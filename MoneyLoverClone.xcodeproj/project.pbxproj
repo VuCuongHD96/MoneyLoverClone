@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */; };
 		4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */; };
-		4CC87D4125136D9100A3B9BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D4025136D9100A3B9BD /* ViewController.swift */; };
+		4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D4025136D9100A3B9BD /* TransactionsViewController.swift */; };
 		4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4225136D9100A3B9BD /* Main.storyboard */; };
 		4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4525136D9300A3B9BD /* Assets.xcassets */; };
 		4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		4CC87D3925136D9100A3B9BD /* MoneyLoverClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyLoverClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CC87D4025136D9100A3B9BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CC87D4025136D9100A3B9BD /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		4CC87D4325136D9100A3B9BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CC87D4525136D9300A3B9BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CC87D4825136D9300A3B9BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +50,63 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C8E4BE52514A885005B238B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C8E4BE62514A88F005B238B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C8E4BE92514A8A8005B238B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
+				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
+				4C8E4BED2514AAAD005B238B /* Transactions */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4C8E4BEA2514A911005B238B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4C8E4BE52514A885005B238B /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4C8E4BEB2514A926005B238B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */,
+				4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4C8E4BEC2514A961005B238B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4CC87D4525136D9300A3B9BD /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4C8E4BED2514AAAD005B238B /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				4CC87D4025136D9100A3B9BD /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		4CC87D3025136D9000A3B9BD = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +128,11 @@
 		4CC87D3B25136D9100A3B9BD /* MoneyLoverClone */ = {
 			isa = PBXGroup;
 			children = (
-				4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */,
-				4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */,
-				4CC87D4025136D9100A3B9BD /* ViewController.swift */,
-				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
-				4CC87D4525136D9300A3B9BD /* Assets.xcassets */,
-				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
+				4C8E4BEB2514A926005B238B /* Application */,
+				4C8E4BEA2514A911005B238B /* Data */,
+				4C8E4BE62514A88F005B238B /* ViewModel */,
+				4C8E4BE92514A8A8005B238B /* Scenes */,
+				4C8E4BEC2514A961005B238B /* Resource */,
 				4CC87D4A25136D9300A3B9BD /* Info.plist */,
 			);
 			path = MoneyLoverClone;
@@ -88,7 +144,6 @@
 				069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */,
 				70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +160,7 @@
 				4CC87D3725136D9100A3B9BD /* Resources */,
 				B4A9E07B42D9803F8F72A4BD /* [CP] Embed Pods Frameworks */,
 				811D2F89178ED299841C7160 /* [CP] Copy Pods Resources */,
+				4C8E4BE42514A23C005B238B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -162,6 +218,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C8E4BE42514A23C005B238B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		811D2F89178ED299841C7160 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CC87D4125136D9100A3B9BD /* ViewController.swift in Sources */,
+				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 			);

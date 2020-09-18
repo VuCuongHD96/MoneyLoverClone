@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TransactionsViewController.swift
 //  MoneyLoverClone
 //
 //  Created by Vu Xuan Cuong on 9/17/20.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class TransactionsViewController: UIViewController {
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
