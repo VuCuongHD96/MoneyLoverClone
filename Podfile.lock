@@ -104,6 +104,7 @@ PODS:
     - Reusable/View (= 4.1.1)
   - Reusable/Storyboard (4.1.1)
   - Reusable/View (4.1.1)
+  - SwiftDate (6.2.0)
   - SwiftLint (0.40.2)
   - Then (2.7.0)
 
@@ -114,6 +115,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - RealmSwift
   - Reusable
+  - SwiftDate
   - SwiftLint
   - Then
 
@@ -140,6 +142,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Reusable
+    - SwiftDate
     - SwiftLint
     - Then
 
@@ -165,9 +168,10 @@ SPEC CHECKSUMS:
   Realm: 7e887608ef1de2d0c3a33dd9b1449e08fc9d9807
   RealmSwift: ef998d9b678fd74e047c56ef4d99d9b77e87c1eb
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwiftLint: 1216c910d27c2633ade33b4f071bb6b930982e62
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: f0f3ac024f9e00c4f8315ff81e8303afac26409a
+PODFILE CHECKSUM: 7d5c3e23e8f7bcdf5de4eb59aba87feabf549a25
 
 COCOAPODS: 1.9.3

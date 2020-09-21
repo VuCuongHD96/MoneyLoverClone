@@ -18,4 +18,6 @@ target 'MoneyLoverClone' do
 	pod 'FBSDKLoginKit'   
 	pod 'GoogleSignIn'
 
+	pod 'SwiftDate'
+
 end
