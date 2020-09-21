@@ -19,6 +19,9 @@
 		4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */; };
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
+		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
+		4CE313A92518834B00553415 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A72518834B00553415 /* DatePickerViewController.swift */; };
+		4CE313AA2518834B00553415 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A82518834B00553415 /* DatePickerViewController.xib */; };
 		B62151B15EDE3671C97DEB7F /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,9 @@
 		4CC87D4A25136D9300A3B9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
+		4CE313A72518834B00553415 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		4CE313A82518834B00553415 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 			children = (
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
+				4CE313A325187E1000553415 /* AddTransaction */,
 				4C8E4BED2514AAAD005B238B /* Transactions */,
 			);
 			path = Scenes;
@@ -172,6 +179,24 @@
 			path = MoneyLoverClone;
 			sourceTree = "<group>";
 		};
+		4CE313A325187E1000553415 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */,
+				4CE313A6251882F600553415 /* CustomView */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		4CE313A6251882F600553415 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4CE313A72518834B00553415 /* DatePickerViewController.swift */,
+				4CE313A82518834B00553415 /* DatePickerViewController.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE313AA2518834B00553415 /* DatePickerViewController.xib in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
@@ -334,7 +360,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
+				4CE313A92518834B00553415 /* DatePickerViewController.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
