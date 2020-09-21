@@ -14,22 +14,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RdV-hu-CR1">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="0.62037852112676062" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RdV-hu-CR1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="93Y-H4-CUR"/>
+                            <constraint firstItem="RdV-hu-CR1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MwP-C8-tQ4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RdV-hu-CR1" secondAttribute="bottom" id="dxh-4S-KpQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RdV-hu-CR1" secondAttribute="trailing" id="uG3-8j-peG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="81Z-D3-Aop"/>
+                    <connections>
+                        <outlet property="tableView" destination="RdV-hu-CR1" id="1Zv-8u-5MU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2010.4000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Item-->
+        <!--Sổ giao dịch-->
         <scene sceneID="hEI-kd-jf6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ONi-Ip-4Lq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6rF-B3-pAj"/>
+                    <tabBarItem key="tabBarItem" title="Sổ giao dịch" image="transaction" id="6rF-B3-pAj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4vl-Mr-JZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -60,4 +76,7 @@
             <point key="canvasLocation" x="-55" y="448"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="transaction" width="32" height="32"/>
+    </resources>
 </document>
