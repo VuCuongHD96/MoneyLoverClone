@@ -16,64 +16,65 @@ final class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var dateLabel: UILabel!
     
     // MARK: - Properties
-    let date = Date()
+    let today = Date()
     let formatter = DateFormatter()
-    var datePicker = UIDatePicker()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupData()
+        setupView()
     }
-
+    
     // MARK: - Views
     private func setupView() {
-        navigationItem.title = "Thêm giao dịch"
-        tabBarItem.image = UIImage(named: "Add")
+        let todayDateString = formatter.string(from: today)
+        dateLabel.text = todayDateString
     }
     
     // MARK: - Data
     private func setupData() {
         let locale = Locale(identifier: "vi")
-        datePicker.do {
-            $0.locale = locale
-            $0.datePickerMode = .date
-            $0.frame = CGRect(x: 0, y: 15, width: 300, height: 200)
-        }
         formatter.do {
             $0.dateStyle = .full
             $0.locale = locale
         }
     }
     
-    private func choiseDate(completeChoice: @escaping (String) -> ()) {
+    private func pickDate() {
+        let alertController = UIAlertController(title: "", message: nil, preferredStyle: .alert)
+        let datePickerViewController = DatePickerViewController()
+        datePickerViewController.date = formatter.date(from: dateLabel.text ?? "") ?? today
+        datePickerViewController.preferredContentSize = datePickerViewController.view.bounds.size
+        alertController.setValue(datePickerViewController, forKey: "contentViewController")
+        let somethingAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            let date = datePickerViewController.date
+            let dateString = self.formatter.string(from: date)
+            self.dateLabel.text = dateString
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(somethingAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func choiseDate(completeChoice: @escaping (String) -> Void) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let todaySheet = UIAlertAction(title: "Hôm nay", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            let resultDate = self.formatter.string(from: self.date)
+            let resultDate = self.formatter.string(from: self.today)
             completeChoice(resultDate)
         }
         let yesterdaySheet = UIAlertAction(title: "Hôm qua", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            let resultDate = self.formatter.string(from: self.date - 1.days)
+            let resultDate = self.formatter.string(from: self.today - 1.days)
             completeChoice(resultDate)
         }
         let customSheet = UIAlertAction(title: "Tùy chọn", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-    
-            
-            let alertController = UIAlertController(title: "", message: nil, preferredStyle: UIAlertController.Style.alert)
-            alertController.view.addSubview(self.datePicker)
-            alertController.preferredContentSize = self.datePicker.bounds.size
-            let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-            alertController.addAction(somethingAction)
-            alertController.addAction(cancelAction)
-            self.present(alertController, animated: true, completion:{})
-           
+            self.pickDate()
         }
-        let cancelSheet = UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: nil)
+        let cancelSheet = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
         alert.addAction(todaySheet)
         alert.addAction(yesterdaySheet)
         alert.addAction(customSheet)
@@ -84,14 +85,17 @@ final class AddTransactionTableViewController: UITableViewController {
 
 extension AddTransactionTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
+        switch indexPath.row {
+        case 1:
+            print("Choise Category")
+        case 2:
+            print("Go to note")
+        case 3:
             choiseDate {
                 self.dateLabel.text = $0
             }
+        default:
+            print("Wrong Choise")
         }
     }
-}
-
-extension AddTransactionTableViewController {
-    
 }
