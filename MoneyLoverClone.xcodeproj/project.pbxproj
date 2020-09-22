@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
+		4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB91125199F2400FABC11 /* NoteViewController.xib */; };
+		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
 		4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BEF2514B677005B238B /* RealmManager.swift */; };
 		4C8E4BF22514B767005B238B /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BF12514B767005B238B /* Year.swift */; };
 		4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BF82514C332005B238B /* HeaderTransactionView.swift */; };
@@ -20,13 +23,16 @@
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
-		4CE313A92518834B00553415 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A72518834B00553415 /* DatePickerViewController.swift */; };
-		4CE313AA2518834B00553415 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A82518834B00553415 /* DatePickerViewController.xib */; };
+		4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */; };
+		4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */; };
 		B62151B15EDE3671C97DEB7F /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
+		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		4C8DB91125199F2400FABC11 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		4C8E4BEF2514B677005B238B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4C8E4BF12514B767005B238B /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		4C8E4BF82514C332005B238B /* HeaderTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTransactionView.swift; sourceTree = "<group>"; };
@@ -42,8 +48,8 @@
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
-		4CE313A72518834B00553415 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		4CE313A82518834B00553415 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +74,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C8DB90F25199EE100FABC11 /* NoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DB91025199F2400FABC11 /* NoteViewController.swift */,
+				4C8DB91125199F2400FABC11 /* NoteViewController.xib */,
+			);
+			path = NoteViewController;
+			sourceTree = "<group>";
+		};
+		4C8DB91425199F4700FABC11 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DB91525199F8400FABC11 /* Storyboard.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
 		4C8E4BE52514A885005B238B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +113,7 @@
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CE313A325187E1000553415 /* AddTransaction */,
 				4C8E4BED2514AAAD005B238B /* Transactions */,
+				4C8DB90F25199EE100FABC11 /* NoteViewController */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -173,6 +197,7 @@
 				4C8E4BEA2514A911005B238B /* Data */,
 				4C8E4BE62514A88F005B238B /* ViewModel */,
 				4C8E4BE92514A8A8005B238B /* Scenes */,
+				4C8DB91425199F4700FABC11 /* Unit */,
 				4C8E4BEC2514A961005B238B /* Resource */,
 				4CC87D4A25136D9300A3B9BD /* Info.plist */,
 			);
@@ -191,8 +216,8 @@
 		4CE313A6251882F600553415 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				4CE313A72518834B00553415 /* DatePickerViewController.swift */,
-				4CE313A82518834B00553415 /* DatePickerViewController.xib */,
+				4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */,
+				4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -268,11 +293,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE313AA2518834B00553415 /* DatePickerViewController.xib in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
+				4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
+				4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,13 +387,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
+				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
-				4CE313A92518834B00553415 /* DatePickerViewController.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
+				4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
+				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
