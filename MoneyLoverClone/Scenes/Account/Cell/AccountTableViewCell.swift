@@ -7,22 +7,18 @@
 //
 
 import UIKit
+import Reusable
 
-class AccountTableViewCell: UITableViewCell {
+final class AccountTableViewCell: UITableViewCell, NibReusable{
 
+    @IBOutlet weak var lbname: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
-    @IBOutlet weak var lbName: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-
-    
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func setContent(_ indexImg : String ,_ indexLb : String ) {
+        imgIcon.image = UIImage(named: indexImg)
+        lbname.text = indexLb
+    }
 }

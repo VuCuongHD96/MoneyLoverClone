@@ -7,59 +7,104 @@
 //
 
 import UIKit
+import Reusable
 
 class AccountViewController: UIViewController {
     
-    @IBOutlet weak var imgAccount: UIImageView!
-    @IBOutlet weak var lbNameAccount: UILabel!
-    @IBOutlet weak var lbGmailAccount: UILabel!
-    @IBOutlet weak var tableViewAccount: UITableView!
+    @IBOutlet private weak var imgAccount: UIImageView!
+    @IBOutlet private weak var lbNameAccount: UILabel!
+    @IBOutlet private weak var lbGmailAccount: UILabel!
+    @IBOutlet private weak var tableViewAccount: UITableView!
     
-    var accountArray: [String] = ["Ví của tôi", "Nhóm", "Cài đặt"]
-    var iconArray: [String] = ["myWallet", "group", "setting"]
-    let id = "AccountCell"
+    var accountArray: [String] = [ "Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
+    var iconArray: [String] = ["group", "setting", "changepass", "logout"]
     var myIndex = 0
+    var passWord = "123" , newPass = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         setupTableView()
+        print(newPass)
     }
+    
     func setData() {
         imgAccount.image = UIImage(named: "male")
         lbNameAccount.text = "Việt Hoàng"
         lbGmailAccount.text = "nguyenviethoang@gmail.com"
         lbGmailAccount.textColor = .lightGray
     }
+    
     func setupTableView() {
-        tableViewAccount.register(UINib(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: id)
-        tableViewAccount.delegate = self
-        tableViewAccount.dataSource = self
+        tableViewAccount.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: AccountTableViewCell.self)
+            tableViewAccount.isScrollEnabled = false
+        }
+    }
+    func logout(){
+        let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn có chắc muốn đăng xuất khỏi thiết bị này?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Đăng xuất", style: .default, handler: { action in
+            print("xủ lý đăng xuất ở đây")
+        }
+            ))
+        self.present(alert, animated: true)
     }
 }
+
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return AccountSections.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        accountArray.count
+        return accountArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewAccount.dequeueReusableCell(withIdentifier: id, for: indexPath) as! AccountTableViewCell
-        cell.imgIcon.image = UIImage(named: iconArray[indexPath.row])
-        cell.lbName.text = accountArray[indexPath.row]
+        //let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
+        let cell = tableViewAccount.dequeueReusableCell(withIdentifier: "CustomCell") as! AccountTableViewCell
+        
+//        switch section {
+//        case 0:
+//            cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
+//        case 1:
+//            cell.setContent(iconArray[indexPath.row+2], accountArray[indexPath.row+2])
+//
+//        default:
+//            break
+//        }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = AccountSections(rawValue: indexPath.section) else { return }
         myIndex = indexPath.row
-        switch myIndex {
-        case 0:
-            print("chuyển sang màn ví của tôi")
-            //performSegue(withIdentifier: "segue", sender: self)
-        case 1:
-            print("chuyển sang màn nhóm")
-            
-        case 2:
-            print("chuyển sang màn Cài đặt")
-        default:
-            break
+        switch section {
+        case .chung:
+             switch myIndex{
+             case 0:
+                 print("Màn hình Nhom")
+             case 1:
+                print("Màn hình setting")
+             default:
+                 break
+             }
+        case .logout:
+            switch myIndex{
+            case 0:
+                guard let vc = storyboard?.instantiateViewController(identifier: "ChangePassViewController") as? ChangePassViewController else { return  }
+                vc.currentPass = passWord
+                self.navigationController?.pushViewController(vc, animated: true)
+            case 1:
+                logout()
+            default:
+                break
+            }
         }
     }
+   
 }

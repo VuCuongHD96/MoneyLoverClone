@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */; };
 		28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */; };
-		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
+		286315A3251AE83F00E3EE1C /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286315A2251AE83F00E3EE1C /* ChangePassViewController.swift */; };
+		286315A5251B2AD800E3EE1C /* AccountSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286315A4251B2AD700E3EE1C /* AccountSections.swift */; };
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
 		4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB91125199F2400FABC11 /* NoteViewController.xib */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
@@ -35,7 +36,8 @@
 		069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		286315A2251AE83F00E3EE1C /* ChangePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
+		286315A4251B2AD700E3EE1C /* AccountSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSections.swift; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		4C8DB91125199F2400FABC11 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */,
+				286315A2251AE83F00E3EE1C /* ChangePassViewController.swift */,
 				28617CD62519AF3300A9E4E0 /* Cell */,
 			);
 			path = Account;
@@ -93,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */,
-				28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8E4BF12514B767005B238B /* Year.swift */,
+				286315A4251B2AD700E3EE1C /* AccountSections.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
-				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
 				4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
@@ -412,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286315A3251AE83F00E3EE1C /* ChangePassViewController.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
@@ -422,6 +425,7 @@
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
 				4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
+				286315A5251B2AD800E3EE1C /* AccountSections.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
