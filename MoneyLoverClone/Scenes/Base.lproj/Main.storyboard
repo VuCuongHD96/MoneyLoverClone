@@ -179,7 +179,7 @@
                                                         <constraint firstAttribute="width" secondItem="zAj-xh-z19" secondAttribute="height" id="8M3-xp-DOZ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Mj-Snr">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ghi chú" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Mj-Snr">
                                                     <rect key="frame" x="52" y="5" width="296" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -236,11 +236,12 @@
                     <navigationItem key="navigationItem" title="Thêm giao dịch" id="UbO-sT-Zkf"/>
                     <connections>
                         <outlet property="dateLabel" destination="47g-g6-9Bg" id="B39-oy-2TF"/>
+                        <outlet property="noteTextField" destination="1ol-Mj-Snr" id="4L4-HB-AwI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5k-D9-9Rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="907"/>
+            <point key="canvasLocation" x="1927" y="905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKP-TF-EX0">

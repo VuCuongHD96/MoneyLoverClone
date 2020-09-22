@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vu Xuan Cuong. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Storyboard {
-//    static let note = 
+    static let note = UIStoryboard(name: "Note", bundle: nil)
 }

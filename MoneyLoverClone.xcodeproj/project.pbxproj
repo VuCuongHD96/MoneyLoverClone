@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
-		4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB91125199F2400FABC11 /* NoteViewController.xib */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
+		4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB9172519AD6D00FABC11 /* Note.storyboard */; };
 		4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BEF2514B677005B238B /* RealmManager.swift */; };
 		4C8E4BF22514B767005B238B /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BF12514B767005B238B /* Year.swift */; };
 		4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E4BF82514C332005B238B /* HeaderTransactionView.swift */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
-		4C8DB91125199F2400FABC11 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		4C8DB9172519AD6D00FABC11 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
 		4C8E4BEF2514B677005B238B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4C8E4BF12514B767005B238B /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		4C8E4BF82514C332005B238B /* HeaderTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTransactionView.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8DB91025199F2400FABC11 /* NoteViewController.swift */,
-				4C8DB91125199F2400FABC11 /* NoteViewController.xib */,
+				4C8DB9172519AD6D00FABC11 /* Note.storyboard */,
 			);
 			path = NoteViewController;
 			sourceTree = "<group>";
@@ -295,8 +295,8 @@
 			files = (
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
-				4C8DB91325199F2400FABC11 /* NoteViewController.xib in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
+				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
 				4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
