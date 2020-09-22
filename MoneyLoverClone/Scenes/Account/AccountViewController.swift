@@ -7,59 +7,63 @@
 //
 
 import UIKit
+import Reusable
 
 class AccountViewController: UIViewController {
     
-    @IBOutlet weak var imgAccount: UIImageView!
-    @IBOutlet weak var lbNameAccount: UILabel!
-    @IBOutlet weak var lbGmailAccount: UILabel!
-    @IBOutlet weak var tableViewAccount: UITableView!
+    @IBOutlet private weak var imgAccount: UIImageView!
+    @IBOutlet private weak var lbNameAccount: UILabel!
+    @IBOutlet private weak var lbGmailAccount: UILabel!
+    @IBOutlet private weak var tableViewAccount: UITableView!
     
-    var accountArray: [String] = ["Ví của tôi", "Nhóm", "Cài đặt"]
-    var iconArray: [String] = ["myWallet", "group", "setting"]
-    let id = "AccountCell"
+    var accountArray: [String] = ["Quản lý tài khoản", "Nhóm", "Cài đặt"]
+    var iconArray: [String] = ["account", "group", "setting"]
+    let id = "AccountTableViewCell"
     var myIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         setupTableView()
     }
+    
     func setData() {
         imgAccount.image = UIImage(named: "male")
         lbNameAccount.text = "Việt Hoàng"
         lbGmailAccount.text = "nguyenviethoang@gmail.com"
         lbGmailAccount.textColor = .lightGray
     }
+    
     func setupTableView() {
-        tableViewAccount.register(UINib(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: id)
-        tableViewAccount.delegate = self
-        tableViewAccount.dataSource = self
+        tableViewAccount.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: AccountTableViewCell.self)
+        }
     }
 }
+
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         accountArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewAccount.dequeueReusableCell(withIdentifier: id, for: indexPath) as! AccountTableViewCell
-        cell.imgIcon.image = UIImage(named: iconArray[indexPath.row])
-        cell.lbName.text = accountArray[indexPath.row]
+        let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
+        cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
         switch myIndex {
         case 0:
-            print("chuyển sang màn ví của tôi")
-            //performSegue(withIdentifier: "segue", sender: self)
+            print("man hinh quan ly tai khoan")
         case 1:
-            print("chuyển sang màn nhóm")
-            
+            print("man hinh Nhom")
         case 2:
-            print("chuyển sang màn Cài đặt")
-        default:
-            break
+            print("man hinh setting")
+        default : break
         }
     }
 }
