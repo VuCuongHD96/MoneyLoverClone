@@ -16,7 +16,7 @@ final class DatePickerViewController: UIViewController {
     // MARK: - Properties
     var date = Date()
     
-    // MARK: - Life Cycle
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()

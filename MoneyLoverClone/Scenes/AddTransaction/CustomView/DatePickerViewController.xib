@@ -15,17 +15,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="241" height="143"/>
+            <rect key="frame" x="0.0" y="0.0" width="272" height="181"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="i3r-0G-IoZ">
-                    <rect key="frame" x="0.0" y="0.0" width="241" height="143"/>
+                    <rect key="frame" x="0.0" y="0.0" width="272" height="181"/>
                     <connections>
                         <action selector="dataChange:" destination="-1" eventType="valueChanged" id="l2Y-Wl-yxL"/>
                     </connections>
                 </datePicker>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="i3r-0G-IoZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SBT-wi-m8E"/>
                 <constraint firstItem="i3r-0G-IoZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WIi-Ea-TH6"/>
@@ -34,7 +34,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="354" y="-22"/>
+            <point key="canvasLocation" x="456.52173913043481" y="-261.49553571428572"/>
         </view>
     </objects>
 </document>
