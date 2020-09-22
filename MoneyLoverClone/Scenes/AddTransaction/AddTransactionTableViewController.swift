@@ -14,6 +14,7 @@ final class AddTransactionTableViewController: UITableViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var noteTextField: UITextField!
     
     // MARK: - Properties
     let today = Date()
@@ -25,7 +26,7 @@ final class AddTransactionTableViewController: UITableViewController {
         setupData()
         setupView()
     }
-    
+
     // MARK: - Views
     private func setupView() {
         let todayDateString = formatter.string(from: today)
@@ -41,6 +42,7 @@ final class AddTransactionTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Action
     private func pickDate() {
         let alertController = UIAlertController(title: "", message: nil, preferredStyle: .alert)
         let datePickerViewController = DatePickerViewController()
@@ -81,6 +83,17 @@ final class AddTransactionTableViewController: UITableViewController {
         alert.addAction(cancelSheet)
         present(alert, animated: true, completion: nil)
     }
+    
+    private func noteHandelAction() {
+        let note = noteTextField.text ?? ""
+        let noteScreen = NoteViewController.instantiate()
+        noteScreen.note = note
+        noteScreen.sendNote = {
+            guard $0 != "" else { return }
+            self.noteTextField.text = $0
+        }
+        navigationController?.pushViewController(noteScreen, animated: true)
+    }
 }
 
 extension AddTransactionTableViewController {
@@ -89,7 +102,7 @@ extension AddTransactionTableViewController {
         case 1:
             print("Choise Category")
         case 2:
-            print("Go to note")
+            noteHandelAction()
         case 3:
             choiseDate {
                 self.dateLabel.text = $0
