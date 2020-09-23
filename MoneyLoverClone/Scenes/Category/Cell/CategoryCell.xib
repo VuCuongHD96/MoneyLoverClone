@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CategoryCell" customModule="MoneyLoverClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reward" translatesAutoresizingMaskIntoConstraints="NO" id="puL-EC-bGx">
+                        <rect key="frame" x="10" y="5" width="32" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="puL-EC-bGx" secondAttribute="height" multiplier="16:17" id="f2E-EP-jHd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qf-5V-Tc1">
+                        <rect key="frame" x="52" y="0.0" width="268" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="puL-EC-bGx" secondAttribute="bottom" constant="5" id="GIr-Ql-kYL"/>
+                    <constraint firstItem="puL-EC-bGx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="IaE-Mm-7KX"/>
+                    <constraint firstAttribute="trailing" secondItem="7qf-5V-Tc1" secondAttribute="trailing" id="SxB-P5-eiZ"/>
+                    <constraint firstItem="7qf-5V-Tc1" firstAttribute="leading" secondItem="puL-EC-bGx" secondAttribute="trailing" constant="10" id="Y8b-TT-cw2"/>
+                    <constraint firstAttribute="bottom" secondItem="7qf-5V-Tc1" secondAttribute="bottom" id="oeD-hL-gHO"/>
+                    <constraint firstItem="puL-EC-bGx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="r7M-2Q-S93"/>
+                    <constraint firstItem="7qf-5V-Tc1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yeM-kz-PSC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryImageView" destination="puL-EC-bGx" id="Amp-kQ-yrn"/>
+                <outlet property="nameLabel" destination="7qf-5V-Tc1" id="jmE-cz-gHZ"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="153"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="reward" width="32" height="32"/>
+    </resources>
+</document>

@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZZY-be-MOS">
-                        <rect key="frame" x="77" y="6.5" width="44" height="44"/>
+                        <rect key="frame" x="67" y="6.5" width="44" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-0G-mhd">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
@@ -50,7 +50,7 @@
                     <constraint firstAttribute="trailing" secondItem="JTe-9A-RIn" secondAttribute="trailing" constant="10" id="HzG-T7-tQi"/>
                     <constraint firstItem="GbW-m6-Crt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qbn-jc-Ubp"/>
                     <constraint firstItem="ZZY-be-MOS" firstAttribute="centerY" secondItem="GbW-m6-Crt" secondAttribute="centerY" id="gpd-ee-2Fe"/>
-                    <constraint firstItem="ZZY-be-MOS" firstAttribute="leading" secondItem="GbW-m6-Crt" secondAttribute="trailing" constant="20" id="lCt-v7-Mba"/>
+                    <constraint firstItem="ZZY-be-MOS" firstAttribute="leading" secondItem="GbW-m6-Crt" secondAttribute="trailing" constant="10" id="lCt-v7-Mba"/>
                     <constraint firstAttribute="bottom" secondItem="GbW-m6-Crt" secondAttribute="bottom" constant="5" id="luw-EZ-wQn"/>
                     <constraint firstItem="JTe-9A-RIn" firstAttribute="centerY" secondItem="aBY-0G-mhd" secondAttribute="centerY" id="oNK-oc-m3m"/>
                     <constraint firstItem="GbW-m6-Crt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="skh-dk-MO0"/>

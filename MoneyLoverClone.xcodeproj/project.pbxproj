@@ -12,6 +12,12 @@
 		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
 		4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA59251B23A500768482 /* Calendar.storyboard */; };
 		4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA5B251B23E600768482 /* CalendarViewController.swift */; };
+		4C30DA5E251B430A00768482 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA5D251B430A00768482 /* Category.storyboard */; };
+		4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA60251B441B00768482 /* CategoryViewController.swift */; };
+		4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA63251B44DA00768482 /* CategoryCell.swift */; };
+		4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA64251B44DA00768482 /* CategoryCell.xib */; };
+		4C30DA68251B460D00768482 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA67251B460D00768482 /* Category.swift */; };
+		4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA69251B539200768482 /* RevenueArray.plist */; };
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
 		4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB9172519AD6D00FABC11 /* Note.storyboard */; };
@@ -41,6 +47,12 @@
 		28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		4C30DA59251B23A500768482 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		4C30DA5B251B23E600768482 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		4C30DA5D251B430A00768482 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		4C30DA60251B441B00768482 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		4C30DA63251B44DA00768482 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		4C30DA64251B44DA00768482 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		4C30DA67251B460D00768482 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4C30DA69251B539200768482 /* RevenueArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RevenueArray.plist; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		4C8DB9172519AD6D00FABC11 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
@@ -113,6 +125,25 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		4C30DA5F251B433B00768482 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4C30DA62251B44BB00768482 /* Cell */,
+				4C30DA5D251B430A00768482 /* Category.storyboard */,
+				4C30DA60251B441B00768482 /* CategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		4C30DA62251B44BB00768482 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C30DA63251B44DA00768482 /* CategoryCell.swift */,
+				4C30DA64251B44DA00768482 /* CategoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4C8DB90F25199EE100FABC11 /* NoteViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8E4BF12514B767005B238B /* Year.swift */,
+				4C30DA67251B460D00768482 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,7 +180,6 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9B8131C6251AE0E40088F6A6 /* Settings */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				28617CD32519AD5300A9E4E0 /* Account */,
@@ -156,6 +187,8 @@
 				4C8E4BED2514AAAD005B238B /* Transactions */,
 				4C8DB90F25199EE100FABC11 /* NoteViewController */,
 				4C30DA58251B238200768482 /* Calendar */,
+				9B8131C6251AE0E40088F6A6 /* Settings */,
+				4C30DA5F251B433B00768482 /* Category */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -182,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC87D4525136D9300A3B9BD /* Assets.xcassets */,
+				4C30DA69251B539200768482 /* RevenueArray.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -343,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
@@ -350,6 +385,8 @@
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
+				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
+				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
 				4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
 			);
@@ -438,10 +475,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
+				4C30DA68251B460D00768482 /* Category.swift in Sources */,
+				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
