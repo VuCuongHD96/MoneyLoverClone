@@ -259,7 +259,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKa-qc-6ID" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-377" y="1567"/>
+            <point key="canvasLocation" x="-449" y="1567"/>
         </scene>
         <!--Tài khoản-->
         <scene sceneID="vSf-8v-dSd">
@@ -340,11 +340,129 @@
                         <outlet property="lbGmailAccount" destination="N1y-CO-xpG" id="cTP-Az-MhS"/>
                         <outlet property="lbNameAccount" destination="ZbH-nf-1BO" id="bff-vU-IhA"/>
                         <outlet property="tableViewAccount" destination="RcN-HH-yCL" id="dq3-Xn-VHU"/>
+                        <segue destination="1Xh-E0-wHG" kind="show" identifier="setting" id="kQu-DS-5fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xvf-YR-xJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="416.80000000000001" y="1566.5667166416792"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="IOb-0a-FBD">
+            <objects>
+                <tableViewController storyboardIdentifier="setting" id="1Xh-E0-wHG" customClass="SettingsTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KKF-J9-8ez">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="EqO-H4-u8w">
+                            <rect key="frame" x="0.0" y="166.5" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="2N0-dQ-yCt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="DY5-7l-ni9">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DY5-7l-ni9" id="5Gi-mN-WXg">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="ads-Ns-qd9">
+                                                    <rect key="frame" x="10" y="6.5" width="35" height="31"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên hiển thị" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-yX-htO">
+                                                    <rect key="frame" x="55" y="6.5" width="208.5" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ads-Ns-qd9" firstAttribute="width" secondItem="5Gi-mN-WXg" secondAttribute="width" multiplier="0.1" id="3Rq-Br-Vld"/>
+                                                <constraint firstItem="ByM-yX-htO" firstAttribute="centerY" secondItem="5Gi-mN-WXg" secondAttribute="centerY" id="MT1-N6-xow"/>
+                                                <constraint firstItem="ads-Ns-qd9" firstAttribute="leading" secondItem="5Gi-mN-WXg" secondAttribute="leading" constant="10" id="a6g-b0-HJ7"/>
+                                                <constraint firstItem="ads-Ns-qd9" firstAttribute="centerY" secondItem="5Gi-mN-WXg" secondAttribute="centerY" id="fpm-ZU-flk"/>
+                                                <constraint firstItem="ads-Ns-qd9" firstAttribute="height" secondItem="5Gi-mN-WXg" secondAttribute="height" multiplier="0.7" id="g9b-sg-UWh"/>
+                                                <constraint firstItem="ByM-yX-htO" firstAttribute="height" secondItem="5Gi-mN-WXg" secondAttribute="height" multiplier="0.7" id="kNq-hj-T9k"/>
+                                                <constraint firstItem="ByM-yX-htO" firstAttribute="width" secondItem="5Gi-mN-WXg" secondAttribute="width" multiplier="0.6" id="kRg-LQ-dbe"/>
+                                                <constraint firstItem="ByM-yX-htO" firstAttribute="leading" secondItem="ads-Ns-qd9" secondAttribute="trailing" constant="10" id="v77-vO-bfI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="nUL-R9-pRJ">
+                                        <rect key="frame" x="0.0" y="61.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUL-R9-pRJ" id="MSw-49-mXq">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Định dạng ngày tháng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8i-lh-5p2">
+                                                    <rect key="frame" x="55" y="6.5" width="208.5" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="90A-le-VUN">
+                                                    <rect key="frame" x="10" y="6.5" width="35" height="31"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="I8i-lh-5p2" firstAttribute="centerY" secondItem="MSw-49-mXq" secondAttribute="centerY" id="BSR-wz-qd8"/>
+                                                <constraint firstItem="I8i-lh-5p2" firstAttribute="leading" secondItem="90A-le-VUN" secondAttribute="trailing" constant="10" id="IVP-b3-VFH"/>
+                                                <constraint firstItem="90A-le-VUN" firstAttribute="centerY" secondItem="MSw-49-mXq" secondAttribute="centerY" id="Zvl-Dw-k1C"/>
+                                                <constraint firstItem="I8i-lh-5p2" firstAttribute="height" secondItem="MSw-49-mXq" secondAttribute="height" multiplier="0.7" id="cAK-k9-R8d"/>
+                                                <constraint firstItem="90A-le-VUN" firstAttribute="height" secondItem="MSw-49-mXq" secondAttribute="height" multiplier="0.7" id="ngn-rn-ez3"/>
+                                                <constraint firstItem="90A-le-VUN" firstAttribute="leading" secondItem="MSw-49-mXq" secondAttribute="leading" constant="10" id="npb-jW-2Qe"/>
+                                                <constraint firstItem="I8i-lh-5p2" firstAttribute="width" secondItem="MSw-49-mXq" secondAttribute="width" multiplier="0.6" id="syt-3D-u7K"/>
+                                                <constraint firstItem="90A-le-VUN" firstAttribute="width" secondItem="MSw-49-mXq" secondAttribute="width" multiplier="0.1" id="tsI-9n-rgc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="jUb-ug-iaQ">
+                                        <rect key="frame" x="0.0" y="105" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jUb-ug-iaQ" id="RWi-wf-ZRy">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn ngôn ngữ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfl-6T-UtT">
+                                                    <rect key="frame" x="55" y="6.5" width="208.5" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="translate" translatesAutoresizingMaskIntoConstraints="NO" id="NlV-3I-vXk">
+                                                    <rect key="frame" x="10" y="6.5" width="35" height="31"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NlV-3I-vXk" firstAttribute="leading" secondItem="RWi-wf-ZRy" secondAttribute="leading" constant="10" id="0eG-Uw-BSP"/>
+                                                <constraint firstItem="NlV-3I-vXk" firstAttribute="centerY" secondItem="RWi-wf-ZRy" secondAttribute="centerY" id="AoJ-cp-uSV"/>
+                                                <constraint firstItem="Bfl-6T-UtT" firstAttribute="centerY" secondItem="RWi-wf-ZRy" secondAttribute="centerY" id="FTv-Pj-daE"/>
+                                                <constraint firstItem="Bfl-6T-UtT" firstAttribute="width" secondItem="RWi-wf-ZRy" secondAttribute="width" multiplier="0.6" id="IyZ-sZ-S1P"/>
+                                                <constraint firstItem="Bfl-6T-UtT" firstAttribute="height" secondItem="RWi-wf-ZRy" secondAttribute="height" multiplier="0.7" id="OAd-hN-cZE"/>
+                                                <constraint firstItem="NlV-3I-vXk" firstAttribute="height" secondItem="RWi-wf-ZRy" secondAttribute="height" multiplier="0.7" id="RzE-tM-Kqd"/>
+                                                <constraint firstItem="NlV-3I-vXk" firstAttribute="width" secondItem="RWi-wf-ZRy" secondAttribute="width" multiplier="0.1" id="euh-qU-zoC"/>
+                                                <constraint firstItem="Bfl-6T-UtT" firstAttribute="leading" secondItem="NlV-3I-vXk" secondAttribute="trailing" constant="10" id="hBr-MN-Oqj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="1Xh-E0-wHG" id="fxY-43-iUl"/>
+                            <outlet property="delegate" destination="1Xh-E0-wHG" id="8XK-Ao-vcm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="ybC-vQ-oCe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAL-Se-hFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="2373"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKP-TF-EX0">
@@ -374,6 +492,7 @@
         <image name="note" width="32" height="32"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="transaction" width="32" height="32"/>
+        <image name="translate" width="256" height="256"/>
         <image name="vietnam" width="32" height="32"/>
         <image name="water" width="32" height="32"/>
     </resources>
