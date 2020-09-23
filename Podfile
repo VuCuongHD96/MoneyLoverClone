@@ -19,6 +19,6 @@ target 'MoneyLoverClone' do
 	pod 'GoogleSignIn'
 
 	pod 'SwiftDate'
-
+	pod 'FSCalendar'
 
 end

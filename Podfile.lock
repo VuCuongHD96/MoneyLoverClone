@@ -48,6 +48,7 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
+  - FSCalendar (2.8.1)
   - GoogleAppMeasurement (6.8.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -112,6 +113,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Database
+  - FSCalendar
   - GoogleSignIn
   - RealmSwift
   - Reusable
@@ -130,6 +132,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseInstallations
+    - FSCalendar
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleSignIn
@@ -156,6 +159,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseDatabase: 13a865a4b85897462b930eb683bda8f52583713f
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   GoogleAppMeasurement: 1a66f478c68ecd6c16ee63ee60c7c3a648e6b337
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
@@ -172,6 +176,6 @@ SPEC CHECKSUMS:
   SwiftLint: 1216c910d27c2633ade33b4f071bb6b930982e62
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 9aa79f93fef3f3ba3833f27aedebe2c62b6e55fb
+PODFILE CHECKSUM: fe0053b3d97610d9218ca69dc39ee99f215d6709
 
 COCOAPODS: 1.9.3

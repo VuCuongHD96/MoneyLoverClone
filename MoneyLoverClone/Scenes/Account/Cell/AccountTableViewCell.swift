@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-final class AccountTableViewCell: UITableViewCell, NibReusable{
+final class AccountTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var imgIcon: UIImageView!
     @IBOutlet private weak var lbName: UILabel!
@@ -18,7 +18,7 @@ final class AccountTableViewCell: UITableViewCell, NibReusable{
         super.awakeFromNib()
     }
     
-    func setContent(_ indexImg : String ,_ indexLb : String ) {
+    func setContent(_ indexImg: String, _ indexLb: String ) {
         imgIcon.image = UIImage(named: indexImg)
         lbName.text = indexLb
     }
