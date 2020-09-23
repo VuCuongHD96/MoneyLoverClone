@@ -62,7 +62,8 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             print("man hinh Nhom")
         case 2:
-            print("man hinh setting")
+            guard let vc = storyboard?.instantiateViewController(identifier: "setting") as? SettingsTableViewController else { return  }
+            navigationController?.pushViewController(vc, animated: true)
         default : break
         }
     }
