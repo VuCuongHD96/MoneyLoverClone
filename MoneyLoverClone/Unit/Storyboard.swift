@@ -10,4 +10,5 @@ import UIKit
 
 struct Storyboard {
     static let note = UIStoryboard(name: "Note", bundle: nil)
+    static let calendar = UIStoryboard(name: "Calendar", bundle: nil)
 }
