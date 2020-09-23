@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="ubG-eV-Zvm">
+            <objects>
+                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eRe-35-6P0" customClass="CalendarViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSZ-0k-ENl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RE-bj-NkK" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6RE-bj-NkK" firstAttribute="top" secondItem="iXn-XZ-T30" secondAttribute="top" id="6fL-1n-iQV"/>
+                            <constraint firstItem="iXn-XZ-T30" firstAttribute="trailing" secondItem="6RE-bj-NkK" secondAttribute="trailing" id="eHu-Kj-XGu"/>
+                            <constraint firstItem="iXn-XZ-T30" firstAttribute="bottom" secondItem="6RE-bj-NkK" secondAttribute="bottom" id="gny-Fa-JsM"/>
+                            <constraint firstItem="6RE-bj-NkK" firstAttribute="leading" secondItem="iXn-XZ-T30" secondAttribute="leading" id="x1J-lS-NTk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iXn-XZ-T30"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wby-k5-S5v">
+                        <barButtonItem key="rightBarButtonItem" title="Today" id="lAM-I6-p1e">
+                            <connections>
+                                <action selector="showTodayAction:" destination="eRe-35-6P0" id="Obd-Vv-QBN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendar" destination="6RE-bj-NkK" id="AEx-2c-LvR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lel-sN-kBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010.4000000000001" y="139.880059970015"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yUT-XZ-oXV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KWQ-QJ-Iz5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G8Y-9l-f1k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eRe-35-6P0" kind="relationship" relationship="rootViewController" id="mN4-Tc-ggc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="des-Oa-z3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="139.880059970015"/>
+        </scene>
+    </scenes>
+</document>

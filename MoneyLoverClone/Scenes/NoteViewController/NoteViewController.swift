@@ -13,8 +13,12 @@ final class NoteViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var noteTextView: UITextView!
+    @IBOutlet private weak var limitTextLabel: UILabel!
     
     // MARK: - Properties
+    struct Constant {
+        static let limitNoteCount = 50
+    }
     typealias Handler = (String) -> Void
     var sendNote: Handler?
     var note = ""
@@ -45,6 +49,7 @@ final class NoteViewController: UIViewController {
             $0.delegate = self
             $0.text = note
         }
+        textViewDidChange(noteTextView)
     }
 }
 
@@ -52,11 +57,18 @@ extension NoteViewController: UITextViewDelegate {
     func textView(_ textView: UITextView,
                   shouldChangeTextIn range: NSRange,
                   replacementText text: String) -> Bool {
-        guard text == "\n" else {
-            return true
+        if text == "\n" {
+            navigationController?.popViewController(animated: true)
         }
-        navigationController?.popViewController(animated: true)
-        return false
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        return updatedText.count <= Constant.limitNoteCount
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let text = textView.text else { return }
+        limitTextLabel.text = String(text.count) + "/" + String(Constant.limitNoteCount)
     }
 }
 

@@ -29,20 +29,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-Xc-Luh">
+                                <rect key="frame" x="362" y="55.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="nWL-FB-Fho" firstAttribute="trailing" secondItem="aXZ-Xc-Luh" secondAttribute="trailing" constant="10" id="1N4-Lq-0Cp"/>
                             <constraint firstItem="Jzc-tR-9vG" firstAttribute="top" secondItem="eTo-lG-3md" secondAttribute="bottom" constant="10" id="4Oq-jQ-ASE"/>
                             <constraint firstItem="nWL-FB-Fho" firstAttribute="trailing" secondItem="eTo-lG-3md" secondAttribute="trailing" constant="5" id="6B8-4A-qYz"/>
                             <constraint firstItem="Jzc-tR-9vG" firstAttribute="leading" secondItem="nWL-FB-Fho" secondAttribute="leading" constant="5" id="7Rs-aI-gFn"/>
                             <constraint firstItem="nWL-FB-Fho" firstAttribute="trailing" secondItem="Jzc-tR-9vG" secondAttribute="trailing" constant="5" id="9cy-zV-nPj"/>
+                            <constraint firstItem="aXZ-Xc-Luh" firstAttribute="centerY" secondItem="eTo-lG-3md" secondAttribute="centerY" id="H7w-ao-T5o"/>
                             <constraint firstItem="eTo-lG-3md" firstAttribute="leading" secondItem="nWL-FB-Fho" secondAttribute="leading" constant="15" id="HmJ-rb-9uw"/>
+                            <constraint firstItem="aXZ-Xc-Luh" firstAttribute="height" secondItem="eTo-lG-3md" secondAttribute="height" multiplier="0.875" id="J35-W3-J3J"/>
                             <constraint firstItem="nWL-FB-Fho" firstAttribute="bottom" secondItem="Jzc-tR-9vG" secondAttribute="bottom" id="lrx-1s-lot"/>
                             <constraint firstItem="eTo-lG-3md" firstAttribute="top" secondItem="nWL-FB-Fho" secondAttribute="top" constant="10" id="qC9-wV-gF9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nWL-FB-Fho"/>
                     </view>
                     <connections>
+                        <outlet property="limitTextLabel" destination="aXZ-Xc-Luh" id="Ind-qO-ZdP"/>
                         <outlet property="noteTextView" destination="Jzc-tR-9vG" id="ZS1-7X-WKa"/>
                     </connections>
                 </viewController>

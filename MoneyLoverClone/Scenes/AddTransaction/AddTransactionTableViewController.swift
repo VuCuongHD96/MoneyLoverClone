@@ -74,7 +74,15 @@ final class AddTransactionTableViewController: UITableViewController {
         }
         let customSheet = UIAlertAction(title: "Tùy chọn", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            self.pickDate()
+            guard let dateString = self.dateLabel.text else { return }
+            guard let dateFromString = self.formatter.date(from: dateString) else { return }
+            let calendarScreen = CalendarViewController.instantiate()
+            calendarScreen.date = dateFromString
+            calendarScreen.passDate = {
+                let dateString = self.formatter.string(from: $0)
+                self.dateLabel.text = dateString
+            }
+            self.navigationController?.pushViewController(calendarScreen, animated: true)
         }
         let cancelSheet = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
         alert.addAction(todaySheet)
