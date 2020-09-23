@@ -69,8 +69,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="ONi-Ip-4Lq" kind="relationship" relationship="viewControllers" id="cXg-J8-GjW"/>
-                        <segue destination="QIt-Jj-O9a" kind="relationship" relationship="viewControllers" id="gpb-lZ-NgT"/>
                         <segue destination="2af-nh-fIA" kind="relationship" relationship="viewControllers" id="Wsr-Q1-krq"/>
+                        <segue destination="Ff6-Ar-2JS" kind="relationship" relationship="viewControllers" id="yfx-Nn-k03"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOW-Rr-mX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,7 +234,9 @@
                             <outlet property="delegate" destination="bDj-qf-ci9" id="VJC-at-GnQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Thêm giao dịch" id="UbO-sT-Zkf"/>
+                    <navigationItem key="navigationItem" title="Thêm giao dịch" id="UbO-sT-Zkf">
+                        <barButtonItem key="leftBarButtonItem" title="Huỷ" id="zwm-oU-Pwp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="47g-g6-9Bg" id="B39-oy-2TF"/>
                         <outlet property="noteTextField" destination="1ol-Mj-Snr" id="4L4-HB-AwI"/>
@@ -242,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5k-D9-9Rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="905"/>
+            <point key="canvasLocation" x="2010" y="887"/>
         </scene>
         <!--Tài khoản-->
         <scene sceneID="Wue-bV-ln6">
@@ -464,30 +466,27 @@
             </objects>
             <point key="canvasLocation" x="417" y="2373"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gKP-TF-EX0">
+        <!--Item-->
+        <scene sceneID="RvV-zK-Hia">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QIt-Jj-O9a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="add" id="GX1-4I-fdV">
-                        <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="10"/>
-                    </tabBarItem>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ff6-Ar-2JS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hgn-3v-KPW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O2G-zF-0RN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rnX-d6-W92">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bDj-qf-ci9" kind="relationship" relationship="rootViewController" id="GOM-E3-2Wd"/>
+                        <segue destination="bDj-qf-ci9" kind="relationship" relationship="rootViewController" id="u9G-vg-ynp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NcN-CO-Q6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRv-j2-YtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="906"/>
+            <point key="canvasLocation" x="1105" y="887"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="32" height="32"/>
         <image name="calendar" width="32" height="32"/>
         <image name="note" width="32" height="32"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>

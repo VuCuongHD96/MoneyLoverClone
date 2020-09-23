@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>trade</key>
+	<string>Bán hàng</string>
+	<key>salary</key>
+	<string>Lương</string>
+	<key>reward</key>
+	<string>Thưởng</string>
+	<key>interest</key>
+	<string>Tiền lãi</string>
+</dict>
+</plist>

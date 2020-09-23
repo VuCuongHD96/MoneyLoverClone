@@ -43,21 +43,9 @@ final class AddTransactionTableViewController: UITableViewController {
     }
     
     // MARK: - Action
-    private func pickDate() {
-        let alertController = UIAlertController(title: "", message: nil, preferredStyle: .alert)
-        let datePickerViewController = DatePickerViewController()
-        datePickerViewController.date = formatter.date(from: dateLabel.text ?? "") ?? today
-        datePickerViewController.preferredContentSize = datePickerViewController.view.bounds.size
-        alertController.setValue(datePickerViewController, forKey: "contentViewController")
-        let somethingAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            let date = datePickerViewController.date
-            let dateString = self.formatter.string(from: date)
-            self.dateLabel.text = dateString
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(somethingAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
+    private func choiseCategory() {
+        let categoryScreen = CategoryViewController.instantiate()
+        navigationController?.pushViewController(categoryScreen, animated: true)
     }
     
     private func choiseDate(completeChoice: @escaping (String) -> Void) {
@@ -108,7 +96,7 @@ extension AddTransactionTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 1:
-            print("Choise Category")
+            choiseCategory()
         case 2:
             noteHandelAction()
         case 3:
