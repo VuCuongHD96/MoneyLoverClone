@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Category {
+struct Category: Equatable {
     var image: String
     var name: String
 }

@@ -18,6 +18,7 @@
 		4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA64251B44DA00768482 /* CategoryCell.xib */; };
 		4C30DA68251B460D00768482 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA67251B460D00768482 /* Category.swift */; };
 		4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA69251B539200768482 /* RevenueArray.plist */; };
+		4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */; };
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
 		4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8DB9172519AD6D00FABC11 /* Note.storyboard */; };
@@ -59,6 +60,7 @@
 		4C30DA64251B44DA00768482 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		4C30DA67251B460D00768482 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4C30DA69251B539200768482 /* RevenueArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RevenueArray.plist; sourceTree = "<group>"; };
+		4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExpenseArray.plist; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		4C8DB9172519AD6D00FABC11 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				4CC87D4525136D9300A3B9BD /* Assets.xcassets */,
 				4C30DA69251B539200768482 /* RevenueArray.plist */,
+				4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			files = (
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
+				4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,

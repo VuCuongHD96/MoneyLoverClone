@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>charity</key>
+	<string>Từ thiện</string>
+	<key>book</key>
+	<string>Sách</string>
+	<key>business</key>
+	<string>Kinh doanh</string>
+	<key>clothes</key>
+	<string>Quần áo</string>
+	<key>coffee</key>
+	<string>Cafe</string>
+	<key>cost</key>
+	<string>Chi phí</string>
+	<key>cradle</key>
+	<string>Con cái</string>
+	<key>electricdevices</key>
+	<string>Thiết bị điện tử</string>
+	<key>electric</key>
+	<string>Điện</string>
+	<key>examination</key>
+	<string>Khám chữa bệnh</string>
+	<key>familyservice</key>
+	<string>Dịch vụ gia đình</string>
+	<key>footwear</key>
+	<string>Giày dép</string>
+	<key>funeral</key>
+	<string>Đám tang</string>
+	<key>game</key>
+	<string>Trò chơi</string>
+	<key>gas</key>
+	<string>Gas</string>
+	<key>insurrance</key>
+	<string>Bảo hiểm</string>
+	<key>invest</key>
+	<string>Đầu tư</string>
+	<key>love</key>
+	<string>Bạn bè &amp; Người yêu</string>
+	<key>maintenance</key>
+	<string>Bảo dưỡng</string>
+	<key>medicine</key>
+	<string>Thuốc</string>
+	<key>movie</key>
+	<string>Phim ảnh</string>
+	<key>packing</key>
+	<string>Gửi xe</string>
+	<key>pet</key>
+	<string>Thú cưng</string>
+	<key>petroleum</key>
+	<string>Xăng dầu</string>
+	<key>phone</key>
+	<string>Điện thoại</string>
+	<key>renthouse</key>
+	<string>Thuê nhà</string>
+	<key>restaurant</key>
+	<string>Nhà hàng</string>
+	<key>sport</key>
+	<string>Thể thao</string>
+	<key>taxi</key>
+	<string>Taxi</string>
+	<key>travel</key>
+	<string>Du lịch</string>
+	<key>tv</key>
+	<string>TV</string>
+	<key>wedding</key>
+	<string>Cưới hỏi</string>
+	<key>wifi</key>
+	<string>Wifi</string>
+	<key>withdraw</key>
+	<string>Rút tiền</string>
+</dict>
+</plist>

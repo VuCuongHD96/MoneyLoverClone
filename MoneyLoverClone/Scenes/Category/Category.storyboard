@@ -15,22 +15,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-0r-y1C">
-                                <rect key="frame" x="0.0" y="36" width="375" height="631"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-0r-y1C">
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="KSt-aB-g8E">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kSZ-Bk-pvu">
-                                <rect key="frame" x="105" y="5" width="165" height="32"/>
+                                <rect key="frame" x="105" y="49" width="165" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Khoản chi"/>
                                     <segment title="Khoản thu"/>
                                 </segments>
+                                <connections>
+                                    <action selector="choiseCategory:" destination="EeX-ht-Tyu" eventType="valueChanged" id="Vgy-ba-hHs"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -38,12 +41,13 @@
                             <constraint firstItem="U6S-y9-LXl" firstAttribute="bottom" secondItem="rMV-0r-y1C" secondAttribute="bottom" id="Gd4-2K-Ssl"/>
                             <constraint firstItem="U6S-y9-LXl" firstAttribute="trailing" secondItem="rMV-0r-y1C" secondAttribute="trailing" id="KII-6h-hbO"/>
                             <constraint firstItem="kSZ-Bk-pvu" firstAttribute="centerX" secondItem="FhZ-JM-lBe" secondAttribute="centerX" id="e1r-41-Ddg"/>
-                            <constraint firstItem="rMV-0r-y1C" firstAttribute="top" secondItem="kSZ-Bk-pvu" secondAttribute="bottom" id="uAb-ZV-hQL"/>
+                            <constraint firstItem="rMV-0r-y1C" firstAttribute="top" secondItem="kSZ-Bk-pvu" secondAttribute="bottom" constant="5" id="uAb-ZV-hQL"/>
                             <constraint firstItem="kSZ-Bk-pvu" firstAttribute="top" secondItem="U6S-y9-LXl" secondAttribute="top" constant="5" id="vDa-15-4x9"/>
                             <constraint firstItem="rMV-0r-y1C" firstAttribute="leading" secondItem="U6S-y9-LXl" secondAttribute="leading" id="yeP-O1-4Ja"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U6S-y9-LXl"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sXb-Qs-aiV"/>
                     <connections>
                         <outlet property="segment" destination="kSZ-Bk-pvu" id="WAc-g6-0q7"/>
                         <outlet property="tableView" destination="rMV-0r-y1C" id="PeH-oz-hpg"/>
@@ -51,7 +55,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xez-d5-DBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="130"/>
+            <point key="canvasLocation" x="976.79999999999995" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N67-dh-C8t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCg-f6-VvZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mjz-Ti-j71">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EeX-ht-Tyu" kind="relationship" relationship="rootViewController" id="2zW-T9-8JP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihI-2R-QdT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

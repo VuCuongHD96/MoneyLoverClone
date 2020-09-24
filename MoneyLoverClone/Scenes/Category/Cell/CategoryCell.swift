@@ -10,15 +10,21 @@ import UIKit
 import Reusable
 
 final class CategoryCell: UITableViewCell, NibReusable {
-
+    
     // MARK: - Outlet
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupViews()
     }
     
+    // MARK: - Views
+    private func setupViews() {
+        selectionStyle = .none
+    }
+
     // MARK: - Data
     func setContent(data: Category) {
         categoryImageView.image = UIImage(named: data.image)
