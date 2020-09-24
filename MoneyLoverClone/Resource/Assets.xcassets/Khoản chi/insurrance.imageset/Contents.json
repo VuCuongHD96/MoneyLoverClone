@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "insurrance.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "insurrance.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
