@@ -39,10 +39,6 @@
 		4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
 		B62151B15EDE3671C97DEB7F /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */; };
-		CF521D9F251B0E6000DC13C4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521D9E251B0E6000DC13C4 /* Event.swift */; };
-		CF521DA6251B1F3A00DC13C4 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DA3251B1F3A00DC13C4 /* EventViewController.swift */; };
-		CF521DA7251B1F3A00DC13C4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DA4251B1F3A00DC13C4 /* EventTableViewCell.swift */; };
-		CF521DA8251B1F3A00DC13C4 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF521DA5251B1F3A00DC13C4 /* EventTableViewCell.xib */; };
 		CF521DAA251B210200DC13C4 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DA9251B210200DC13C4 /* PlanningTableViewController.swift */; };
 		CF521DAC251B52B900DC13C4 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DAB251B52B900DC13C4 /* AddEventTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -87,7 +83,6 @@
 		CF521D9E251B0E6000DC13C4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = "../../../../../.Trash/MoneyLoverClone 11.22.24 AM/MoneyLoverClone/Data/Model/Event.swift"; sourceTree = "<group>"; };
 		CF521DA3251B1F3A00DC13C4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../../../../Planning/EventViewController.swift; sourceTree = "<group>"; };
 		CF521DA4251B1F3A00DC13C4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../../../../Planning/EventTableViewCell.swift; sourceTree = "<group>"; };
-		CF521DA5251B1F3A00DC13C4 /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = ../../../../Planning/EventTableViewCell.xib; sourceTree = "<group>"; };
 		CF521DA9251B210200DC13C4 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF521DAB251B52B900DC13C4 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				CF521DA4251B1F3A00DC13C4 /* EventTableViewCell.swift */,
-				CF521DA5251B1F3A00DC13C4 /* EventTableViewCell.xib */,
 				CF521DA3251B1F3A00DC13C4 /* EventViewController.swift */,
 				CF521DA9251B210200DC13C4 /* PlanningTableViewController.swift */,
 				CF521DAB251B52B900DC13C4 /* AddEventTableViewController.swift */,
@@ -415,12 +409,8 @@
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
-
 				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
-
-				CF521DA8251B1F3A00DC13C4 /* EventTableViewCell.xib in Resources */,
-
 				4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
 			);
@@ -514,32 +504,20 @@
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
-
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
-
 				CF521DAC251B52B900DC13C4 /* AddEventTableViewController.swift in Sources */,
-
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
-				CF521DA6251B1F3A00DC13C4 /* EventViewController.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
-
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
-
 				CF521DAA251B210200DC13C4 /* PlanningTableViewController.swift in Sources */,
-
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
-				CF521DA7251B1F3A00DC13C4 /* EventTableViewCell.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
 				4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
-
 				4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */,
-
-				CF521D9F251B0E6000DC13C4 /* Event.swift in Sources */,
-
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
