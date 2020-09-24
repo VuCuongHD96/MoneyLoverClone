@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "petroleum.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "petroleum.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
