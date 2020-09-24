@@ -15,16 +15,30 @@ final class AddTransactionTableViewController: UITableViewController {
     // MARK: - Outlet
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var noteTextField: UITextField!
+    @IBOutlet private weak var categoryImageView: UIImageView!
+    @IBOutlet private weak var categoryNameTextField: UITextField!
     
     // MARK: - Properties
     let today = Date()
     let formatter = DateFormatter()
+    var segmentIndex = 0
+    var category: Category?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Thêm giao dịch"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = "Quay lại"
     }
 
     // MARK: - Views
@@ -45,6 +59,15 @@ final class AddTransactionTableViewController: UITableViewController {
     // MARK: - Action
     private func choiseCategory() {
         let categoryScreen = CategoryViewController.instantiate()
+        categoryScreen.passCategory = { [weak self] in
+            guard let self = self else { return }
+            self.categoryImageView.image = UIImage(named: $0.image)
+            self.categoryNameTextField.text = $0.name
+            self.category = $0
+            self.segmentIndex = $1
+        }
+        categoryScreen.segmentIndex = segmentIndex
+        categoryScreen.categorySelected = category
         navigationController?.pushViewController(categoryScreen, animated: true)
     }
     
@@ -85,7 +108,9 @@ final class AddTransactionTableViewController: UITableViewController {
         let noteScreen = NoteViewController.instantiate()
         noteScreen.note = note
         noteScreen.sendNote = {
-            guard $0 != "" else { return }
+            if $0 == "" {
+                self.noteTextField.text = nil
+            }
             self.noteTextField.text = $0
         }
         navigationController?.pushViewController(noteScreen, animated: true)

@@ -33,7 +33,12 @@ final class CalendarViewController: UIViewController {
     
     // MARK: - Views
     private func setupViews() {
-        calendar.select(date, scrollToDate: true)
+        calendar.do {
+            $0.select(date, scrollToDate: true)
+            $0.locale = Locale(identifier: "vi")
+            $0.scrollDirection = .vertical
+            $0.firstWeekday = 2
+        }
     }
     
     // MARK: - Action

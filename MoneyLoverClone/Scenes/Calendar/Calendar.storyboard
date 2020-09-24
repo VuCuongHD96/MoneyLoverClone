@@ -30,7 +30,7 @@
                         <viewLayoutGuide key="safeArea" id="iXn-XZ-T30"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wby-k5-S5v">
-                        <barButtonItem key="rightBarButtonItem" title="Today" id="lAM-I6-p1e">
+                        <barButtonItem key="rightBarButtonItem" title="Hôm nay" id="lAM-I6-p1e">
                             <connections>
                                 <action selector="showTodayAction:" destination="eRe-35-6P0" id="Obd-Vv-QBN"/>
                             </connections>
