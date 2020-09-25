@@ -43,6 +43,7 @@ class AccountViewController: UIViewController {
             tableViewAccount.isScrollEnabled = false
         }
     }
+    
     func logout(){
         let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn có chắc muốn đăng xuất khỏi thiết bị này?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: nil))
@@ -57,26 +58,42 @@ class AccountViewController: UIViewController {
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return AccountSections.allCases.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accountArray.count
+        guard let section = AccountSections(rawValue: section) else {
+            return 0
+        }
+        switch section {
+        case .chung:
+            return 2
+        case .logout:
+            return 2
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
         let cell = tableViewAccount.dequeueReusableCell(withIdentifier: "CustomCell") as! AccountTableViewCell
-        
-//        switch section {
-//        case 0:
-//            cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
-//        case 1:
-//            cell.setContent(iconArray[indexPath.row+2], accountArray[indexPath.row+2])
-//
-//        default:
-//            break
-//        }
+        guard let section = AccountSections(rawValue: indexPath.section) else {
+            return UITableViewCell()
+        }
+        switch section {
+        case .chung:
+            cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
+        case .logout:
+            cell.setContent(iconArray[indexPath.row+2], accountArray[indexPath.row+2])
+        }
         return cell
     }
     
@@ -106,5 +123,4 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-   
 }
