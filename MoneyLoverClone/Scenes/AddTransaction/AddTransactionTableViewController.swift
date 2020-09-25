@@ -15,6 +15,7 @@ final class AddTransactionTableViewController: UITableViewController {
     // MARK: - Outlet
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var noteTextField: UITextField!
+    @IBOutlet private weak var moneyTextField: UITextField!
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var categoryNameTextField: UITextField!
     
@@ -40,11 +41,17 @@ final class AddTransactionTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
         navigationItem.title = "Quay lại"
     }
-
+    
     // MARK: - Views
     private func setupView() {
         let todayDateString = formatter.string(from: today)
         dateLabel.text = todayDateString
+        let customKeyboard = NumericKeyboard(target: moneyTextField)
+        customKeyboard.doneEdit = { [weak self] in
+            guard let self = self else { return }
+            self.setupMoneyLabel()
+        }
+        moneyTextField.inputView = customKeyboard
     }
     
     // MARK: - Data
@@ -54,6 +61,24 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.dateStyle = .full
             $0.locale = locale
         }
+    }
+    
+    private func setupMoneyLabel() {
+        let moneyString = moneyTextField.text ?? ""
+        moneyTextField.do {
+            $0.text = convertToMoneyFormat(moneyString)
+            $0.resignFirstResponder()
+        }
+    }
+    
+    private func convertToMoneyFormat(_ money: String) -> String {
+        let newMoney = money.replacingOccurrences(of: ",", with: "")
+        let amount = Double(newMoney) ?? 0
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let nsNumber = NSNumber(value: amount)
+        guard let result = numberFormatter.string(from: nsNumber) else { return "" }
+        return result
     }
     
     // MARK: - Action
