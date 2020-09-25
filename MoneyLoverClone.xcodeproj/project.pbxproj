@@ -18,6 +18,7 @@
 		4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA64251B44DA00768482 /* CategoryCell.xib */; };
 		4C30DA68251B460D00768482 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA67251B460D00768482 /* Category.swift */; };
 		4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA69251B539200768482 /* RevenueArray.plist */; };
+		4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */; };
 		4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */; };
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
@@ -35,16 +36,14 @@
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
-		4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */; };
-		4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */; };
+		538BBF59ACECAE55737818CF /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
-		B62151B15EDE3671C97DEB7F /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */; };
 		CF521DAA251B210200DC13C4 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DA9251B210200DC13C4 /* PlanningTableViewController.swift */; };
 		CF521DAC251B52B900DC13C4 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF521DAB251B52B900DC13C4 /* AddEventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
+		07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		4C30DA64251B44DA00768482 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		4C30DA67251B460D00768482 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4C30DA69251B539200768482 /* RevenueArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RevenueArray.plist; sourceTree = "<group>"; };
+		4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeyboard.swift; sourceTree = "<group>"; };
 		4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExpenseArray.plist; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -75,11 +75,9 @@
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
-		4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
-		70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
+		524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		CF521D9E251B0E6000DC13C4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = "../../../../../.Trash/MoneyLoverClone 11.22.24 AM/MoneyLoverClone/Data/Model/Event.swift"; sourceTree = "<group>"; };
 		CF521DA3251B1F3A00DC13C4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../../../../Planning/EventViewController.swift; sourceTree = "<group>"; };
 		CF521DA4251B1F3A00DC13C4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../../../../Planning/EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -92,21 +90,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62151B15EDE3671C97DEB7F /* Pods_MoneyLoverClone.framework in Frameworks */,
+				538BBF59ACECAE55737818CF /* Pods_MoneyLoverClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19660107285E9819D7D3B341 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD40864802C1E086D24FBBAF /* Pods_MoneyLoverClone.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		28617CD32519AD5300A9E4E0 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +256,7 @@
 				4CC87D3B25136D9100A3B9BD /* MoneyLoverClone */,
 				4CC87D3A25136D9100A3B9BD /* Products */,
 				BF16F7A49D65BA1E1208B742 /* Pods */,
-				19660107285E9819D7D3B341 /* Frameworks */,
+				691349E9043BE965769CF499 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,6 +274,7 @@
 				4C8E4BEB2514A926005B238B /* Application */,
 				4C8E4BEA2514A911005B238B /* Data */,
 				4C8E4BE62514A88F005B238B /* ViewModel */,
+				4CE313A6251882F600553415 /* CustomView */,
 				4C8E4BE92514A8A8005B238B /* Scenes */,
 				4C8DB91425199F4700FABC11 /* Unit */,
 				4C8E4BEC2514A961005B238B /* Resource */,
@@ -296,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */,
-				4CE313A6251882F600553415 /* CustomView */,
 			);
 			path = AddTransaction;
 			sourceTree = "<group>";
@@ -304,10 +294,17 @@
 		4CE313A6251882F600553415 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				4CE313AB2518B7AF00553415 /* DatePickerViewController.swift */,
-				4CE313AC2518B7AF00553415 /* DatePickerViewController.xib */,
+				4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		691349E9043BE965769CF499 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9B8131C6251AE0E40088F6A6 /* Settings */ = {
@@ -321,8 +318,8 @@
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */,
-				70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */,
+				524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */,
+				C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -345,13 +342,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CC87D4D25136D9300A3B9BD /* Build configuration list for PBXNativeTarget "MoneyLoverClone" */;
 			buildPhases = (
-				A9F8D54C295FDA9F666046C7 /* [CP] Check Pods Manifest.lock */,
+				4F36C86FA58238202F9E95B5 /* [CP] Check Pods Manifest.lock */,
 				4CC87D3525136D9100A3B9BD /* Sources */,
 				4CC87D3625136D9100A3B9BD /* Frameworks */,
 				4CC87D3725136D9100A3B9BD /* Resources */,
-				B4A9E07B42D9803F8F72A4BD /* [CP] Embed Pods Frameworks */,
-				811D2F89178ED299841C7160 /* [CP] Copy Pods Resources */,
 				4C8E4BE42514A23C005B238B /* ShellScript */,
+				931F2CDFC78F78226FA20B79 /* [CP] Embed Pods Frameworks */,
+				1C19D7FF68F14A731F83FD19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,7 +408,6 @@
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
 				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
-				4CE313AE2518B7AF00553415 /* DatePickerViewController.xib in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +415,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C19D7FF68F14A731F83FD19 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4C8E4BE42514A23C005B238B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,24 +449,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		811D2F89178ED299841C7160 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A9F8D54C295FDA9F666046C7 /* [CP] Check Pods Manifest.lock */ = {
+		4F36C86FA58238202F9E95B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,7 +471,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4A9E07B42D9803F8F72A4BD /* [CP] Embed Pods Frameworks */ = {
+		931F2CDFC78F78226FA20B79 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -499,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
@@ -513,7 +510,6 @@
 				CF521DAA251B210200DC13C4 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
-				4CE313AD2518B7AF00553415 /* DatePickerViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
@@ -660,7 +656,7 @@
 		};
 		4CC87D4E25136D9300A3B9BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 069DC8AE5418ED689836699C /* Pods-MoneyLoverClone.debug.xcconfig */;
+			baseConfigurationReference = 524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -678,7 +674,7 @@
 		};
 		4CC87D4F25136D9300A3B9BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70DB9EE76CD7B00F5ACA88F8 /* Pods-MoneyLoverClone.release.xcconfig */;
+			baseConfigurationReference = C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
