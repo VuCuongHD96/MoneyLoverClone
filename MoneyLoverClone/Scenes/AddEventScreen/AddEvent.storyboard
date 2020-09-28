@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Thêm sự kiện-->
+        <scene sceneID="sp7-A7-wSb">
+            <objects>
+                <tableViewController storyboardIdentifier="AddEventTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n68-hM-aFD" customClass="AddEventTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kFu-q4-iID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="sY1-1a-guq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3iU-KW-J54">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3iU-KW-J54" id="u83-Ry-TLc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-7N-OPb">
+                                                    <rect key="frame" x="65" y="0.0" width="1" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="NBV-Ct-yNr"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tên" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u00-ju-XJd">
+                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water" translatesAutoresizingMaskIntoConstraints="NO" id="la8-1B-mI9">
+                                                    <rect key="frame" x="10" y="6" width="41" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="0WE-kb-mNG"/>
+                                                        <constraint firstAttribute="width" constant="41" id="1xJ-0x-AZ3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Jke-7N-OPb" secondAttribute="bottom" id="2LD-QT-QHC"/>
+                                                <constraint firstItem="la8-1B-mI9" firstAttribute="leading" secondItem="u83-Ry-TLc" secondAttribute="leading" constant="10" id="Nxt-jr-hq6"/>
+                                                <constraint firstItem="Jke-7N-OPb" firstAttribute="top" secondItem="u83-Ry-TLc" secondAttribute="top" id="b4H-9E-4m1"/>
+                                                <constraint firstItem="la8-1B-mI9" firstAttribute="top" secondItem="u83-Ry-TLc" secondAttribute="top" constant="6" id="dCX-ih-YgD"/>
+                                                <constraint firstItem="Jke-7N-OPb" firstAttribute="leading" secondItem="u83-Ry-TLc" secondAttribute="leading" constant="65" id="un1-1A-v16"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rq7-Ty-TWG">
+                                        <rect key="frame" x="0.0" y="71.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rq7-Ty-TWG" id="vjP-ND-bNl">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ngày kết thúc" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-GR-0xO">
+                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar-64" translatesAutoresizingMaskIntoConstraints="NO" id="dtS-hP-TEc">
+                                                    <rect key="frame" x="10" y="6" width="41" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="MLZ-nb-0dV"/>
+                                                        <constraint firstAttribute="width" constant="41" id="ywQ-0Q-Iue"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="leading" secondItem="vjP-ND-bNl" secondAttribute="leading" constant="10" id="83g-Gy-iKS"/>
+                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="top" secondItem="vjP-ND-bNl" secondAttribute="top" constant="6" id="o16-8u-kap"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wLc-uj-3s8">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLc-uj-3s8" id="43k-bW-vAv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VND" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-4D-8aE">
+                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vietnam" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-cD-xPV">
+                                                    <rect key="frame" x="10" y="6" width="41" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="41" id="55O-kn-Ufm"/>
+                                                        <constraint firstAttribute="height" constant="32" id="pi9-1e-3ND"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="top" secondItem="43k-bW-vAv" secondAttribute="top" constant="6" id="k82-uD-Pgd"/>
+                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="leading" secondItem="43k-bW-vAv" secondAttribute="leading" constant="10" id="zhL-cD-guN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="n68-hM-aFD" id="gou-c0-qLp"/>
+                            <outlet property="delegate" destination="n68-hM-aFD" id="tZ0-P9-AC1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Thêm sự kiện" leftItemsSupplementBackButton="YES" id="Eby-RG-TNz">
+                        <barButtonItem key="backBarButtonItem" title="Hủy" id="HHr-EA-cCU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Hủy" id="Kbm-NN-vfn">
+                            <connections>
+                                <action selector="btnCancel:" destination="n68-hM-aFD" id="9nU-8c-RrB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc">
+                            <connections>
+                                <action selector="btnSave:" destination="n68-hM-aFD" id="UmT-Gl-Rfv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnLuu" destination="6mW-mQ-emc" id="vy9-eF-zeX"/>
+                        <outlet property="tblAddEvent" destination="kFu-q4-iID" id="YGJ-tD-Wfs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBt-pn-LJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3906" y="-448"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-calendar-64" width="32" height="32"/>
+        <image name="vietnam" width="32" height="32"/>
+        <image name="water" width="32" height="32"/>
+    </resources>
+</document>
