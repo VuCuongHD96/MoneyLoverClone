@@ -8,8 +8,7 @@
 
 import UIKit
 import SwiftDate
-
-
+import Reusable
 
 class AddEventTableViewController: UITableViewController {
     
@@ -28,17 +27,9 @@ class AddEventTableViewController: UITableViewController {
         tblAddEvent.delegate = self
         tblAddEvent.dataSource = self
         setupDate()
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-////        imgIcon.isUserInteractionEnabled = true
-//        imgIcon.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
-        
-//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IconViewController") as! IconViewController
-//        vc.imageIconDelegate = self
-//        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupDate(){
@@ -71,7 +62,6 @@ class AddEventTableViewController: UITableViewController {
     @IBAction func btnSave(_ sender: Any) {
         guard let nameEvent = txtName.text else {return}
         guard let date = formatter.date(from: lblDate.text!) else {return}
-        guard let imgString = imgIcon.image else { return }
         
     }
     
@@ -102,12 +92,7 @@ class AddEventTableViewController: UITableViewController {
     }
     
 }
-//extension AddEventTableViewController : displayImage{
-//
-//    func setIcon(data: String) {
-//        imgIcon.image = UIImage.init(named: "icon\(data)")
-//    }
-//
-//}
 
-
+extension AddEventTableViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.addEvent
+}

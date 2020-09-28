@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reusable
 
 class SettingsTableViewController: UITableViewController {
     
@@ -45,4 +46,8 @@ extension SettingsTableViewController {
         default: break
         }
     }
+}
+
+extension SettingsTableViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.setting
 }

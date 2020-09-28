@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2af-nh-fIA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tài khoản-->
+        <scene sceneID="Wue-bV-ln6">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-2af-nh-fIA" id="2af-nh-fIA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tài khoản" image="person.circle.fill" catalog="system" id="5DW-9B-FH0"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WFP-Tn-xBh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jGD-a5-Zlc" kind="relationship" relationship="rootViewController" id="CBi-QF-naK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKa-qc-6ID" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646" y="1297"/>
+        </scene>
+        <!--Tài khoản-->
+        <scene sceneID="vSf-8v-dSd">
+            <objects>
+                <viewController id="jGD-a5-Zlc" customClass="AccountViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KeR-tr-AZf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-tq-B19">
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-oP-kk5">
+                                        <rect key="frame" x="167" y="0.5" width="80" height="163.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Ujp-Bv-Jzz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbH-nf-1BO">
+                                        <rect key="frame" x="0.0" y="164.5" width="414" height="53.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gmail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1y-CO-xpG">
+                                        <rect key="frame" x="0.0" y="218" width="414" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="8g3-oP-kk5" firstAttribute="height" secondItem="fdm-tq-B19" secondAttribute="height" multiplier="3/5" constant="3" id="16i-LM-L6n"/>
+                                    <constraint firstItem="ZbH-nf-1BO" firstAttribute="height" secondItem="fdm-tq-B19" secondAttribute="height" multiplier="1/5" id="4C0-Jv-sC8"/>
+                                    <constraint firstAttribute="trailing" secondItem="N1y-CO-xpG" secondAttribute="trailing" id="8A3-Uj-eaQ"/>
+                                    <constraint firstItem="N1y-CO-xpG" firstAttribute="leading" secondItem="fdm-tq-B19" secondAttribute="leading" id="90s-B8-hWN"/>
+                                    <constraint firstItem="8g3-oP-kk5" firstAttribute="top" secondItem="fdm-tq-B19" secondAttribute="top" id="CkB-g3-iRj"/>
+                                    <constraint firstItem="ZbH-nf-1BO" firstAttribute="top" secondItem="8g3-oP-kk5" secondAttribute="bottom" id="SA8-Ye-tqM"/>
+                                    <constraint firstAttribute="bottom" secondItem="N1y-CO-xpG" secondAttribute="bottom" id="aO4-yl-UGM"/>
+                                    <constraint firstItem="N1y-CO-xpG" firstAttribute="top" secondItem="ZbH-nf-1BO" secondAttribute="bottom" id="dPk-Ns-1ve"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZbH-nf-1BO" secondAttribute="trailing" id="fHY-Ez-RBb"/>
+                                    <constraint firstItem="8g3-oP-kk5" firstAttribute="centerX" secondItem="fdm-tq-B19" secondAttribute="centerX" id="oOT-32-xz6"/>
+                                    <constraint firstItem="ZbH-nf-1BO" firstAttribute="leading" secondItem="fdm-tq-B19" secondAttribute="leading" id="tO2-nb-40g"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-HH-yCL">
+                                <rect key="frame" x="0.0" y="377" width="414" height="485"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="kcD-93-dFw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="jGD-a5-Zlc" id="DAN-Bp-PrT"/>
+                                    <outlet property="delegate" destination="jGD-a5-Zlc" id="Epa-Zy-x8w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xwo-8u-QAy" firstAttribute="trailing" secondItem="fdm-tq-B19" secondAttribute="trailing" id="52e-8y-oaJ"/>
+                            <constraint firstItem="fdm-tq-B19" firstAttribute="height" secondItem="KeR-tr-AZf" secondAttribute="height" multiplier="3/10" id="JeT-Y9-gm2"/>
+                            <constraint firstItem="RcN-HH-yCL" firstAttribute="leading" secondItem="Xwo-8u-QAy" secondAttribute="leading" id="Why-pl-DHB"/>
+                            <constraint firstItem="fdm-tq-B19" firstAttribute="leading" secondItem="Xwo-8u-QAy" secondAttribute="leading" id="YvE-sl-dPz"/>
+                            <constraint firstItem="RcN-HH-yCL" firstAttribute="top" secondItem="fdm-tq-B19" secondAttribute="bottom" constant="20" id="aTi-Uf-WPH"/>
+                            <constraint firstItem="fdm-tq-B19" firstAttribute="top" secondItem="Xwo-8u-QAy" secondAttribute="top" id="fbB-dK-hud"/>
+                            <constraint firstItem="Xwo-8u-QAy" firstAttribute="bottom" secondItem="RcN-HH-yCL" secondAttribute="bottom" id="fri-xe-KHZ"/>
+                            <constraint firstItem="Xwo-8u-QAy" firstAttribute="trailing" secondItem="RcN-HH-yCL" secondAttribute="trailing" id="thq-Ii-DQ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xwo-8u-QAy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tài khoản" id="C27-4m-gHw"/>
+                    <connections>
+                        <outlet property="imgAccount" destination="8g3-oP-kk5" id="PDd-AB-YIK"/>
+                        <outlet property="lbGmailAccount" destination="N1y-CO-xpG" id="cTP-Az-MhS"/>
+                        <outlet property="lbNameAccount" destination="ZbH-nf-1BO" id="bff-vU-IhA"/>
+                        <outlet property="tableViewAccount" destination="RcN-HH-yCL" id="dq3-Xn-VHU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvf-YR-xJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="1296"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

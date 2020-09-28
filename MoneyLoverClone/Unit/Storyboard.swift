@@ -13,4 +13,7 @@ struct Storyboard {
     static let calendar = UIStoryboard(name: "Calendar", bundle: nil)
     static let category = UIStoryboard(name: "Category", bundle: nil)
     static let eventIcon = UIStoryboard(name: "EventIcon", bundle: nil)
+    static let addEvent = UIStoryboard(name: "AddEvent", bundle: nil)
+    static let event = UIStoryboard(name: "Event", bundle: nil)
+    static let setting = UIStoryboard(name: "Setting", bundle: nil)
 }
