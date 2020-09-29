@@ -58,6 +58,7 @@
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF14E4ED2522D90E00F6A235 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EC2522D90E00F6A235 /* EventViewController.swift */; };
 		CF14E4F02523188F00F6A235 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */; };
+		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4EC2522D90E00F6A235 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
+		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */,
 				4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */,
+				CF14E4F12523216600F6A235 /* ImageDelegate.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CF14E4F32523344900F6A235 /* DetailEvent */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4C6FB0122522D22D0095F3FD /* HomeViewController */,
@@ -420,6 +424,13 @@
 				C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF14E4F32523344900F6A235 /* DetailEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailEvent;
 			sourceTree = "<group>";
 		};
 		CF521DA2251B1F2700DC13C4 /* Planning */ = {
@@ -605,6 +616,7 @@
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
+				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
 				4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,

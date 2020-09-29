@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class PlanningTableViewController: UITableViewController {
     
     @IBOutlet private var tblPlanning: UITableView!
@@ -20,10 +19,9 @@ class PlanningTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if indexPath.section == 1 {
-            let vc = EventViewController.instantiate()
-            navigationController?.pushViewController(vc, animated: true)
+            let viewcontroller = EventViewController.instantiate()
+            navigationController?.pushViewController(viewcontroller, animated: true)
         }
     }
 }

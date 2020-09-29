@@ -9,17 +9,12 @@
 import UIKit
 import Reusable
 
-protocol ImageDelegate {
-    func displayImage(data : String)
-}
-
 final class EventIconViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+
     // MARK: - Properties
-    
     struct Constant {
         static let lineSpacing: CGFloat = 40
         static let cellSpacing: CGFloat = 40
@@ -29,7 +24,7 @@ final class EventIconViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    var delegate : ImageDelegate!
+    weak var delegate: ImageDelegate?
     typealias Handler = (Category) -> Void
     var categoryDidChoise: Handler?
     
@@ -90,7 +85,7 @@ extension EventIconViewController: UICollectionViewDelegate {
         let category = categoryArray[indexPath.row]
         let nameImage = category.image
         categoryDidChoise?(category)
-        delegate.displayImage(data: nameImage)
+        delegate!.displayImage(data: nameImage)
         self.navigationController?.popViewController(animated: true)
         
     }
