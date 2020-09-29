@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Cài đặt-->
         <scene sceneID="nzk-u2-pdl">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtU-VW-QmJ" customClass="SettingsTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                             <outlet property="delegate" destination="EtU-VW-QmJ" id="55V-5e-4kG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="DCB-O3-kWi"/>
+                    <navigationItem key="navigationItem" title="Cài đặt" id="DCB-O3-kWi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y68-Zp-n4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
