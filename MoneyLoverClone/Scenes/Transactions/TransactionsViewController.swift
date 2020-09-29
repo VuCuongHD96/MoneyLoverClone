@@ -40,7 +40,6 @@ final class TransactionsViewController: UIViewController {
     
     // MARK: - Views
     private func setupViews() {
-        tabBarItem.selectedImage = UIImage(named: "transactionSelected")?.withRenderingMode(.alwaysOriginal)
     }
 }
 

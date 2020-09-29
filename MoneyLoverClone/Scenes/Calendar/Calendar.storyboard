@@ -38,6 +38,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="6RE-bj-NkK" id="AEx-2c-LvR"/>
+                        <outlet property="todayButton" destination="lAM-I6-p1e" id="hnH-1y-fAZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lel-sN-kBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

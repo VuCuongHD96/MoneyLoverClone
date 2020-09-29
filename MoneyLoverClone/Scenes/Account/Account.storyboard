@@ -11,7 +11,7 @@
         <scene sceneID="Wue-bV-ln6">
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-2af-nh-fIA" id="2af-nh-fIA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tài khoản" image="person.circle.fill" catalog="system" id="5DW-9B-FH0"/>
+                    <tabBarItem key="tabBarItem" title="Tài khoản" image="account" selectedImage="accountSelected" id="5DW-9B-FH0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WFP-Tn-xBh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,6 +111,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account" width="32" height="32"/>
+        <image name="accountSelected" width="32" height="32"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
