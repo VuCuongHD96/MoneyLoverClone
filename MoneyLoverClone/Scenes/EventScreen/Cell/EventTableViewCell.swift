@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-
-class EventTableViewCell: UITableViewCell{
-    
+class EventTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
     

@@ -13,12 +13,9 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
    
     @IBOutlet weak var tblEvent: UITableView!
     var listEvent = [Event]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backButton = UIBarButtonItem(title: "Lập kế hoạch", style: .plain, target: self, action: nil)
-        self.navigationItem.backBarButtonItem = backButton
-        
         getListEventData()
         tblEvent.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         tblEvent.dataSource = self
@@ -27,21 +24,19 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         tblEvent.register(nib, forCellReuseIdentifier: "cellEvent")
     }
     
-    func getListEventData(){
+    func getListEventData() {
         
     }
     
     @IBAction func addEventAction(_ sender: Any) {
-        
         let story = UIStoryboard(name: "AddEvent", bundle: nil)
-        guard let vc = story.instantiateViewController(identifier: "AddEventTableViewController") as? AddEventTableViewController else {
+        guard let addEventView = story.instantiateViewController(identifier: "AddEventTableViewController") as? AddEventTableViewController else {
             return
         }
-        let navController = UINavigationController(rootViewController: vc)
-        vc.isModalInPresentation = true
-        vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        let navController = UINavigationController(rootViewController: addEventView)
+        addEventView.isModalInPresentation = true
+        addEventView.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         self.present(navController, animated: true, completion: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,21 +44,20 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as? EventTableViewCell ?? nil
+        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
+        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
+        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
+        cell!.txtEvent.text = listEvent[indexPath.row].nameEvent
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent" , for: indexPath) as! EventTableViewCell
-        cell.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
-        cell.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
-        cell.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
-        cell.txtEvent.text = listEvent[indexPath.row].nameEvent
-        
-        cell.cardView.backgroundColor = UIColor.white
-        cell.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-        cell.cardView.layer.cornerRadius = 8
-        cell.cardView.layer.masksToBounds = false
-        cell.cardView.layer.shadowOpacity = 0.5
-        cell.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        cell.cardView.layer.shadowColor = UIColor.black.cgColor
-        return cell
+        cell!.cardView.backgroundColor = UIColor.white
+        cell!.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
+        cell!.cardView.layer.cornerRadius = 8
+        cell!.cardView.layer.masksToBounds = false
+        cell!.cardView.layer.shadowOpacity = 0.5
+        cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cell!.cardView.layer.shadowColor = UIColor.black.cgColor
+        return cell!
        }	
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
