@@ -14,6 +14,7 @@ final class CalendarViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet private weak var calendar: FSCalendar!
+    @IBOutlet private weak var todayButton: UIBarButtonItem!
     
     // MARK: - Properties
     typealias Handler = (Date) -> Void
@@ -39,6 +40,7 @@ final class CalendarViewController: UIViewController {
             $0.scrollDirection = .vertical
             $0.firstWeekday = 2
         }
+        todayButton.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
     }
     
     // MARK: - Action

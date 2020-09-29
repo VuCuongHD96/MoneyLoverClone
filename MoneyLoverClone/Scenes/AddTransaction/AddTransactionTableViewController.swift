@@ -18,6 +18,7 @@ final class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var moneyTextField: UITextField!
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var categoryNameTextField: UITextField!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
     
     // MARK: - Properties
     let today = Date()
@@ -35,11 +36,13 @@ final class AddTransactionTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = "Thêm giao dịch"
+        dataIsValid()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.title = "Quay lại"
+        moneyTextField.resignFirstResponder()
     }
     
     // MARK: - Views
@@ -52,6 +55,10 @@ final class AddTransactionTableViewController: UITableViewController {
             self.setupMoneyLabel()
         }
         moneyTextField.inputView = customKeyboard
+        saveButton.do {
+            $0.isEnabled = false
+            $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
+        }
     }
     
     // MARK: - Data
@@ -61,6 +68,7 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.dateStyle = .full
             $0.locale = locale
         }
+        moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
     }
     
     private func setupMoneyLabel() {
@@ -79,6 +87,15 @@ final class AddTransactionTableViewController: UITableViewController {
         let nsNumber = NSNumber(value: amount)
         guard let result = numberFormatter.string(from: nsNumber) else { return "" }
         return result
+    }
+    
+    @objc private func dataIsValid() {
+        guard let moneyText = moneyTextField.text, let categoryName = categoryNameTextField.text, moneyText != "0", categoryName != ""
+         else {
+            saveButton.isEnabled = false
+            return
+        }
+        saveButton.isEnabled = true
     }
     
     // MARK: - Action
@@ -140,6 +157,10 @@ final class AddTransactionTableViewController: UITableViewController {
         }
         navigationController?.pushViewController(noteScreen, animated: true)
     }
+    
+    @IBAction func saveAction(_ sender: Any) {
+        // MARK: - Todo
+    }
 }
 
 extension AddTransactionTableViewController {
@@ -158,4 +179,3 @@ extension AddTransactionTableViewController {
         }
     }
 }
-

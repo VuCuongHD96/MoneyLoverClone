@@ -41,8 +41,8 @@ final class NoteViewController: UIViewController {
         let note = noteTextView.text ?? ""
         sendNote?(note)
     }
-    
-    // MARK: - Views
+
+    // MARK: - Data
     private func setupData() {
         navigationItem.title = "Ghi chú"
         noteTextView.do {

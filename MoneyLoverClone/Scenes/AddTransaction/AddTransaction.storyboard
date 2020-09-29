@@ -13,12 +13,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="J3i-V5-HQT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="52" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Wv4-kX-slV">
                             <rect key="frame" x="0.0" y="268" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <sections>
                             <tableViewSection id="xVe-ZG-hhv">
@@ -162,13 +162,21 @@
                             <outlet property="delegate" destination="bDj-qf-ci9" id="VJC-at-GnQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Thêm giao dịch" id="UbO-sT-Zkf"/>
+                    <navigationItem key="navigationItem" title="Thêm giao dịch" id="UbO-sT-Zkf">
+                        <barButtonItem key="rightBarButtonItem" title="Lưu" style="done" id="c33-we-hAx">
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveAction:" destination="bDj-qf-ci9" id="7kJ-3r-KRt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryImageView" destination="1XR-sJ-OqX" id="lHD-PJ-mbQ"/>
                         <outlet property="categoryNameTextField" destination="JcE-fy-jZu" id="Eon-GX-Kq5"/>
                         <outlet property="dateLabel" destination="47g-g6-9Bg" id="B39-oy-2TF"/>
                         <outlet property="moneyTextField" destination="yr2-8m-dh4" id="bMs-oK-6vA"/>
                         <outlet property="noteTextField" destination="1ol-Mj-Snr" id="4L4-HB-AwI"/>
+                        <outlet property="saveButton" destination="c33-we-hAx" id="pVp-Nf-qGY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5k-D9-9Rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,8 +186,8 @@
         <!--Thêm giao dịch-->
         <scene sceneID="6p9-TV-W5G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZh-Dz-gMQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Thêm giao dịch" image="add" id="bxB-OK-DXc"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZh-Dz-gMQ" customClass="NavigationViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Thêm giao dịch" image="add" selectedImage="addSelected" id="bxB-OK-DXc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v0z-TU-OTj">
@@ -198,6 +206,7 @@
     </scenes>
     <resources>
         <image name="add" width="32" height="32"/>
+        <image name="addSelected" width="32" height="32"/>
         <image name="calendar" width="32" height="32"/>
         <image name="graycircle" width="32" height="32"/>
         <image name="note" width="32" height="32"/>

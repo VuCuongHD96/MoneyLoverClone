@@ -30,6 +30,8 @@
 		4C6C53EE25217F5100E7D3F0 /* CategoryIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */; };
 		4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EF2521932500E7D3F0 /* Screen.swift */; };
 		4C6C53F525219D2000E7D3F0 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53F425219D2000E7D3F0 /* AddEvent.storyboard */; };
+		4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */; };
+		4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */; };
 		4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */; };
 		4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91025199F2400FABC11 /* NoteViewController.swift */; };
 		4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DB91525199F8400FABC11 /* Storyboard.swift */; };
@@ -83,6 +85,8 @@
 		4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryIconCell.xib; sourceTree = "<group>"; };
 		4C6C53EF2521932500E7D3F0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		4C6C53F425219D2000E7D3F0 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		4C81AA30251C4E4200B60CC4 /* ExpenseArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExpenseArray.plist; sourceTree = "<group>"; };
 		4C8DB91025199F2400FABC11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		4C8DB91525199F8400FABC11 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			path = AddEventScreen;
 			sourceTree = "<group>";
 		};
+		4C6FB0122522D22D0095F3FD /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */,
+				4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
 		4C8DB90F25199EE100FABC11 /* NoteViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +254,7 @@
 			children = (
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
+				4C6FB0122522D22D0095F3FD /* HomeViewController */,
 				4C9FF3D12521BC340027D02F /* EventScreen */,
 				4C6C53F325219CE400E7D3F0 /* AddEventScreen */,
 				CF521DA2251B1F2700DC13C4 /* Planning */,
@@ -599,8 +613,10 @@
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C4E29E2251DF6B70015E783 /* EventViewController.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
+				4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
+				4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */,
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,

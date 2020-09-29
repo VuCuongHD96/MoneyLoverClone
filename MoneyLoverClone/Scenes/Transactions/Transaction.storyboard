@@ -42,7 +42,7 @@
         <scene sceneID="ct1-AO-vtR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GEY-8j-gQf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sổ giao dịch" image="transaction" id="cpB-b5-rki"/>
+                    <tabBarItem key="tabBarItem" title="Sổ giao dịch" image="transaction" selectedImage="transactionSelected" id="cpB-b5-rki"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1ml-3I-P30">
@@ -61,5 +61,6 @@
     </scenes>
     <resources>
         <image name="transaction" width="32" height="32"/>
+        <image name="transactionSelected" width="32" height="32"/>
     </resources>
 </document>

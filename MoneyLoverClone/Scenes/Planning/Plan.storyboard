@@ -102,7 +102,7 @@
         <scene sceneID="EeW-lQ-5MW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5zy-2G-9CG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lập kế hoạch" image="schedule" id="3AE-ft-0eD">
+                    <tabBarItem key="tabBarItem" title="Lập kế hoạch" image="plan" selectedImage="planSelected" id="3AE-ft-0eD">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -123,6 +123,7 @@
     <resources>
         <image name="icons8-money-bag-shekel-64" width="32" height="32"/>
         <image name="icons8-wedding-cake-64" width="32" height="32"/>
-        <image name="schedule" width="32" height="32"/>
+        <image name="plan" width="32" height="32"/>
+        <image name="planSelected" width="32" height="32"/>
     </resources>
 </document>
