@@ -444,6 +444,7 @@
 				4C8E4BE42514A23C005B238B /* ShellScript */,
 				931F2CDFC78F78226FA20B79 /* [CP] Embed Pods Frameworks */,
 				1C19D7FF68F14A731F83FD19 /* [CP] Copy Pods Resources */,
+				2879C2BD25232C35009953BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -536,6 +537,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2879C2BD25232C35009953BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		4C8E4BE42514A23C005B238B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

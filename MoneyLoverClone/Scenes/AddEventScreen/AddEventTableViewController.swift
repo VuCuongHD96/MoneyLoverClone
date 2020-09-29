@@ -50,14 +50,12 @@ class AddEventTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    private func estimateDay(endDate : Date){
+    private func estimateDay(endDate : Date) {
         let now = Date()
         let nowString = formattershort.string(from: now)
         let dateNowFormater = formattershort.date(from: nowString)
         let components = Calendar.current.dateComponents([.day], from: dateNowFormater! , to: endDate )
     }
-    
-    
     
     @IBAction func btnSave(_ sender: Any) {
         guard let nameEvent = txtName.text else {return}
