@@ -32,12 +32,19 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func addEventAction(_ sender: Any) {
-        let addEventScreen = AddEventTableViewController.instantiate()
-        navigationController?.pushViewController(addEventScreen, animated: true)
+        
+        let story = UIStoryboard(name: "AddEvent", bundle: nil)
+        guard let vc = story.instantiateViewController(identifier: "AddEventTableViewController") as? AddEventTableViewController else {
+            return
+        }
+        let navController = UINavigationController(rootViewController: vc)
+        vc.isModalInPresentation = true
+        vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.present(navController, animated: true, completion: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return listEvent.count
     }
     
@@ -57,12 +64,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
         cell.cardView.layer.shadowColor = UIColor.black.cgColor
         return cell
-       }
+       }	
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
 }
-
 extension EventViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboard.event
 }

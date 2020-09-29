@@ -10,7 +10,7 @@
         <!--Sự kiện -->
         <scene sceneID="Tbq-tU-WVL">
             <objects>
-                <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PdF-V3-jWx" customClass="EventViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" id="PdF-V3-jWx" customClass="EventViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDD-D3-vJr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

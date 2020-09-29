@@ -93,6 +93,9 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lập kế hoạch" id="MLj-je-Gpg"/>
+                    <connections>
+                        <outlet property="tblPlanning" destination="XLo-aU-sIu" id="SJP-sd-k5m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yI-HK-okk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

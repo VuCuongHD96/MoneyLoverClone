@@ -10,6 +10,7 @@ import UIKit
 import SwiftDate
 import Reusable
 
+
 class AddEventTableViewController: UITableViewController {
     
     @IBOutlet private weak var txtName: UITextField!
@@ -27,9 +28,25 @@ class AddEventTableViewController: UITableViewController {
         tblAddEvent.delegate = self
         tblAddEvent.dataSource = self
         setupDate()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgIcon.isUserInteractionEnabled = true
+        imgIcon.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if txtName.text!.isEmpty || lblDate.text! == "Ngày kết thúc" || txtName.text! == "Tên" {
+            btnLuu.isEnabled = false
+        }
+        else {
+            btnLuu.isEnabled = true
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let vc = EventIconViewController.instantiate()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupDate(){
@@ -42,7 +59,6 @@ class AddEventTableViewController: UITableViewController {
         formatter.do {
             $0.dateStyle = .full
             $0.locale = locale
-            
         }
     }
     
@@ -57,12 +73,10 @@ class AddEventTableViewController: UITableViewController {
         let components = Calendar.current.dateComponents([.day], from: dateNowFormater! , to: endDate )
     }
     
-    
-    
     @IBAction func btnSave(_ sender: Any) {
         guard let nameEvent = txtName.text else {return}
         guard let date = formatter.date(from: lblDate.text!) else {return}
-        
+        guard let imgString = imgIcon.image else { return }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,16 +97,22 @@ class AddEventTableViewController: UITableViewController {
     
     @IBAction func editText(_ sender: Any) {
         txtName.textColor = UIColor.black
-        if txtName.text!.isEmpty || lblDate.text!.isEmpty {
+        if txtName.text!.isEmpty || lblDate.text! == "Ngày kết thúc" {
             btnLuu.isEnabled = false
         }
         else {
             btnLuu.isEnabled = true
         }
     }
-    
 }
 
-extension AddEventTableViewController: StoryboardSceneBased {
-    static var sceneStoryboard = Storyboard.addEvent
+extension AddEventTableViewController : ImageDelegate{
+    func displayImage(data: String) {
+        imgIcon.image = UIImage.init(named: data)
+    }
 }
+
+extension AddEventTableViewController : StoryboardBased{
+    static var sceneStoryboard: UIStoryboard = Storyboard.addEvent
+}
+
