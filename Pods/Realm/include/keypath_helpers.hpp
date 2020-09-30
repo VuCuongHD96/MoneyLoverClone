@@ -93,8 +93,11 @@ inline IncludeDescriptor generate_include_from_keypaths(std::vector<StringData> 
             else {
                 cur_table = element.table; // advance through backlink
             }
-            LinkPathPart link = element.is_backlink ? LinkPathPart(element.col_key, element.table) : LinkPathPart(element.col_key);
-            links.emplace_back(std::move(link));
+            ConstTableRef tr;
+            if (element.is_backlink) {
+                tr = element.table;
+            }
+            links.emplace_back(element.col_key, tr);
         }
         properties.push_back(std::move(links));
     }

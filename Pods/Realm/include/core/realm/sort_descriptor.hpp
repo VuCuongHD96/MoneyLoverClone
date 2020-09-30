@@ -205,9 +205,7 @@ public:
         /// If another sort has just been applied, merge after it to take secondary precedence
         /// this is used to construct sorts in a builder pattern where the first applied sort remains the most
         /// important
-        prepend,
-        /// Replace this sort descriptor with another
-        replace
+        prepend
     };
 
     void merge(SortDescriptor&& other, MergeMode mode);

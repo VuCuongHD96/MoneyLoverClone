@@ -10,16 +10,18 @@ import UIKit
 
 class PlanningTableViewController: UITableViewController {
     
+    @IBOutlet private var tblPlanning: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        tblPlanning.dataSource = self
+        tblPlanning.delegate = self
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let eventScreen = EventViewController.instantiate()
-            navigationController?.pushViewController(eventScreen, animated: true)
+            let viewcontroller = EventViewController.instantiate()
+            navigationController?.pushViewController(viewcontroller, animated: true)
         }
     }
 }

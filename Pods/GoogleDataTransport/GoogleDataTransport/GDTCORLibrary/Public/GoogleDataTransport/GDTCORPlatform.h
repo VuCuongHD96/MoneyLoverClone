@@ -156,15 +156,6 @@ id<NSSecureCoding> _Nullable GDTCORDecodeArchive(Class archiveClass,
                                                  NSData *_Nullable archiveData,
                                                  NSError *_Nullable *error);
 
-/** Writes the provided data to a file at the provided  path. Intermediate directories will be
- * created as needed.
- *  @param data The file content.
- *  @param filePath The path to the file to write the provided data.
- *  @param outError The error to populate if something goes wrong.
- *  @return `YES` in the case of success, `NO` otherwise.
- */
-BOOL GDTCORWriteDataToFile(NSData *data, NSString *filePath, NSError *_Nullable *outError);
-
 /** A typedef identify background identifiers. */
 typedef volatile NSUInteger GDTCORBackgroundIdentifier;
 
@@ -186,12 +177,17 @@ FOUNDATION_EXPORT const GDTCORBackgroundIdentifier GDTCORBackgroundIdentifierInv
 
 @end
 
-@protocol GDTCORApplicationProtocol <NSObject>
-
-@required
+/** A cross-platform application class. */
+@interface GDTCORApplication : NSObject <GDTCORApplicationDelegate>
 
 /** Flag to determine if the application is running in the background. */
 @property(atomic, readonly) BOOL isRunningInBackground;
+
+/** Creates and/or returns the shared application instance.
+ *
+ * @return The shared application instance.
+ */
++ (nullable GDTCORApplication *)sharedApplication;
 
 /** Creates a background task with the returned identifier if on a suitable platform.
  *
@@ -208,17 +204,6 @@ FOUNDATION_EXPORT const GDTCORBackgroundIdentifier GDTCORBackgroundIdentifierInv
  * @param bgID The background task to end.
  */
 - (void)endBackgroundTask:(GDTCORBackgroundIdentifier)bgID;
-
-@end
-
-/** A cross-platform application class. */
-@interface GDTCORApplication : NSObject <GDTCORApplicationProtocol, GDTCORApplicationDelegate>
-
-/** Creates and/or returns the shared application instance.
- *
- * @return The shared application instance.
- */
-+ (nullable GDTCORApplication *)sharedApplication;
 
 @end
 

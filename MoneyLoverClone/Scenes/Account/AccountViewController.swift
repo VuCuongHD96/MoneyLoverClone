@@ -18,7 +18,7 @@ class AccountViewController: UIViewController {
     
     var accountArray: [String] = ["Quản lý tài khoản", "Nhóm", "Cài đặt"]
     var iconArray: [String] = ["account", "group", "setting"]
-    let id = "AccountTableViewCell"
+    let idAccountTableViewCell = "AccountTableViewCell"
     var myIndex = 0
     
     override func viewDidLoad() {
