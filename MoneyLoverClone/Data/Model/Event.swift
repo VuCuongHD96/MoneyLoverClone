@@ -9,15 +9,15 @@
 import Foundation
 
 class Event {
-    var id: Int = 0
-    var estimateDay : Int = 0
-    var nameEvent : String = ""
-    var imgEvent : String = ""
-    var cash : Float = 0
-    var category : Category
+    var idEvent = 0
+    var estimateDay = 0
+    var nameEvent = ""
+    var imgEvent = ""
+    var cash: Float = 0
+    var category: Category
     
-    init(id: Int, endDate : Int, nameEvent : String, imgEvent : String, cash: Float, category : Category) {
-        self.id = id
+    init(idEvent: Int, endDate: Int, nameEvent: String, imgEvent: String, cash: Float, category: Category) {
+        self.idEvent = idEvent
         self.estimateDay = endDate
         self.imgEvent =  imgEvent
         self.nameEvent = nameEvent

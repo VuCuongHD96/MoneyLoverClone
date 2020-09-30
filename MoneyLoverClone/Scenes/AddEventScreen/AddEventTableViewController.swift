@@ -12,29 +12,43 @@ import Reusable
 
 class AddEventTableViewController: UITableViewController {
     
-    @IBOutlet private weak var txtName: UITextField!
-    @IBOutlet private weak var lblDate: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var dateLabel: UITextField!
     @IBOutlet private var tblAddEvent: UITableView!
-    @IBOutlet private weak var btnLuu: UIBarButtonItem!
-    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
+    @IBOutlet private weak var imgIcon: UIImageView!
     
     let formatter = DateFormatter()
     let formattershort = DateFormatter()
-    var imgString : String  = ""
-    
+    var imgString = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tblAddEvent.delegate = self
         tblAddEvent.dataSource = self
         setupDate()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgIcon.isUserInteractionEnabled = true
+        imgIcon.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+    override func viewWillAppear(_ animated: Bool) {
+        if nameTextField.text?.isEmpty ?? false  || dateLabel.text == "Ngày kết thúc" || nameTextField.text == "Tên" {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
     }
     
-    private func setupDate(){
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let eventInstatiate = EventIconViewController.instantiate()
+        eventInstatiate.delegate = self
+        navigationController?.pushViewController(eventInstatiate, animated: true)
+    }
+    
+    private func setupDate() {
         let locale = Locale(identifier: "vi")
-        formattershort.do{
+        formattershort.do {
             $0.dateFormat = "yyyy-MM-dd"
             $0.locale = locale
             $0.timeZone = TimeZone(secondsFromGMT: 7)
@@ -42,27 +56,24 @@ class AddEventTableViewController: UITableViewController {
         formatter.do {
             $0.dateStyle = .full
             $0.locale = locale
-            
         }
     }
     
-    @IBAction func btnCancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
-    private func estimateDay(endDate : Date){
+    private func estimateDay(endDate: Date) {
         let now = Date()
         let nowString = formattershort.string(from: now)
         let dateNowFormater = formattershort.date(from: nowString)
-        let components = Calendar.current.dateComponents([.day], from: dateNowFormater! , to: endDate )
+        _ = Calendar.current.dateComponents([.day], from: dateNowFormater ?? now, to: endDate )
     }
     
-    
-    
     @IBAction func btnSave(_ sender: Any) {
-        guard let nameEvent = txtName.text else {return}
-        guard let date = formatter.date(from: lblDate.text!) else {return}
-        
+        guard let nameEvent = nameTextField.text else { return }
+        guard let date = formatter.date(from: dateLabel.text ?? "") else { return }
+        guard let imgString = imgIcon.image else { return }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,8 +84,8 @@ class AddEventTableViewController: UITableViewController {
             navigationController?.pushViewController(calendarScreen, animated: true)
             calendarScreen.passDate = {
                 let dateString = self.formatter.string(from: $0)
-                self.lblDate.text = dateString
-                self.lblDate.textColor = UIColor.black
+                self.dateLabel.text = dateString
+                self.dateLabel.textColor = UIColor.black
             }
         default:
             print("")
@@ -82,17 +93,21 @@ class AddEventTableViewController: UITableViewController {
     }
     
     @IBAction func editText(_ sender: Any) {
-        txtName.textColor = UIColor.black
-        if txtName.text!.isEmpty || lblDate.text!.isEmpty {
-            btnLuu.isEnabled = false
-        }
-        else {
-            btnLuu.isEnabled = true
+        nameTextField.textColor = .black
+        if nameTextField.text?.isEmpty ?? false || dateLabel.text == "Ngày kết thúc" {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
         }
     }
-    
 }
 
-extension AddEventTableViewController: StoryboardSceneBased {
-    static var sceneStoryboard = Storyboard.addEvent
+extension AddEventTableViewController: ImageDelegate {
+    func displayImage(data: String) {
+        imgIcon.image = UIImage(named: data)
+    }
+}
+
+extension AddEventTableViewController: StoryboardBased {
+    static var sceneStoryboard: UIStoryboard = Storyboard.addEvent
 }
