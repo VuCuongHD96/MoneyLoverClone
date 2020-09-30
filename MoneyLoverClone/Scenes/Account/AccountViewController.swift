@@ -18,7 +18,6 @@ class AccountViewController: UIViewController {
     
     var accountArray = ["Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
     var iconArray = ["group", "setting", "changepass", "logout"]
-    let id = "AccountTableViewCell"
     var myIndex = 0
     var pass = "123"
     
@@ -70,7 +69,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,6 +109,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
             switch myIndex {
             case 0:
                 let settingScreen = SettingsTableViewController.instantiate()
+                settingScreen.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(settingScreen, animated: true)
             case 1:
                 let changePass = ChangePassViewController.instantiate()
