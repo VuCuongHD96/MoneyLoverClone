@@ -9,10 +9,10 @@
 import Foundation
 
 class Event {
-    var idEvent: Int = 0
-    var estimateDay: Int = 0
-    var nameEvent: String = ""
-    var imgEvent: String = ""
+    var idEvent = 0
+    var estimateDay = 0
+    var nameEvent = ""
+    var imgEvent = ""
     var cash: Float = 0
     var category: Category
     

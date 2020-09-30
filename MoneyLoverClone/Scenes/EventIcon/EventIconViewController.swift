@@ -24,6 +24,7 @@ final class EventIconViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+
     weak var delegate: ImageDelegate?
     typealias Handler = (Category) -> Void
     var categoryDidChoise: Handler?

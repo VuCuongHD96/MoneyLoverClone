@@ -59,11 +59,14 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
         cell!.cardView.layer.shadowColor = UIColor.black.cgColor
         return cell!
+
     }	
+
+       }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-}
+
 extension EventViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboard.event
 }
