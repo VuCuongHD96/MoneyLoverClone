@@ -166,9 +166,9 @@ final class AddTransactionTableViewController: UITableViewController {
     }
     
     private func choiseEvent() {
-        let eventScreen = EventViewController.instantiate()
-        eventScreen.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(eventScreen, animated: true)
+        let storyBoard = UIStoryboard(name: "ChoiseEvent", bundle: nil)
+        guard let choiseEventScreen = storyBoard.instantiateViewController(identifier: "ChoiseEventTableViewController") as? ChoiseEventTableViewController else { return }
+        navigationController?.pushViewController(choiseEventScreen, animated: true)
     }
     
     @IBAction func saveAction(_ sender: Any) {

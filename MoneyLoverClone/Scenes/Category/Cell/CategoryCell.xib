@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reward" translatesAutoresizingMaskIntoConstraints="NO" id="puL-EC-bGx">
-                        <rect key="frame" x="10" y="7" width="30" height="30"/>
+                        <rect key="frame" x="15" y="7" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="puL-EC-bGx" secondAttribute="height" id="f2E-EP-jHd"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qf-5V-Tc1">
-                        <rect key="frame" x="50" y="7" width="270" height="30"/>
+                        <rect key="frame" x="60" y="7" width="260" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,9 +33,9 @@
                     <constraint firstAttribute="bottom" secondItem="puL-EC-bGx" secondAttribute="bottom" constant="7" id="GIr-Ql-kYL"/>
                     <constraint firstItem="puL-EC-bGx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="IaE-Mm-7KX"/>
                     <constraint firstAttribute="trailing" secondItem="7qf-5V-Tc1" secondAttribute="trailing" id="SxB-P5-eiZ"/>
-                    <constraint firstItem="7qf-5V-Tc1" firstAttribute="leading" secondItem="puL-EC-bGx" secondAttribute="trailing" constant="10" id="Y8b-TT-cw2"/>
+                    <constraint firstItem="7qf-5V-Tc1" firstAttribute="leading" secondItem="puL-EC-bGx" secondAttribute="trailing" constant="15" id="Y8b-TT-cw2"/>
                     <constraint firstItem="7qf-5V-Tc1" firstAttribute="bottom" secondItem="puL-EC-bGx" secondAttribute="bottom" id="lr4-XL-nUm"/>
-                    <constraint firstItem="puL-EC-bGx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="r7M-2Q-S93"/>
+                    <constraint firstItem="puL-EC-bGx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="r7M-2Q-S93"/>
                     <constraint firstItem="7qf-5V-Tc1" firstAttribute="top" secondItem="puL-EC-bGx" secondAttribute="top" id="tx1-lL-mW0"/>
                 </constraints>
             </tableViewCellContentView>
