@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yL3-Vm-8ef">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +17,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="7mR-90-OSj" kind="relationship" relationship="viewControllers" id="d6e-WE-B5f"/>
-                        <segue destination="LBI-bT-MdH" kind="relationship" relationship="viewControllers" id="TCd-O0-DFf"/>
-                        <segue destination="bHU-Tq-SOI" kind="relationship" relationship="viewControllers" id="mUv-MH-Nuz"/>
-                        <segue destination="Mag-Fp-I0j" kind="relationship" relationship="viewControllers" id="WdI-hF-j0u"/>
+                        <segue destination="LBI-bT-MdH" kind="relationship" relationship="viewControllers" id="nLk-UA-w9v"/>
+                        <segue destination="7mR-90-OSj" kind="relationship" relationship="viewControllers" id="gcR-hZ-YZR"/>
+                        <segue destination="bHU-Tq-SOI" kind="relationship" relationship="viewControllers" id="yKH-7w-ZF7"/>
+                        <segue destination="Mag-Fp-I0j" kind="relationship" relationship="viewControllers" id="a76-dZ-nII"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOW-Rr-mX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,7 +36,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emV-rq-Yil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-547" y="532"/>
+            <point key="canvasLocation" x="-584" y="358"/>
         </scene>
         <!--Transaction-->
         <scene sceneID="y0s-x5-YMp">
@@ -46,17 +47,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8P-bs-jDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-566" y="356"/>
+            <point key="canvasLocation" x="-584" y="224"/>
         </scene>
         <!--Plan-->
         <scene sceneID="PJk-jT-Eub">
             <objects>
                 <viewControllerPlaceholder storyboardName="Plan" id="bHU-Tq-SOI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Kế hoạch" image="planning" id="E2A-nD-XJ4"/>
+                    <tabBarItem key="tabBarItem" title="Kế hoạch" image="plan" id="E2A-nD-XJ4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRl-aJ-t14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602" y="213"/>
+            <point key="canvasLocation" x="-601" y="466"/>
         </scene>
         <!--Account-->
         <scene sceneID="kX1-rX-Qdt">
@@ -66,14 +67,14 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="no2-wX-ZNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="645"/>
+            <point key="canvasLocation" x="-618" y="615"/>
         </scene>
     </scenes>
     <resources>
         <image name="account" width="32" height="32"/>
         <image name="add" width="32" height="32"/>
         <image name="addSelected" width="32" height="32"/>
-        <image name="planning" width="32" height="32"/>
+        <image name="plan" width="32" height="32"/>
         <image name="transaction" width="32" height="32"/>
         <image name="transactionSelected" width="32" height="32"/>
     </resources>

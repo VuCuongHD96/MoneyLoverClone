@@ -73,4 +73,9 @@ extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.heightForHeaderInSection
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let transactionDetail = TransactionDetailTableViewController.instantiate()
+        navigationController?.pushViewController(transactionDetail, animated: true)
+    }
 }

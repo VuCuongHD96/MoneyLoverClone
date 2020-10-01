@@ -9,6 +9,7 @@
 import UIKit
 import SwiftDate
 import Then
+import Reusable
 
 final class AddTransactionTableViewController: UITableViewController {
     
@@ -19,12 +20,14 @@ final class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var categoryNameTextField: UITextField!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
+    @IBOutlet private weak var cancelButton: UIBarButtonItem!
     
     // MARK: - Properties
     let today = Date()
     let formatter = DateFormatter()
     var segmentIndex = 0
     var category: Category?
+    var money = "0"
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -59,6 +62,9 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.isEnabled = false
             $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
         }
+        cancelButton.do {
+            $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
+        }
     }
     
     // MARK: - Data
@@ -69,6 +75,7 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.locale = locale
         }
         moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
+        moneyTextField.text = money
     }
     
     private func setupMoneyLabel() {
@@ -158,8 +165,18 @@ final class AddTransactionTableViewController: UITableViewController {
         navigationController?.pushViewController(noteScreen, animated: true)
     }
     
+    private func choiseEvent() {
+        let eventScreen = EventViewController.instantiate()
+        eventScreen.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(eventScreen, animated: true)
+    }
+    
     @IBAction func saveAction(_ sender: Any) {
         // MARK: - Todo
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -174,8 +191,14 @@ extension AddTransactionTableViewController {
             choiseDate {
                 self.dateLabel.text = $0
             }
+        case 4:
+            choiseEvent()
         default:
             print("Wrong Choise")
         }
     }
+}
+
+extension AddTransactionTableViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.addTransaction
 }

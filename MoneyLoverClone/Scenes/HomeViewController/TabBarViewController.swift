@@ -23,5 +23,18 @@ final class TabBarViewController: UITabBarController {
             $0.tintColor = .systemGreen
             $0.barTintColor = .white
         }
+        delegate = self
+    }
+}
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController == tabBarController.viewControllers?[1] {
+            let addTransactionScreen = AddTransactionTableViewController.instantiate()
+            let navigationController = UINavigationController(rootViewController: addTransactionScreen)
+            present(navigationController, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
 }
