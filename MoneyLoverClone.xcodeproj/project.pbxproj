@@ -58,7 +58,13 @@
 		CF14E4ED2522D90E00F6A235 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EC2522D90E00F6A235 /* EventViewController.swift */; };
 		CF14E4F02523188F00F6A235 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
+
 		CF52DB412525803F0096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB402525803F0096585B /* EventTableViewCell.xib */; };
+
+		CF17F199252489A60073D701 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17F198252489A60073D701 /* DetailViewController.swift */; };
+		CF17F19C25248AC90073D701 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF17F19B25248AC90073D701 /* DetailEvent.storyboard */; };
+		CF52DB43252582340096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB42252582340096585B /* EventTableViewCell.xib */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,7 +123,13 @@
 		CF14E4EC2522D90E00F6A235 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
+
 		CF52DB402525803F0096585B /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+
+		CF17F198252489A60073D701 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CF17F19B25248AC90073D701 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
+		CF52DB42252582340096585B /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,7 +356,11 @@
 		4C9FF3D42521C00A0027D02F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+
 				CF52DB402525803F0096585B /* EventTableViewCell.xib */,
+
+				CF52DB42252582340096585B /* EventTableViewCell.xib */,
+
 				CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */,
 			);
 			path = Cell;
@@ -429,6 +445,8 @@
 		CF14E4F32523344900F6A235 /* DetailEvent */ = {
 			isa = PBXGroup;
 			children = (
+				CF17F19B25248AC90073D701 /* DetailEvent.storyboard */,
+				CF17F198252489A60073D701 /* DetailViewController.swift */,
 			);
 			path = DetailEvent;
 			sourceTree = "<group>";
@@ -504,7 +522,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				CF52DB412525803F0096585B /* EventTableViewCell.xib in Resources */,
+
+				CF17F19C25248AC90073D701 /* DetailEvent.storyboard in Resources */,
+
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
 				4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */,
@@ -518,6 +540,7 @@
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				4C6C53F525219D2000E7D3F0 /* AddEvent.storyboard in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
+				CF52DB43252582340096585B /* EventTableViewCell.xib in Resources */,
 				4C9FF3D32521BD760027D02F /* Transaction.storyboard in Resources */,
 				4C9FF3DE2521C8F80027D02F /* Account.storyboard in Resources */,
 				4C9FF3D92521C6C60027D02F /* Plan.storyboard in Resources */,
@@ -639,6 +662,7 @@
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
 				4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */,
 				4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */,
+				CF17F199252489A60073D701 /* DetailViewController.swift in Sources */,
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 			);

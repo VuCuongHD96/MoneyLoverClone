@@ -17,7 +17,7 @@
                         <sections>
                             <tableViewSection id="sY1-1a-guq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="3iU-KW-J54">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="3iU-KW-J54">
                                         <rect key="frame" x="0.0" y="18" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3iU-KW-J54" id="u83-Ry-TLc">
@@ -59,7 +59,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rq7-Ty-TWG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="rq7-Ty-TWG">
                                         <rect key="frame" x="0.0" y="61.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rq7-Ty-TWG" id="vjP-ND-bNl">
@@ -130,7 +130,7 @@
                     <navigationItem key="navigationItem" title="Thêm sự kiện" largeTitleDisplayMode="never" id="Eby-RG-TNz">
                         <barButtonItem key="leftBarButtonItem" title="Hủy" id="Ifq-fj-UyN">
                             <connections>
-                                <action selector="btnCancel:" destination="n68-hM-aFD" id="XmX-pK-93n"/>
+                                <action selector="cancelAction:" destination="n68-hM-aFD" id="Wz7-gv-9sa"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc">
@@ -140,11 +140,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnLuu" destination="6mW-mQ-emc" id="vy9-eF-zeX"/>
+                        <outlet property="dateLabel" destination="mOa-GR-0xO" id="IVC-6x-Ddi"/>
                         <outlet property="imgIcon" destination="la8-1B-mI9" id="y4z-jT-3WA"/>
-                        <outlet property="lblDate" destination="mOa-GR-0xO" id="FXm-vT-MDD"/>
+                        <outlet property="nameTextField" destination="u00-ju-XJd" id="HhZ-ZL-lCT"/>
+                        <outlet property="saveButton" destination="6mW-mQ-emc" id="HMS-sR-DbT"/>
                         <outlet property="tblAddEvent" destination="kFu-q4-iID" id="YGJ-tD-Wfs"/>
-                        <outlet property="txtName" destination="u00-ju-XJd" id="8f4-Nf-8p3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBt-pn-LJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
