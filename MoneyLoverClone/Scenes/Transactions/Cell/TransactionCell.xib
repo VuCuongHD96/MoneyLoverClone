@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZZY-be-MOS">
-                        <rect key="frame" x="67" y="6.5" width="44" height="44"/>
+                        <rect key="frame" x="77" y="6.5" width="44" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-0G-mhd">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
@@ -34,26 +34,26 @@
                         </subviews>
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="internet" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-m6-Crt">
-                        <rect key="frame" x="10" y="5" width="47" height="47"/>
+                        <rect key="frame" x="15" y="5" width="47" height="47"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="GbW-m6-Crt" secondAttribute="height" id="cPI-jh-QLA"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTe-9A-RIn">
-                        <rect key="frame" x="268.5" y="6.5" width="41.5" height="20.5"/>
+                        <rect key="frame" x="263.5" y="6.5" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="JTe-9A-RIn" secondAttribute="trailing" constant="10" id="HzG-T7-tQi"/>
+                    <constraint firstAttribute="trailing" secondItem="JTe-9A-RIn" secondAttribute="trailing" constant="15" id="HzG-T7-tQi"/>
                     <constraint firstItem="GbW-m6-Crt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qbn-jc-Ubp"/>
                     <constraint firstItem="ZZY-be-MOS" firstAttribute="centerY" secondItem="GbW-m6-Crt" secondAttribute="centerY" id="gpd-ee-2Fe"/>
-                    <constraint firstItem="ZZY-be-MOS" firstAttribute="leading" secondItem="GbW-m6-Crt" secondAttribute="trailing" constant="10" id="lCt-v7-Mba"/>
+                    <constraint firstItem="ZZY-be-MOS" firstAttribute="leading" secondItem="GbW-m6-Crt" secondAttribute="trailing" constant="15" id="lCt-v7-Mba"/>
                     <constraint firstAttribute="bottom" secondItem="GbW-m6-Crt" secondAttribute="bottom" constant="5" id="luw-EZ-wQn"/>
                     <constraint firstItem="JTe-9A-RIn" firstAttribute="centerY" secondItem="aBY-0G-mhd" secondAttribute="centerY" id="oNK-oc-m3m"/>
-                    <constraint firstItem="GbW-m6-Crt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="skh-dk-MO0"/>
+                    <constraint firstItem="GbW-m6-Crt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="skh-dk-MO0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
