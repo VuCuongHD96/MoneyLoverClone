@@ -14,10 +14,13 @@ final class AddEventCell: UITableViewCell, NibReusable {
     // MARK: - Outlet
     @IBOutlet private weak var addEventLabel: UILabel!
     
-    // MARK: - Outlet
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupView()
+    }
+    
+    // MARK: - Views
+    private func setupView() {
         let attributedString = NSAttributedString(string: "Thêm sự kiện",
                                                   attributes: [.underlineStyle: 1,
                                                                .foregroundColor: UIColor.systemGreen])

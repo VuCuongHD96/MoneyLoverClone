@@ -13,6 +13,7 @@ final class ChoiseEventTableViewController: UITableViewController {
     // MARK: - Properties
     struct Constant {
         static let cellHeight: CGFloat = 50
+        static let numberOfSection = 2
     }
     var categoryArray = [Category]()
     typealias Handler = (Category) -> Void
@@ -54,7 +55,7 @@ final class ChoiseEventTableViewController: UITableViewController {
 // MARK: - TableView Datasource
 extension ChoiseEventTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return Constant.numberOfSection
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
