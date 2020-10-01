@@ -14,7 +14,7 @@ class AddEventTableViewController: UITableViewController {
     
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var dateLabel: UITextField!
-    @IBOutlet private var tblAddEvent: UITableView!
+    @IBOutlet private weak var tblAddEvent: UITableView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private weak var imgIcon: UIImageView!
     
@@ -108,6 +108,6 @@ extension AddEventTableViewController: ImageDelegate {
     }
 }
 
-extension AddEventTableViewController: StoryboardBased {
-    static var sceneStoryboard: UIStoryboard = Storyboard.addEvent
+extension AddEventTableViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.addEvent
 }
