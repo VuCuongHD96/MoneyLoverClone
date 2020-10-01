@@ -10,6 +10,8 @@
 		28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */; };
 		28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */; };
 		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
+		288747C72525BEBE00CA8467 /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288747C62525BEBE00CA8467 /* ChangePassViewController.swift */; };
+		288747C92525BEC300CA8467 /* ChangePassWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288747C82525BEC300CA8467 /* ChangePassWord.storyboard */; };
 		4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA59251B23A500768482 /* Calendar.storyboard */; };
 		4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA5B251B23E600768482 /* CalendarViewController.swift */; };
 		4C30DA5E251B430A00768482 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA5D251B430A00768482 /* Category.storyboard */; };
@@ -55,9 +57,7 @@
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
-		4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE437EC25257DC80089DEDA /* AddEventCell.swift */; };
-		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
-		538BBF59ACECAE55737818CF /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */; };
+		7D6D1D019FF58354F5962D4A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C00C5DC53C108BE05E062EA /* Pods_MoneyLoverClone.framework */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
 		CF14E4E82522D89F00F6A235 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
@@ -67,10 +67,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		288747C62525BEBE00CA8467 /* ChangePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
+		288747C82525BEC300CA8467 /* ChangePassWord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangePassWord.storyboard; sourceTree = "<group>"; };
+		2C00C5DC53C108BE05E062EA /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30DA59251B23A500768482 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		4C30DA5B251B23E600768482 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4C30DA5D251B430A00768482 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
@@ -118,16 +120,14 @@
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
-		4CE437EC25257DC80089DEDA /* AddEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventCell.swift; sourceTree = "<group>"; };
-		4CE437ED25257DC80089DEDA /* AddEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventCell.xib; sourceTree = "<group>"; };
-		524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
+		B7C3D57E6F43A18B2C5928FC /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4EC2522D90E00F6A235 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
+		E1E915D20B95CCB66B94D3F5 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				538BBF59ACECAE55737818CF /* Pods_MoneyLoverClone.framework in Frameworks */,
+				7D6D1D019FF58354F5962D4A /* Pods_MoneyLoverClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +159,15 @@
 				28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		288747C52525BEAD00CA8467 /* ChangePassWord */ = {
+			isa = PBXGroup;
+			children = (
+				288747C62525BEBE00CA8467 /* ChangePassViewController.swift */,
+				288747C82525BEC300CA8467 /* ChangePassWord.storyboard */,
+			);
+			path = ChangePassWord;
 			sourceTree = "<group>";
 		};
 		4C30DA58251B238200768482 /* Calendar */ = {
@@ -284,6 +293,8 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				288747C52525BEAD00CA8467 /* ChangePassWord */,
+				CF14E4F32523344900F6A235 /* DetailEvent */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4C6C68D5252572270086BF55 /* ChoiseEvent */,
@@ -386,7 +397,7 @@
 				4CC87D3B25136D9100A3B9BD /* MoneyLoverClone */,
 				4CC87D3A25136D9100A3B9BD /* Products */,
 				BF16F7A49D65BA1E1208B742 /* Pods */,
-				691349E9043BE965769CF499 /* Frameworks */,
+				8DB1FC330D07E2871A25834A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,19 +441,10 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		4CE437EB25257DC80089DEDA /* Cell */ = {
+		8DB1FC330D07E2871A25834A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4CE437EC25257DC80089DEDA /* AddEventCell.swift */,
-				4CE437ED25257DC80089DEDA /* AddEventCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		691349E9043BE965769CF499 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				07CE29B406F27DEA889A6011 /* Pods_MoneyLoverClone.framework */,
+				2C00C5DC53C108BE05E062EA /* Pods_MoneyLoverClone.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,8 +461,8 @@
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */,
-				C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */,
+				B7C3D57E6F43A18B2C5928FC /* Pods-MoneyLoverClone.debug.xcconfig */,
+				E1E915D20B95CCB66B94D3F5 /* Pods-MoneyLoverClone.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -488,13 +490,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CC87D4D25136D9300A3B9BD /* Build configuration list for PBXNativeTarget "MoneyLoverClone" */;
 			buildPhases = (
-				4F36C86FA58238202F9E95B5 /* [CP] Check Pods Manifest.lock */,
+				3E9320845F61F13587DE7D8B /* [CP] Check Pods Manifest.lock */,
 				4CC87D3525136D9100A3B9BD /* Sources */,
 				4CC87D3625136D9100A3B9BD /* Frameworks */,
 				4CC87D3725136D9100A3B9BD /* Resources */,
 				4C8E4BE42514A23C005B238B /* ShellScript */,
-				931F2CDFC78F78226FA20B79 /* [CP] Embed Pods Frameworks */,
-				1C19D7FF68F14A731F83FD19 /* [CP] Copy Pods Resources */,
+				D765E97E7A8A2993FFE93867 /* [CP] Embed Pods Frameworks */,
+				43AA788E9807D3569FE681ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -547,6 +549,7 @@
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
 				4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */,
+				288747C92525BEC300CA8467 /* ChangePassWord.storyboard in Resources */,
 				4C6C53EE25217F5100E7D3F0 /* CategoryIconCell.xib in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
@@ -573,7 +576,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C19D7FF68F14A731F83FD19 /* [CP] Copy Pods Resources */ = {
+		3E9320845F61F13587DE7D8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyLoverClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43AA788E9807D3569FE681ED /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -607,29 +632,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		4F36C86FA58238202F9E95B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MoneyLoverClone-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		931F2CDFC78F78226FA20B79 /* [CP] Embed Pods Frameworks */ = {
+		D765E97E7A8A2993FFE93867 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -681,6 +684,7 @@
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C6C53E925217D3800E7D3F0 /* EventIconViewController.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
+				288747C72525BEBE00CA8467 /* ChangePassViewController.swift in Sources */,
 				4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */,
 				4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */,
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
@@ -826,7 +830,7 @@
 		};
 		4CC87D4E25136D9300A3B9BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 524483C9B56ED5964C3CE592 /* Pods-MoneyLoverClone.debug.xcconfig */;
+			baseConfigurationReference = B7C3D57E6F43A18B2C5928FC /* Pods-MoneyLoverClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -844,7 +848,7 @@
 		};
 		4CC87D4F25136D9300A3B9BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */;
+			baseConfigurationReference = E1E915D20B95CCB66B94D3F5 /* Pods-MoneyLoverClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

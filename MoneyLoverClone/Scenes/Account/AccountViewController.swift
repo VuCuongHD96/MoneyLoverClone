@@ -16,56 +16,118 @@ class AccountViewController: UIViewController {
     @IBOutlet private weak var lbGmailAccount: UILabel!
     @IBOutlet private weak var tableViewAccount: UITableView!
     
-    var accountArray: [String] = ["Quản lý tài khoản", "Nhóm", "Cài đặt"]
-    var iconArray: [String] = ["account", "group", "setting"]
-    let idAccountTableViewCell = "AccountTableViewCell"
-    var myIndex = 0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setData()
-        setupTableView()
-    }
-    
-    func setData() {
-        imgAccount.image = UIImage(named: "male")
-        lbNameAccount.text = "Việt Hoàng"
-        lbGmailAccount.text = "nguyenviethoang@gmail.com"
-        lbGmailAccount.textColor = .lightGray
-    }
-    
-    func setupTableView() {
-        tableViewAccount.do {
-            $0.delegate = self
-            $0.dataSource = self
-            $0.register(cellType: AccountTableViewCell.self)
+    var accountArray = ["Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
+        var iconArray = ["group", "setting", "changepass", "logout"]
+        var myIndex = 0
+        var pass = "123"
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            setData()
+            setupTableView()
+            print(pass)
+        }
+        
+        func setData() {
+            imgAccount.image = UIImage(named: "male")
+            imgAccount.layer.cornerRadius = imgAccount.frame.size.width / 2
+            imgAccount.clipsToBounds = true
+            lbNameAccount.text = "Việt Hoàng"
+            lbGmailAccount.text = "nguyenviethoang@gmail.com"
+            lbGmailAccount.textColor = .lightGray
+        }
+        
+        func setupTableView() {
+            tableViewAccount.do {
+                $0.delegate = self
+                $0.dataSource = self
+                $0.register(cellType: AccountTableViewCell.self)
+            }
+            tableViewAccount.isScrollEnabled = false
+        }
+        
+        func logout() {
+            let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn có chắc muốn đăng xuất khỏi thiết bị này?", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            let logoutAction = UIAlertAction(title: "Đăng xuất", style: .default, handler: { action in
+                print("xủ lý đăng xuất ở đây")
+            })
+            alert.addAction(logoutAction)
+            self.present(alert, animated: true)
         }
     }
-}
 
-extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        accountArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
-        cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
-        switch myIndex {
-        case 0:
-            print("man hinh quan ly tai khoan")
-        case 1:
-            print("man hinh Nhom")
-        case 2:
-//            guard let vc = storyboard?.instantiateViewController(identifier: "setting") as? SettingsTableViewController else { return  }
-            let settingScreen = SettingsTableViewController.instantiate()
-            navigationController?.pushViewController(settingScreen, animated: true)
-        default : break
+    extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 2
+        }
+        
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 45
+        }
+        
+        func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+            return CGFloat.leastNonzeroMagnitude
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            switch section {
+            case 0:
+                return 2
+            case 1:
+                return 2
+            default:
+                return 0
+            }
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
+            switch indexPath.section {
+            case 0:
+                cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
+            case 1:
+                cell.setContent(iconArray[indexPath.row + 2], accountArray[indexPath.row + 2])
+            default:
+                break
+            }
+            return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            switch indexPath.section {
+            case 0:
+                myIndex = indexPath.row
+                switch myIndex {
+                case 0:
+                    print("Man hinh Nhom")
+                case 1:
+                    let settingScreen = SettingsTableViewController.instantiate()
+                    settingScreen.hidesBottomBarWhenPushed = true
+                    navigationController?.pushViewController(settingScreen, animated: true)
+                default:
+                    break
+                }
+            case 1:
+                myIndex = indexPath.row
+                switch myIndex {
+                case 0:
+                    let changePass = ChangePassViewController.instantiate()
+                    changePass.currentPass = pass
+                    changePass.hidesBottomBarWhenPushed = true
+                    navigationController?.pushViewController(changePass, animated: true)
+                case 1:
+                    logout()
+                default :
+                    break
+                }
+            default: break
+            }
         }
     }
-}
+
+    extension AccountViewController: StoryboardSceneBased {
+        static var sceneStoryboard = Storyboard.account
+    }
