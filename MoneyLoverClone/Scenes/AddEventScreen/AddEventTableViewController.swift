@@ -21,7 +21,7 @@ class AddEventTableViewController: UITableViewController {
     let formatter = DateFormatter()
     let formattershort = DateFormatter()
     var imgString = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tblAddEvent.delegate = self
@@ -76,6 +76,16 @@ class AddEventTableViewController: UITableViewController {
         guard let imgString = imgIcon.image else { return }
     }
     
+    //    private func getEvent() -> Event {
+    //        guard let nameEvent = nameTextField.text,
+    //            let idEvent = Event.IncrementaID()
+    //            let date = formatter.date(from: dateLabel.text ?? ""),
+    //            let imgString = imgIcon.image
+    //            else {
+    //                return Event(value: "")
+    //        }
+    //
+    //    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         switch row {

@@ -28,7 +28,7 @@
 		4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */; };
 		4C6C53EE25217F5100E7D3F0 /* CategoryIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */; };
 		4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EF2521932500E7D3F0 /* Screen.swift */; };
-		4C6C53F525219D2000E7D3F0 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53F425219D2000E7D3F0 /* AddEvent.storyboard */; };
+
 		4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */; };
 		4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */; };
 		4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */; };
@@ -45,7 +45,6 @@
 		4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E4BFA2514C33C005B238B /* HeaderTransactionView.xib */; };
 		4C9FF3CF2521A1E40027D02F /* AddTransaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3CE2521A1E40027D02F /* AddTransaction.storyboard */; };
 		4C9FF3D32521BD760027D02F /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3D22521BD760027D02F /* Transaction.storyboard */; };
-		4C9FF3D62521C0250027D02F /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3D52521C0250027D02F /* Event.storyboard */; };
 		4C9FF3D92521C6C60027D02F /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3D82521C6C60027D02F /* Plan.storyboard */; };
 		4C9FF3DE2521C8F80027D02F /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3DD2521C8F80027D02F /* Account.storyboard */; };
 		4C9FF3E02521CB5B0027D02F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3DF2521CB5B0027D02F /* Setting.storyboard */; };
@@ -61,11 +60,16 @@
 		4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE437EC25257DC80089DEDA /* AddEventCell.swift */; };
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
-		CF14E4E82522D89F00F6A235 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */; };
+
+
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
-		CF14E4ED2522D90E00F6A235 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EC2522D90E00F6A235 /* EventViewController.swift */; };
-		CF14E4F02523188F00F6A235 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
+		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
+		CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */; };
+		CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB4B2525C3DE0096585B /* Event.storyboard */; };
+		CF52DB502525C3E00096585B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
+		CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB552525C4720096585B /* AddEvent.storyboard */; };
+		CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB562525C4760096585B /* AddEventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +94,8 @@
 		4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconCell.swift; sourceTree = "<group>"; };
 		4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryIconCell.xib; sourceTree = "<group>"; };
 		4C6C53EF2521932500E7D3F0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		4C6C53F425219D2000E7D3F0 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+
+
 		4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiseEvent.storyboard; sourceTree = "<group>"; };
 		4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseEventTableViewController.swift; sourceTree = "<group>"; };
 		4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +112,6 @@
 		4C8E4BFA2514C33C005B238B /* HeaderTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTransactionView.xib; sourceTree = "<group>"; };
 		4C9FF3CE2521A1E40027D02F /* AddTransaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTransaction.storyboard; sourceTree = "<group>"; };
 		4C9FF3D22521BD760027D02F /* Transaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transaction.storyboard; sourceTree = "<group>"; };
-		4C9FF3D52521C0250027D02F /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		4C9FF3D82521C6C60027D02F /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		4C9FF3DD2521C8F80027D02F /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		4C9FF3DF2521CB5B0027D02F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -127,11 +131,19 @@
 		64CE459DB7AF58BF2A1696F5 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		9B7B22FFD7E44F1914EB0BC6 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+
+		C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
+
+
+
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
-		CF14E4EC2522D90E00F6A235 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
+		CF52DB492525C3DB0096585B /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		CF52DB4B2525C3DE0096585B /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		CF52DB4C2525C3E00096585B /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		CF52DB552525C4720096585B /* AddEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		CF52DB562525C4760096585B /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +237,10 @@
 		4C6C53F325219CE400E7D3F0 /* AddEventScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4C6C53F425219D2000E7D3F0 /* AddEvent.storyboard */,
-				CF14E4EF2523188F00F6A235 /* AddEventTableViewController.swift */,
+
+				CF52DB552525C4720096585B /* AddEvent.storyboard */,
+				CF52DB562525C4760096585B /* AddEventTableViewController.swift */,
+
 			);
 			path = AddEventScreen;
 			sourceTree = "<group>";
@@ -379,21 +393,15 @@
 		4C9FF3D12521BC340027D02F /* EventScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4C9FF3D42521C00A0027D02F /* Cell */,
-				CF14E4EC2522D90E00F6A235 /* EventViewController.swift */,
-				4C9FF3D52521C0250027D02F /* Event.storyboard */,
+				CF52DB482525C3DB0096585B /* Cell */,
+				CF52DB4B2525C3DE0096585B /* Event.storyboard */,
+				CF52DB4C2525C3E00096585B /* EventViewController.swift */,
 			);
 			path = EventScreen;
 			sourceTree = "<group>";
 		};
-		4C9FF3D42521C00A0027D02F /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CF14E4E62522D89F00F6A235 /* EventTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
+
+
 		4CC87D3025136D9000A3B9BD = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +503,15 @@
 			path = Planning;
 			sourceTree = "<group>";
 		};
+		CF52DB482525C3DB0096585B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF52DB492525C3DB0096585B /* EventTableViewCell.xib */,
+				CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,6 +574,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
+
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				288747CC2525E7E400CA8467 /* ChangePassWord.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
@@ -567,10 +587,9 @@
 				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
 				4C6C53E725217D0800E7D3F0 /* EventIcon.storyboard in Resources */,
-				4C9FF3D62521C0250027D02F /* Event.storyboard in Resources */,
 				4C9FF3E02521CB5B0027D02F /* Setting.storyboard in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
-				4C6C53F525219D2000E7D3F0 /* AddEvent.storyboard in Resources */,
+				CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */,
 				4C6FB01925233F130095F3FD /* TransactionDetail.storyboard in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4C9FF3D32521BD760027D02F /* Transaction.storyboard in Resources */,
@@ -579,6 +598,9 @@
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
 				4C9FF3CF2521A1E40027D02F /* AddTransaction.storyboard in Resources */,
 				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
+
+				CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */,
+
 				4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
@@ -668,7 +690,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF14E4E82522D89F00F6A235 /* EventTableViewCell.swift in Sources */,
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
@@ -678,9 +699,9 @@
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
-				CF14E4F02523188F00F6A235 /* AddEventTableViewController.swift in Sources */,
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
+				CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */,
 				4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */,
 				4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
@@ -690,8 +711,9 @@
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
 				4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
-				CF14E4ED2522D90E00F6A235 /* EventViewController.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
+				CF52DB502525C3E00096585B /* EventViewController.swift in Sources */,
+				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
