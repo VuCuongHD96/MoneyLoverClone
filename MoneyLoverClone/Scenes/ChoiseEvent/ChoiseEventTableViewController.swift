@@ -13,7 +13,7 @@ final class ChoiseEventTableViewController: UITableViewController {
     // MARK: - Properties
     struct Constant {
         static let cellHeight: CGFloat = 50
-        static let numberOfSection = 2
+
     }
     var categoryArray = [Category]()
     typealias Handler = (Category) -> Void
@@ -23,7 +23,6 @@ final class ChoiseEventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        setupView()
     }
     
     // MARK: - Data
@@ -45,17 +44,13 @@ final class ChoiseEventTableViewController: UITableViewController {
             return category
         }
     }
-    
-    // MARK: - View
-    private func setupView() {
-        navigationItem.title = "Chọn sự kiện"
-    }
 }
 
 // MARK: - TableView Datasource
 extension ChoiseEventTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return Constant.numberOfSection
+
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +86,6 @@ extension ChoiseEventTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:

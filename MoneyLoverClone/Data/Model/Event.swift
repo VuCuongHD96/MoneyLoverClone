@@ -7,21 +7,40 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Event {
-    var idEvent = 0
-    var estimateDay = 0
-    var nameEvent = ""
-    var imgEvent = ""
-    var cash: Float = 0
-    var category: Category
+class Event: Object {
+    @objc dynamic var idEvent = 0
+    @objc dynamic var estimateDay = 0
+    @objc dynamic var nameEvent = ""
+    @objc dynamic var imgEvent = ""
+    @objc dynamic var cash: Float = 0
+    @objc dynamic var endDate = Date()
+    @objc dynamic var inProgress = true
+    var category = [Category]()
     
-    init(idEvent: Int, endDate: Int, nameEvent: String, imgEvent: String, cash: Float, category: Category) {
+    convenience init(idEvent: Int, estimateDay: Int, nameEvent: String, imgEvent: String, cash: Float, inProgress: Bool, endDate: Date) {
+        self.init()
         self.idEvent = idEvent
-        self.estimateDay = endDate
+        self.estimateDay = estimateDay
         self.imgEvent =  imgEvent
         self.nameEvent = nameEvent
         self.cash = cash
         self.category = category
+        self.inProgress = inProgress
+        self.endDate = endDate
+    }
+    
+    static func incrementaID() -> Int {
+            let realm = try? Realm()
+            if let retNext = realm?.objects(Event.self).sorted(byKeyPath: "idEvent").first?.idEvent {
+                return retNext + 1
+            } else {
+                return 1
+            }
+        }
+    
+    override class func primaryKey() -> String? {
+        return "idEvent"
     }
 }
