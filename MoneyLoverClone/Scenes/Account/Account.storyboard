@@ -27,7 +27,7 @@
         <!--Tài khoản-->
         <scene sceneID="vSf-8v-dSd">
             <objects>
-                <viewController id="jGD-a5-Zlc" customClass="AccountViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="jGD-a5-Zlc" customClass="AccountViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeR-tr-AZf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,9 +99,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tài khoản" id="C27-4m-gHw"/>
                     <connections>
-                        <outlet property="imgAccount" destination="8g3-oP-kk5" id="PDd-AB-YIK"/>
-                        <outlet property="lbGmailAccount" destination="N1y-CO-xpG" id="cTP-Az-MhS"/>
-                        <outlet property="lbNameAccount" destination="ZbH-nf-1BO" id="bff-vU-IhA"/>
+                        <outlet property="accountImg" destination="8g3-oP-kk5" id="u31-5t-ao1"/>
+                        <outlet property="gmailLable" destination="N1y-CO-xpG" id="m3D-rf-7CJ"/>
+                        <outlet property="nameLabel" destination="ZbH-nf-1BO" id="jUK-4i-Wen"/>
                         <outlet property="tableViewAccount" destination="RcN-HH-yCL" id="dq3-Xn-VHU"/>
                     </connections>
                 </viewController>
