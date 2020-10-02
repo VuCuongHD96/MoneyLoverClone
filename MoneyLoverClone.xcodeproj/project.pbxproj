@@ -28,7 +28,6 @@
 		4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */; };
 		4C6C53EE25217F5100E7D3F0 /* CategoryIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */; };
 		4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EF2521932500E7D3F0 /* Screen.swift */; };
-
 		4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */; };
 		4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */; };
 		4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */; };
@@ -60,10 +59,9 @@
 		4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE437EC25257DC80089DEDA /* AddEventCell.swift */; };
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
-
-
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
+		CF4FD81F2525D5A20048CB0B /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4FD81E2525D5A20048CB0B /* DetailEvent.storyboard */; };
 		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
 		CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */; };
 		CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB4B2525C3DE0096585B /* Event.storyboard */; };
@@ -94,8 +92,6 @@
 		4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconCell.swift; sourceTree = "<group>"; };
 		4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryIconCell.xib; sourceTree = "<group>"; };
 		4C6C53EF2521932500E7D3F0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-
-
 		4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiseEvent.storyboard; sourceTree = "<group>"; };
 		4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseEventTableViewController.swift; sourceTree = "<group>"; };
 		4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -135,9 +131,9 @@
 		C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 
 
-
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
+		CF4FD81E2525D5A20048CB0B /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		CF52DB492525C3DB0096585B /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CF52DB4B2525C3DE0096585B /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
@@ -311,11 +307,12 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				288747CA2525E7D400CA8467 /* ChangePassWord */,
+
+				CF4FD81D2525D57C0048CB0B /* DetailEvent */,
+
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4C6C68D5252572270086BF55 /* ChoiseEvent */,
-				CF14E4F32523344900F6A235 /* DetailEvent */,
 				4C6FB01725233E650095F3FD /* TransactionDetail */,
 				4C6FB0122522D22D0095F3FD /* HomeViewController */,
 				4C9FF3D12521BC340027D02F /* EventScreen */,
@@ -400,8 +397,6 @@
 			path = EventScreen;
 			sourceTree = "<group>";
 		};
-
-
 		4CC87D3025136D9000A3B9BD = {
 			isa = PBXGroup;
 			children = (
@@ -487,9 +482,10 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CF14E4F32523344900F6A235 /* DetailEvent */ = {
+		CF4FD81D2525D57C0048CB0B /* DetailEvent */ = {
 			isa = PBXGroup;
 			children = (
+				CF4FD81E2525D5A20048CB0B /* DetailEvent.storyboard */,
 			);
 			path = DetailEvent;
 			sourceTree = "<group>";
@@ -574,9 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
-
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				288747CC2525E7E400CA8467 /* ChangePassWord.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
@@ -591,6 +585,7 @@
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */,
 				4C6FB01925233F130095F3FD /* TransactionDetail.storyboard in Resources */,
+				CF4FD81F2525D5A20048CB0B /* DetailEvent.storyboard in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4C9FF3D32521BD760027D02F /* Transaction.storyboard in Resources */,
 				4C9FF3DE2521C8F80027D02F /* Account.storyboard in Resources */,
@@ -598,9 +593,7 @@
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
 				4C9FF3CF2521A1E40027D02F /* AddTransaction.storyboard in Resources */,
 				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
-
 				CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */,
-
 				4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,

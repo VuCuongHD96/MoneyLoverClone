@@ -25,9 +25,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rS-DF-0PO">
                                             <rect key="frame" x="15" y="0.0" width="30" height="40"/>
                                             <subviews>
-
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addSelected" translatesAutoresizingMaskIntoConstraints="NO" id="222-vT-ZBL">
-
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:222-vT-ZBL:image" translatesAutoresizingMaskIntoConstraints="NO" id="222-vT-ZBL">
                                                     <rect key="frame" x="5" y="10" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="BHR-R5-akN"/>
@@ -65,7 +63,6 @@
                             <outlet property="delegate" destination="A9Z-9p-0gj" id="PU7-0d-SsY"/>
                         </connections>
                     </tableView>
-
                     <navigationItem key="navigationItem" id="BB1-Fn-mks"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5N1-k5-YUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1296,14 +1293,5 @@ CeIAAQnoAAEJ8AABCfIAAQn0AAEJ9gABCfgAARtkAAEbaQABG3YAARt5AAEbhgABG4sAARuTAAEblgAB
 G5sAARujAAAAAAAABAEAAAAAAAAAZwAAAAAAAAAAAAAAAAABG6Y
 </mutableData>
         </image>
-
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5N1-k5-YUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="205.79710144927537" y="158.70535714285714"/>
-        </scene>
-    </scenes>
-    <resources>
-        <image name="addSelected" width="32" height="32"/>
     </resources>
 </document>

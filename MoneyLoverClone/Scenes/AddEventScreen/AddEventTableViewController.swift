@@ -63,29 +63,29 @@ class AddEventTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    private func estimateDay(endDate: Date) {
+    private func estimateDay(endDate: Date) -> Int {
         let now = Date()
         let nowString = formattershort.string(from: now)
         let dateNowFormater = formattershort.date(from: nowString)
-        _ = Calendar.current.dateComponents([.day], from: dateNowFormater ?? now, to: endDate )
+        let estimateDay = Calendar.current.dateComponents([.day], from: dateNowFormater ?? now, to: endDate ).day ?? 0
+        return estimateDay
     }
     
     @IBAction func btnSave(_ sender: Any) {
-        guard let nameEvent = nameTextField.text else { return }
-        guard let date = formatter.date(from: dateLabel.text ?? "") else { return }
-        guard let imgString = imgIcon.image else { return }
+        let event = getEvent()
     }
     
-    //    private func getEvent() -> Event {
-    //        guard let nameEvent = nameTextField.text,
-    //            let idEvent = Event.IncrementaID()
-    //            let date = formatter.date(from: dateLabel.text ?? ""),
-    //            let imgString = imgIcon.image
-    //            else {
-    //                return Event(value: "")
-    //        }
-    //
-    //    }
+    private func getEvent() -> Event {
+        let idEvent = Event.incrementaID()
+        let endDate = formatter.date(from: dateLabel.text ?? "")
+        let estimateDay = self.estimateDay(endDate: endDate ?? Date())
+        let cash = 0.0
+        guard let nameEvent = nameTextField.text
+        else {
+            return Event(value: "")
+        }
+        return Event(idEvent: idEvent, estimateDay: estimateDay, nameEvent: nameEvent, imgEvent: imgString, cash: Float(cash), inProgress: true, endDate: endDate ?? Date())
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         switch row {
@@ -114,7 +114,8 @@ class AddEventTableViewController: UITableViewController {
 
 extension AddEventTableViewController: ImageDelegate {
     func displayImage(data: String) {
-        imgIcon.image = UIImage(named: data)
+        imgIcon.image = UIImage(named: data ?? "")
+        imgString = data ?? ""
     }
 }
 
