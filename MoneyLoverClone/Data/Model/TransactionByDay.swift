@@ -9,12 +9,12 @@
 import Foundation
 
 struct TransactionByDay {
-    var dateString = ""
+    var date = Date()
     var summaryMoney = 0
     var transactionArray = [Transaction]()
     
-    init(dateString: String, transactionArray: [Transaction]) {
-        self.dateString = dateString
+    init(date: Date, transactionArray: [Transaction]) {
+        self.date = date
         self.transactionArray = transactionArray.sorted(by: {
             $0.date.timeIntervalSinceReferenceDate > $1.date.timeIntervalSinceReferenceDate
         })

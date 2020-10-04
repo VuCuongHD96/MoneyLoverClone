@@ -24,7 +24,9 @@ class DBManager {
     }
     
     func fetchTransactions() -> [Transaction] {
-        var arrayResult = database.objects(Transaction.self)
+        guard var arrayResult = database?.objects(Transaction.self) else {
+            return [Transaction]()
+        }
         arrayResult = arrayResult.sorted(byKeyPath: "date", ascending: false)
         return Array(arrayResult)
     }

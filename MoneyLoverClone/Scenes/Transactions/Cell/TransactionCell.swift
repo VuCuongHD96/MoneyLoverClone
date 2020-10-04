@@ -13,12 +13,9 @@ final class TransactionCell: UITableViewCell, NibReusable {
     
     // MARK: - Outlet
     @IBOutlet private weak var categoryImageView: UIImageView!
-    @IBOutlet private weak var categoryName: UILabel!
+    @IBOutlet private weak var categoryNameLabel: UILabel!
     @IBOutlet private weak var noteLabel: UILabel!
     @IBOutlet private weak var costLabel: UILabel!
-    
-    // MARK: - Properties
-    var categoryArray = [Category]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,25 +39,26 @@ final class TransactionCell: UITableViewCell, NibReusable {
     // MARK: - Data
     func setcontent(data: Transaction) {
         categoryImageView.image = UIImage(named: data.category)
-        categoryName.text = data.category
         noteLabel.text = data.note
         costLabel.text = String(data.money).convertToMoneyFormat()
-        setupCostColor(TransactionType(rawValue: data.type)!)
-    }
-    
-    private func fetchCategoryData(from name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let nsDictionary = NSDictionary(contentsOfFile: path) else { return }
-        categoryArray += nsDictionary.map {
-            let imageString = $0.key as? String ?? ""
-            let name = $0.value as? String ?? ""
-            let category = Category(image: imageString, name: name)
-            return category
+        guard let transactionType = TransactionType(rawValue: data.type) else {
+            return
+        }
+        setupCostColor(transactionType)
+        switch transactionType {
+        case .expendsed:
+            fetchCategoryData(from: "ExpenseArray", category: data.category)
+        case .income:
+            fetchCategoryData(from: "RevenueArray", category: data.category)
         }
     }
     
-    private func setupData() {
-        fetchCategoryData(from: "ExpenseArray")
-        fetchCategoryData(from: "RevenueArray")
+    private func fetchCategoryData(from name: String, category: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let categoryDictionary = NSDictionary(contentsOfFile: path) else { return }
+        guard let categoryName = categoryDictionary[category] as? String else {
+            return
+        }
+        categoryNameLabel.text = categoryName
     }
 }

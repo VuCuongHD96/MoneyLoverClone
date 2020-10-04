@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 final class HeaderTransactionView: UIView {
 
@@ -16,10 +17,34 @@ final class HeaderTransactionView: UIView {
     @IBOutlet private weak var monthYearLabel: UILabel!
     @IBOutlet private weak var moneyLabel: UILabel!
     
-    // MARK: - Views
+    // MARK: - Properties
+    struct Constant {
+        static let dateFormat = "EEEE,dd,MMMM yyyy"
+    }
+    var formatter = DateFormatter()
+    let today = Date()
+    
+    // MARK: - Data
     func setContent(data: TransactionByDay) {
         moneyLabel.text = String(data.summaryMoney).convertToMoneyFormat()
-        let dateString = data.dateString
-        
+        setupTime(from: data.date)
+    }
+    
+    private func setupTime(from date: Date) {
+        formatter.locale = Locale(identifier: "vi")
+        formatter.dateFormat = Constant.dateFormat
+        let dateString = formatter.string(from: date)
+        let stringArray = dateString.split(separator: ",")
+        dayLabel.text = String(stringArray[1])
+        dayOfWeakLabel.text = String(stringArray[0])
+        monthYearLabel.text = String(stringArray[2])
+        let todayString = formatter.string(from: today)
+        if dateString == todayString {
+            dayOfWeakLabel.text = "Hôm nay"
+        }
+        let yesterday = formatter.string(from: Date() - 1.days)
+        if dateString == yesterday {
+            dayOfWeakLabel.text = "Hôm qua"
+        }
     }
 }

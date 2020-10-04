@@ -60,10 +60,9 @@ final class TransactionsViewController: UIViewController {
     
     private func fetchTransactionData() {
         transactionArray = dataManager.fetchTransactions()
-        if transactionArray.count == 0 {
+        guard let mostRecentDate = transactionArray.first?.date else {
             return
         }
-        let mostRecentDate = transactionArray[0].date
         fetchTransactionBy(mostRecentDate)
     }
     
@@ -85,13 +84,12 @@ final class TransactionsViewController: UIViewController {
         }
         transactionByMonthArray.removeAll()
         transactionDictionary.forEach {
-            let transactionByDay = TransactionByDay(dateString: $0, transactionArray: $1)
+            let date = formatter.date(from: $0) ?? Date()
+            let transactionByDay = TransactionByDay(date: date, transactionArray: $1)
             transactionByMonthArray.append(transactionByDay)
         }
         transactionByMonthArray.sort {
-            let dateOne = formatter.date(from: $0.dateString)
-            let dateTwo = formatter.date(from: $1.dateString)
-            return dateOne! > dateTwo!
+            $0.date > $1.date
         }
     }
     
