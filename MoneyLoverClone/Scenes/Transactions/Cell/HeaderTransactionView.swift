@@ -17,7 +17,9 @@ final class HeaderTransactionView: UIView {
     @IBOutlet private weak var moneyLabel: UILabel!
     
     // MARK: - Views
-    func setContent(data: String) {
-        dayLabel.text = data
+    func setContent(data: TransactionByDay) {
+        moneyLabel.text = String(data.summaryMoney).convertToMoneyFormat()
+        let dateString = data.dateString
+        
     }
 }

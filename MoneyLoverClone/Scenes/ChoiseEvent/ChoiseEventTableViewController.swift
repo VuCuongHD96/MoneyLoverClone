@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reusable
 
 final class ChoiseEventTableViewController: UITableViewController {
     
@@ -94,9 +95,14 @@ extension ChoiseEventTableViewController {
         case 1:
             let addEventScreen = AddEventTableViewController.instantiate()
             let navigationController = UINavigationController(rootViewController: addEventScreen)
+            navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true, completion: nil)
         default:
             break
         }
     }
+}
+
+extension ChoiseEventTableViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.choiseEvent
 }

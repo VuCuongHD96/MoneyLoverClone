@@ -23,11 +23,13 @@ final class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
     
     // MARK: - Properties
-    let today = Date()
-    let formatter = DateFormatter()
-    var segmentIndex = 0
-    var category: Category?
     var money = "0"
+    var category: Category!
+    var segmentIndex = 0
+    var date = Date()
+    let formatter = DateFormatter()
+    var transactionType: TransactionType!
+    var dataManager: DBManager!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -45,12 +47,13 @@ final class AddTransactionTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.title = "Quay lại"
+        setupMoneyLabel()
         moneyTextField.resignFirstResponder()
     }
     
     // MARK: - Views
     private func setupView() {
-        let todayDateString = formatter.string(from: today)
+        let todayDateString = formatter.string(from: date)
         dateLabel.text = todayDateString
         let customKeyboard = NumericKeyboard(target: moneyTextField)
         customKeyboard.doneEdit = { [weak self] in
@@ -76,26 +79,18 @@ final class AddTransactionTableViewController: UITableViewController {
         }
         moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
         moneyTextField.text = money
+        dataManager = DBManager.shared
     }
     
     private func setupMoneyLabel() {
         let moneyString = moneyTextField.text ?? ""
+        money = moneyString
         moneyTextField.do {
-            $0.text = convertToMoneyFormat(moneyString)
+            $0.text = moneyString.convertToMoneyFormat()
             $0.resignFirstResponder()
         }
     }
-    
-    private func convertToMoneyFormat(_ money: String) -> String {
-        let newMoney = money.replacingOccurrences(of: ",", with: "")
-        let amount = Double(newMoney) ?? 0
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let nsNumber = NSNumber(value: amount)
-        guard let result = numberFormatter.string(from: nsNumber) else { return "" }
-        return result
-    }
-    
+
     @objc private func dataIsValid() {
         guard let moneyText = moneyTextField.text, let categoryName = categoryNameTextField.text, moneyText != "0", categoryName != ""
          else {
@@ -103,6 +98,16 @@ final class AddTransactionTableViewController: UITableViewController {
             return
         }
         saveButton.isEnabled = true
+    }
+    
+    private func getTransaction() -> Transaction {
+        let moneyString = money
+        let moneyNumber = Int(moneyString) ?? 0
+        let categoryImage = category.image
+        let note = noteTextField.text
+        let dateSelected = date
+        transactionType = segmentIndex == 0 ? .expendsed : .income
+        return Transaction(money: moneyNumber, category: categoryImage, note: note, date: dateSelected, idEvent: nil, transactionType: transactionType)
     }
     
     // MARK: - Action
@@ -120,27 +125,22 @@ final class AddTransactionTableViewController: UITableViewController {
         navigationController?.pushViewController(categoryScreen, animated: true)
     }
     
-    private func choiseDate(completeChoice: @escaping (String) -> Void) {
+    private func choiseDate(completeChoice: @escaping (Date) -> Void) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let todaySheet = UIAlertAction(title: "Hôm nay", style: .default) { [weak self] (_) in
-            guard let self = self else { return }
-            let resultDate = self.formatter.string(from: self.today)
-            completeChoice(resultDate)
+        let todaySheet = UIAlertAction(title: "Hôm nay", style: .default) { _ in
+            let today = Date()
+            completeChoice(today)
         }
         let yesterdaySheet = UIAlertAction(title: "Hôm qua", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            let resultDate = self.formatter.string(from: self.today - 1.days)
-            completeChoice(resultDate)
+            completeChoice(self.date - 1.days)
         }
         let customSheet = UIAlertAction(title: "Tùy chọn", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            guard let dateString = self.dateLabel.text else { return }
-            guard let dateFromString = self.formatter.date(from: dateString) else { return }
             let calendarScreen = CalendarViewController.instantiate()
-            calendarScreen.date = dateFromString
+            calendarScreen.date = self.date
             calendarScreen.passDate = {
-                let dateString = self.formatter.string(from: $0)
-                self.dateLabel.text = dateString
+                completeChoice($0)
             }
             self.navigationController?.pushViewController(calendarScreen, animated: true)
         }
@@ -166,13 +166,14 @@ final class AddTransactionTableViewController: UITableViewController {
     }
     
     private func choiseEvent() {
-        let storyBoard = UIStoryboard(name: "ChoiseEvent", bundle: nil)
-        guard let choiseEventScreen = storyBoard.instantiateViewController(identifier: "ChoiseEventTableViewController") as? ChoiseEventTableViewController else { return }
+        let choiseEventScreen = ChoiseEventTableViewController.instantiate()
         navigationController?.pushViewController(choiseEventScreen, animated: true)
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        // MARK: - Todo
+        let transaction = getTransaction()
+        dataManager.saveTransaction(transaction)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -183,13 +184,17 @@ final class AddTransactionTableViewController: UITableViewController {
 extension AddTransactionTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            moneyTextField.becomeFirstResponder()
         case 1:
             choiseCategory()
         case 2:
             noteHandelAction()
         case 3:
             choiseDate {
-                self.dateLabel.text = $0
+                self.date = $0
+                let dateString = self.formatter.string(from: $0)
+                self.dateLabel.text = dateString
             }
         case 4:
             choiseEvent()
