@@ -116,11 +116,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             myIndex = indexPath.row
             switch myIndex {
-            case 0:
-                let changePass = ChangePassViewController.instantiate()
-                changePass.currentPass = pass
-                changePass.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(changePass, animated: true)
+            case 0: break
+//                let changePass = ChangePassViewController.instantiate()
+//                changePass.currentPass = pass
+//                changePass.hidesBottomBarWhenPushed = true
+//                navigationController?.pushViewController(changePass, animated: true)
             case 1:
                 logout()
             default :

@@ -11,4 +11,14 @@ import Foundation
 struct Category: Equatable {
     var image: String
     var name: String
+    
+    init() {
+        self.image = ""
+        self.name = ""
+    }
+    
+    init(image: String, name: String) {
+        self.image = image
+        self.name = name
+    }
 }

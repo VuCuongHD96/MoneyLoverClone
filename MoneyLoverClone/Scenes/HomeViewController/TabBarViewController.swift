@@ -10,7 +10,7 @@ import UIKit
 import Then
 
 final class TabBarViewController: UITabBarController {
-
+    
     // MARK: - Outlet
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
         if viewController == tabBarController.viewControllers?[1] {
             let addTransactionScreen = AddTransactionTableViewController.instantiate()
             let navigationController = UINavigationController(rootViewController: addTransactionScreen)
+            navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true, completion: nil)
             return false
         }

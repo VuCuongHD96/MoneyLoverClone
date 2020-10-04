@@ -23,7 +23,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UiN-Ti-ESG">
-                    <rect key="frame" x="62" y="5.5" width="93" height="41"/>
+                    <rect key="frame" x="72" y="5.5" width="93" height="41"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thứ Bảy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn9-Sd-y1q">
                             <rect key="frame" x="0.0" y="0.0" width="93" height="20.5"/>
@@ -40,7 +40,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-6000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-1h-9ba">
-                    <rect key="frame" x="309.5" y="16" width="50.5" height="20.5"/>
+                    <rect key="frame" x="304.5" y="16" width="50.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -50,11 +50,11 @@
             <constraints>
                 <constraint firstItem="UiN-Ti-ESG" firstAttribute="height" secondItem="Wxe-zh-Se3" secondAttribute="height" multiplier="0.788462" id="0ka-XA-umy"/>
                 <constraint firstItem="Wxe-zh-Se3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Hpp-xR-Ynq"/>
-                <constraint firstItem="UiN-Ti-ESG" firstAttribute="leading" secondItem="Wxe-zh-Se3" secondAttribute="trailing" id="SlF-vV-08t"/>
+                <constraint firstItem="UiN-Ti-ESG" firstAttribute="leading" secondItem="Wxe-zh-Se3" secondAttribute="trailing" constant="10" id="SlF-vV-08t"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Wxe-zh-Se3" secondAttribute="bottom" id="TQu-q9-O5Z"/>
                 <constraint firstItem="6J0-1h-9ba" firstAttribute="centerY" secondItem="UiN-Ti-ESG" secondAttribute="centerY" id="U23-Lc-EGO"/>
                 <constraint firstItem="UiN-Ti-ESG" firstAttribute="centerY" secondItem="Wxe-zh-Se3" secondAttribute="centerY" id="gwg-nW-s56"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6J0-1h-9ba" secondAttribute="trailing" constant="10" id="sT0-8H-UEZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6J0-1h-9ba" secondAttribute="trailing" constant="15" id="sT0-8H-UEZ"/>
                 <constraint firstItem="Wxe-zh-Se3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xSq-Tt-SKn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

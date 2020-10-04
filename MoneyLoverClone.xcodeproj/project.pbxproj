@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016AEE825296C3D0030287F /* TransactionByDay.swift */; };
 		28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */; };
 		28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */; };
 		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
-		288747CC2525E7E400CA8467 /* ChangePassWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288747CB2525E7E400CA8467 /* ChangePassWord.storyboard */; };
-		288747CE2525E7EB00CA8467 /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288747CD2525E7EB00CA8467 /* ChangePassViewController.swift */; };
 		377D2E5377B6F52BCAD5B2B1 /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7B22FFD7E44F1914EB0BC6 /* Pods_MoneyLoverClone.framework */; };
 		4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA59251B23A500768482 /* Calendar.storyboard */; };
 		4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA5B251B23E600768482 /* CalendarViewController.swift */; };
@@ -53,6 +52,10 @@
 		4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4225136D9100A3B9BD /* Main.storyboard */; };
 		4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4525136D9300A3B9BD /* Assets.xcassets */; };
 		4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */; };
+		4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96E92526C7E9005A2FEC /* DBManager.swift */; };
+		4CCA96EC2526D750005A2FEC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EB2526D750005A2FEC /* Transaction.swift */; };
+		4CCA96EF25271C8F005A2FEC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EE25271C8F005A2FEC /* String+.swift */; };
+		4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96F025272C47005A2FEC /* TransactionType.swift */; };
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
@@ -71,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1016AEE825296C3D0030287F /* TransactionByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByDay.swift; sourceTree = "<group>"; };
 		28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
@@ -119,6 +123,10 @@
 		4CC87D4525136D9300A3B9BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CC87D4825136D9300A3B9BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CC87D4A25136D9300A3B9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CCA96E92526C7E9005A2FEC /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		4CCA96EB2526D750005A2FEC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		4CCA96EE25271C8F005A2FEC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		4CCA96F025272C47005A2FEC /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +135,6 @@
 		64CE459DB7AF58BF2A1696F5 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		9B7B22FFD7E44F1914EB0BC6 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-
-		C5AD981FA946395A40CAD712 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
-
-
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
 		CF4FD81E2525D5A20048CB0B /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10DA8AF62529F6AC00417FB0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				288747CD2525E7EB00CA8467 /* ChangePassViewController.swift */,
+				288747CB2525E7E400CA8467 /* ChangePassWord.storyboard */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		28617CD32519AD5300A9E4E0 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,15 +184,6 @@
 				28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		288747CA2525E7D400CA8467 /* ChangePassWord */ = {
-			isa = PBXGroup;
-			children = (
-				288747CB2525E7E400CA8467 /* ChangePassWord.storyboard */,
-				288747CD2525E7EB00CA8467 /* ChangePassViewController.swift */,
-			);
-			path = ChangePassWord;
 			sourceTree = "<group>";
 		};
 		4C30DA58251B238200768482 /* Calendar */ = {
@@ -233,10 +237,8 @@
 		4C6C53F325219CE400E7D3F0 /* AddEventScreen */ = {
 			isa = PBXGroup;
 			children = (
-
 				CF52DB552525C4720096585B /* AddEvent.storyboard */,
 				CF52DB562525C4760096585B /* AddEventTableViewController.swift */,
-
 			);
 			path = AddEventScreen;
 			sourceTree = "<group>";
@@ -293,6 +295,9 @@
 				4C4E29D7251DF69D0015E783 /* Event.swift */,
 				4C8E4BF12514B767005B238B /* Year.swift */,
 				4C30DA67251B460D00768482 /* Category.swift */,
+				4CCA96EB2526D750005A2FEC /* Transaction.swift */,
+				4CCA96F025272C47005A2FEC /* TransactionType.swift */,
+				1016AEE825296C3D0030287F /* TransactionByDay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,9 +312,7 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-
 				CF4FD81D2525D57C0048CB0B /* DetailEvent */,
-
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4C6C68D5252572270086BF55 /* ChoiseEvent */,
@@ -333,6 +336,7 @@
 		4C8E4BEA2514A911005B238B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4CCA96E82526C7C8005A2FEC /* DataBase */,
 				4C8E4BE52514A885005B238B /* Model */,
 				4C8E4BEE2514B65A005B238B /* Realm */,
 			);
@@ -404,6 +408,7 @@
 				4CC87D3A25136D9100A3B9BD /* Products */,
 				BF16F7A49D65BA1E1208B742 /* Pods */,
 				84A130F0B0283E333E2774C2 /* Frameworks */,
+				10DA8AF62529F6AC00417FB0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,10 +429,27 @@
 				4CE313A6251882F600553415 /* CustomView */,
 				4C8E4BE92514A8A8005B238B /* Scenes */,
 				4C8DB91425199F4700FABC11 /* Unit */,
+				4CCA96ED25271C75005A2FEC /* Extension */,
 				4C8E4BEC2514A961005B238B /* Resource */,
 				4CC87D4A25136D9300A3B9BD /* Info.plist */,
 			);
 			path = MoneyLoverClone;
+			sourceTree = "<group>";
+		};
+		4CCA96E82526C7C8005A2FEC /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA96E92526C7E9005A2FEC /* DBManager.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		4CCA96ED25271C75005A2FEC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA96EE25271C8F005A2FEC /* String+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		4CE313A325187E1000553415 /* AddTransaction */ = {
@@ -572,7 +594,6 @@
 			files = (
 				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
-				288747CC2525E7E400CA8467 /* ChangePassWord.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
 				4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */,
@@ -685,13 +706,16 @@
 			files = (
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
+				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
 				4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */,
-				288747CE2525E7EB00CA8467 /* ChangePassViewController.swift in Sources */,
+				4CCA96EC2526D750005A2FEC /* Transaction.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
+				4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */,
+				4CCA96EF25271C8F005A2FEC /* String+.swift in Sources */,
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */,
@@ -709,6 +733,7 @@
 				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
+				4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C6C53E925217D3800E7D3F0 /* EventIconViewController.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
@@ -791,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -845,7 +870,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
