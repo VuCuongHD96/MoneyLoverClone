@@ -21,4 +21,5 @@ struct Storyboard {
     static let account = UIStoryboard(name: "Account", bundle: nil)
     static let changepass = UIStoryboard(name: "ChangePassWord", bundle: nil)
     static let choiseEvent = UIStoryboard(name: "ChoiseEvent", bundle: nil)
+    static let detailEvent = UIStoryboard(name: "DetailEvent", bundle: nil)
 }

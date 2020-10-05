@@ -9,10 +9,11 @@
 import UIKit
 import Reusable
 
-class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EventViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tblEvent: UITableView!
     var listEvent = [Event]()
+    var database: DBManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         tblEvent.register(nib, forCellReuseIdentifier: "cellEvent")
     }
     
-     // MARK: - todo
     func getListEventData() {
-        
+        listEvent.append(Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
+        listEvent.append(Event(idEvent: 1, estimateDay: 0, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
+        listEvent.append(Event(idEvent: 1, estimateDay: 11, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
+        listEvent.append(Event(idEvent: 1, estimateDay: 10, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
     }
     
     @IBAction func addEventAction(_ sender: Any) {
@@ -36,12 +39,12 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         let navController = UINavigationController(rootViewController: addEventView)
         addEventView.isModalInPresentation = true
-        addEventView.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        addEventView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(navController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listEvent.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,14 +62,24 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
         cell!.cardView.layer.shadowColor = UIColor.black.cgColor
         return cell!
-
     }	
-
-       }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+    
+}
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 100
+}
 
 extension EventViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboard.event
+}
+
+extension EventViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let story = UIStoryboard(name: "DetailEvent", bundle: nil)
+        guard let detailEvent = story.instantiateViewController(identifier: "DetailEventViewController") as? TransactionsOfDetailViewController else {
+            print("err")
+            return
+        }
+        navigationController?.pushViewController(detailEvent, animated: true)
+    }
 }

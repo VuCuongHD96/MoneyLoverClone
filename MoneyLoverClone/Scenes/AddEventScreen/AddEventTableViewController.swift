@@ -114,8 +114,8 @@ class AddEventTableViewController: UITableViewController {
 
 extension AddEventTableViewController: ImageDelegate {
     func displayImage(data: String) {
-        imgIcon.image = UIImage(named: data ?? "")
-        imgString = data ?? ""
+        imgIcon.image = UIImage(named: data )
+        imgString = data
     }
 }
 

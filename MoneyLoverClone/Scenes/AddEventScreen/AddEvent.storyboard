@@ -31,18 +31,21 @@
                                                         <constraint firstAttribute="width" constant="1" id="NBV-Ct-yNr"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tên" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u00-ju-XJd">
-                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tên" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u00-ju-XJd">
+                                                    <rect key="frame" x="74" y="10" width="288" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="288" id="YG0-Z9-5un"/>
+                                                        <constraint firstAttribute="height" constant="24" id="itM-Mb-7BW"/>
+                                                    </constraints>
                                                     <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                                     <connections>
-                                                        <action selector="editText:" destination="n68-hM-aFD" eventType="editingChanged" id="iCc-Ll-7s4"/>
+                                                        <action selector="editText:" destination="n68-hM-aFD" eventType="editingChanged" id="avM-je-BdO"/>
                                                     </connections>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graycircle" translatesAutoresizingMaskIntoConstraints="NO" id="la8-1B-mI9">
-                                                    <rect key="frame" x="17" y="9.5" width="25" height="25"/>
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="ZMt-Fj-6fy"/>
                                                         <constraint firstAttribute="width" constant="25" id="a65-1O-Pmh"/>
@@ -50,10 +53,12 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="u00-ju-XJd" firstAttribute="leading" secondItem="la8-1B-mI9" secondAttribute="trailing" constant="29" id="0ZD-Gg-aGg"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jke-7N-OPb" secondAttribute="bottom" id="2LD-QT-QHC"/>
                                                 <constraint firstItem="la8-1B-mI9" firstAttribute="centerY" secondItem="u83-Ry-TLc" secondAttribute="centerY" id="8Sh-Sm-MF0"/>
-                                                <constraint firstItem="la8-1B-mI9" firstAttribute="leading" secondItem="u83-Ry-TLc" secondAttribute="leading" constant="17" id="Zsl-OV-oCt"/>
+                                                <constraint firstItem="la8-1B-mI9" firstAttribute="leading" secondItem="u83-Ry-TLc" secondAttribute="leading" constant="20" id="Zsl-OV-oCt"/>
                                                 <constraint firstItem="Jke-7N-OPb" firstAttribute="top" secondItem="u83-Ry-TLc" secondAttribute="top" id="b4H-9E-4m1"/>
+                                                <constraint firstItem="u00-ju-XJd" firstAttribute="centerY" secondItem="u83-Ry-TLc" secondAttribute="centerY" id="jA1-TI-5an"/>
                                                 <constraint firstItem="Jke-7N-OPb" firstAttribute="leading" secondItem="u83-Ry-TLc" secondAttribute="leading" constant="65" id="un1-1A-v16"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -66,30 +71,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ngày kết thúc" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-GR-0xO">
-                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ngày kết thúc" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-GR-0xO">
+                                                    <rect key="frame" x="74" y="9.5" width="288" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="22U-Ij-ieg"/>
+                                                        <constraint firstAttribute="width" constant="288" id="fvk-Y2-sTu"/>
+                                                    </constraints>
                                                     <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                                     <connections>
-                                                        <action selector="editText:" destination="n68-hM-aFD" eventType="editingChanged" id="OAO-Xu-PCq"/>
+                                                        <action selector="editText:" destination="n68-hM-aFD" eventType="editingChanged" id="ec9-VA-Pca"/>
                                                     </connections>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar-64" translatesAutoresizingMaskIntoConstraints="NO" id="dtS-hP-TEc">
-                                                    <rect key="frame" x="20" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="QMn-2q-vY1"/>
-                                                        <constraint firstAttribute="height" constant="20" id="Zr7-qy-if2"/>
+                                                        <constraint firstAttribute="height" constant="25" id="A0D-MK-lOi"/>
+                                                        <constraint firstAttribute="width" constant="25" id="ocF-cS-yqe"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="leading" secondItem="vjP-ND-bNl" secondAttribute="leading" constant="20" id="0Cd-gB-sit"/>
-                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="centerY" secondItem="vjP-ND-bNl" secondAttribute="centerY" id="a2s-SZ-QlK"/>
+                                                <constraint firstItem="mOa-GR-0xO" firstAttribute="leading" secondItem="dtS-hP-TEc" secondAttribute="trailing" constant="29" id="3P9-sA-ZJ1"/>
+                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="centerY" secondItem="vjP-ND-bNl" secondAttribute="centerY" id="UjS-8B-BQ4"/>
+                                                <constraint firstItem="mOa-GR-0xO" firstAttribute="centerY" secondItem="vjP-ND-bNl" secondAttribute="centerY" id="kUy-A9-Tcx"/>
+                                                <constraint firstItem="dtS-hP-TEc" firstAttribute="leading" secondItem="vjP-ND-bNl" secondAttribute="leading" constant="20" id="oIe-iH-zoV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="separatorInset" minX="66" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wLc-uj-3s8">
                                         <rect key="frame" x="0.0" y="105" width="375" height="43.5"/>
@@ -98,24 +108,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VND" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-4D-8aE">
-                                                    <rect key="frame" x="79" y="4" width="288" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VND" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-4D-8aE">
+                                                    <rect key="frame" x="74" y="9.5" width="288" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="288" id="cJe-0A-hwH"/>
+                                                        <constraint firstAttribute="height" constant="25" id="uAo-bl-KqP"/>
+                                                    </constraints>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vietnam" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-cD-xPV">
-                                                    <rect key="frame" x="20" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="UQ6-Nj-mWf"/>
-                                                        <constraint firstAttribute="height" constant="20" id="zHX-5s-rSX"/>
+                                                        <constraint firstAttribute="width" constant="25" id="7R2-vE-EXh"/>
+                                                        <constraint firstAttribute="height" constant="25" id="bgh-zp-o6X"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="leading" secondItem="43k-bW-vAv" secondAttribute="leading" constant="20" id="e9U-b7-SUp"/>
-                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="centerY" secondItem="43k-bW-vAv" secondAttribute="centerY" id="wgT-2S-c7R"/>
+                                                <constraint firstItem="7zH-4D-8aE" firstAttribute="leading" secondItem="eRz-cD-xPV" secondAttribute="trailing" constant="29" id="9Mo-zB-zbF"/>
+                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="leading" secondItem="43k-bW-vAv" secondAttribute="leading" constant="20" id="Jzx-RH-qi4"/>
+                                                <constraint firstItem="7zH-4D-8aE" firstAttribute="centerY" secondItem="43k-bW-vAv" secondAttribute="centerY" id="Zrh-s4-sYY"/>
+                                                <constraint firstItem="eRz-cD-xPV" firstAttribute="centerY" secondItem="43k-bW-vAv" secondAttribute="centerY" id="pmC-Jn-0xu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -130,9 +145,7 @@
                     <navigationItem key="navigationItem" title="Thêm sự kiện" largeTitleDisplayMode="never" id="Eby-RG-TNz">
                         <barButtonItem key="leftBarButtonItem" title="Hủy" id="Ifq-fj-UyN">
                             <connections>
-
                                 <action selector="cancelAction:" destination="n68-hM-aFD" id="Wz7-gv-9sa"/>
-
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc">
@@ -142,12 +155,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-
                         <outlet property="dateLabel" destination="mOa-GR-0xO" id="IVC-6x-Ddi"/>
                         <outlet property="imgIcon" destination="la8-1B-mI9" id="y4z-jT-3WA"/>
                         <outlet property="nameTextField" destination="u00-ju-XJd" id="HhZ-ZL-lCT"/>
                         <outlet property="saveButton" destination="6mW-mQ-emc" id="HMS-sR-DbT"/>
-
                         <outlet property="tblAddEvent" destination="kFu-q4-iID" id="YGJ-tD-Wfs"/>
                     </connections>
                 </tableViewController>
