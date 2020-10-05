@@ -1,16 +1,17 @@
 //
-//  ChangePassViewController.swift
+//  ChangePasswordViewController.swift
 //  MoneyLoverClone
 //
-//  Created by nguyen viet hoang on 9/29/20.
+//  Created by nguyen viet hoang on 10/5/20.
 //  Copyright © 2020 Vu Xuan Cuong. All rights reserved.
 //
 
 import UIKit
 import Reusable
+import Toast_Swift
 
-class ChangePassViewController: UIViewController {
-
+class ChangePasswordViewController: UIViewController {
+    
     @IBOutlet private weak var oldPassTextField: UITextField!
     @IBOutlet private weak var newPassTextField: UITextField!
     @IBOutlet private weak var confirmPassTextField: UITextField!
@@ -39,44 +40,30 @@ class ChangePassViewController: UIViewController {
         placeHolder = NSMutableAttributedString(string: placeHolderText, attributes: [.font: UIFont(name: "Helvetica", size: 16)!])
         textfield.attributedPlaceholder = placeHolder
     }
-
+    
     @IBAction func clickSave(_ sender: Any) {
         textNewPass = newPassTextField.text ?? ""
         textPass = oldPassTextField.text ?? ""
         textConfirm = confirmPassTextField.text ?? ""
         if textPass == currentPass {
             if textNewPass.isEmpty || textConfirm.isEmpty {
-                showAlert(message: "Mật khẩu không được để trống")
+                view.makeToast("Mật khẩu không được để trống")
             } else {
                 if textNewPass == textConfirm {
-                    currentPass = textNewPass
-                    showAlertSuccess()
+                    view.makeToast("Đổi mật khẩu thành công")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 } else {
-                    showAlert(message: "Mật khẩu không khớp")
+                    view.makeToast("Mật khẩu không khớp")
                 }
             }
         } else {
-            showAlert(message: "Nhập sai mật khẩu")
+            view.makeToast("Nhập sai mật khẩu")
         }
-    }
-    
-    func showAlertSuccess() {
-        let alert = UIAlertController(title: "Thông báo", message: "Đổi mật khẩu thành công thành công", preferredStyle: .alert)
-        present(alert, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            alert.dismiss(animated: true, completion: nil)
-            let accountScreen = AccountViewController.instantiate()
-            self.navigationController?.pushViewController(accountScreen, animated: true)
-        }
-    }
-    
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Nhắc nhở", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: nil))
-        present(alert, animated: true)
     }
 }
 
-extension ChangePassViewController: StoryboardSceneBased {
+extension ChangePasswordViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboard.changepass
 }

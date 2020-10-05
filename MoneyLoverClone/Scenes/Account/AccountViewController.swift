@@ -35,6 +35,8 @@ class AccountViewController: UIViewController {
     
     func setData() {
         accountImg.image = UIImage(named: "male")
+        accountImg.layer.cornerRadius = accountImg.frame.size.width / 2
+        accountImg.clipsToBounds = true
         nameLabel.text = "Việt Hoàng"
         gmailLable.text = "nguyenviethoang@gmail.com"
         gmailLable.textColor = .lightGray
@@ -116,11 +118,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             myIndex = indexPath.row
             switch myIndex {
-            case 0: break
-//                let changePass = ChangePassViewController.instantiate()
-//                changePass.currentPass = pass
-//                changePass.hidesBottomBarWhenPushed = true
-//                navigationController?.pushViewController(changePass, animated: true)
+            case 0:
+                let changePass = ChangePasswordViewController.instantiate()
+                changePass.currentPass = pass
+                changePass.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(changePass, animated: true)
             case 1:
                 logout()
             default :
