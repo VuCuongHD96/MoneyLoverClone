@@ -19,6 +19,6 @@ struct Storyboard {
     static let transactionDetail = UIStoryboard(name: "TransactionDetail", bundle: nil)
     static let addTransaction = UIStoryboard(name: "AddTransaction", bundle: nil)
     static let account = UIStoryboard(name: "Account", bundle: nil)
-    static let changepass = UIStoryboard(name: "ChangePassWord", bundle: nil)
+    static let changepass = UIStoryboard(name: "ChangePass", bundle: nil)
     static let choiseEvent = UIStoryboard(name: "ChoiseEvent", bundle: nil)
 }
