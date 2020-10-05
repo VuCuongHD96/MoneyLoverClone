@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,24 +17,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZZY-be-MOS">
-                        <rect key="frame" x="70" y="3" width="235" height="44"/>
+                        <rect key="frame" x="66" y="3" width="239" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-0G-mhd">
-                                <rect key="frame" x="0.0" y="0.0" width="235" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nhiều" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-TA-Qsv">
-                                <rect key="frame" x="0.0" y="23.5" width="235" height="20.5"/>
+                                <rect key="frame" x="0.0" y="23.5" width="239" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="internet" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-m6-Crt">
-                        <rect key="frame" x="15" y="5" width="40" height="40"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="internet" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-m6-Crt">
+                        <rect key="frame" x="15" y="7" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="GbW-m6-Crt" secondAttribute="height" id="cPI-jh-QLA"/>
                         </constraints>
@@ -47,10 +48,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JTe-9A-RIn" secondAttribute="trailing" constant="15" id="HzG-T7-tQi"/>
-                    <constraint firstItem="GbW-m6-Crt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qbn-jc-Ubp"/>
+                    <constraint firstItem="GbW-m6-Crt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Qbn-jc-Ubp"/>
                     <constraint firstItem="ZZY-be-MOS" firstAttribute="centerY" secondItem="GbW-m6-Crt" secondAttribute="centerY" id="gpd-ee-2Fe"/>
                     <constraint firstItem="ZZY-be-MOS" firstAttribute="leading" secondItem="GbW-m6-Crt" secondAttribute="trailing" constant="15" id="lCt-v7-Mba"/>
-                    <constraint firstAttribute="bottom" secondItem="GbW-m6-Crt" secondAttribute="bottom" constant="5" id="luw-EZ-wQn"/>
+                    <constraint firstAttribute="bottom" secondItem="GbW-m6-Crt" secondAttribute="bottom" constant="7" id="luw-EZ-wQn"/>
                     <constraint firstItem="JTe-9A-RIn" firstAttribute="centerY" secondItem="aBY-0G-mhd" secondAttribute="centerY" id="oNK-oc-m3m"/>
                     <constraint firstItem="GbW-m6-Crt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="skh-dk-MO0"/>
                     <constraint firstItem="eGk-TA-Qsv" firstAttribute="trailing" secondItem="JTe-9A-RIn" secondAttribute="trailing" id="zCC-bb-r6f"/>

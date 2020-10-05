@@ -15,7 +15,7 @@ final class TransactionDetailTableViewController: UITableViewController {
     // MARK: - Outlet
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var categoryNameLabel: UILabel!
-    @IBOutlet private weak var noteLabel: UILabel!
+    @IBOutlet private weak var noteTextField: UITextField!
     @IBOutlet private weak var moneyLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var eventImageView: UIImageView!
@@ -26,6 +26,8 @@ final class TransactionDetailTableViewController: UITableViewController {
     // MARK: - Properties
     let formatter = DateFormatter()
     let today = Date()
+    var transaction = Transaction()
+    var database: DBManager!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -36,7 +38,6 @@ final class TransactionDetailTableViewController: UITableViewController {
     
     // MARK: - Views
     private func setupView() {
-        dateLabel.text = formatter.string(from: today)
         let deleteButtonAttributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .foregroundColor: UIColor.red
@@ -47,6 +48,14 @@ final class TransactionDetailTableViewController: UITableViewController {
         fixButton.do {
             $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
         }
+        let transactionTypeString = transaction.type
+        guard let transactionType = TransactionType(rawValue: transactionTypeString) else { return }
+        switch transactionType {
+        case .expendsed:
+            moneyLabel.textColor = .systemRed
+        case .income:
+            moneyLabel.textColor = .systemBlue
+        }
     }
     
     // MARK: - Data
@@ -56,35 +65,32 @@ final class TransactionDetailTableViewController: UITableViewController {
             $0.dateStyle = .full
             $0.locale = locale
         }
-        let eventTextFieldAction = UITapGestureRecognizer(target: self, action: #selector(eventTextFieldTapped(_:)))
-        eventTextField.do {
-            $0.isUserInteractionEnabled = true
-            $0.addGestureRecognizer(eventTextFieldAction)
-        }
+        database = DBManager.shared
+        let category = database.fetchCategory(from: transaction.categoryID)
+        categoryImageView.image = UIImage(named: category.image)
+        categoryNameLabel.text = category.name
+        moneyLabel.text = transaction.money.convertToMoneyFormat()
+        dateLabel.text = formatter.string(from: transaction.date)
+        noteTextField.text = transaction.note
     }
     
     // MARK: - Action
     @IBAction func fixAction(_ sender: Any) {
         let transactionScreen = AddTransactionTableViewController.instantiate()
         let navigationController = UINavigationController(rootViewController: transactionScreen)
-        let moneyString = moneyLabel.text ?? "0"
-        transactionScreen.money = moneyString
         present(navigationController, animated: true)
     }
     
-    @objc func eventTextFieldTapped(_ sender: UITapGestureRecognizer) {
-        let eventScreen = EventViewController.instantiate()
-        navigationController?.pushViewController(eventScreen, animated: true)
-    }
-
     @IBAction func deleteAction(_ sender: Any) {
         confirmDelete()
     }
     
     private func confirmDelete() {
         let alert = UIAlertController(title: nil, message: "Xoá giao dịch này?", preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "Xoá", style: .default) { _ in
-            // MARK: - Todo
+        let deleteAction = UIAlertAction(title: "Xoá", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.database.deleteTransaction(self.transaction)
+            self.navigationController?.popViewController(animated: true)
         }
         deleteAction.setValue(UIColor.red, forKey: "titleTextColor")
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)

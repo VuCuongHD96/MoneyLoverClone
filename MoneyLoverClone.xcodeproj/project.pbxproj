@@ -54,8 +54,9 @@
 		4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */; };
 		4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96E92526C7E9005A2FEC /* DBManager.swift */; };
 		4CCA96EC2526D750005A2FEC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EB2526D750005A2FEC /* Transaction.swift */; };
-		4CCA96EF25271C8F005A2FEC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EE25271C8F005A2FEC /* String+.swift */; };
 		4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96F025272C47005A2FEC /* TransactionType.swift */; };
+		4CE2DF2C252AB935009D32E5 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DF2B252AB935009D32E5 /* Int+.swift */; };
+		4CE2DF2E252AC67E009D32E5 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DF2D252AC67E009D32E5 /* String+.swift */; };
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
@@ -125,8 +126,9 @@
 		4CC87D4A25136D9300A3B9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCA96E92526C7E9005A2FEC /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		4CCA96EB2526D750005A2FEC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		4CCA96EE25271C8F005A2FEC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		4CCA96F025272C47005A2FEC /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		4CE2DF2B252AB935009D32E5 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		4CE2DF2D252AC67E009D32E5 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		4CE313A0251852F000553415 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
@@ -447,7 +449,8 @@
 		4CCA96ED25271C75005A2FEC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA96EE25271C8F005A2FEC /* String+.swift */,
+				4CE2DF2B252AB935009D32E5 /* Int+.swift */,
+				4CE2DF2D252AC67E009D32E5 /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -715,7 +718,6 @@
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
 				4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */,
-				4CCA96EF25271C8F005A2FEC /* String+.swift in Sources */,
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */,
@@ -725,9 +727,11 @@
 				4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */,
+				4CE2DF2C252AB935009D32E5 /* Int+.swift in Sources */,
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
 				4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
+				4CE2DF2E252AC67E009D32E5 /* String+.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
 				CF52DB502525C3E00096585B /* EventViewController.swift in Sources */,
 				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,

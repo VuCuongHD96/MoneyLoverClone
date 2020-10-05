@@ -41,7 +41,7 @@ final class ChoiseEventTableViewController: UITableViewController {
         categoryArray = nsDictionary.map {
             let imageString = $0.key as? String ?? ""
             let name = $0.value as? String ?? ""
-            let category = Category(image: imageString, name: name)
+            let category = Category(image: imageString, name: name, transactionType: "income")
             return category
         }
     }

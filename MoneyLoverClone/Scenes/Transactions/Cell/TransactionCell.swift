@@ -17,9 +17,18 @@ final class TransactionCell: UITableViewCell, NibReusable {
     @IBOutlet private weak var noteLabel: UILabel!
     @IBOutlet private weak var costLabel: UILabel!
     
+    // MARK: - Properties
+    var database: DBManager?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupData()
         setupView()
+    }
+    
+    // MARK: - Data
+    private func setupData() {
+        database = DBManager.shared
     }
     
     // MARK: - View
@@ -38,27 +47,14 @@ final class TransactionCell: UITableViewCell, NibReusable {
     
     // MARK: - Data
     func setcontent(data: Transaction) {
-        categoryImageView.image = UIImage(named: data.category)
+        guard let category = database?.fetchCategory(from: data.categoryID) else { return }
+        categoryImageView.image = UIImage(named: category.image)
+        categoryNameLabel.text = category.name
         noteLabel.text = data.note
-        costLabel.text = String(data.money).convertToMoneyFormat()
+        costLabel.text = data.money.convertToMoneyFormat()
         guard let transactionType = TransactionType(rawValue: data.type) else {
             return
         }
         setupCostColor(transactionType)
-        switch transactionType {
-        case .expendsed:
-            fetchCategoryData(from: "ExpenseArray", category: data.category)
-        case .income:
-            fetchCategoryData(from: "RevenueArray", category: data.category)
-        }
-    }
-    
-    private func fetchCategoryData(from name: String, category: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let categoryDictionary = NSDictionary(contentsOfFile: path) else { return }
-        guard let categoryName = categoryDictionary[category] as? String else {
-            return
-        }
-        categoryNameLabel.text = categoryName
     }
 }

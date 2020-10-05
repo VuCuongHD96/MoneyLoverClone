@@ -23,12 +23,9 @@ final class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
     
     // MARK: - Properties
-    var money = "0"
-    var category: Category!
-    var segmentIndex = 0
+    var category = Category()
     var date = Date()
     let formatter = DateFormatter()
-    var transactionType: TransactionType!
     var dataManager: DBManager!
     
     // MARK: - Life Cycle
@@ -78,13 +75,11 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.locale = locale
         }
         moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
-        moneyTextField.text = money
         dataManager = DBManager.shared
     }
     
     private func setupMoneyLabel() {
         let moneyString = moneyTextField.text ?? ""
-        money = moneyString
         moneyTextField.do {
             $0.text = moneyString.convertToMoneyFormat()
             $0.resignFirstResponder()
@@ -101,13 +96,10 @@ final class AddTransactionTableViewController: UITableViewController {
     }
     
     private func getTransaction() -> Transaction {
-        let moneyString = money
-        let moneyNumber = Int(moneyString) ?? 0
-        let categoryImage = category.image
+        let money = moneyTextField.text?.convertToInt() ?? 0
         let note = noteTextField.text
         let dateSelected = date
-        transactionType = segmentIndex == 0 ? .expendsed : .income
-        return Transaction(money: moneyNumber, category: categoryImage, note: note, date: dateSelected, idEvent: nil, transactionType: transactionType)
+        return Transaction(money: money, categoryID: category.identify, note: note, date: dateSelected, idEvent: nil, transactionType: category.transactionType)
     }
     
     // MARK: - Action
@@ -118,9 +110,7 @@ final class AddTransactionTableViewController: UITableViewController {
             self.categoryImageView.image = UIImage(named: $0.image)
             self.categoryNameTextField.text = $0.name
             self.category = $0
-            self.segmentIndex = $1
         }
-        categoryScreen.segmentIndex = segmentIndex
         categoryScreen.categorySelected = category
         navigationController?.pushViewController(categoryScreen, animated: true)
     }
