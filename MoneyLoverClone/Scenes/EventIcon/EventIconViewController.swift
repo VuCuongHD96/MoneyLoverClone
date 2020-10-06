@@ -24,30 +24,31 @@ final class EventIconViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-
     weak var delegate: ImageDelegate?
     typealias Handler = (Category) -> Void
     var categoryDidChoise: Handler?
+    var database: DBManager!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCategoryData(from: "ExpenseArray")
+        setupView()
+        setupData()
+    }
+    
+    // MARK: - Data
+    private func setupView() {
+        navigationItem.title = "Chọn Biểu Tượng"
+    }
+    
+    // MARK: - Data
+    private func setupData() {
+        database = DBManager.shared
+        categoryArray = database.fetchCategorys()
         collectionView.do {
             $0.dataSource = self
             $0.delegate = self
             $0.register(cellType: CategoryIconCell.self)
-        }
-    }
-    
-    private func fetchCategoryData(from name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let nsDictionary = NSDictionary(contentsOfFile: path) else { return }
-        categoryArray = nsDictionary.map {
-            let imageString = $0.key as? String ?? ""
-            let name = $0.value as? String ?? ""
-            let category = Category(image: imageString, name: name, transactionType: "income")
-            return category
         }
     }
 }
@@ -76,7 +77,9 @@ extension EventIconViewController: UICollectionViewDelegateFlowLayout {
         return Constant.lineSpacing
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constant.cellSpacing
     }
 }
@@ -84,10 +87,7 @@ extension EventIconViewController: UICollectionViewDelegateFlowLayout {
 extension EventIconViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = categoryArray[indexPath.row]
-        let nameImage = category.image
         categoryDidChoise?(category)
-        delegate!.displayImage(data: nameImage)
-        self.navigationController?.popViewController(animated: true)
-        
+        navigationController?.popViewController(animated: true)
     }
 }

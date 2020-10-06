@@ -14,49 +14,54 @@ final class ChoiseEventTableViewController: UITableViewController {
     // MARK: - Properties
     struct Constant {
         static let cellHeight: CGFloat = 50
-
+        static let numberOfSection = 2
     }
-    var categoryArray = [Category]()
-    typealias Handler = (Category) -> Void
-    var passData: Handler?
+    var eventArray = [Event]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    typealias Handler = (Event) -> Void
+    var eventDidChoise: Handler?
+    var database: DBManager!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
+        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        eventArray = database.fetchEvents()
     }
     
     // MARK: - Data
     private func setupData() {
         tableView.do {
-            $0.register(cellType: CategoryCell.self)
+            $0.register(cellType: ChoiseEventCell.self)
             $0.register(cellType: AddEventCell.self)
         }
-        fetchCategoryData(from: "RevenueArray")
+        database = DBManager.shared
     }
     
-    private func fetchCategoryData(from name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let nsDictionary = NSDictionary(contentsOfFile: path) else { return }
-        categoryArray = nsDictionary.map {
-            let imageString = $0.key as? String ?? ""
-            let name = $0.value as? String ?? ""
-            let category = Category(image: imageString, name: name, transactionType: "income")
-            return category
-        }
+    // MARK: - View
+    private func setupView() {
+        navigationItem.title = "Chọn Sự Kiện"
     }
 }
 
 // MARK: - TableView Datasource
 extension ChoiseEventTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return Constant.numberOfSection
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return categoryArray.count
+            return eventArray.count
         case 1:
             return 1
         default:
@@ -68,9 +73,9 @@ extension ChoiseEventTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell: CategoryCell = tableView.dequeueReusableCell(for: indexPath)
-            let category = categoryArray[indexPath.row]
-            cell.setContent(data: category)
+            let cell: ChoiseEventCell = tableView.dequeueReusableCell(for: indexPath)
+            let event = eventArray[indexPath.row]
+            cell.setContent(data: event)
             return cell
         case 1:
             let addCell: AddEventCell = tableView.dequeueReusableCell(for: indexPath)
@@ -89,8 +94,9 @@ extension ChoiseEventTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let category = categoryArray[indexPath.row]
-            passData?(category)
+            let event = eventArray[indexPath.row]
+            eventDidChoise?(event)
+            navigationController?.popViewController(animated: true)
         case 1:
             let addEventScreen = AddEventTableViewController.instantiate()
             let navigationController = UINavigationController(rootViewController: addEventScreen)

@@ -21,10 +21,13 @@ class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var categoryNameTextField: UITextField!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
+    @IBOutlet private weak var eventImageView: UIImageView!
+    @IBOutlet private weak var eventNameTextField: UITextField!
     
     // MARK: - Properties
     var category = Category()
     var date = Date()
+    var event: Event!
     let formatter = DateFormatter()
     var database: DBManager!
     var transaction: Transaction?
@@ -101,6 +104,10 @@ class AddTransactionTableViewController: UITableViewController {
         dateLabel.text = formatter.string(from: transaction.date)
         date = transaction.date
         noteTextField.text = transaction.note
+        guard let idEvent = transaction.idEvent else { return }
+        event = database.fetchObject(from: idEvent)
+        eventImageView.image = UIImage(named: event.image)
+        eventNameTextField.text = event.name
     }
     
     private func setupMoneyLabel() {
@@ -123,7 +130,10 @@ class AddTransactionTableViewController: UITableViewController {
     private func getTransaction() -> Transaction {
         let money = moneyTextField.text?.convertToInt() ?? 0
         let note = noteTextField.text
-        return Transaction(money: money, categoryID: category.identify, note: note, date: date, idEvent: nil, transactionType: category.transactionType)
+        if event == nil {
+            return Transaction(money: money, categoryID: category.identify, note: note, date: date, transactionType: category.transactionType)
+        }
+        return Transaction(money: money, categoryID: category.identify, note: note, date: date, idEvent: event.identify, transactionType: category.transactionType)
     }
     
     // MARK: - Action
@@ -181,6 +191,12 @@ class AddTransactionTableViewController: UITableViewController {
     
     private func choiseEvent() {
         let choiseEventScreen = ChoiseEventTableViewController.instantiate()
+        choiseEventScreen.eventDidChoise = { [weak self] in
+            guard let self = self else { return }
+            self.eventImageView.image = UIImage(named: $0.image)
+            self.eventNameTextField.text = $0.name
+            self.event = $0
+        }
         navigationController?.pushViewController(choiseEventScreen, animated: true)
     }
     

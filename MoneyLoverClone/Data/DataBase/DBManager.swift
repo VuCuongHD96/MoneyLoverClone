@@ -38,6 +38,14 @@ class DBManager {
         return object
     }
     
+    // MARK: - Event
+    func fetchEvents() -> [Event] {
+        guard let arrayResult = database?.objects(Event.self) else {
+            return [Event]()
+        }
+        return Array(arrayResult)
+    }
+    
     // MARK: - Transaction
     func fetchTransactions() -> [Transaction] {
         guard var arrayResult = database?.objects(Transaction.self) else {

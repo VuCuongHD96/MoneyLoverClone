@@ -21,6 +21,7 @@ class AddEventTableViewController: UITableViewController {
     let formatter = DateFormatter()
     let formattershort = DateFormatter()
     var imgString = ""
+    var database: DBManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class AddEventTableViewController: UITableViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgIcon.isUserInteractionEnabled = true
         imgIcon.addGestureRecognizer(tapGestureRecognizer)
+        database = DBManager.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,9 +43,13 @@ class AddEventTableViewController: UITableViewController {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let eventInstatiate = EventIconViewController.instantiate()
-        eventInstatiate.delegate = self
-        navigationController?.pushViewController(eventInstatiate, animated: true)
+        let eventIconScreen = EventIconViewController.instantiate()
+        eventIconScreen.categoryDidChoise = { [weak self] in
+            guard let self = self else { return }
+            self.imgIcon.image = UIImage(named: $0.image)
+            self.imgString = $0.image
+        }
+        navigationController?.pushViewController(eventIconScreen, animated: true)
     }
     
     private func setupDate() {
@@ -72,31 +78,23 @@ class AddEventTableViewController: UITableViewController {
     }
     
     @IBAction func btnSave(_ sender: Any) {
-        let event = getEvent()
+        let name = nameTextField.text ?? ""
+        guard let date = formatter.date(from: dateLabel.text ?? "") else { return }
+        let event = Event(name: name, image: imgString, endDate: date)
+        database.save(event)
+        dismiss(animated: true, completion: nil)
     }
-    
-    private func getEvent() -> Event {
-        let idEvent = Event.incrementaID()
-        let endDate = formatter.date(from: dateLabel.text ?? "")
-        let estimateDay = self.estimateDay(endDate: endDate ?? Date())
-        let cash = 0.0
-        guard let nameEvent = nameTextField.text
-        else {
-            return Event(value: "")
-        }
-        return Event(idEvent: idEvent, estimateDay: estimateDay, nameEvent: nameEvent, imgEvent: imgString, cash: Float(cash), inProgress: true, endDate: endDate ?? Date())
-    }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         switch row {
         case 1:
             let calendarScreen = CalendarViewController.instantiate()
+            calendarScreen.choiseDateEvent = true
             navigationController?.pushViewController(calendarScreen, animated: true)
             calendarScreen.passDate = {
                 let dateString = self.formatter.string(from: $0)
                 self.dateLabel.text = dateString
-                self.dateLabel.textColor = UIColor.black
             }
         default:
             print("")
@@ -105,7 +103,7 @@ class AddEventTableViewController: UITableViewController {
     
     @IBAction func editText(_ sender: Any) {
         nameTextField.textColor = .black
-        if nameTextField.text?.isEmpty ?? false || dateLabel.text == "Ngày kết thúc" {
+        if nameTextField.text?.isEmpty ?? false || dateLabel.text?.isEmpty == true {
             saveButton.isEnabled = false
         } else {
             saveButton.isEnabled = true
