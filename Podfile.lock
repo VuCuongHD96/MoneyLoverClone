@@ -108,6 +108,7 @@ PODS:
   - SwiftDate (6.2.0)
   - SwiftLint (0.40.3)
   - Then (2.7.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -120,6 +121,7 @@ DEPENDENCIES:
   - SwiftDate
   - SwiftLint
   - Then
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -148,6 +150,7 @@ SPEC REPOS:
     - SwiftDate
     - SwiftLint
     - Then
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -175,7 +178,8 @@ SPEC CHECKSUMS:
   SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fe0053b3d97610d9218ca69dc39ee99f215d6709
+PODFILE CHECKSUM: 0fa480dbe3df69454678128338d8697a67c070ca
 
 COCOAPODS: 1.9.3

@@ -11,7 +11,7 @@ import SwiftDate
 import Then
 import Reusable
 
-final class AddTransactionTableViewController: UITableViewController {
+class AddTransactionTableViewController: UITableViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var dateLabel: UILabel!
@@ -26,32 +26,30 @@ final class AddTransactionTableViewController: UITableViewController {
     var category = Category()
     var date = Date()
     let formatter = DateFormatter()
-    var dataManager: DBManager!
+    var database: DBManager!
+    var transaction: Transaction?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setupView()
+        setupData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "Thêm giao dịch"
         dataIsValid()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationItem.title = "Quay lại"
         setupMoneyLabel()
         moneyTextField.resignFirstResponder()
     }
     
     // MARK: - Views
     private func setupView() {
-        let todayDateString = formatter.string(from: date)
-        dateLabel.text = todayDateString
+        navigationItem.title = "Thêm giao dịch"
         let customKeyboard = NumericKeyboard(target: moneyTextField)
         customKeyboard.doneEdit = { [weak self] in
             guard let self = self else { return }
@@ -74,8 +72,35 @@ final class AddTransactionTableViewController: UITableViewController {
             $0.dateStyle = .full
             $0.locale = locale
         }
+        let todayDateString = formatter.string(from: date)
+        dateLabel.text = todayDateString
         moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
-        dataManager = DBManager.shared
+        database = DBManager.shared
+        if transaction != nil {
+            prepareForUpdate()
+        }
+    }
+    
+    private func prepareForUpdate() {
+        navigationItem.title = "Sửa giao dịch"
+        saveButton.action = #selector(updateTransaction)
+        navigationItem.rightBarButtonItem?.title = "Cập nhật"
+        setupTransactionData()
+    }
+    
+    private func setupTransactionData() {
+        guard var transaction = transaction else {
+            return
+        }
+        transaction = database.fetchObject(from: transaction.identify)
+        let categoryFetch = database.fetchCategory(from: transaction.categoryID)
+        self.category = categoryFetch
+        categoryImageView.image = UIImage(named: categoryFetch.image)
+        categoryNameTextField.text = categoryFetch.name
+        moneyTextField.text = String(transaction.money).convertToMoneyFormat()
+        dateLabel.text = formatter.string(from: transaction.date)
+        date = transaction.date
+        noteTextField.text = transaction.note
     }
     
     private func setupMoneyLabel() {
@@ -98,8 +123,7 @@ final class AddTransactionTableViewController: UITableViewController {
     private func getTransaction() -> Transaction {
         let money = moneyTextField.text?.convertToInt() ?? 0
         let note = noteTextField.text
-        let dateSelected = date
-        return Transaction(money: money, categoryID: category.identify, note: note, date: dateSelected, idEvent: nil, transactionType: category.transactionType)
+        return Transaction(money: money, categoryID: category.identify, note: note, date: date, idEvent: nil, transactionType: category.transactionType)
     }
     
     // MARK: - Action
@@ -160,9 +184,19 @@ final class AddTransactionTableViewController: UITableViewController {
         navigationController?.pushViewController(choiseEventScreen, animated: true)
     }
     
+    @objc private func updateTransaction() {
+        guard let transaction = transaction else {
+            return
+        }
+        let transactionToUpdate = getTransaction()
+        transactionToUpdate.identify = transaction.identify 
+        database.save(transactionToUpdate)
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func saveAction(_ sender: Any) {
         let transaction = getTransaction()
-        dataManager.saveTransaction(transaction)
+        database.save(transaction)
         dismiss(animated: true, completion: nil)
     }
     

@@ -7,18 +7,20 @@ target 'MoneyLoverClone' do
 
   # Pods for MoneyLoverClone
 
-	pod 'RealmSwift'
-  	pod 'SwiftLint'
- 	pod 'Reusable'
-  	pod 'Then'
+  pod 'SwiftLint'
+  pod 'Reusable'
+  pod 'Then'
+  pod 'Toast-Swift', '~> 5.0.1'
 
-	pod 'Firebase/Core'
-	pod 'Firebase/Database'
+  pod 'RealmSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
-	pod 'FBSDKLoginKit'   
-	pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
-	pod 'SwiftDate'
-	pod 'FSCalendar'
+  pod 'SwiftDate'
+  pod 'FSCalendar'
 
+  
 end
