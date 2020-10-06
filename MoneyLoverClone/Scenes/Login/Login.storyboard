@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UEL-Ca-H31">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="sst-To-arH">
+            <objects>
+                <viewController id="DFa-jV-DAz" customClass="LoginViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o12-l1-ZsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="na2-1Z-CFz" customClass="GIDSignInButton">
+                                <rect key="frame" x="69" y="632" width="276" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jUd-Fk-C0I"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reward" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-ak-WTI">
+                                <rect key="frame" x="0.0" y="214" width="414" height="358"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-I7-aZf">
+                                <rect key="frame" x="83" y="138" width="248" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhg-N3-eIk">
+                                <rect key="frame" x="69" y="707" width="276" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookSignInButton:" destination="DFa-jV-DAz" eventType="touchUpInside" id="fKx-VK-IjA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nhg-N3-eIk" firstAttribute="width" secondItem="na2-1Z-CFz" secondAttribute="width" id="0Jb-5J-UB0"/>
+                            <constraint firstItem="nhg-N3-eIk" firstAttribute="height" secondItem="na2-1Z-CFz" secondAttribute="height" id="9Pq-DK-z3s"/>
+                            <constraint firstItem="geZ-I7-aZf" firstAttribute="centerX" secondItem="o12-l1-ZsS" secondAttribute="centerX" id="Cf6-hU-lj5"/>
+                            <constraint firstItem="geZ-I7-aZf" firstAttribute="top" secondItem="CQw-8K-Rl9" secondAttribute="top" constant="50" id="DiH-BT-czG"/>
+                            <constraint firstItem="na2-1Z-CFz" firstAttribute="width" secondItem="o12-l1-ZsS" secondAttribute="width" multiplier="0.666667" id="FA0-vJ-zzl"/>
+                            <constraint firstItem="MeV-ak-WTI" firstAttribute="height" secondItem="o12-l1-ZsS" secondAttribute="height" multiplier="0.4" id="JJa-k9-LOO"/>
+                            <constraint firstItem="geZ-I7-aZf" firstAttribute="height" secondItem="o12-l1-ZsS" secondAttribute="height" multiplier="0.04" id="R8v-F3-m5N"/>
+                            <constraint firstItem="MeV-ak-WTI" firstAttribute="top" secondItem="geZ-I7-aZf" secondAttribute="bottom" constant="40" id="SCS-4N-5bn"/>
+                            <constraint firstItem="nhg-N3-eIk" firstAttribute="centerX" secondItem="o12-l1-ZsS" secondAttribute="centerX" id="WKa-R8-7Py"/>
+                            <constraint firstItem="na2-1Z-CFz" firstAttribute="centerX" secondItem="o12-l1-ZsS" secondAttribute="centerX" id="ZZ9-oY-AU5"/>
+                            <constraint firstItem="nhg-N3-eIk" firstAttribute="top" secondItem="na2-1Z-CFz" secondAttribute="bottom" constant="15" id="hDj-ob-i2N"/>
+                            <constraint firstItem="MeV-ak-WTI" firstAttribute="leading" secondItem="CQw-8K-Rl9" secondAttribute="leading" id="jMX-tc-lXa"/>
+                            <constraint firstItem="na2-1Z-CFz" firstAttribute="top" secondItem="MeV-ak-WTI" secondAttribute="bottom" constant="60" id="pK8-mI-2L9"/>
+                            <constraint firstItem="CQw-8K-Rl9" firstAttribute="trailing" secondItem="MeV-ak-WTI" secondAttribute="trailing" id="tep-jY-DIh"/>
+                            <constraint firstItem="geZ-I7-aZf" firstAttribute="width" secondItem="o12-l1-ZsS" secondAttribute="width" multiplier="0.6" id="ziq-t5-OIu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CQw-8K-Rl9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hNK-Ez-h4k"/>
+                    <connections>
+                        <outlet property="googleSignButton" destination="na2-1Z-CFz" id="ajN-zI-HON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysQ-M8-jtf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.057971014493" y="76.339285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jV7-nJ-AIO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UEL-Ca-H31" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eNA-bh-xpw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DFa-jV-DAz" kind="relationship" relationship="rootViewController" id="euS-kW-0iR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxE-Op-Ppc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="76"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="reward" width="32" height="32"/>
+    </resources>
+</document>

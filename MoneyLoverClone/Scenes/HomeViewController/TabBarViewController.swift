@@ -8,6 +8,7 @@
 
 import UIKit
 import Then
+import Reusable
 
 final class TabBarViewController: UITabBarController {
 
