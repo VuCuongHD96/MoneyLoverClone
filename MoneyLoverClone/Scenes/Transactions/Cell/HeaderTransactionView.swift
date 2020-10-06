@@ -26,7 +26,7 @@ final class HeaderTransactionView: UIView {
     
     // MARK: - Data
     func setContent(data: TransactionByDay) {
-        moneyLabel.text = String(data.summaryMoney).convertToMoneyFormat()
+        moneyLabel.text = data.summaryMoney.convertToMoneyFormat()
         setupTime(from: data.date)
     }
     

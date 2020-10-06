@@ -7,18 +7,23 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Category: Equatable {
-    var image: String
-    var name: String
-    
-    init() {
-        self.image = ""
-        self.name = ""
-    }
-    
-    init(image: String, name: String) {
+class Category: Object {
+    @objc dynamic var identify = ""
+    @objc dynamic var image = ""
+    @objc dynamic var name = ""
+    @objc dynamic var transactionType = ""
+
+    convenience init(image: String, name: String, transactionType: String) {
+        self.init()
+        self.identify = UUID().uuidString
         self.image = image
         self.name = name
+        self.transactionType = transactionType
+    }
+    
+    override class func primaryKey() -> String? {
+        return "identify"
     }
 }

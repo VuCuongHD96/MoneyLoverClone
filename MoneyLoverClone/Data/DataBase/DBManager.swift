@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class DBManager {
+    // MARK: - Setup Database
     static let shared = DBManager()
     private var database: Realm!
     
@@ -17,6 +18,7 @@ class DBManager {
         database = try? Realm()
     }
     
+    // MARK: - Transaction
     func saveTransaction(_ transaction: Transaction) {
         try? database?.write {
             database?.add(transaction)
@@ -29,5 +31,53 @@ class DBManager {
         }
         arrayResult = arrayResult.sorted(byKeyPath: "date", ascending: false)
         return Array(arrayResult)
+    }
+    
+    func deleteTransaction(_ transaction: Transaction) {
+        try? database.write {
+            database.delete(database.objects(Transaction.self).filter("identify=%@", transaction.identify))
+        }
+    }
+    
+    // MARK: - Category
+    func saveCategory(_ category: Category) {
+        try? database?.write {
+            database?.add(category)
+        }
+    }
+    
+    func fetchCategory(from identify: String) -> Category {
+        let result = database.objects(Category.self).filter("identify == %@", identify)
+        guard let category = result.first else {
+            return Category()
+        }
+        return category
+    }
+    
+    func fetchCategorys() -> [Category] {
+        guard let arrayResult = database?.objects(Category.self),
+            arrayResult.isEmpty != true else {
+            setupCategoryData()
+            return fetchCategorys()
+        }
+        return Array(arrayResult)
+    }
+    
+    func setupCategoryData() {
+        saveCategoryToRealm(from: "ExpenseArray", type: "expendsed")
+        saveCategoryToRealm(from: "RevenueArray", type: "income")
+    }
+    
+    private func saveCategoryToRealm(from name: String, type: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let categoryDictionary = NSDictionary(contentsOfFile: path) else { return }
+        categoryDictionary.forEach {
+            let categoryImage = $0.key as? String ?? ""
+            let categoryName = $0.value as? String ?? ""
+            let category = Category(image: categoryImage, name: categoryName, transactionType: type)
+            try? database.write {
+                database.add(category)
+            }
+        }
     }
 }

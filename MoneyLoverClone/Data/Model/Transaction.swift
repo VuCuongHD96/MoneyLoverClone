@@ -10,26 +10,26 @@ import Foundation
 import RealmSwift
 
 class Transaction: Object {
-    @objc dynamic var idTransaction = ""
+    @objc dynamic var identify = ""
     @objc dynamic var money = 0
-    @objc dynamic var category = ""
+    @objc dynamic var categoryID = ""
     @objc dynamic var note: String?
     @objc dynamic var date = Date()
     @objc dynamic var idEvent: String?
     @objc dynamic var type = ""
     
-    convenience init(money: Int, category: String, note: String? = nil, date: Date, idEvent: String? = nil, transactionType: TransactionType) {
+    convenience init(money: Int, categoryID: String, note: String? = nil, date: Date, idEvent: String? = nil, transactionType: String) {
         self.init()
-        self.idTransaction = UUID().uuidString
+        self.identify = UUID().uuidString
         self.money = money
-        self.category = category
+        self.categoryID = categoryID
         self.note = note
         self.date = date
         self.idEvent = idEvent
-        self.type = transactionType.rawValue
+        self.type = transactionType
     }
-    
+
     override class func primaryKey() -> String? {
-        return "idTransaction"
+        return "identify"
     }
 }

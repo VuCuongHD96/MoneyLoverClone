@@ -19,15 +19,16 @@ final class CategoryViewController: UIViewController {
     struct Constant {
         static let heightForRowAt: CGFloat = 50
     }
-    var categoryArray = [Category]() {  
+    var categoryArray = [Category]()
+    var categoryArraySelected = [Category]() {
         didSet {
             tableView.reloadData()
         }
     }
-    typealias Handler = (Category, Int) -> Void
+    typealias Handler = (Category) -> Void
     var passCategory: Handler?
-    var segmentIndex: Int! = nil
-    var categorySelected: Category! = nil
+    var categorySelected: Category?
+    var database: DBManager!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -44,41 +45,49 @@ final class CategoryViewController: UIViewController {
             $0.layer.borderColor = UIColor.green.cgColor
             $0.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
             $0.setTitleTextAttributes([.foregroundColor: UIColor.systemGreen], for: .normal)
+            $0.backgroundColor = .white
         }
         navigationItem.title = "Chọn nhóm"
     }
     
     // MARK: - Data
     private func setupData() {
+        database = DBManager.shared
+        categoryArray = database.fetchCategorys()
         tableView.do {
             $0.dataSource = self
             $0.delegate = self
             $0.register(cellType: CategoryCell.self)
         }
-        segment.selectedSegmentIndex = segmentIndex
         choiseCategory(segment)
-    }
-    
-    private func fetchCategoryData(from name: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let nsDictionary = NSDictionary(contentsOfFile: path) else { return }
-        categoryArray = nsDictionary.map {
-            let imageString = $0.key as? String ?? ""
-            let name = $0.value as? String ?? ""
-            let category = Category(image: imageString, name: name)
-            return category
+        if categorySelected != nil {
+            guard let transactionType = categorySelected?.transactionType else {
+                return
+            }
+            switch transactionType {
+            case TransactionType.expendsed.rawValue:
+                segment.selectedSegmentIndex = 0
+            case TransactionType.income.rawValue:
+                segment.selectedSegmentIndex = 1
+            default:
+                break
+            }
+            choiseCategory(segment)
         }
     }
     
     // MARK: - Action
     @IBAction func choiseCategory(_ sender: UISegmentedControl) {
-        categoryArray.removeAll()
         let selectedIndex = sender.selectedSegmentIndex
         switch selectedIndex {
         case 0:
-            fetchCategoryData(from: "ExpenseArray")
+            categoryArraySelected = categoryArray.filter {
+                $0.transactionType == TransactionType.expendsed.rawValue
+            }
         case 1:
-            fetchCategoryData(from: "RevenueArray")
+            categoryArraySelected = categoryArray.filter {
+                $0.transactionType == TransactionType.income.rawValue
+            }
         default:
             break
         }
@@ -87,12 +96,12 @@ final class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryArray.count
+        return categoryArraySelected.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CategoryCell = tableView.dequeueReusableCell(for: indexPath)
-        let category = categoryArray[indexPath.row]
+        let category = categoryArraySelected[indexPath.row]
         cell.setContent(data: category)
         return cell
     }
@@ -108,8 +117,8 @@ extension CategoryViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categoryArray[indexPath.row]
-        passCategory?(category, segment.selectedSegmentIndex)
+        let category = categoryArraySelected[indexPath.row]
+        passCategory?(category)
         navigationController?.popViewController(animated: true)
     }
 }

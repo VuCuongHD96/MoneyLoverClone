@@ -61,6 +61,7 @@ final class TransactionsViewController: UIViewController {
     private func fetchTransactionData() {
         transactionArray = dataManager.fetchTransactions()
         guard let mostRecentDate = transactionArray.first?.date else {
+            transactionByMonthArray.removeAll()
             return
         }
         fetchTransactionBy(mostRecentDate)
@@ -72,7 +73,7 @@ final class TransactionsViewController: UIViewController {
         let transactionInAMonth = transactionArray.filter {
             $0.date.year == year && $0.date.month == month
         }
-        var transactionDictionary = Dictionary<String, [Transaction]>()
+        var transactionDictionary = [String: [Transaction]]()
         transactionInAMonth.forEach {
             let date = $0.date
             let dateString = formatter.string(from: date)
@@ -139,7 +140,12 @@ extension TransactionsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        let transactionInADay = transactionByMonthArray[section]
+        let transaction = transactionInADay.transactionArray[row]
         let transactionDetail = TransactionDetailTableViewController.instantiate()
+        transactionDetail.transaction = transaction
         navigationController?.pushViewController(transactionDetail, animated: true)
     }
 }
