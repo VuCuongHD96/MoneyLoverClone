@@ -327,10 +327,10 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				283103A4252B10BF006539DF /* ChangePassword */,
-				CF4FD81D2525D57C0048CB0B /* DetailEvent */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
+				283103A4252B10BF006539DF /* ChangePassword */,
+				CF4FD81D2525D57C0048CB0B /* DetailEvent */,
 				4C6C68D5252572270086BF55 /* ChoiseEvent */,
 				4C6FB01725233E650095F3FD /* TransactionDetail */,
 				4C6FB0122522D22D0095F3FD /* HomeViewController */,

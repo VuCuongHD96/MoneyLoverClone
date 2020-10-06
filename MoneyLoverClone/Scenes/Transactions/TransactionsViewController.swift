@@ -146,6 +146,7 @@ extension TransactionsViewController: UITableViewDelegate {
         let transaction = transactionInADay.transactionArray[row]
         let transactionDetail = TransactionDetailTableViewController.instantiate()
         transactionDetail.transaction = transaction
+        transactionDetail.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(transactionDetail, animated: true)
     }
 }

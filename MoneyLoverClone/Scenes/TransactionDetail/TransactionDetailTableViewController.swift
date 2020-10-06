@@ -36,6 +36,11 @@ final class TransactionDetailTableViewController: UITableViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupTransactionData()
+    }
+    
     // MARK: - Views
     private func setupView() {
         let deleteButtonAttributes: [NSAttributedString.Key: Any] = [
@@ -48,14 +53,6 @@ final class TransactionDetailTableViewController: UITableViewController {
         fixButton.do {
             $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
         }
-        let transactionTypeString = transaction.type
-        guard let transactionType = TransactionType(rawValue: transactionTypeString) else { return }
-        switch transactionType {
-        case .expendsed:
-            moneyLabel.textColor = .systemRed
-        case .income:
-            moneyLabel.textColor = .systemBlue
-        }
     }
     
     // MARK: - Data
@@ -66,18 +63,32 @@ final class TransactionDetailTableViewController: UITableViewController {
             $0.locale = locale
         }
         database = DBManager.shared
+    }
+    
+    private func setupTransactionData() {
+        transaction = database.fetchObject(from: transaction.identify)
         let category = database.fetchCategory(from: transaction.categoryID)
         categoryImageView.image = UIImage(named: category.image)
         categoryNameLabel.text = category.name
         moneyLabel.text = transaction.money.convertToMoneyFormat()
         dateLabel.text = formatter.string(from: transaction.date)
         noteTextField.text = transaction.note
+        let transactionTypeString = transaction.type
+        guard let transactionType = TransactionType(rawValue: transactionTypeString) else { return }
+        switch transactionType {
+        case .expendsed:
+            moneyLabel.textColor = .systemRed
+        case .income:
+            moneyLabel.textColor = .systemBlue
+        }
     }
     
     // MARK: - Action
-    @IBAction func fixAction(_ sender: Any) {
+    @IBAction func updateAction(_ sender: Any) {
         let transactionScreen = AddTransactionTableViewController.instantiate()
+        transactionScreen.transaction = transaction
         let navigationController = UINavigationController(rootViewController: transactionScreen)
+        navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
     }
     
@@ -89,7 +100,7 @@ final class TransactionDetailTableViewController: UITableViewController {
         let alert = UIAlertController(title: nil, message: "Xoá giao dịch này?", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Xoá", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.database.deleteTransaction(self.transaction)
+            self.database.delete(self.transaction)
             self.navigationController?.popViewController(animated: true)
         }
         deleteAction.setValue(UIColor.red, forKey: "titleTextColor")

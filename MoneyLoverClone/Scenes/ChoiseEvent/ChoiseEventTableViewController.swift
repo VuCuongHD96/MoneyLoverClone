@@ -50,7 +50,6 @@ final class ChoiseEventTableViewController: UITableViewController {
 // MARK: - TableView Datasource
 extension ChoiseEventTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-
         return 2
     }
     

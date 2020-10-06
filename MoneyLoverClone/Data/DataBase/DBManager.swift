@@ -18,13 +18,27 @@ class DBManager {
         database = try? Realm()
     }
     
-    // MARK: - Transaction
-    func saveTransaction(_ transaction: Transaction) {
-        try? database?.write {
-            database?.add(transaction)
+    func delete<T: Object>(_ object: T) {
+        try? database.write {
+            database.delete(object)
         }
     }
     
+    func save<T: Object>(_ object: T) {
+        try? database?.write {
+            database?.add(object, update: .all)
+        }
+    }
+    
+    func fetchObject<T: Object>(from identify: String) -> T {
+        let result = database.objects(T.self).filter("identify == %@", identify)
+        guard let object = result.first else {
+            return T()
+        }
+        return object
+    }
+    
+    // MARK: - Transaction
     func fetchTransactions() -> [Transaction] {
         guard var arrayResult = database?.objects(Transaction.self) else {
             return [Transaction]()
@@ -33,19 +47,7 @@ class DBManager {
         return Array(arrayResult)
     }
     
-    func deleteTransaction(_ transaction: Transaction) {
-        try? database.write {
-            database.delete(database.objects(Transaction.self).filter("identify=%@", transaction.identify))
-        }
-    }
-    
     // MARK: - Category
-    func saveCategory(_ category: Category) {
-        try? database?.write {
-            database?.add(category)
-        }
-    }
-    
     func fetchCategory(from identify: String) -> Category {
         let result = database.objects(Category.self).filter("identify == %@", identify)
         guard let category = result.first else {
@@ -75,9 +77,7 @@ class DBManager {
             let categoryImage = $0.key as? String ?? ""
             let categoryName = $0.value as? String ?? ""
             let category = Category(image: categoryImage, name: categoryName, transactionType: type)
-            try? database.write {
-                database.add(category)
-            }
+            self.save(category)
         }
     }
 }
