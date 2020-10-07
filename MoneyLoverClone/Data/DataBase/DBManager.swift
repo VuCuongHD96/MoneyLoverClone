@@ -80,4 +80,5 @@ class DBManager {
             self.save(category)
         }
     }
+    
 }
