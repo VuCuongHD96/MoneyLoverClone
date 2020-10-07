@@ -9,27 +9,33 @@
 import UIKit
 import Reusable
 
-class EventViewController: UIViewController, UITableViewDataSource {
+class EventViewController: UIViewController {
     
-    @IBOutlet weak var tblEvent: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    struct Constant {
+        static let heigtforrow: CGFloat = 95
+        static let namecell = "EventTableViewCell"
+    }   
+    
     var listEvent = [Event]()
     var database: DBManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getListEventData()
-        tblEvent.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-        tblEvent.dataSource = self
-        tblEvent.delegate = self
-        let nib = UINib.init(nibName: "EventTableViewCell", bundle: nil)
-        tblEvent.register(nib, forCellReuseIdentifier: "cellEvent")
+        tableView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
+        tableView.dataSource = self
+        tableView.delegate = self
+        let nib = UINib.init(nibName: Constant.namecell, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cellEvent")
     }
     
     func getListEventData() {
-        listEvent.append(Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
-        listEvent.append(Event(idEvent: 1, estimateDay: 0, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
-        listEvent.append(Event(idEvent: 1, estimateDay: 11, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
-        listEvent.append(Event(idEvent: 1, estimateDay: 10, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7)))
+        let event = Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7))
+        for _ in 1...10 {
+            listEvent.append(event)
+        }
     }
     
     @IBAction func addEventAction(_ sender: Any) {
@@ -40,33 +46,8 @@ class EventViewController: UIViewController, UITableViewDataSource {
         let navController = UINavigationController(rootViewController: addEventView)
         addEventView.isModalInPresentation = true
         addEventView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(navController, animated: true, completion: nil)
+        present(navController, animated: true, completion: nil)
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as? EventTableViewCell ?? nil
-        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
-        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
-        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
-        cell!.txtEvent.text = listEvent[indexPath.row].nameEvent
-        
-        cell!.cardView.backgroundColor = UIColor.white
-        cell!.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-        cell!.cardView.layer.cornerRadius = 8
-        cell!.cardView.layer.masksToBounds = false
-        cell!.cardView.layer.shadowOpacity = 0.5
-        cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        cell!.cardView.layer.shadowColor = UIColor.black.cgColor
-        return cell!
-    }	
-    
-}
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100
 }
 
 extension EventViewController: StoryboardSceneBased {
@@ -81,5 +62,31 @@ extension EventViewController: UITableViewDelegate {
             return
         }
         navigationController?.pushViewController(detailEvent, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constant.heigtforrow
+    }
+}
+
+extension EventViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listEvent.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as? EventTableViewCell ?? nil
+        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
+        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
+        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
+        
+        cell!.cardView.backgroundColor = UIColor.white
+        cell!.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
+        cell!.cardView.layer.cornerRadius = 8
+        cell!.cardView.layer.masksToBounds = false
+        cell!.cardView.layer.shadowOpacity = 0.5
+        cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cell!.cardView.layer.shadowColor = UIColor.black.cgColor
+        return cell!
     }
 }

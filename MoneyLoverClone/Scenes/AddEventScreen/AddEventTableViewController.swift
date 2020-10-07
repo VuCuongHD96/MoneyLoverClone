@@ -86,6 +86,7 @@ class AddEventTableViewController: UITableViewController {
         }
         return Event(idEvent: idEvent, estimateDay: estimateDay, nameEvent: nameEvent, imgEvent: imgString, cash: Float(cash), inProgress: true, endDate: endDate ?? Date())
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         switch row {

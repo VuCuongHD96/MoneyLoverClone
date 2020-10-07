@@ -11,8 +11,8 @@ import Reusable
 
 final class TransactionsOfDetailViewController: UIViewController {
     
-    @IBOutlet weak var cardOverView: UIView!
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet private weak var cardOverView: UIView!
+    @IBOutlet private weak var tableview: UITableView!
     
     struct Constant {
         static let numberOfSections = 5
@@ -26,6 +26,9 @@ final class TransactionsOfDetailViewController: UIViewController {
         super.viewDidLoad()
         setupData()
         setupView()
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.white
+        tableview.tableFooterView = footerView
     }
     
     func setupData() {
@@ -37,14 +40,15 @@ final class TransactionsOfDetailViewController: UIViewController {
     }
     
     func setupView() {
-        self.do {
-            $0.view.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-            $0.cardOverView.backgroundColor = UIColor.white
-            $0.cardOverView.layer.cornerRadius = 8
-            $0.cardOverView.layer.masksToBounds = false
-            $0.cardOverView.layer.shadowOpacity = 0.7
-            $0.cardOverView.layer.shadowOffset = CGSize(width: 0, height: 1)
-            $0.cardOverView.layer.shadowColor = UIColor.black.cgColor
+        view.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
+        cardOverView.backgroundColor = UIColor.white
+        cardOverView.layer.cornerRadius = 8
+        cardOverView.layer.masksToBounds = false
+        cardOverView.layer.shadowOpacity = 0.7
+        cardOverView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cardOverView.layer.shadowColor = UIColor.black.cgColor
+        tableview.do {
+            $0.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         }
     }
 }
@@ -67,11 +71,6 @@ extension TransactionsOfDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.heightForHeaderInSection
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let transactionDetail = TransactionDetailTableViewController.instantiate()
-        navigationController?.pushViewController(transactionDetail, animated: true)
     }
 }
 
