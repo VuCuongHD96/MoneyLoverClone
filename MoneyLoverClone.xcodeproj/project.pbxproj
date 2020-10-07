@@ -64,6 +64,11 @@
 		4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE437EC25257DC80089DEDA /* AddEventCell.swift */; };
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
+		9B910962252D784400D3D1D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B910961252D784400D3D1D7 /* GoogleService-Info.plist */; };
+		9B910965252D7B1A00D3D1D7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B910964252D7B1A00D3D1D7 /* Login.storyboard */; };
+		9B910967252D7B3B00D3D1D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B910966252D7B3B00D3D1D7 /* LoginViewController.swift */; };
+		9B91096A252DAFC500D3D1D7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B910969252DAFC500D3D1D7 /* Storyboard.storyboard */; };
+		9B91096C252DAFDD00D3D1D7 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91096B252DAFDD00D3D1D7 /* ChangeNameViewController.swift */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
@@ -140,6 +145,11 @@
 		4CE437ED25257DC80089DEDA /* AddEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventCell.xib; sourceTree = "<group>"; };
 		7F319EC1FA6BE4EEBDFEAA07 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		9B910961252D784400D3D1D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B910964252D7B1A00D3D1D7 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9B910966252D7B3B00D3D1D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9B910969252DAFC500D3D1D7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9B91096B252DAFDD00D3D1D7 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		BE812B66C0C425349C69ADFE /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
@@ -327,6 +337,8 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9B910968252DAF9F00D3D1D7 /* ChangeName */,
+				9B910963252D7AFB00D3D1D7 /* Login */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				283103A4252B10BF006539DF /* ChangePassword */,
@@ -448,6 +460,7 @@
 				4CCA96ED25271C75005A2FEC /* Extension */,
 				4C8E4BEC2514A961005B238B /* Resource */,
 				4CC87D4A25136D9300A3B9BD /* Info.plist */,
+				9B910961252D784400D3D1D7 /* GoogleService-Info.plist */,
 			);
 			path = MoneyLoverClone;
 			sourceTree = "<group>";
@@ -510,6 +523,24 @@
 				4C9FF3DF2521CB5B0027D02F /* Setting.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		9B910963252D7AFB00D3D1D7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9B910964252D7B1A00D3D1D7 /* Login.storyboard */,
+				9B910966252D7B3B00D3D1D7 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9B910968252DAF9F00D3D1D7 /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				9B910969252DAFC500D3D1D7 /* Storyboard.storyboard */,
+				9B91096B252DAFDD00D3D1D7 /* ChangeNameViewController.swift */,
+			);
+			path = ChangeName;
 			sourceTree = "<group>";
 		};
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
@@ -609,6 +640,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B910965252D7B1A00D3D1D7 /* Login.storyboard in Resources */,
 				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
@@ -622,6 +654,7 @@
 				4C6C53E725217D0800E7D3F0 /* EventIcon.storyboard in Resources */,
 				4C9FF3E02521CB5B0027D02F /* Setting.storyboard in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
+				9B910962252D784400D3D1D7 /* GoogleService-Info.plist in Resources */,
 				CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */,
 				4C6FB01925233F130095F3FD /* TransactionDetail.storyboard in Resources */,
 				CF4FD81F2525D5A20048CB0B /* DetailEvent.storyboard in Resources */,
@@ -636,6 +669,7 @@
 				4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
+				9B91096A252DAFC500D3D1D7 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,10 +780,12 @@
 				4CE2DF2C252AB935009D32E5 /* Int+.swift in Sources */,
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
 				4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */,
+				9B91096C252DAFDD00D3D1D7 /* ChangeNameViewController.swift in Sources */,
 				4C8E4BF02514B677005B238B /* RealmManager.swift in Sources */,
 				4CE2DF2E252AC67E009D32E5 /* String+.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
 				CF52DB502525C3E00096585B /* EventViewController.swift in Sources */,
+				9B910967252D7B3B00D3D1D7 /* LoginViewController.swift in Sources */,
 				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
