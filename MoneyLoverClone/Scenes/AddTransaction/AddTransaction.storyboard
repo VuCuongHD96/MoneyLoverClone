@@ -210,6 +210,8 @@
                         <outlet property="categoryImageView" destination="1XR-sJ-OqX" id="lHD-PJ-mbQ"/>
                         <outlet property="categoryNameTextField" destination="JcE-fy-jZu" id="Eon-GX-Kq5"/>
                         <outlet property="dateLabel" destination="47g-g6-9Bg" id="B39-oy-2TF"/>
+                        <outlet property="eventImageView" destination="9Jr-Yg-iAs" id="Kd8-LU-Vqr"/>
+                        <outlet property="eventNameTextField" destination="gT4-gO-S9J" id="PxC-pR-OgW"/>
                         <outlet property="moneyTextField" destination="yr2-8m-dh4" id="bMs-oK-6vA"/>
                         <outlet property="noteTextField" destination="1ol-Mj-Snr" id="4L4-HB-AwI"/>
                         <outlet property="saveButton" destination="c33-we-hAx" id="pVp-Nf-qGY"/>

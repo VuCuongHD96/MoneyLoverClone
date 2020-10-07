@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import Reusable
+import Toast_Swift
 
 final class CalendarViewController: UIViewController {
 
@@ -20,6 +21,7 @@ final class CalendarViewController: UIViewController {
     typealias Handler = (Date) -> Void
     var passDate: Handler?
     var date = Date()
+    var choiseDateEvent = false
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -51,6 +53,11 @@ final class CalendarViewController: UIViewController {
 
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let today = Date()
+        if choiseDateEvent && date < today {
+            view.makeToast("Ngày kết thúc không thể là ngày trong quá khứ")
+            return
+        }
         passDate?(date)
         navigationController?.popViewController(animated: true)
     }

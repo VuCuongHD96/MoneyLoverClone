@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Reusable
 
-class EventTableViewCell: UITableViewCell {
+final class EventTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var cardView: UIView!
-    
     @IBOutlet weak var txtDateLeft: UILabel!
     @IBOutlet weak var imgEvent: UIImageView!
-    
     @IBOutlet weak var txtCash: UILabel!
     @IBOutlet weak var txtEvent: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setContent(data: Event) {
+        imgEvent.image = UIImage(named: data.image)
+        txtEvent.text = data.name
     }
 }

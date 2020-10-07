@@ -81,6 +81,11 @@ final class TransactionDetailTableViewController: UITableViewController {
         case .income:
             moneyLabel.textColor = .systemBlue
         }
+        guard let idEvent = transaction.idEvent, idEvent != "" else { return }
+        var event = Event()
+        event = database.fetchObject(from: idEvent)
+        eventImageView.image = UIImage(named: event.image)
+        eventTextField.text = event.name
     }
     
     // MARK: - Action

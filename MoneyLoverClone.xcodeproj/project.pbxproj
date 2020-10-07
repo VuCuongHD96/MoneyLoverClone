@@ -21,6 +21,8 @@
 		4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA69251B539200768482 /* RevenueArray.plist */; };
 		4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */; };
 		4C4E29D8251DF69D0015E783 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E29D7251DF69D0015E783 /* Event.swift */; };
+		4C548D3F252D6254006FDCEF /* ChoiseEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C548D3D252D6254006FDCEF /* ChoiseEventCell.swift */; };
+		4C548D40252D6254006FDCEF /* ChoiseEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */; };
 		4C6C53E725217D0800E7D3F0 /* EventIcon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C53E625217D0800E7D3F0 /* EventIcon.storyboard */; };
 		4C6C53E925217D3800E7D3F0 /* EventIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53E825217D3800E7D3F0 /* EventIconViewController.swift */; };
 		4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */; };
@@ -93,6 +95,8 @@
 		4C30DA69251B539200768482 /* RevenueArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RevenueArray.plist; sourceTree = "<group>"; };
 		4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeyboard.swift; sourceTree = "<group>"; };
 		4C4E29D7251DF69D0015E783 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4C548D3D252D6254006FDCEF /* ChoiseEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseEventCell.swift; sourceTree = "<group>"; };
+		4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiseEventCell.xib; sourceTree = "<group>"; };
 		4C6C53E625217D0800E7D3F0 /* EventIcon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventIcon.storyboard; sourceTree = "<group>"; };
 		4C6C53E825217D3800E7D3F0 /* EventIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventIconViewController.swift; sourceTree = "<group>"; };
 		4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconCell.swift; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 			children = (
 				4CE437EC25257DC80089DEDA /* AddEventCell.swift */,
 				4CE437ED25257DC80089DEDA /* AddEventCell.xib */,
+				4C548D3D252D6254006FDCEF /* ChoiseEventCell.swift */,
+				4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
+				4C548D40252D6254006FDCEF /* ChoiseEventCell.xib in Resources */,
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
 				CF62DC1B252D62DA00BF2490 /* DetailEvent.storyboard in Resources */,
@@ -742,6 +749,7 @@
 				CF52DB502525C3E00096585B /* EventViewController.swift in Sources */,
 				CF62DC1A252D62DA00BF2490 /* TransactionsOfDetailViewController.swift in Sources */,
 				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,
+				4C548D3F252D6254006FDCEF /* ChoiseEventCell.swift in Sources */,
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */,
