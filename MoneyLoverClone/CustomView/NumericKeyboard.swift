@@ -31,6 +31,7 @@ class NumericKeyboard: UIView {
         button.setTitleColor(Constant.titleColor, for: .normal)
         button.layer.borderWidth = Constant.borderWidth
         button.layer.borderColor = Constant.borderColor
+        button.layer.backgroundColor = UIColor.white.cgColor
         button.accessibilityTraits = [.button]
         button.addTarget(self, action: #selector(didTapDigitButton(_:)), for: .touchUpInside)
         return button

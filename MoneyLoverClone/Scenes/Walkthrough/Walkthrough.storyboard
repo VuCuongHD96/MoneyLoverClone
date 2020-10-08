@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Walk Through View Controller-->
+        <scene sceneID="ouf-Pj-bVi">
+            <objects>
+                <viewController storyboardIdentifier="WalkThroughViewController" id="PbK-0e-F0s" customClass="WalkThroughViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xDN-HH-vVH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SV1-PD-tVD">
+                                <rect key="frame" x="168" y="448.5" width="39" height="37"/>
+                            </pageControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JCz-Lp-Qpy">
+                                <rect key="frame" x="40" y="505.5" width="295" height="111.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwK-9P-SxI">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="45.5"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="   Login with Google" image="gg">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginWithGoogle:" destination="PbK-0e-F0s" eventType="touchUpInside" id="MfP-lA-pqE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LH-lJ-qZB">
+                                        <rect key="frame" x="0.0" y="65.5" width="295" height="46"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="   Login with Facebook" image="fb">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginWithFacebook:" destination="PbK-0e-F0s" eventType="touchUpInside" id="Vo9-Uk-BRj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cwK-9P-SxI" secondAttribute="trailing" id="172-9H-va9"/>
+                                    <constraint firstAttribute="trailing" secondItem="1LH-lJ-qZB" secondAttribute="trailing" id="Yi6-GM-LOV"/>
+                                    <constraint firstItem="cwK-9P-SxI" firstAttribute="leading" secondItem="JCz-Lp-Qpy" secondAttribute="leading" id="ZJL-u6-cdi"/>
+                                    <constraint firstItem="1LH-lJ-qZB" firstAttribute="leading" secondItem="JCz-Lp-Qpy" secondAttribute="leading" id="sWf-Xz-bv2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16630743385709831" green="0.62149854274611394" blue="0.28510126106679351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JCz-Lp-Qpy" firstAttribute="leading" secondItem="d5v-Ca-TC5" secondAttribute="leading" constant="40" id="6kB-nt-xZW"/>
+                            <constraint firstItem="SV1-PD-tVD" firstAttribute="centerX" secondItem="xDN-HH-vVH" secondAttribute="centerX" id="90V-98-CdD"/>
+                            <constraint firstItem="d5v-Ca-TC5" firstAttribute="bottom" secondItem="JCz-Lp-Qpy" secondAttribute="bottom" constant="50" id="OTh-zl-9Ug"/>
+                            <constraint firstItem="JCz-Lp-Qpy" firstAttribute="top" secondItem="SV1-PD-tVD" secondAttribute="bottom" constant="20" id="UIP-uR-sMl"/>
+                            <constraint firstItem="SV1-PD-tVD" firstAttribute="centerY" secondItem="xDN-HH-vVH" secondAttribute="centerY" multiplier="2.8/2" id="Xbs-7i-RYC"/>
+                            <constraint firstItem="d5v-Ca-TC5" firstAttribute="trailing" secondItem="JCz-Lp-Qpy" secondAttribute="trailing" constant="40" id="gzQ-zt-qzk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d5v-Ca-TC5"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="SV1-PD-tVD" id="nmD-Kb-FHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spK-Wo-Fq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="145"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="6c3-Io-GnI">
+            <objects>
+                <viewController storyboardIdentifier="PageOne" id="D6t-rn-Nf9" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ogf-oZ-mCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pjf-DI-dYt">
+                                <rect key="frame" x="140.5" y="156.5" width="94" height="93.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pjf-DI-dYt" secondAttribute="height" multiplier="1:1" id="uvb-bm-1C3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mẹo đầu tiên: đăng nhập để truy cập vào dữ liệu của bạn trên tất cả các thiếu bị." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-iy-AKe">
+                                <rect key="frame" x="19" y="358" width="337.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quản lý tài chính hiệu quả với Money Lover Clone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dak-EV-qSe">
+                                <rect key="frame" x="37.5" y="280" width="300" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pjf-DI-dYt" firstAttribute="bottom" secondItem="ogf-oZ-mCg" secondAttribute="centerY" multiplier="1.5/2" id="0kq-2w-q9Q"/>
+                            <constraint firstItem="dak-EV-qSe" firstAttribute="width" secondItem="ogf-oZ-mCg" secondAttribute="width" multiplier="8/10" id="Amb-he-Dd1"/>
+                            <constraint firstItem="dak-EV-qSe" firstAttribute="top" secondItem="Pjf-DI-dYt" secondAttribute="bottom" constant="30" id="GFa-gU-4EL"/>
+                            <constraint firstItem="oBq-iy-AKe" firstAttribute="width" secondItem="ogf-oZ-mCg" secondAttribute="width" multiplier="9/10" id="LX8-2a-PjM"/>
+                            <constraint firstItem="oBq-iy-AKe" firstAttribute="top" secondItem="dak-EV-qSe" secondAttribute="bottom" constant="30" id="dzY-2G-9WR"/>
+                            <constraint firstItem="oBq-iy-AKe" firstAttribute="centerX" secondItem="ogf-oZ-mCg" secondAttribute="centerX" id="mqH-BD-U0K"/>
+                            <constraint firstItem="Pjf-DI-dYt" firstAttribute="centerX" secondItem="ogf-oZ-mCg" secondAttribute="centerX" id="rkr-en-4rg"/>
+                            <constraint firstItem="Pjf-DI-dYt" firstAttribute="width" secondItem="ogf-oZ-mCg" secondAttribute="width" multiplier="2.5/10" id="s7N-Me-oFo"/>
+                            <constraint firstItem="dak-EV-qSe" firstAttribute="centerX" secondItem="ogf-oZ-mCg" secondAttribute="centerX" id="uNj-pM-TyZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L8d-6j-P5c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJ7-hK-8Sq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="136"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="t69-jf-yyM">
+            <objects>
+                <viewController storyboardIdentifier="PageTwo" id="8qw-IU-WXl" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jMO-J1-eU1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" translatesAutoresizingMaskIntoConstraints="NO" id="clb-20-cIJ">
+                                <rect key="frame" x="131.5" y="157.5" width="112.5" height="112.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="clb-20-cIJ" secondAttribute="height" id="20U-ZP-iAv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quản lý chi tiêu cá nhân và hoàn thiện mục tiêu tài chính." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHR-nY-OhR">
+                                <rect key="frame" x="37.5" y="300" width="300" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LHR-nY-OhR" firstAttribute="top" secondItem="jMO-J1-eU1" secondAttribute="centerY" multiplier="9/10" id="EHa-Di-Sq9"/>
+                            <constraint firstItem="clb-20-cIJ" firstAttribute="centerX" secondItem="jMO-J1-eU1" secondAttribute="centerX" id="Ymi-Sf-5vk"/>
+                            <constraint firstItem="LHR-nY-OhR" firstAttribute="centerX" secondItem="jMO-J1-eU1" secondAttribute="centerX" id="f4R-Xp-fa7"/>
+                            <constraint firstItem="LHR-nY-OhR" firstAttribute="width" secondItem="jMO-J1-eU1" secondAttribute="width" multiplier="8/10" id="fro-1o-PfA"/>
+                            <constraint firstItem="clb-20-cIJ" firstAttribute="width" secondItem="jMO-J1-eU1" secondAttribute="width" multiplier="3/10" id="gNe-7q-1qR"/>
+                            <constraint firstItem="LHR-nY-OhR" firstAttribute="top" secondItem="clb-20-cIJ" secondAttribute="bottom" constant="30" id="x8e-Fc-6nO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VzD-k8-A1l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UF0-Ul-vZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="135"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="SBc-IT-d7G">
+            <objects>
+                <viewController storyboardIdentifier="PageThree" id="cjb-vD-aYf" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DTw-Yh-80b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network" translatesAutoresizingMaskIntoConstraints="NO" id="Iyw-pN-4cM">
+                                <rect key="frame" x="131.5" y="157.5" width="112.5" height="112.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dễ dàng truy cập dữ liệu trên nhiều thiết bị." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-4F-HlL">
+                                <rect key="frame" x="37.5" y="300" width="300" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IVs-4F-HlL" firstAttribute="centerX" secondItem="DTw-Yh-80b" secondAttribute="centerX" id="7q6-H5-yOf"/>
+                            <constraint firstItem="Iyw-pN-4cM" firstAttribute="width" secondItem="Iyw-pN-4cM" secondAttribute="height" id="GYn-zV-RKn"/>
+                            <constraint firstItem="IVs-4F-HlL" firstAttribute="top" secondItem="Iyw-pN-4cM" secondAttribute="bottom" constant="30" id="SMg-aR-83r"/>
+                            <constraint firstItem="Iyw-pN-4cM" firstAttribute="centerX" secondItem="DTw-Yh-80b" secondAttribute="centerX" id="a4S-5J-8Rw"/>
+                            <constraint firstItem="IVs-4F-HlL" firstAttribute="top" secondItem="DTw-Yh-80b" secondAttribute="centerY" multiplier="9/10" id="eC9-Bc-zj9"/>
+                            <constraint firstItem="IVs-4F-HlL" firstAttribute="width" secondItem="DTw-Yh-80b" secondAttribute="width" multiplier="8/10" id="efS-wq-3Wf"/>
+                            <constraint firstItem="Iyw-pN-4cM" firstAttribute="width" secondItem="DTw-Yh-80b" secondAttribute="width" multiplier="3/10" id="hv7-Pn-PnA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RQE-mj-7cx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjW-1d-tdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="135"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="iuo-41-ox7">
+            <objects>
+                <viewController storyboardIdentifier="PageFour" id="agO-3S-K7a" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ur-w8-1RJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report" translatesAutoresizingMaskIntoConstraints="NO" id="6Y9-3O-RxW">
+                                <rect key="frame" x="131.5" y="157.5" width="112.5" height="112.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiểm soát từng khoản thu chi với hệ thống báo cáo chi tiết." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-uX-Dgr">
+                                <rect key="frame" x="37.5" y="300" width="300" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aPO-uX-Dgr" firstAttribute="top" secondItem="6Ur-w8-1RJ" secondAttribute="centerY" multiplier="9/10" id="7V1-pg-9eN"/>
+                            <constraint firstItem="6Y9-3O-RxW" firstAttribute="width" secondItem="6Y9-3O-RxW" secondAttribute="height" id="Eog-3d-bAN"/>
+                            <constraint firstItem="aPO-uX-Dgr" firstAttribute="centerX" secondItem="6Ur-w8-1RJ" secondAttribute="centerX" id="FGw-Fr-Eg5"/>
+                            <constraint firstItem="6Y9-3O-RxW" firstAttribute="centerX" secondItem="6Ur-w8-1RJ" secondAttribute="centerX" id="Itr-rQ-VG8"/>
+                            <constraint firstItem="aPO-uX-Dgr" firstAttribute="width" secondItem="6Ur-w8-1RJ" secondAttribute="width" multiplier="8/10" id="Zjh-c4-ALI"/>
+                            <constraint firstItem="aPO-uX-Dgr" firstAttribute="top" secondItem="6Y9-3O-RxW" secondAttribute="bottom" constant="30" id="mXa-Nj-YRq"/>
+                            <constraint firstItem="6Y9-3O-RxW" firstAttribute="width" secondItem="6Ur-w8-1RJ" secondAttribute="width" multiplier="3/10" id="wft-FO-FUX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rg2-Kx-3vg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAq-UK-rP5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2745" y="135"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="MAr-kp-e6c">
+            <objects>
+                <viewController storyboardIdentifier="PageFive" id="hWq-dI-rba" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DdR-LN-Jou">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="financial" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-Lc-ogu">
+                                <rect key="frame" x="131.5" y="157.5" width="112.5" height="112.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lên kế hoạch tài chính thông minh và từng bước tiết kiệm để thực hoá ước mơ." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="231-Kq-GBN">
+                                <rect key="frame" x="37.5" y="300" width="300" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cZX-Lc-ogu" firstAttribute="width" secondItem="cZX-Lc-ogu" secondAttribute="height" id="B76-DW-M3b"/>
+                            <constraint firstItem="231-Kq-GBN" firstAttribute="top" secondItem="cZX-Lc-ogu" secondAttribute="bottom" constant="30" id="UQF-1f-qCl"/>
+                            <constraint firstItem="231-Kq-GBN" firstAttribute="centerX" secondItem="DdR-LN-Jou" secondAttribute="centerX" id="VxD-QT-b8l"/>
+                            <constraint firstItem="cZX-Lc-ogu" firstAttribute="centerX" secondItem="DdR-LN-Jou" secondAttribute="centerX" id="WDX-eW-6I0"/>
+                            <constraint firstItem="cZX-Lc-ogu" firstAttribute="width" secondItem="DdR-LN-Jou" secondAttribute="width" multiplier="3/10" id="d89-lv-LEP"/>
+                            <constraint firstItem="231-Kq-GBN" firstAttribute="width" secondItem="DdR-LN-Jou" secondAttribute="width" multiplier="8/10" id="xUH-T5-kLn"/>
+                            <constraint firstItem="231-Kq-GBN" firstAttribute="top" secondItem="DdR-LN-Jou" secondAttribute="centerY" multiplier="9/10" id="yYS-d2-jqT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Kb-mb-b2t"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxl-qC-MVQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3678" y="144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fb" width="48" height="48"/>
+        <image name="financial" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="gg" width="48" height="48"/>
+        <image name="logo" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="network" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="report" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="target" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
+</document>
