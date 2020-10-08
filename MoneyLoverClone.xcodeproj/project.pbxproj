@@ -12,6 +12,7 @@
 		28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */; };
 		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
 		4C24A191252EF7ED007BD624 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C24A190252EF7ED007BD624 /* User.swift */; };
+		4C24A192252F11BE007BD624 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA59251B23A500768482 /* Calendar.storyboard */; };
 		4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA5B251B23E600768482 /* CalendarViewController.swift */; };
 		4C30DA5E251B430A00768482 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA5D251B430A00768482 /* Category.storyboard */; };
@@ -73,7 +74,6 @@
 		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
 		CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */; };
 		CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB4B2525C3DE0096585B /* Event.storyboard */; };
-		CF52DB502525C3E00096585B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB552525C4720096585B /* AddEvent.storyboard */; };
 		CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB562525C4760096585B /* AddEventTableViewController.swift */; };
 		CF62DC15252D627B00BF2490 /* ChangePassWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF62DC13252D627900BF2490 /* ChangePassWord.storyboard */; };
@@ -748,6 +748,7 @@
 			files = (
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
+				4C24A192252F11BE007BD624 /* EventViewController.swift in Sources */,
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
@@ -772,7 +773,6 @@
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
 				4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
-				CF52DB502525C3E00096585B /* EventViewController.swift in Sources */,
 				CF62DC1A252D62DA00BF2490 /* TransactionsOfDetailViewController.swift in Sources */,
 				CF52DB4E2525C3E00096585B /* EventTableViewCell.swift in Sources */,
 				4C548D3F252D6254006FDCEF /* ChoiseEventCell.swift in Sources */,
@@ -864,7 +864,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -918,7 +918,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

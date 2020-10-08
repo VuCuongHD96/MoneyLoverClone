@@ -26,8 +26,9 @@ class NumericKeyboard: UIView {
     var numericButtons: [DigitButton] = (0...9).map {
         let button = DigitButton(type: .system)
         button.digit = $0
-        button.setTitle("\($0)", for: .normal)
-        button.titleLabel?.font = Constant.font
+        let attributed = NSAttributedString(string: "\($0)", attributes: [.foregroundColor: UIColor.green, .underlineStyle: 1])
+        button.setAttributedTitle(attributed, for: .normal)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
         button.setTitleColor(Constant.titleColor, for: .normal)
         button.layer.borderWidth = Constant.borderWidth
         button.layer.borderColor = Constant.borderColor
@@ -39,8 +40,9 @@ class NumericKeyboard: UIView {
 
     var deleteButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("⌫", for: .normal)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .title1)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        let attributed = NSAttributedString(string: "⌫", attributes: [.foregroundColor: UIColor.green, .underlineStyle: 1])
+        button.setAttributedTitle(attributed, for: .normal)
         button.setTitleColor(Constant.titleColor, for: .normal)
         button.layer.borderWidth = Constant.borderWidth
         button.layer.borderColor = Constant.borderColor
@@ -52,11 +54,12 @@ class NumericKeyboard: UIView {
 
     lazy var doneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Done", for: .normal)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .title1)
-        button.setTitleColor(Constant.titleColor, for: .normal)
+        let attributed = NSAttributedString(string: "XONG", attributes: [.foregroundColor: UIColor.white, .underlineStyle: 1])
+        button.setAttributedTitle(attributed, for: .normal)
         button.layer.borderWidth = Constant.borderWidth
         button.layer.borderColor = Constant.borderColor
+        button.titleLabel?.font = Constant.font
+        button.layer.backgroundColor = UIColor.green.cgColor
         button.accessibilityTraits = [.keyboardKey]
         button.addTarget(self, action: #selector(didTapDoneButton(_:)), for: .touchUpInside)
         return button

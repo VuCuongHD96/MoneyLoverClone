@@ -15,6 +15,9 @@ final class TransactionsViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var previousMonthButton: UIButton!
+    @IBOutlet private weak var thisMonthButton: UIButton!
+    @IBOutlet private weak var nextMonthButton: UIButton!
     
     // MARK: - Properties
     struct Constant {
@@ -25,12 +28,14 @@ final class TransactionsViewController: UIViewController {
     }
     var dataManager: DBManager!
     let formatter = DateFormatter()
+    let formatterMonthYear = DateFormatter()
     var transactionArray = [Transaction]()
     var transactionByMonthArray = [TransactionByDay]() {
         didSet {
             tableView.reloadData()
         }
     }
+    var date = Date()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -56,6 +61,10 @@ final class TransactionsViewController: UIViewController {
             $0.dateStyle = .full
             $0.locale = Locale(identifier: "vi")
         }
+        formatterMonthYear.do {
+            $0.locale = Locale(identifier: "vi")
+            $0.dateFormat = "MMMM, yyyy"
+        }
     }
     
     private func fetchTransactionData() {
@@ -64,14 +73,23 @@ final class TransactionsViewController: UIViewController {
             transactionByMonthArray.removeAll()
             return
         }
+        date = mostRecentDate
         fetchTransactionBy(mostRecentDate)
     }
     
     private func fetchTransactionBy(_ date: Date) {
         let year = date.year
         let month = date.month
+        var monthString = "\(month)"
+        if month < 10 {
+            monthString = "0" + monthString
+        }
+        thisMonthButton.setTitle("\(monthString)/\(year)", for: .normal)
         let transactionInAMonth = transactionArray.filter {
             $0.date.year == year && $0.date.month == month
+        }
+        if transactionInAMonth.isEmpty {
+            tableView.backgroundColor = .red
         }
         var transactionDictionary = [String: [Transaction]]()
         transactionInAMonth.forEach {
@@ -97,6 +115,34 @@ final class TransactionsViewController: UIViewController {
     // MARK: - Views
     private func setupViews() {
         navigationItem.title = "Sổ giao dịch"
+    }
+    
+    @IBAction func choiseMonth(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            date = date - 1.months
+            fetchTransactionBy(date)
+        case 2:
+            date = date + 1.months
+            fetchTransactionBy(date)
+        default:
+            break
+        }
+    }
+    
+    @IBAction func choiseThisMonth(_ sender: Any) {
+        let today = Date()
+        let dateString = formatterMonthYear.string(from: today)
+        let alert = UIAlertController(title: nil, message: "Xem giao dịch của tháng này: \(dateString)", preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.fetchTransactionBy(today)
+            self.date = today
+        }
+        let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
