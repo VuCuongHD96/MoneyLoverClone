@@ -16,7 +16,7 @@ class EventViewController: UIViewController {
     struct Constant {
         static let heigtforrow: CGFloat = 95
         static let namecell = "EventTableViewCell"
-    }   
+    }
     
     var listEvent = [Event]()
     var database: DBManager!
@@ -32,10 +32,10 @@ class EventViewController: UIViewController {
     }
     
     func getListEventData() {
-        let event = Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7))
-        for _ in 1...10 {
-            listEvent.append(event)
-        }
+//        let event = Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7))
+//        for _ in 1...10 {
+//            listEvent.append(event)
+//        }
     }
     
     @IBAction func addEventAction(_ sender: Any) {
@@ -76,10 +76,9 @@ extension EventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as? EventTableViewCell ?? nil
-        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
-        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
-        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
-        
+//        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
+//        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
+//        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
         cell!.cardView.backgroundColor = UIColor.white
         cell!.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         cell!.cardView.layer.cornerRadius = 8
