@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        
+        autoLogin()
     }
     
     @IBAction func loginWithGoogle(_ sender: Any) {
