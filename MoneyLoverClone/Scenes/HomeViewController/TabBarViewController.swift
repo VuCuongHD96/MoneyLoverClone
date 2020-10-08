@@ -8,13 +8,26 @@
 
 import UIKit
 import Then
+import BWWalkthrough
 
 final class TabBarViewController: UITabBarController {
     
-    // MARK: - Outlet
+    // MARK: - Properties
+    var database: DBManager!
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let user = database.fetchUser()
+        if user == nil {
+            setupWalkThough()
+        }
     }
     
     // MARK: - View
@@ -24,6 +37,28 @@ final class TabBarViewController: UITabBarController {
             $0.barTintColor = .white
         }
         delegate = self
+    }
+    
+    // MARK: - Data
+    private func setupData() {
+        database = DBManager.shared
+    }
+    
+    private func setupWalkThough() {
+        let storyBoard = Storyboard.walkThrough
+        let walkThoughScreen = WalkThroughViewController.instantiate()
+        let pageOne = storyBoard.instantiateViewController(identifier: "PageOne")
+        let pageTwo = storyBoard.instantiateViewController(identifier: "PageTwo")
+        let pageThree = storyBoard.instantiateViewController(identifier: "PageThree")
+        let pageFour = storyBoard.instantiateViewController(identifier: "PageFour")
+        let pageFive = storyBoard.instantiateViewController(identifier: "PageFive")
+        walkThoughScreen.add(viewController: pageOne)
+        walkThoughScreen.add(viewController: pageTwo)
+        walkThoughScreen.add(viewController: pageThree)
+        walkThoughScreen.add(viewController: pageFour)
+        walkThoughScreen.add(viewController: pageFive)
+        walkThoughScreen.modalPresentationStyle = .fullScreen
+        present(walkThoughScreen, animated: false, completion: nil)
     }
 }
 

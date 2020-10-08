@@ -21,6 +21,7 @@ target 'MoneyLoverClone' do
 
   pod 'SwiftDate'
   pod 'FSCalendar'
-
   
+  pod "BWWalkthrough"
+
 end
