@@ -59,6 +59,8 @@
 		4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */; };
 		4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96E92526C7E9005A2FEC /* DBManager.swift */; };
 		4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96F025272C47005A2FEC /* TransactionType.swift */; };
+		4CD27A9525300E02005965BA /* ChoiseDateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD27A9425300E02005965BA /* ChoiseDateEnum.swift */; };
+		4CD27A97253022C7005965BA /* AddUpdateTransactionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD27A96253022C7005965BA /* AddUpdateTransactionEnum.swift */; };
 		4CE2DF2C252AB935009D32E5 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DF2B252AB935009D32E5 /* Int+.swift */; };
 		4CE313A1251852F000553415 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3139F251852F000553415 /* TransactionCell.swift */; };
 		4CE313A2251852F000553415 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE313A0251852F000553415 /* TransactionCell.xib */; };
@@ -140,6 +142,8 @@
 		4CCA96E92526C7E9005A2FEC /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		4CCA96EB2526D750005A2FEC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		4CCA96F025272C47005A2FEC /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		4CD27A9425300E02005965BA /* ChoiseDateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseDateEnum.swift; sourceTree = "<group>"; };
+		4CD27A96253022C7005965BA /* AddUpdateTransactionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateTransactionEnum.swift; sourceTree = "<group>"; };
 		4CE2DF2B252AB935009D32E5 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		4CE2DF2D252AC67E009D32E5 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		4CE3139F251852F000553415 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			children = (
 				4C30DA59251B23A500768482 /* Calendar.storyboard */,
 				4C30DA5B251B23E600768482 /* CalendarViewController.swift */,
+				4CD27A9425300E02005965BA /* ChoiseDateEnum.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 			children = (
 				4C9FF3CE2521A1E40027D02F /* AddTransaction.storyboard */,
 				4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */,
+				4CD27A96253022C7005965BA /* AddUpdateTransactionEnum.swift */,
 			);
 			path = AddTransaction;
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */,
+				4CD27A9525300E02005965BA /* ChoiseDateEnum.swift in Sources */,
 				4C3E1102252EA21F009DC7E1 /* WalkThroughViewController.swift in Sources */,
 				CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
@@ -789,6 +796,7 @@
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 				4C24A191252EF7ED007BD624 /* User.swift in Sources */,
+				4CD27A97253022C7005965BA /* AddUpdateTransactionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

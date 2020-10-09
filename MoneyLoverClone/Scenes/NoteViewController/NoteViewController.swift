@@ -19,9 +19,9 @@ final class NoteViewController: UIViewController {
     struct Constant {
         static let limitNoteCount = 50
     }
-    typealias Handler = (String) -> Void
+    typealias Handler = (String?) -> Void
     var sendNote: Handler?
-    var note = ""
+    var note: String?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ final class NoteViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        let note = noteTextView.text ?? ""
+        let note = noteTextView.text
         sendNote?(note)
     }
 
