@@ -26,7 +26,7 @@ final class TabBarViewController: UITabBarController {
         super.viewDidAppear(animated)
         let user = database.fetchUser()
         if user == nil {
-            setupWalkThough()
+            //setupWalkThough()
         }
     }
     
