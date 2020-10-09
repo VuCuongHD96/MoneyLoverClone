@@ -28,7 +28,7 @@ class NumericKeyboard: UIView {
         button.digit = $0
         let attributed = NSAttributedString(string: "\($0)", attributes: [.foregroundColor: UIColor.green, .underlineStyle: 1])
         button.setAttributedTitle(attributed, for: .normal)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        button.titleLabel?.font = Constant.font
         button.setTitleColor(Constant.titleColor, for: .normal)
         button.layer.borderWidth = Constant.borderWidth
         button.layer.borderColor = Constant.borderColor
@@ -40,7 +40,7 @@ class NumericKeyboard: UIView {
 
     var deleteButton: UIButton = {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        button.titleLabel?.font = Constant.font
         let attributed = NSAttributedString(string: "⌫", attributes: [.foregroundColor: UIColor.green, .underlineStyle: 1])
         button.setAttributedTitle(attributed, for: .normal)
         button.setTitleColor(Constant.titleColor, for: .normal)

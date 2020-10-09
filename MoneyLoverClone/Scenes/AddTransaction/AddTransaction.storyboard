@@ -198,11 +198,8 @@
                                 <action selector="cancelAction:" destination="bDj-qf-ci9" id="yWL-zL-KsH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Lưu" style="done" id="c33-we-hAx">
+                        <barButtonItem key="rightBarButtonItem" title="Lưu" style="done" id="bUy-3M-ZAd">
                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="saveAction:" destination="bDj-qf-ci9" id="7kJ-3r-KRt"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -214,7 +211,7 @@
                         <outlet property="eventNameTextField" destination="gT4-gO-S9J" id="PxC-pR-OgW"/>
                         <outlet property="moneyTextField" destination="yr2-8m-dh4" id="bMs-oK-6vA"/>
                         <outlet property="noteTextField" destination="1ol-Mj-Snr" id="4L4-HB-AwI"/>
-                        <outlet property="saveButton" destination="c33-we-hAx" id="pVp-Nf-qGY"/>
+                        <outlet property="saveButton" destination="bUy-3M-ZAd" id="efs-5P-DWU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5k-D9-9Rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

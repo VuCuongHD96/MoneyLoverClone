@@ -90,7 +90,7 @@ class AddEventTableViewController: UITableViewController {
         switch row {
         case 1:
             let calendarScreen = CalendarViewController.instantiate()
-            calendarScreen.choiseDateEvent = true
+            calendarScreen.choiseDateEnum = .future
             navigationController?.pushViewController(calendarScreen, animated: true)
             calendarScreen.passDate = {
                 let dateString = self.formatter.string(from: $0)

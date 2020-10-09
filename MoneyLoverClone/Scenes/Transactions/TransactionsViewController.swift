@@ -18,6 +18,7 @@ final class TransactionsViewController: UIViewController {
     @IBOutlet private weak var previousMonthButton: UIButton!
     @IBOutlet private weak var thisMonthButton: UIButton!
     @IBOutlet private weak var nextMonthButton: UIButton!
+    @IBOutlet private weak var nodataView: UIView!
     
     // MARK: - Properties
     struct Constant {
@@ -35,6 +36,7 @@ final class TransactionsViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    let today = Date()
     var date = Date()
     
     // MARK: - Life Cycle
@@ -84,12 +86,19 @@ final class TransactionsViewController: UIViewController {
         if month < 10 {
             monthString = "0" + monthString
         }
+        if today.year == year && today.month == month {
+            nextMonthButton.isEnabled = false
+        } else {
+            nextMonthButton.isEnabled = true
+        }
         thisMonthButton.setTitle("\(monthString)/\(year)", for: .normal)
         let transactionInAMonth = transactionArray.filter {
             $0.date.year == year && $0.date.month == month
         }
         if transactionInAMonth.isEmpty {
-            tableView.backgroundColor = .red
+            nodataView.isHidden = false
+        } else {
+            nodataView.isHidden = true
         }
         var transactionDictionary = [String: [Transaction]]()
         transactionInAMonth.forEach {
@@ -131,13 +140,12 @@ final class TransactionsViewController: UIViewController {
     }
     
     @IBAction func choiseThisMonth(_ sender: Any) {
-        let today = Date()
         let dateString = formatterMonthYear.string(from: today)
         let alert = UIAlertController(title: nil, message: "Xem giao dịch của tháng này: \(dateString)", preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.fetchTransactionBy(today)
-            self.date = today
+            self.fetchTransactionBy(self.today)
+            self.date = self.today
         }
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
         alert.addAction(okAction)
