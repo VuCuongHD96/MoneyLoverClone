@@ -46,9 +46,10 @@ class DBManager {
     
     // MARK: - Event
     func fetchEvents() -> [Event] {
-        guard let arrayResult = database?.objects(Event.self) else {
+        guard var arrayResult = database?.objects(Event.self) else {
             return [Event]()
         }
+        arrayResult = arrayResult.sorted(byKeyPath: "endDate", ascending: true)
         return Array(arrayResult)
     }
     
@@ -59,6 +60,13 @@ class DBManager {
         }
         arrayResult = arrayResult.sorted(byKeyPath: "date", ascending: false)
         return Array(arrayResult)
+    }
+    
+    func fetchTransation(from idEvent: String) -> [Transaction] {
+        guard let result = database?.objects(Transaction.self).filter("idEvent == %@", idEvent) else {
+            return [Transaction]()
+        }
+        return Array(result)
     }
     
     // MARK: - Category
