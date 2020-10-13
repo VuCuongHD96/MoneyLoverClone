@@ -23,5 +23,6 @@ target 'MoneyLoverClone' do
   pod 'FSCalendar'
   
   pod "BWWalkthrough"
-
+  pod "Firebase/Storage"
+  
 end

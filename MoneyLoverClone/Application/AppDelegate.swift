@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = try? Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL)
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        FirebaseApp.configure()
         return true
     }
     
