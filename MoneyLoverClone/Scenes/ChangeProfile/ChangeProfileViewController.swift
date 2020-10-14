@@ -73,7 +73,7 @@ class ChangeProfileViewController: UIViewController {
         })
         let name = nameTextField.text ?? ""
         ref.child("Users").child("user 01").child("name").setValue("\(name)")
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 
