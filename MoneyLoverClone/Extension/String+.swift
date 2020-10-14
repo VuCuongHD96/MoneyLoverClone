@@ -23,4 +23,14 @@ extension String {
         let moneyString = self.replacingOccurrences(of: ",", with: "")
         return Int(moneyString) ?? 0
     }
+    
+    func convertToEditFormat() -> String {
+        let newMoney = self.replacingOccurrences(of: ",", with: "")
+        let amount = Double(newMoney) ?? 0
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let nsNumber = NSNumber(value: amount)
+        guard let self = numberFormatter.string(from: nsNumber) else { return "" }
+        return self
+    }
 }

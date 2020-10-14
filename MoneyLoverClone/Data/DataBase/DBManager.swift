@@ -16,6 +16,7 @@ class DBManager {
     
     private init() {
         database = try? Realm()
+        setupCategoryData()
     }
     
     func delete<T: Object>(_ object: T) {
@@ -78,16 +79,26 @@ class DBManager {
         return category
     }
     
+    func fetchCategoryBy(name: String) -> Category {
+        let result = database.objects(Category.self).filter("image == %@", name)
+        guard let category = result.first else {
+            return Category()
+        }
+        return category
+    }
+    
     func fetchCategorys() -> [Category] {
-        guard let arrayResult = database?.objects(Category.self),
-            arrayResult.isEmpty != true else {
-            setupCategoryData()
-            return fetchCategorys()
+        guard let arrayResult = database?.objects(Category.self) else {
+                return [Category]()
         }
         return Array(arrayResult)
     }
     
-    func setupCategoryData() {
+    private func setupCategoryData() {
+        let categoryCount = database.objects(Category.self).count
+        if categoryCount != 0 {
+            return
+        }
         saveCategoryToRealm(from: "ExpenseArray", type: "expendsed")
         saveCategoryToRealm(from: "RevenueArray", type: "income")
     }

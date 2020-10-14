@@ -49,7 +49,6 @@ class AddTransactionTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        setupMoneyLabel()
         moneyTextField.resignFirstResponder()
     }
     
@@ -58,7 +57,7 @@ class AddTransactionTableViewController: UITableViewController {
         let customKeyboard = NumericKeyboard(target: moneyTextField)
         customKeyboard.doneEdit = { [weak self] in
             guard let self = self else { return }
-            self.setupMoneyLabel()
+            self.hideKeyBoard()
         }
         moneyTextField.inputView = customKeyboard
         saveButton.do {
@@ -78,7 +77,10 @@ class AddTransactionTableViewController: UITableViewController {
             $0.dateStyle = .full
             $0.locale = locale
         }
-        moneyTextField.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
+        moneyTextField.do {
+            $0.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
+            $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
         database = DBManager.shared
         transaction = Transaction()
     }
@@ -97,7 +99,7 @@ class AddTransactionTableViewController: UITableViewController {
     private func prepareForAdd() {
         navigationItem.title = "Thêm giao dịch"
         saveButton.action = #selector(saveAction)
-        let todayDateString = formatter.string(from: date)
+        let todayDateString = formatter.string(from: today)
         dateLabel.text = todayDateString
     }
     
@@ -111,7 +113,7 @@ class AddTransactionTableViewController: UITableViewController {
         let categoryFetch = database.fetchCategory(from: transaction.categoryID)
         categoryImageView.image = UIImage(named: categoryFetch.image)
         categoryNameTextField.text = categoryFetch.name
-        moneyTextField.text = String(transaction.money).convertToMoneyFormat()
+        moneyTextField.text = transaction.money.convertToEditFormat()
         dateLabel.text = formatter.string(from: transaction.date)
         date = transaction.date
         noteTextField.text = transaction.note
@@ -121,12 +123,8 @@ class AddTransactionTableViewController: UITableViewController {
         eventNameTextField.text = event.name
     }
     
-    private func setupMoneyLabel() {
-        let money = moneyTextField.text?.convertToInt() ?? 0
-        transaction.money = money
-        let moneyString = moneyTextField.text ?? ""
+    private func hideKeyBoard() {
         moneyTextField.do {
-            $0.text = moneyString.convertToMoneyFormat()
             $0.resignFirstResponder()
         }
     }
@@ -140,15 +138,6 @@ class AddTransactionTableViewController: UITableViewController {
         saveButton.isEnabled = true
     }
     
-    private func getTransaction() -> Transaction {
-        let money = moneyTextField.text?.convertToInt() ?? 0
-        let note = noteTextField.text
-        if event == nil {
-            return Transaction(money: money, categoryID: category.identify, note: note, date: date, transactionType: category.transactionType)
-        }
-        return Transaction(money: money, categoryID: category.identify, note: note, date: date, idEvent: event.identify, transactionType: category.transactionType)
-    }
-    
     // MARK: - Action
     private func choiseCategory() {
         let categoryScreen = CategoryViewController.instantiate()
@@ -156,7 +145,6 @@ class AddTransactionTableViewController: UITableViewController {
             guard let self = self else { return }
             self.categoryImageView.image = UIImage(named: $0.image)
             self.categoryNameTextField.text = $0.name
-//            self.category = $0
             self.transaction.categoryID = $0.identify
             self.transaction.type = $0.transactionType
         }
@@ -228,11 +216,18 @@ class AddTransactionTableViewController: UITableViewController {
         let transactionToSave = Transaction()
         transactionToSave.clone(from: transaction)
         database.save(transactionToSave)
+        UserDefaults.standard.set(transaction.date, forKey: "NewDateAdded")
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func textFieldDidChange() {
+        guard let text = moneyTextField.text?.convertToEditFormat() else { return }
+        moneyTextField.text = text
+        transaction.money = text.convertToInt()
     }
 }
 
