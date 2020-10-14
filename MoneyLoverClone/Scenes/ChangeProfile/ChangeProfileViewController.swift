@@ -13,9 +13,10 @@ import RealmSwift
 
 class ChangeProfileViewController: UIViewController {
     
-    @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet private weak var avatarImage: UIImageView!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
+    
     let user = User(name: "minh thang", email: "minhthang09199@gmail.com", avatar: "")
     let storage = Storage.storage().reference()
     let ref = Database.database().reference()
@@ -110,9 +111,6 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
 
 
 
