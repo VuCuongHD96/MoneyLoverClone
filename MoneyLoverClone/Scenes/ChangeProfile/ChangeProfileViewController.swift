@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import RealmSwift
+import Kingfisher
 
 class ChangeProfileViewController: UIViewController {
     
@@ -50,16 +51,7 @@ class ChangeProfileViewController: UIViewController {
             guard let avatarURL = snapshot.value as? String else {
                 return
             }
-            let imageURL = URL(string: avatarURL)
-            DispatchQueue.global().async {
-                guard let imageData = try? Data(contentsOf: imageURL!) else {
-                    return
-                }
-                let image = UIImage(data: imageData)
-                DispatchQueue.main.async {
-                    self.avatarImage.image = image
-                }
-            }
+            self.avatarImage.kf.setImage(with: URL(string: avatarURL))
         }
     }
     
@@ -111,7 +103,6 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
 
 
 
