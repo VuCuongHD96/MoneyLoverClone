@@ -14,11 +14,10 @@ import RealmSwift
 class ChangeProfileViewController: UIViewController {
     
     @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    
     let user = User(name: "minh thang", email: "minhthang09199@gmail.com", avatar: "")
-    private let storage = Storage.storage().reference()
+    let storage = Storage.storage().reference()
     let ref = Database.database().reference()
     let tapImage = UITapGestureRecognizer()
     
@@ -29,7 +28,14 @@ class ChangeProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData()
+        setupView()
+    }
+    
+    func setupView() {
+        getImageData()
+        emailTextField.text = user.email
+        emailTextField.isUserInteractionEnabled = false
+        nameTextField.text = user.name
     }
     
     func tappedImage() {
@@ -38,8 +44,7 @@ class ChangeProfileViewController: UIViewController {
         avatarImage.isUserInteractionEnabled = true
     }
     
-    
-    func getData() {
+    func getImageData() {
         ref.child("Users").child("user 01").child("avatarURL").observeSingleEvent(of: .value) { (snapshot) in
             guard let avatarURL = snapshot.value as? String else {
                 return
@@ -70,10 +75,11 @@ class ChangeProfileViewController: UIViewController {
                 guard let url = url, error == nil else {
                     return
                 }
-                print(url)
-                self.ref.child("Users").child("user 01").setValue(["avatarURL" : "\(url)"])
+                self.ref.child("Users").child("user 01").child("avatarURL").setValue("\(url)")
             })
         })
+        let name = nameTextField.text ?? ""
+        ref.child("Users").child("user 01").child("name").setValue("\(name)")
         self.navigationController?.popViewController(animated: true)
     }
 }
@@ -103,43 +109,8 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         }
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-    
-    //    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-    //        picker.dismiss(animated: true, completion: nil)
-    //    }
-    //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    //        picker.dismiss(animated: true, completion: nil)
-    //        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-    //            return
-    //        }
-    //        guard let imageData = image.pngData() else {
-    //            return
-    //        }
-    //        storage.child("images/file.png").putData(imageData, metadata: nil, completion: { _, error in
-    //            guard error == nil else {
-    //                print("failed to upload")
-    //                return
-    //            }
-    //            self.storage.child("images/file.png").downloadURL(completion: { url, error in
-    //                guard let url = url, error == nil else {
-    //                    return
-    //                }
-    //                let urlString = url.absoluteString
-    //                DispatchQueue.main.async {
-    //                    self.avatarImage.image = image
-    //                }
-    //                print("Download url: \(urlString)")
-    //                UserDefaults.standard.set(urlString, forKey: "url")
-    //            })
-    //        })
-    //    }
 }
+
 
 
 
