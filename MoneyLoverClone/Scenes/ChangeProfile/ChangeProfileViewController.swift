@@ -91,8 +91,8 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var selectedImageFromPicker : UIImage?
-        if let editedImage  = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        var selectedImageFromPicker: UIImage?
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImageFromPicker = editedImage
         } else if let originalImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImageFromPicker = originalImage
