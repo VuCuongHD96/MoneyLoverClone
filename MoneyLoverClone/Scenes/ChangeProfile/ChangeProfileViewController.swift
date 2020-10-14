@@ -103,8 +103,3 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
