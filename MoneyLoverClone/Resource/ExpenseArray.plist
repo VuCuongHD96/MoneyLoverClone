@@ -70,5 +70,7 @@
 	<string>Wifi</string>
 	<key>withdraw</key>
 	<string>Rút tiền</string>
+	<key>expendsed</key>
+	<string>Khoản chi khác</string>
 </dict>
 </plist>

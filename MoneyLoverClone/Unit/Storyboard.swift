@@ -23,4 +23,5 @@ struct Storyboard {
     static let choiseEvent = UIStoryboard(name: "ChoiseEvent", bundle: nil)
     static let detailEvent = UIStoryboard(name: "DetailEvent", bundle: nil)
     static let walkThrough = UIStoryboard(name: "Walkthrough", bundle: nil)
+    static let blance = UIStoryboard(name: "Blance", bundle: nil)
 }

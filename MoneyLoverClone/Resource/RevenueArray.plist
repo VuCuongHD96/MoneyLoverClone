@@ -10,5 +10,7 @@
 	<string>Thưởng</string>
 	<key>interest</key>
 	<string>Tiền lãi</string>
+	<key>income</key>
+	<string>Khoản thu khác</string>
 </dict>
 </plist>

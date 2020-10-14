@@ -51,6 +51,8 @@
 		4C9FF3D92521C6C60027D02F /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3D82521C6C60027D02F /* Plan.storyboard */; };
 		4C9FF3DE2521C8F80027D02F /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3DD2521C8F80027D02F /* Account.storyboard */; };
 		4C9FF3E02521CB5B0027D02F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FF3DF2521CB5B0027D02F /* Setting.storyboard */; };
+		4CA531E225340F8D00D22471 /* Blance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA531E125340F8D00D22471 /* Blance.storyboard */; };
+		4CA531E42534133600D22471 /* BalanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA531E32534133600D22471 /* BalanceTableViewController.swift */; };
 		4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */; };
 		4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */; };
 		4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC87D4025136D9100A3B9BD /* TransactionsViewController.swift */; };
@@ -131,6 +133,8 @@
 		4C9FF3D82521C6C60027D02F /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		4C9FF3DD2521C8F80027D02F /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		4C9FF3DF2521CB5B0027D02F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		4CA531E125340F8D00D22471 /* Blance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Blance.storyboard; sourceTree = "<group>"; };
+		4CA531E32534133600D22471 /* BalanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewController.swift; sourceTree = "<group>"; };
 		4CC87D3925136D9100A3B9BD /* MoneyLoverClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyLoverClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC87D3C25136D9100A3B9BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CC87D3E25136D9100A3B9BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 			children = (
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
+				4CA531E025340F7500D22471 /* Blance */,
 				4C7F4510252DCC4E00C325CE /* Walkthrough */,
 				CFF524AA25270AA700D2F755 /* ChangePassWord */,
 				CF4FD81D2525D57C0048CB0B /* DetailEvent */,
@@ -427,6 +432,15 @@
 				CF52DB4C2525C3E00096585B /* EventViewController.swift */,
 			);
 			path = EventScreen;
+			sourceTree = "<group>";
+		};
+		4CA531E025340F7500D22471 /* Blance */ = {
+			isa = PBXGroup;
+			children = (
+				4CA531E125340F8D00D22471 /* Blance.storyboard */,
+				4CA531E32534133600D22471 /* BalanceTableViewController.swift */,
+			);
+			path = Blance;
 			sourceTree = "<group>";
 		};
 		4CC87D3025136D9000A3B9BD = {
@@ -665,6 +679,7 @@
 				CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */,
 				4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */,
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
+				4CA531E225340F8D00D22471 /* Blance.storyboard in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +807,7 @@
 				4C6C53E925217D3800E7D3F0 /* EventIconViewController.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
 				4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */,
+				4CA531E42534133600D22471 /* BalanceTableViewController.swift in Sources */,
 				4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */,
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
