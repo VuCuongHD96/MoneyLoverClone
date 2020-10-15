@@ -14,7 +14,7 @@ class Event: Object {
     @objc dynamic var name = ""
     @objc dynamic var image = ""
     @objc dynamic var endDate = Date()
-    @objc dynamic var inProgress = true
+    @objc dynamic var status = StatusEventEnum.apply.rawValue
     
     convenience init(name: String, image: String, endDate: Date) {
         self.init()
@@ -22,6 +22,14 @@ class Event: Object {
         self.image = image
         self.name = name
         self.endDate = endDate
+    }
+    
+    func clone(from event: Event) {
+        self.identify = event.identify
+        self.name = event.name
+        self.endDate = event.endDate
+        self.image = event.image
+        self.status = event.status
     }
 
     override class func primaryKey() -> String? {

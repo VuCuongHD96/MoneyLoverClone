@@ -37,7 +37,7 @@ class AddEventTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         dateLabel.textColor = UIColor.black
-        if nameTextField.text?.isEmpty ?? false  || dateLabel.text?.isEmpty ?? false {
+        if nameTextField.text?.isEmpty ?? false || dateLabel.text?.isEmpty ?? false {
             saveButton.isEnabled = false
         } else {
             saveButton.isEnabled = true
@@ -64,7 +64,6 @@ class AddEventTableViewController: UITableViewController {
         formatter.do {
             $0.dateStyle = .full
             $0.locale = locale
-            $0.timeZone = TimeZone(identifier: "vi")
         }
     }
     
@@ -108,7 +107,7 @@ extension AddEventTableViewController {
             calendarScreen.passDate = {
                 let dateString = self.formatter.string(from: $0)
                 self.dateLabel.text = dateString
-                self.enddate = $0
+                self.enddate = self.formatter.date(from: dateString) ?? Date()
             }
         default:
             break

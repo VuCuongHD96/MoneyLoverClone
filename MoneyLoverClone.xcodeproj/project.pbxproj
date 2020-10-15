@@ -74,7 +74,6 @@
 		9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
-		CF05D6F325304EBA00E4D536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
 		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
@@ -87,6 +86,7 @@
 		CF62DC1A252D62DA00BF2490 /* TransactionsOfDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62DC17252D62DA00BF2490 /* TransactionsOfDetailViewController.swift */; };
 		CF62DC1B252D62DA00BF2490 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF62DC18252D62DA00BF2490 /* DetailEvent.storyboard */; };
 		CF62DC1D252D669100BF2490 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DF2D252AC67E009D32E5 /* String+.swift */; };
+		CF6E2D8A2537F5ED003468C9 /* StatusEventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E2D882537F524003468C9 /* StatusEventEnum.swift */; };
 		CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EB2526D750005A2FEC /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +176,7 @@
 		CF62DC14252D627B00BF2490 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		CF62DC17252D62DA00BF2490 /* TransactionsOfDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsOfDetailViewController.swift; sourceTree = "<group>"; };
 		CF62DC18252D62DA00BF2490 /* DetailEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
+		CF6E2D882537F524003468C9 /* StatusEventEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEventEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +342,7 @@
 				4CCA96F025272C47005A2FEC /* TransactionType.swift */,
 				1016AEE825296C3D0030287F /* TransactionByDay.swift */,
 				4C24A190252EF7ED007BD624 /* User.swift */,
+				CF6E2D882537F524003468C9 /* StatusEventEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -784,9 +786,7 @@
 			files = (
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
-
 				9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */,
-
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
@@ -796,6 +796,7 @@
 				4C8DB91625199F8400FABC11 /* Storyboard.swift in Sources */,
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
 				CF62DC1D252D669100BF2490 /* String+.swift in Sources */,
+				CF6E2D8A2537F5ED003468C9 /* StatusEventEnum.swift in Sources */,
 				4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */,
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
