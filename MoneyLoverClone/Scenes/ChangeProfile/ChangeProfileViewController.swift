@@ -18,10 +18,10 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var nameTextField: UITextField!
     
-    let user = User(name: "minh thang", email: "minhthang09199@gmail.com", avatar: "")
     let storage = Storage.storage().reference()
     let ref = Database.database().reference()
     let tapImage = UITapGestureRecognizer()
+    let user = User(name: "minh thang", email: "minhthang09199@gmail.com", avatar: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
