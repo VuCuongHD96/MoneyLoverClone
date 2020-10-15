@@ -15,10 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RdV-hu-CR1">
-                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfK-mP-zL6">
                                 <rect key="frame" x="0.0" y="44" width="375" height="40"/>
                                 <subviews>
@@ -38,35 +34,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="anM-nq-Ssh">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="40"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gdz-fB-OXf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="40"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nau-NI-Gis">
-                                                        <rect key="frame" x="14" y="5" width="87" height="30"/>
+                                                        <rect key="frame" x="0.0" y="5" width="125" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <state key="normal" title="THÁNG NÀY">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="choiseThisMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0hT-JD-rqW"/>
-                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8h-1P-kBS">
-                                                        <rect key="frame" x="101" y="9" width="10.5" height="22"/>
-                                                        <state key="normal" image="down"/>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHR-1U-AET">
-                                                        <rect key="frame" x="111.5" y="0.0" width="13.5" height="40"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Gdz-fB-OXf" firstAttribute="width" secondItem="XHR-1U-AET" secondAttribute="width" id="aTP-sf-I3t"/>
-                                                </constraints>
                                             </stackView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4of-jq-SJe">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="THÁNG SAU">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -86,22 +65,62 @@
                                     <constraint firstItem="XEm-tG-tXF" firstAttribute="top" secondItem="YfK-mP-zL6" secondAttribute="top" id="Zgj-t6-IVj"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RdV-hu-CR1">
+                                <rect key="frame" x="0.0" y="89" width="375" height="529"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opX-VH-LEf">
+                                <rect key="frame" x="0.0" y="89" width="375" height="529"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-V4-BJT">
+                                        <rect key="frame" x="48" y="159" width="279" height="211.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notransaction" translatesAutoresizingMaskIntoConstraints="NO" id="TBX-he-tzH">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="181"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không tìm thấy giao dịch nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW0-XS-qXz">
+                                                <rect key="frame" x="28.5" y="191" width="222" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="leJ-V4-BJT" firstAttribute="centerX" secondItem="opX-VH-LEf" secondAttribute="centerX" id="NM7-iw-PBx"/>
+                                    <constraint firstItem="leJ-V4-BJT" firstAttribute="centerY" secondItem="opX-VH-LEf" secondAttribute="centerY" id="bKg-x1-efR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YfK-mP-zL6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0B0-Fz-17P"/>
+                            <constraint firstItem="opX-VH-LEf" firstAttribute="height" secondItem="RdV-hu-CR1" secondAttribute="height" id="3KL-YE-eBd"/>
                             <constraint firstItem="RdV-hu-CR1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7bP-zu-nIB"/>
                             <constraint firstItem="YfK-mP-zL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GLi-HK-3eR"/>
-                            <constraint firstItem="RdV-hu-CR1" firstAttribute="top" secondItem="YfK-mP-zL6" secondAttribute="bottom" id="Q8F-va-nmr"/>
+                            <constraint firstItem="opX-VH-LEf" firstAttribute="width" secondItem="RdV-hu-CR1" secondAttribute="width" id="H5M-S2-OWG"/>
+                            <constraint firstItem="RdV-hu-CR1" firstAttribute="top" secondItem="YfK-mP-zL6" secondAttribute="bottom" constant="5" id="Q8F-va-nmr"/>
+                            <constraint firstItem="opX-VH-LEf" firstAttribute="centerX" secondItem="RdV-hu-CR1" secondAttribute="centerX" id="QVN-fB-07j"/>
+                            <constraint firstItem="opX-VH-LEf" firstAttribute="centerY" secondItem="RdV-hu-CR1" secondAttribute="centerY" id="oKZ-S6-2mh"/>
                             <constraint firstItem="YfK-mP-zL6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qM7-aN-k13"/>
                             <constraint firstItem="RdV-hu-CR1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="u65-n7-HaI"/>
                             <constraint firstItem="RdV-hu-CR1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zYb-rN-1Lc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="81Z-D3-Aop"/>
+                    <navigationItem key="navigationItem" id="81Z-D3-Aop">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" image="showmore" id="zOn-Rc-iso">
+                            <connections>
+                                <action selector="showMore:" destination="BYZ-38-t0r" id="pgF-Or-JMX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nextMonthButton" destination="4of-jq-SJe" id="XtY-PC-wOV"/>
+                        <outlet property="nodataView" destination="opX-VH-LEf" id="vLr-bO-ieq"/>
                         <outlet property="previousMonthButton" destination="TfR-xz-Jgp" id="KcY-pC-Ulq"/>
                         <outlet property="tableView" destination="RdV-hu-CR1" id="1Zv-8u-5MU"/>
                         <outlet property="thisMonthButton" destination="nau-NI-Gis" id="FgV-AB-cWy"/>
@@ -133,7 +152,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="down" width="10.666666984558105" height="10.666666984558105"/>
+        <image name="notransaction" width="279" height="181"/>
+        <image name="showmore" width="21.333333969116211" height="21.333333969116211"/>
         <image name="transaction" width="32" height="32"/>
         <image name="transactionSelected" width="32" height="32"/>
     </resources>

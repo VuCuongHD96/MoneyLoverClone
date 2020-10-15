@@ -38,7 +38,11 @@ extension SettingsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print("man hinh sua ten hien thi")
+            let storyboard = UIStoryboard(name: "ChangeProfile", bundle: nil)
+            guard let changeProfileScreen = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else {
+                return
+            }
+            navigationController?.pushViewController(changeProfileScreen, animated: true)
         case 1:
             print("man hinh sua dinh dang ngay thang")
         case 2:

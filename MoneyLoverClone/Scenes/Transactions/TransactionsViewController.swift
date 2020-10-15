@@ -18,6 +18,7 @@ final class TransactionsViewController: UIViewController {
     @IBOutlet private weak var previousMonthButton: UIButton!
     @IBOutlet private weak var thisMonthButton: UIButton!
     @IBOutlet private weak var nextMonthButton: UIButton!
+    @IBOutlet private weak var nodataView: UIView!
     
     // MARK: - Properties
     struct Constant {
@@ -29,24 +30,26 @@ final class TransactionsViewController: UIViewController {
     var dataManager: DBManager!
     let formatter = DateFormatter()
     let formatterMonthYear = DateFormatter()
-    var transactionArray = [Transaction]()
+    var transactionArray = [Transaction]() 
     var transactionByMonthArray = [TransactionByDay]() {
         didSet {
             tableView.reloadData()
         }
     }
+    let today = Date()
     var date = Date()
+    var totalMoney = 0
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchTransactionData()
+        setupBalance()
     }
     
     // MARK: - Data
@@ -69,11 +72,15 @@ final class TransactionsViewController: UIViewController {
     
     private func fetchTransactionData() {
         transactionArray = dataManager.fetchTransactions()
-        guard let mostRecentDate = transactionArray.first?.date else {
+        guard var mostRecentDate = transactionArray.first?.date else {
             transactionByMonthArray.removeAll()
             return
         }
         date = mostRecentDate
+        if let dateAdded = UserDefaults.standard.value(forKey: "NewDateAdded") as? Date {
+            mostRecentDate = dateAdded
+            date = dateAdded
+        }
         fetchTransactionBy(mostRecentDate)
     }
     
@@ -84,12 +91,19 @@ final class TransactionsViewController: UIViewController {
         if month < 10 {
             monthString = "0" + monthString
         }
+        if today.year == year && today.month == month {
+            nextMonthButton.isEnabled = false
+        } else {
+            nextMonthButton.isEnabled = true
+        }
         thisMonthButton.setTitle("\(monthString)/\(year)", for: .normal)
         let transactionInAMonth = transactionArray.filter {
             $0.date.year == year && $0.date.month == month
         }
         if transactionInAMonth.isEmpty {
-            tableView.backgroundColor = .red
+            nodataView.isHidden = false
+        } else {
+            nodataView.isHidden = true
         }
         var transactionDictionary = [String: [Transaction]]()
         transactionInAMonth.forEach {
@@ -113,10 +127,19 @@ final class TransactionsViewController: UIViewController {
     }
     
     // MARK: - Views
-    private func setupViews() {
-        navigationItem.title = "Sổ giao dịch"
+    private func setupBalance() {
+        let totalMoney = transactionArray.reduce(into: 0) {
+            switch $1.type {
+            case TransactionType.income.rawValue: $0 += $1.money
+            case TransactionType.expendsed.rawValue: $0 -= $1.money
+            default: break
+            }
+        }
+        navigationItem.title = "Số dư: " + totalMoney.convertToMoneyFormat()
+        self.totalMoney = totalMoney
     }
     
+    // MARK: - Action
     @IBAction func choiseMonth(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -128,19 +151,28 @@ final class TransactionsViewController: UIViewController {
         default:
             break
         }
+        UserDefaults.standard.set(date, forKey: "NewDateAdded")
     }
-    
-    @IBAction func choiseThisMonth(_ sender: Any) {
-        let today = Date()
-        let dateString = formatterMonthYear.string(from: today)
-        let alert = UIAlertController(title: nil, message: "Xem giao dịch của tháng này: \(dateString)", preferredStyle: .actionSheet)
-        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+
+    @IBAction func showMore(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let thisMonth = UIAlertAction(title: "Xem giao dịch của tháng hiện tại", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.fetchTransactionBy(today)
-            self.date = today
+            self.fetchTransactionBy(self.today)
+            self.date = self.today
+            UserDefaults.standard.set(self.date, forKey: "NewDateAdded")
+        }
+        let fixBlance = UIAlertAction(title: "Chỉnh sửa số dư", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            let blanceScreen = BalanceTableViewController.instantiate()
+            blanceScreen.money = self.totalMoney
+            let navigation = NavigationViewController(rootViewController: blanceScreen)
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
-        alert.addAction(okAction)
+        alert.addAction(thisMonth)
+        alert.addAction(fixBlance)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }

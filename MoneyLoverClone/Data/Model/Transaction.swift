@@ -28,6 +28,20 @@ class Transaction: Object {
         self.idEvent = idEvent
         self.type = transactionType
     }
+    
+    required init() {
+        self.identify = UUID().uuidString
+    }
+    
+    func clone(from transaction: Transaction) {
+        self.identify = transaction.identify
+        self.money = transaction.money
+        self.categoryID = transaction.categoryID
+        self.note = transaction.note
+        self.date = transaction.date
+        self.idEvent = transaction.idEvent
+        self.type = transaction.type
+    }
 
     override class func primaryKey() -> String? {
         return "identify"

@@ -16,6 +16,7 @@ class DBManager {
     
     private init() {
         database = try? Realm()
+        setupCategoryData()
     }
     
     func delete<T: Object>(_ object: T) {
@@ -46,9 +47,10 @@ class DBManager {
     
     // MARK: - Event
     func fetchEvents() -> [Event] {
-        guard let arrayResult = database?.objects(Event.self) else {
+        guard var arrayResult = database?.objects(Event.self) else {
             return [Event]()
         }
+        arrayResult = arrayResult.sorted(byKeyPath: "endDate", ascending: true)
         return Array(arrayResult)
     }
     
@@ -61,6 +63,13 @@ class DBManager {
         return Array(arrayResult)
     }
     
+    func fetchTransation(from idEvent: String) -> [Transaction] {
+        guard let result = database?.objects(Transaction.self).filter("idEvent == %@", idEvent) else {
+            return [Transaction]()
+        }
+        return Array(result)
+    }
+    
     // MARK: - Category
     func fetchCategory(from identify: String) -> Category {
         let result = database.objects(Category.self).filter("identify == %@", identify)
@@ -70,16 +79,26 @@ class DBManager {
         return category
     }
     
+    func fetchCategoryBy(name: String) -> Category {
+        let result = database.objects(Category.self).filter("image == %@", name)
+        guard let category = result.first else {
+            return Category()
+        }
+        return category
+    }
+    
     func fetchCategorys() -> [Category] {
-        guard let arrayResult = database?.objects(Category.self),
-            arrayResult.isEmpty != true else {
-            setupCategoryData()
-            return fetchCategorys()
+        guard let arrayResult = database?.objects(Category.self) else {
+                return [Category]()
         }
         return Array(arrayResult)
     }
     
-    func setupCategoryData() {
+    private func setupCategoryData() {
+        let categoryCount = database.objects(Category.self).count
+        if categoryCount != 0 {
+            return
+        }
         saveCategoryToRealm(from: "ExpenseArray", type: "expendsed")
         saveCategoryToRealm(from: "RevenueArray", type: "income")
     }

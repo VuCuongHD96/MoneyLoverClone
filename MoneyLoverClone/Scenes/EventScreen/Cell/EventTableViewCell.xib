@@ -13,35 +13,34 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="564" height="124"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="117"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-wg-42o">
-                        <rect key="frame" x="10" y="8" width="544" height="108"/>
+                        <rect key="frame" x="10" y="8" width="460" height="101"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="Hjv-2E-h10">
-                                <rect key="frame" x="10" y="6.5" width="54.5" height="86.5"/>
+                                <rect key="frame" x="10" y="5" width="46" height="81"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-og-7ml">
-                                <rect key="frame" x="89.5" y="7" width="217.5" height="27"/>
+                                <rect key="frame" x="81" y="7" width="184" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã chi: 5 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDs-UJ-dGU">
-                                <rect key="frame" x="89.5" y="61" width="380.5" height="48.5"/>
+                                <rect key="frame" x="81" y="57.5" width="322" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Còn 2 ngày" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afc-c3-oNy">
-                                <rect key="frame" x="89.5" y="34" width="217.5" height="27"/>
+                                <rect key="frame" x="81" y="32" width="184" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.98105569950000004" green="0.66306799959999996" blue="0.95466352980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tDs-UJ-dGU" firstAttribute="height" secondItem="XHj-wg-42o" secondAttribute="height" multiplier="0.45" id="4DP-0c-w0J"/>
                             <constraint firstItem="afc-c3-oNy" firstAttribute="width" secondItem="XHj-wg-42o" secondAttribute="width" multiplier="0.4" id="Ad0-19-QNg"/>
@@ -72,10 +71,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardView" destination="XHj-wg-42o" id="6Hn-af-sjk"/>
-                <outlet property="imgEvent" destination="Hjv-2E-h10" id="pwR-Gs-Pge"/>
-                <outlet property="txtCash" destination="tDs-UJ-dGU" id="sLd-ie-SRk"/>
-                <outlet property="txtDateLeft" destination="afc-c3-oNy" id="NeM-aN-g4b"/>
-                <outlet property="txtEvent" destination="WAz-og-7ml" id="a6T-PD-iVA"/>
+                <outlet property="cashLabel" destination="tDs-UJ-dGU" id="sLd-ie-SRk"/>
+                <outlet property="dateLeftLabel" destination="afc-c3-oNy" id="NeM-aN-g4b"/>
+                <outlet property="eventImage" destination="Hjv-2E-h10" id="pwR-Gs-Pge"/>
+                <outlet property="eventLabel" destination="WAz-og-7ml" id="a6T-PD-iVA"/>
             </connections>
             <point key="canvasLocation" x="465.21739130434787" y="127.23214285714285"/>
         </tableViewCell>

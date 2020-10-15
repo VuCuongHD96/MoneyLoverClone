@@ -91,7 +91,7 @@ final class TransactionDetailTableViewController: UITableViewController {
     // MARK: - Action
     @IBAction func updateAction(_ sender: Any) {
         let transactionScreen = AddTransactionTableViewController.instantiate()
-        transactionScreen.transaction = transaction
+        transactionScreen.addUpdateTransactionEnum = .update(transaction)
         let navigationController = UINavigationController(rootViewController: transactionScreen)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)

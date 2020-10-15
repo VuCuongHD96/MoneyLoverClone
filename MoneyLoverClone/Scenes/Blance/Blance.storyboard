@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Điều Chỉnh Số Dư-->
+        <scene sceneID="gPi-de-vV4">
+            <objects>
+                <tableViewController storyboardIdentifier="BalanceTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="75g-L9-3Ag" customClass="BalanceTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xSb-l7-Cnq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Nhập số dư hiện tại của ví" id="1PS-S8-Kjh">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="56" id="DmB-ZS-fSI">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DmB-ZS-fSI" id="pPQ-fQ-1Dm">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="mSV-Wc-1pH">
+                                                    <rect key="frame" x="62" y="5" width="286" height="51"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="uWs-MV-Rga">
+                                                            <rect key="frame" x="0.0" y="0.0" width="286" height="51"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="uWs-MV-Rga" secondAttribute="trailing" id="yQy-89-0br"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vietnam" translatesAutoresizingMaskIntoConstraints="NO" id="Q5f-Tr-sgw">
+                                                    <rect key="frame" x="15" y="14.5" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Q5f-Tr-sgw" secondAttribute="height" id="e49-PA-o0V"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mSV-Wc-1pH" firstAttribute="top" secondItem="pPQ-fQ-1Dm" secondAttribute="top" constant="5" id="4r6-F6-5Zd"/>
+                                                <constraint firstItem="Q5f-Tr-sgw" firstAttribute="centerY" secondItem="uWs-MV-Rga" secondAttribute="centerY" id="Ebt-gj-HAX"/>
+                                                <constraint firstAttribute="trailing" secondItem="mSV-Wc-1pH" secondAttribute="trailing" id="dLF-Up-b14"/>
+                                                <constraint firstItem="Q5f-Tr-sgw" firstAttribute="leading" secondItem="pPQ-fQ-1Dm" secondAttribute="leading" constant="15" id="ip6-QR-uM3"/>
+                                                <constraint firstItem="mSV-Wc-1pH" firstAttribute="leading" secondItem="Q5f-Tr-sgw" secondAttribute="trailing" constant="15" id="lPd-U3-gJS"/>
+                                                <constraint firstAttribute="bottom" secondItem="mSV-Wc-1pH" secondAttribute="bottom" id="phh-Ew-svv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="75g-L9-3Ag" id="jEC-ZF-a1C"/>
+                            <outlet property="delegate" destination="75g-L9-3Ag" id="RMs-7v-Qhg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Điều Chỉnh Số Dư" id="VBE-Ie-vL5">
+                        <barButtonItem key="leftBarButtonItem" title="Huỷ" id="SDY-y2-i4O">
+                            <connections>
+                                <action selector="cancelAction:" destination="75g-L9-3Ag" id="K4Q-Ks-90j"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Lưu" style="done" id="1go-Kd-PIc">
+                            <connections>
+                                <action selector="saveAction:" destination="75g-L9-3Ag" id="m5v-zb-ydx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="SDY-y2-i4O" id="9n2-4U-Acy"/>
+                        <outlet property="moneyTextField" destination="uWs-MV-Rga" id="w7h-eR-POh"/>
+                        <outlet property="saveButton" destination="1go-Kd-PIc" id="XQ7-5v-oWU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppc-2a-zko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="115.59220389805098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="vietnam" width="32" height="32"/>
+    </resources>
+</document>

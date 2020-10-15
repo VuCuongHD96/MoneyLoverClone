@@ -31,7 +31,7 @@
                                                         <constraint firstAttribute="width" constant="1" id="NBV-Ct-yNr"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tên" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u00-ju-XJd">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u00-ju-XJd">
                                                     <rect key="frame" x="74" y="10" width="288" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="288" id="YG0-Z9-5un"/>
@@ -39,7 +39,7 @@
                                                     </constraints>
                                                     <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="editText:" destination="n68-hM-aFD" eventType="editingChanged" id="avM-je-BdO"/>
                                                     </connections>
@@ -71,7 +71,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ngày kết thúc" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-GR-0xO">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ngày kết thúc" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-GR-0xO">
                                                     <rect key="frame" x="74" y="9.5" width="288" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="22U-Ij-ieg"/>
@@ -150,19 +150,37 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc">
                             <connections>
-                                <action selector="btnSave:" destination="n68-hM-aFD" id="UmT-Gl-Rfv"/>
+                                <action selector="saveAction:" destination="n68-hM-aFD" id="pvP-bp-Ofb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="mOa-GR-0xO" id="IVC-6x-Ddi"/>
-                        <outlet property="imgIcon" destination="la8-1B-mI9" id="y4z-jT-3WA"/>
+                        <outlet property="iconImage" destination="la8-1B-mI9" id="y4z-jT-3WA"/>
                         <outlet property="nameTextField" destination="u00-ju-XJd" id="HhZ-ZL-lCT"/>
                         <outlet property="saveButton" destination="6mW-mQ-emc" id="HMS-sR-DbT"/>
-                        <outlet property="tblAddEvent" destination="kFu-q4-iID" id="YGJ-tD-Wfs"/>
+                        <outlet property="tableEvent" destination="kFu-q4-iID" id="YGJ-tD-Wfs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBt-pn-LJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10285.6" y="-448.42578710644682"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OLn-FH-yNF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3FY-hH-vou" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qkR-zt-Y1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n68-hM-aFD" kind="relationship" relationship="rootViewController" id="yQK-aE-yU5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJV-Sw-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9346.3999999999996" y="-448.42578710644682"/>
         </scene>

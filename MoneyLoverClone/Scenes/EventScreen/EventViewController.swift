@@ -9,33 +9,47 @@
 import UIKit
 import Reusable
 
-class EventViewController: UIViewController {
+final class EventViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     struct Constant {
         static let heigtforrow: CGFloat = 95
-        static let namecell = "EventTableViewCell"
     }
     
-    var listEvent = [Event]()
+    var listEven = [Event]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var database: DBManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getListEventData()
-        tableView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-        tableView.dataSource = self
-        tableView.delegate = self
-        let nib = UINib.init(nibName: Constant.namecell, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cellEvent")
+        setupData()
+        setupView()
     }
     
-    func getListEventData() {
-//        let event = Event(idEvent: 1, estimateDay: 12, nameEvent: "Birthday", imgEvent: "icon2", cash: 12000000, inProgress: true, endDate: Date() + TimeInterval(Date().day * 7))
-//        for _ in 1...10 {
-//            listEvent.append(event)
-//        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getListEventData()
+    }
+    
+    private func getListEventData() {
+        listEvent = database.fetchEvents()
+    }
+    
+    private func setupView() {
+        tableView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
+    }
+    
+    private func setupData() {
+        database = DBManager.shared
+        tableView.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: EventTableViewCell.self )
+        }
     }
     
     @IBAction func addEventAction(_ sender: Any) {
@@ -45,6 +59,7 @@ class EventViewController: UIViewController {
         }
         let navController = UINavigationController(rootViewController: addEventView)
         addEventView.isModalInPresentation = true
+        navController.modalPresentationStyle = .fullScreen
         addEventView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         present(navController, animated: true, completion: nil)
     }
@@ -75,17 +90,9 @@ extension EventViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as? EventTableViewCell ?? nil
-//        cell!.imgEvent.image = UIImage.init(named: listEvent[indexPath.row].imgEvent)
-//        cell!.txtCash.text =  "Đã chi \(String(listEvent[indexPath.row].cash)) VND"
-//        cell!.txtDateLeft.text = "Còn lại \(String(listEvent[indexPath.row].estimateDay))"
-        cell!.cardView.backgroundColor = UIColor.white
-        cell!.contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
-        cell!.cardView.layer.cornerRadius = 8
-        cell!.cardView.layer.masksToBounds = false
-        cell!.cardView.layer.shadowOpacity = 0.5
-        cell!.cardView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        cell!.cardView.layer.shadowColor = UIColor.black.cgColor
-        return cell!
+        let cell: EventTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let event = listEvent[indexPath.row]
+        cell.setContent(data: event)
+        return cell
     }
 }

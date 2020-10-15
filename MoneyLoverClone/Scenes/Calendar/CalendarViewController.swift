@@ -21,7 +21,8 @@ final class CalendarViewController: UIViewController {
     typealias Handler = (Date) -> Void
     var passDate: Handler?
     var date = Date()
-    var choiseDateEvent = false
+    var choiseDateEnum = ChoiseDateEnum.past
+    let today = Date()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ final class CalendarViewController: UIViewController {
     }
     
     private func setupData() {
-        calendar.delegate = self    
+        calendar.delegate = self
     }
     
     // MARK: - Views
@@ -47,16 +48,21 @@ final class CalendarViewController: UIViewController {
     
     // MARK: - Action
     @IBAction func showTodayAction(_ sender: Any) {
-        calendar.select(Date(), scrollToDate: true)
+        calendar.select(today, scrollToDate: true)
     }
 }
 
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let today = Date()
-        if choiseDateEvent && date < today {
+        switch choiseDateEnum {
+        case .future where date < today:
             view.makeToast("Ngày kết thúc không thể là ngày trong quá khứ")
             return
+        case .past where date > today:
+            view.makeToast("Giao dịch phải được thực hiện trong quá khứ & hiện tại")
+            return
+        case .future: break
+        case .past: break
         }
         passDate?(date)
         navigationController?.popViewController(animated: true)
