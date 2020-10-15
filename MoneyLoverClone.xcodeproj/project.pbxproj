@@ -70,6 +70,8 @@
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
 		9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9332F6252EC082000957EA /* GoogleService-Info.plist */; };
+		9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */; };
+		9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
 		CF05D6F325304EBA00E4D536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
@@ -159,6 +161,8 @@
 		85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9B9332F6252EC082000957EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfile.storyboard; sourceTree = "<group>"; };
+		9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
 		BE812B66C0C425349C69ADFE /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9BC28A9925300AFD00ABDF43 /* ChangeProfile */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				4CA531E025340F7500D22471 /* Blance */,
@@ -535,6 +540,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		9BC28A9925300AFD00ABDF43 /* ChangeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */,
+				9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */,
+			);
+			path = ChangeProfile;
+			sourceTree = "<group>";
+		};
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +689,7 @@
 				4C9FF3D92521C6C60027D02F /* Plan.storyboard in Resources */,
 				4CC87D4425136D9100A3B9BD /* Main.storyboard in Resources */,
 				4C9FF3CF2521A1E40027D02F /* AddTransaction.storyboard in Resources */,
+				9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */,
 				4C30DA66251B44DA00768482 /* CategoryCell.xib in Resources */,
 				CF52DB4F2525C3E00096585B /* Event.storyboard in Resources */,
 				4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */,
@@ -769,7 +784,9 @@
 			files = (
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
-				CF05D6F325304EBA00E4D536 /* EventViewController.swift in Sources */,
+
+				9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */,
+
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
