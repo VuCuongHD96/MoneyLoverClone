@@ -23,12 +23,8 @@ target 'MoneyLoverClone' do
   pod 'FSCalendar'
   
   pod "BWWalkthrough"
-<<<<<<< HEAD
   pod 'Charts'
-
-=======
   pod "Firebase/Storage"
   pod 'Kingfisher', '~> 5.0'
-  
->>>>>>> master
+
 end
