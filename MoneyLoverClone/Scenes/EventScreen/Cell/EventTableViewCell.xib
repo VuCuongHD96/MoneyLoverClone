@@ -40,6 +40,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-process-40" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-bC-SXm">
+                                <rect key="frame" x="385" y="20.5" width="24" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1K2-3k-RTt"/>
+                                    <constraint firstAttribute="width" constant="24" id="sSD-9Y-Bx6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tDs-UJ-dGU" firstAttribute="height" secondItem="XHj-wg-42o" secondAttribute="height" multiplier="0.45" id="4DP-0c-w0J"/>
@@ -49,9 +56,11 @@
                             <constraint firstItem="afc-c3-oNy" firstAttribute="leading" secondItem="Hjv-2E-h10" secondAttribute="trailing" constant="25" id="E9X-kB-A0p"/>
                             <constraint firstAttribute="bottom" secondItem="Hjv-2E-h10" secondAttribute="bottom" constant="15" id="ExY-pF-pKN"/>
                             <constraint firstItem="tDs-UJ-dGU" firstAttribute="top" secondItem="afc-c3-oNy" secondAttribute="bottom" id="HSg-tO-0h1"/>
+                            <constraint firstItem="tDs-UJ-dGU" firstAttribute="top" secondItem="LQf-bC-SXm" secondAttribute="bottom" constant="17" id="JPb-T6-5Td"/>
                             <constraint firstItem="afc-c3-oNy" firstAttribute="height" secondItem="XHj-wg-42o" secondAttribute="height" multiplier="0.25" id="Lw3-6L-0Xh"/>
                             <constraint firstItem="afc-c3-oNy" firstAttribute="top" secondItem="WAz-og-7ml" secondAttribute="bottom" id="RHG-ed-bzQ"/>
                             <constraint firstItem="Hjv-2E-h10" firstAttribute="leading" secondItem="XHj-wg-42o" secondAttribute="leading" constant="10" id="ZVn-4i-f7U"/>
+                            <constraint firstAttribute="trailing" secondItem="LQf-bC-SXm" secondAttribute="trailing" constant="51" id="cWO-hE-B8N"/>
                             <constraint firstItem="WAz-og-7ml" firstAttribute="leading" secondItem="Hjv-2E-h10" secondAttribute="trailing" constant="25" id="co0-Nz-cga"/>
                             <constraint firstItem="WAz-og-7ml" firstAttribute="height" secondItem="XHj-wg-42o" secondAttribute="height" multiplier="0.25" id="d4u-8c-xRO"/>
                             <constraint firstItem="WAz-og-7ml" firstAttribute="top" secondItem="XHj-wg-42o" secondAttribute="top" constant="7" id="fYJ-Ij-3cq"/>
@@ -60,11 +69,23 @@
                             <constraint firstItem="tDs-UJ-dGU" firstAttribute="leading" secondItem="Hjv-2E-h10" secondAttribute="trailing" constant="25" id="vcg-tX-JEZ"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang áp dụng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es4-Vz-0Os">
+                        <rect key="frame" x="351" y="50.5" width="110" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="e5C-U2-Bvj"/>
+                            <constraint firstAttribute="width" constant="110" id="fIa-Z5-81p"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="es4-Vz-0Os" secondAttribute="trailing" constant="19" id="4Di-EX-r6J"/>
                     <constraint firstItem="XHj-wg-42o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.9000000000000004" id="ApF-3i-ruf"/>
                     <constraint firstItem="XHj-wg-42o" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="FDu-ab-8bn"/>
                     <constraint firstItem="XHj-wg-42o" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UO2-b8-lT5"/>
+                    <constraint firstItem="es4-Vz-0Os" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YxW-Fh-Osq"/>
                     <constraint firstItem="XHj-wg-42o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aOS-Mf-EYC"/>
                 </constraints>
             </tableViewCellContentView>
@@ -72,14 +93,17 @@
             <connections>
                 <outlet property="cardView" destination="XHj-wg-42o" id="6Hn-af-sjk"/>
                 <outlet property="cashLabel" destination="tDs-UJ-dGU" id="sLd-ie-SRk"/>
+                <outlet property="checkEventImageView" destination="LQf-bC-SXm" id="QcP-mb-C5X"/>
+                <outlet property="checkEventLabel" destination="es4-Vz-0Os" id="XMn-cc-eHa"/>
                 <outlet property="dateLeftLabel" destination="afc-c3-oNy" id="NeM-aN-g4b"/>
                 <outlet property="eventImage" destination="Hjv-2E-h10" id="pwR-Gs-Pge"/>
                 <outlet property="eventLabel" destination="WAz-og-7ml" id="a6T-PD-iVA"/>
             </connections>
-            <point key="canvasLocation" x="465.21739130434787" y="127.23214285714285"/>
+            <point key="canvasLocation" x="489.85507246376818" y="30.46875"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="book" width="32" height="32"/>
+        <image name="icons8-process-40" width="16" height="16"/>
     </resources>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-final class TransactionsOfDetailViewController: UIViewController {
+final class TransactionsOfEventViewController: UIViewController {
     
     @IBOutlet private weak var cardOverView: UIView!
     @IBOutlet private weak var tableview: UITableView!
@@ -53,7 +53,7 @@ final class TransactionsOfDetailViewController: UIViewController {
     }
 }
 
-extension TransactionsOfDetailViewController: UITableViewDelegate {
+extension TransactionsOfEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerSectionView = Bundle.main.loadNibNamed(Constant.headerNibName, owner: self, options: nil)?.first as? HeaderTransactionView else {
             return UIView()
@@ -74,7 +74,7 @@ extension TransactionsOfDetailViewController: UITableViewDelegate {
     }
 }
 
-extension TransactionsOfDetailViewController: UITableViewDataSource {
+extension TransactionsOfEventViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Constant.numberOfSections
     }
@@ -89,6 +89,6 @@ extension TransactionsOfDetailViewController: UITableViewDataSource {
     }
 }
 
-extension TransactionsOfDetailViewController: StoryboardSceneBased {
+extension TransactionsOfEventViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboard.detailEvent
 }

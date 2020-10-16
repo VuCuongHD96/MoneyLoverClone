@@ -9,16 +9,18 @@
 import UIKit
 import Reusable
 
-final class EventTableViewCell: UITableViewCell, NibReusable {
+class EventTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var dateLeftLabel: UILabel!
     @IBOutlet private weak var eventImage: UIImageView!
     @IBOutlet private weak var cashLabel: UILabel!
     @IBOutlet private weak var eventLabel: UILabel!
+    @IBOutlet private weak var checkEventImageView: UIImageView!
+    @IBOutlet private weak var checkEventLabel: UILabel!
     
     var cashEvent = 0
-    var database: DBManager?
+    var database: DBManager!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +42,38 @@ final class EventTableViewCell: UITableViewCell, NibReusable {
         database = DBManager.shared
     }
     
+    func finishStatus() {
+        checkEventLabel.do {
+            $0.text = "Đã hoàn thành"
+            $0.textColor = UIColor.green
+        }
+        checkEventImageView.do {
+            $0.image = UIImage.init(named: "checked")
+        }
+    }
+    
+    func applyStatus() {
+        checkEventLabel.do {
+            $0.text = "Đang áp dụng"
+            $0.textColor = UIColor.purple
+        }
+        checkEventImageView.do {
+            $0.image = UIImage.init(named: "icons8-process-40")
+        }
+    }
+    
+    func validStatus() {
+        checkEventLabel.do {
+            $0.text = "Đã hết hạn"
+            $0.textColor = UIColor.red
+        }
+        checkEventImageView.do {
+            $0.alpha = 0
+        }
+    }
+    
     private func expenseEvent(idEvent: String) -> Int {
+        cashEvent = 0
         guard let listTransationEvent = database?.fetchTransation(from: idEvent) else {
             return 0
         }
@@ -55,8 +88,11 @@ final class EventTableViewCell: UITableViewCell, NibReusable {
     }
     
     private func estimateDay(endDate: Date) -> Int {
+        let calendar = Calendar.current
         let now = Date()
-        let estimateDay = Calendar.current.dateComponents([.day], from: now, to: endDate ).day ?? 0
+        let date1 = calendar.startOfDay(for: now)
+        let date2 = calendar.startOfDay(for: endDate)
+        let estimateDay = calendar.dateComponents([.day], from: date1, to: date2).day ?? 0
         return estimateDay
     }
     
@@ -64,6 +100,14 @@ final class EventTableViewCell: UITableViewCell, NibReusable {
         let idevent = data.identify
         let cash = expenseEvent(idEvent: idevent)
         let dateLeft = estimateDay(endDate: data.endDate)
+        let status = data.status
+        if status == StatusEventEnum.valid.rawValue {
+            validStatus()
+        } else if status == StatusEventEnum.finish.rawValue {
+            finishStatus()
+        } else if status == StatusEventEnum.apply.rawValue {
+            applyStatus()
+        }
         cashLabel.do {
             if cash <= 0 {
                 $0.text = "Đã chi \((cash*(-1)).convertToMoneyFormat()) VND"
@@ -71,8 +115,15 @@ final class EventTableViewCell: UITableViewCell, NibReusable {
                 $0.text = "Đã thu \(cash.convertToMoneyFormat()) VND"
             }
         }
-        dateLeftLabel.text = "Còn lại \(String(dateLeft)) ngày"
+        dateLeftLabel.do {
+            if dateLeft < 0 {
+                $0.text = "Còn lại 0 ngày"
+            } else {
+                $0.text = "Còn lại \(String(dateLeft)) ngày"
+            }
+        }
         eventImage.image = UIImage(named: data.image)
         eventLabel.text = data.name
+        
     }
 }

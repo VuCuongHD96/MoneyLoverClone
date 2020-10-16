@@ -33,10 +33,30 @@ final class EventViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getListEventData()
+        checkEventValid()
     }
     
     private func getListEventData() {
         listEvent = database.fetchEvents()
+    }
+    
+    private func checkEventValid() {
+        listEvent.forEach { event in
+            let endDate =  event.endDate
+            let dayLeft = estimateDay(endDate: endDate)
+            if dayLeft == 0 {
+                updateProcessEvent(status: StatusEventEnum.valid.rawValue, event: event)
+            }
+        }
+    }
+    
+    private func estimateDay(endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let now = Date()
+        let date1 = calendar.startOfDay(for: now)
+        let date2 = calendar.startOfDay(for: endDate)
+        let estimateDay = calendar.dateComponents([.day], from: date1, to: date2).day ?? 0
+        return estimateDay
     }
     
     private func setupView() {
@@ -52,15 +72,20 @@ final class EventViewController: UIViewController {
         }
     }
     
+    func updateProcessEvent(status: String, event: Event) {
+        let eventUpdate = Event()
+        eventUpdate.clone(from: event)
+        eventUpdate.status = status
+        database?.save(eventUpdate)
+        listEvent = database.fetchEvents()
+    }
+    
     @IBAction func addEventAction(_ sender: Any) {
-        let story = UIStoryboard(name: "AddEvent", bundle: nil)
-        guard let addEventView = story.instantiateViewController(identifier: "AddEventTableViewController") as? AddEventTableViewController else {
-            return
-        }
-        let navController = UINavigationController(rootViewController: addEventView)
-        addEventView.isModalInPresentation = true
+        let story = AddEventTableViewController.instantiate()
+        let navController = UINavigationController(rootViewController: story)
+        story.isModalInPresentation = true
         navController.modalPresentationStyle = .fullScreen
-        addEventView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        story.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         present(navController, animated: true, completion: nil)
     }
 }
@@ -70,13 +95,45 @@ extension EventViewController: StoryboardSceneBased {
 }
 
 extension EventViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let story = UIStoryboard(name: "DetailEvent", bundle: nil)
-        guard let detailEvent = story.instantiateViewController(identifier: "DetailEventViewController") as? TransactionsOfDetailViewController else {
-            print("err")
-            return
+        //get statusEvent
+        let event = listEvent[indexPath.row]
+        let statusEvent = event.status
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        //excute alert
+        let checkSheet = UIAlertAction(title: "Đánh dấu hoàn tất ", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            if statusEvent == StatusEventEnum.finish.rawValue {
+                self.updateProcessEvent(status: StatusEventEnum.apply.rawValue, event: event)
+            } else {
+                self.updateProcessEvent(status: StatusEventEnum.finish.rawValue, event: event)
+            }
         }
-        navigationController?.pushViewController(detailEvent, animated: true)
+        let detailEventSheet = UIAlertAction(title: "Danh sách giao dịch", style: .default) { [weak self] (_) in
+            guard let self = self else { return }
+            let story = TransactionsOfEventViewController.instantiate()
+            self.navigationController?.pushViewController(story, animated: true)
+        }
+        let editEventSheet = UIAlertAction(title: "Sửa sự kiện", style: .default) { [weak self] (_) in
+            // MARK: - To do
+        }
+        let deleteEventSheet = UIAlertAction(title: "Xóa sự kiện", style: .destructive) { [weak self] (_) in
+            // MARK: - To do
+        }
+        let cancelSheet = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
+        //checkStatusAction
+        if statusEvent == StatusEventEnum.finish.rawValue {
+            checkSheet.setValue("Đánh dấu chưa hoàn tất", forKey: "title")
+        } else if statusEvent == StatusEventEnum.valid.rawValue {
+            checkSheet.isEnabled = false
+        }
+        alert.addAction(checkSheet)
+        alert.addAction(detailEventSheet)
+        alert.addAction(editEventSheet)
+        alert.addAction(deleteEventSheet)
+        alert.addAction(cancelSheet)
+        present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
