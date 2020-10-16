@@ -13,6 +13,9 @@ final class TransactionsOfEventViewController: UIViewController {
     
     @IBOutlet private weak var cardOverView: UIView!
     @IBOutlet private weak var tableview: UITableView!
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var expenseLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     struct Constant {
         static let numberOfSections = 5
@@ -22,13 +25,28 @@ final class TransactionsOfEventViewController: UIViewController {
         static let headerNibName = "HeaderTransactionView"
     }
     
+    var listTransationEvent = [Transaction]() {
+        didSet {
+            tableview.reloadData()
+        }
+    }
+    var database: DBManager!
+    var event = Event()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setupView()
+        setupOverView()
         let footerView = UIView()
         footerView.backgroundColor = UIColor.white
         tableview.tableFooterView = footerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupData()
+        setupView()
+        setupOverView()
     }
     
     func setupData() {
@@ -37,9 +55,42 @@ final class TransactionsOfEventViewController: UIViewController {
             $0.dataSource = self
             $0.register(cellType: TransactionCell.self )
         }
+        database = DBManager.shared
+        listTransationEvent = database.fetchTransation(from: event.identify)
     }
     
-    func setupView() {
+    private func checkEmptyTransation() {
+        if listTransationEvent.isEmpty {
+            tableview.isHidden = true
+            cardOverView.isHidden = true
+            let labelView = UILabel(frame: CGRect(x: 105, y: 420, width: 255, height: 21))
+            labelView.text = "Không có giao dịch nào"
+            let imageName = "notransaction"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(image: image!)
+            imageView.frame = CGRect(x: 32, y: 230, width: 320, height: 200)
+            view.addSubview(imageView)
+            view.addSubview(labelView)
+        }
+    }
+    
+    private func setupOverView() {
+        var income = 0
+        var expense = 0
+        listTransationEvent.forEach { transationFromEvent in
+            if transationFromEvent.type == TransactionType.income.rawValue {
+                income += transationFromEvent.money
+            } else if transationFromEvent.type == TransactionType.expendsed.rawValue {
+                expense += transationFromEvent.money
+            }
+        }
+        let total = income - expense
+        incomeLabel.text = "+\(income.convertToMoneyFormat())"
+        expenseLabel.text = "-\(expense.convertToMoneyFormat())"
+        totalLabel.text = "\(total.convertToMoneyFormat())"
+    }
+    
+    private func setupView() {
         view.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         cardOverView.backgroundColor = UIColor.white
         cardOverView.layer.cornerRadius = 8
@@ -50,6 +101,8 @@ final class TransactionsOfEventViewController: UIViewController {
         tableview.do {
             $0.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         }
+        checkEmptyTransation()
+        self.title = event.name
     }
 }
 
@@ -74,17 +127,21 @@ extension TransactionsOfEventViewController: UITableViewDelegate {
     }
 }
 
-extension TransactionsOfEventViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return Constant.numberOfSections
-    }
+
+extension TransactionsOfDetailViewController: UITableViewDataSource {
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return Constant.numberOfSections
+//    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constant.numberOfRowsInSection
+        return listTransationEvent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TransactionCell = tableView.dequeueReusableCell(for: indexPath)
+        let transactionFromEvent = listTransationEvent[indexPath.row]
+        cell.setcontent(data: transactionFromEvent)
         return cell
     }
 }

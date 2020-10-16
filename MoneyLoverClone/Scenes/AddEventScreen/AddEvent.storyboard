@@ -9,7 +9,7 @@
         <!--Thêm sự kiện-->
         <scene sceneID="sp7-A7-wSb">
             <objects>
-                <tableViewController storyboardIdentifier="AddEventTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n68-hM-aFD" customClass="AddEventTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddUpdateEventTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n68-hM-aFD" customClass="AddUpdateEventTableViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kFu-q4-iID">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,11 +148,7 @@
                                 <action selector="cancelAction:" destination="n68-hM-aFD" id="Wz7-gv-9sa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc">
-                            <connections>
-                                <action selector="saveAction:" destination="n68-hM-aFD" id="pvP-bp-Ofb"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lưu" id="6mW-mQ-emc"/>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="mOa-GR-0xO" id="IVC-6x-Ddi"/>

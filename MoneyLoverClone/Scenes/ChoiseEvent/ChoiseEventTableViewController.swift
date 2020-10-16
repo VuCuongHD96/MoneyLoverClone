@@ -98,7 +98,7 @@ extension ChoiseEventTableViewController {
             eventDidChoise?(event)
             navigationController?.popViewController(animated: true)
         case 1:
-            let addEventScreen = AddEventTableViewController.instantiate()
+            let addEventScreen = AddUpdateEventTableViewController.instantiate()
             let navigationController = UINavigationController(rootViewController: addEventScreen)
             navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true, completion: nil)

@@ -40,6 +40,10 @@ class AddUpdateEventTableViewController: UITableViewController {
         nameTextField.delegate = self
         tableEvent.delegate = self
         tableEvent.dataSource = self
+        saveButton.do {
+            $0.isEnabled = false
+            $0.target = self
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +77,7 @@ class AddUpdateEventTableViewController: UITableViewController {
            case .update(let event):
                prepareForUpdate()
                setupEventData(event: event)
+               self.event.clone(from: event)
            }
        }
     
@@ -89,9 +94,11 @@ class AddUpdateEventTableViewController: UITableViewController {
     
     @objc private func updateEvent() {
         let name = nameTextField.text ?? ""
-        event = Event(name: name, image: imageString, endDate: enddate)
         let eventToUpdate = Event()
         eventToUpdate.clone(from: event)
+        eventToUpdate.name = name
+        eventToUpdate.endDate = enddate
+        eventToUpdate.image = imageString
         database.save(eventToUpdate)
         dismiss(animated: true, completion: nil)
     }
