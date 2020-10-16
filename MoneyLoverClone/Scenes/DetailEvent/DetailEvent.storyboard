@@ -10,7 +10,9 @@
         <!--Transactions Of Event View Controller-->
         <scene sceneID="v1k-oN-frq">
             <objects>
-                <viewController storyboardIdentifier="TransactionsOfEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WKo-9D-gO0" customClass="TransactionsOfEventViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+
+                <viewController storyboardIdentifier="TransactionsOfDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WKo-9D-gO0" customClass="TransactionsOfDetailViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="Vxr-fj-BRK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

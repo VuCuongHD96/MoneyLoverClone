@@ -80,8 +80,24 @@ final class EventViewController: UIViewController {
         listEvent = database.fetchEvents()
     }
     
+
+    private func confirmDelete(event: Event) {
+        let alert = UIAlertController(title: nil, message: "Xoá sự kiện này?", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Xoá", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.database.delete(event)
+            self.listEvent = self.database.fetchEvents()
+        }
+        deleteAction.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func addEventAction(_ sender: Any) {
-        let story = AddEventTableViewController.instantiate()
+        let story = AddUpdateEventTableViewController.instantiate()
+
         let navController = UINavigationController(rootViewController: story)
         story.isModalInPresentation = true
         navController.modalPresentationStyle = .fullScreen
@@ -95,6 +111,12 @@ extension EventViewController: StoryboardSceneBased {
 }
 
 extension EventViewController: UITableViewDelegate {
+
+    func moveToDetailEventScreen() {
+        let story = TransactionsOfDetailViewController.instantiate()
+        navigationController?.pushViewController(story, animated: true)
+    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //get statusEvent
@@ -116,13 +138,22 @@ extension EventViewController: UITableViewDelegate {
             self.navigationController?.pushViewController(story, animated: true)
         }
         let editEventSheet = UIAlertAction(title: "Sửa sự kiện", style: .default) { [weak self] (_) in
-            // MARK: - To do
+
+            guard let self = self else { return }
+            let story = AddUpdateEventTableViewController.instantiate()
+            let navController = UINavigationController(rootViewController: story)
+            story.isModalInPresentation = true
+            story.addUpdateEvent = .update(event)
+            navController.modalPresentationStyle = .fullScreen
+            story.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+            self.present(navController, animated: true, completion: nil)
         }
         let deleteEventSheet = UIAlertAction(title: "Xóa sự kiện", style: .destructive) { [weak self] (_) in
-            // MARK: - To do
+            guard let self = self else { return }
+            self.confirmDelete(event: event)
         }
         let cancelSheet = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
-        //checkStatusAction
+
         if statusEvent == StatusEventEnum.finish.rawValue {
             checkSheet.setValue("Đánh dấu chưa hoàn tất", forKey: "title")
         } else if statusEvent == StatusEventEnum.valid.rawValue {
