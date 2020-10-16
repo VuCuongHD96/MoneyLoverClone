@@ -112,12 +112,7 @@ extension EventViewController: StoryboardSceneBased {
 
 extension EventViewController: UITableViewDelegate {
 
-    func moveToDetailEventScreen() {
-        let story = TransactionsOfDetailViewController.instantiate()
-        navigationController?.pushViewController(story, animated: true)
-    }
 
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //get statusEvent
         let event = listEvent[indexPath.row]
@@ -134,7 +129,10 @@ extension EventViewController: UITableViewDelegate {
         }
         let detailEventSheet = UIAlertAction(title: "Danh sách giao dịch", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            let story = TransactionsOfEventViewController.instantiate()
+
+            let story = TransactionsOfDetailViewController.instantiate()
+            story.event = event
+
             self.navigationController?.pushViewController(story, animated: true)
         }
         let editEventSheet = UIAlertAction(title: "Sửa sự kiện", style: .default) { [weak self] (_) in

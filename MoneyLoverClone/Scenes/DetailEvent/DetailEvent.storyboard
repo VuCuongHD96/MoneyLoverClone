@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-71-6zT">
-                                <rect key="frame" x="10" y="54" width="394" height="179"/>
+                                <rect key="frame" x="10" y="98" width="394" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng quan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-5H-HKe">
                                         <rect key="frame" x="10" y="10" width="74" height="18"/>
@@ -121,12 +121,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w6r-rN-Pq9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jj2-l4-C2O"/>
                     <connections>
                         <outlet property="cardOverView" destination="Zdl-71-6zT" id="VCU-MR-OhK"/>
+                        <outlet property="expenseLabel" destination="oK5-y2-ooQ" id="OfW-3N-TqT"/>
+                        <outlet property="incomeLabel" destination="KJz-mp-BIu" id="jNX-lQ-MiD"/>
                         <outlet property="tableview" destination="kRJ-Js-Lwj" id="7gU-JW-cwg"/>
+                        <outlet property="totalLabel" destination="6v8-BS-TxC" id="lmR-eP-qqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sc4-m3-gmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="192.75362318840581" y="189.50892857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rh1-iu-spo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gxT-4C-beo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uSv-RA-nAx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WKo-9D-gO0" kind="relationship" relationship="rootViewController" id="dKI-HM-tBS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jav-Lu-Lwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-717.39130434782612" y="189.50892857142856"/>
         </scene>
