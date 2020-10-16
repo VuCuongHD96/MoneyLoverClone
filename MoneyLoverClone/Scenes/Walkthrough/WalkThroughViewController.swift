@@ -27,14 +27,13 @@ final class WalkThroughViewController: BWWalkthroughViewController {
         setupData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     // MARK: - Data
     func setupData() {
         database = DBManager.shared
+        let user = database.fetchUser()
+        if user != nil {
+            
+        }
         GIDSignIn.sharedInstance()?.do {
             $0.clientID = Constant.clientID
             $0.presentingViewController = self

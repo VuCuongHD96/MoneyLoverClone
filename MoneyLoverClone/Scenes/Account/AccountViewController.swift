@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+import Kingfisher
 
 class AccountViewController: UIViewController {
     
@@ -16,29 +17,32 @@ class AccountViewController: UIViewController {
     @IBOutlet private weak var gmailLable: UILabel!
     @IBOutlet private weak var tableViewAccount: UITableView!
     
-    var accountArray = ["Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
-    var iconArray = ["group", "setting", "changepass", "logout"]
-    var myIndex = 0
-    var pass = "123"
-    
     struct Constant {
         static let heighForHeader: CGFloat = 45
         static let section = 2
     }
+    var accountArray = ["Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
+    var iconArray = ["group", "setting", "changepass", "logout"]
+    var myIndex = 0
+    var pass = "123"
+    var database: DBManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         setupTableView()
-        print(pass)
     }
     
     func setData() {
-        accountImg.image = UIImage(named: "male")
-        accountImg.layer.cornerRadius = accountImg.frame.size.width / 2
-        accountImg.clipsToBounds = true
-        nameLabel.text = "Việt Hoàng"
-        gmailLable.text = "nguyenviethoang@gmail.com"
+        database = DBManager.shared
+        let user = database.fetchUser()
+        guard let avatar = user?.avatar, let url = URL(string: avatar) else {
+            return
+        }
+        accountImg.kf.setImage(with: url)
+        nameLabel.text = user?.name
+        gmailLable.text = user?.email
+        accountImg.layer.cornerRadius = 50
         gmailLable.textColor = .lightGray
     }
     
@@ -55,8 +59,7 @@ class AccountViewController: UIViewController {
         let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn có chắc muốn đăng xuất khỏi thiết bị này?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let logoutAction = UIAlertAction(title: "Đăng xuất", style: .default, handler: { action in
-            print("xủ lý đăng xuất ở đây")
+        let logoutAction = UIAlertAction(title: "Đăng xuất", style: .default, handler: { _ in
         })
         alert.addAction(logoutAction)
         present(alert, animated: true)
