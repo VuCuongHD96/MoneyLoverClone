@@ -17,7 +17,7 @@ final class EventViewController: UIViewController {
         static let heigtforrow: CGFloat = 95
     }
     
-    var listEven = [Event]() {
+    var listEvent = [Event]() {
         didSet {
             tableView.reloadData()
         }

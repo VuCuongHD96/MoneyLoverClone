@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+import ViewAnimator
 
 final class EventIconViewController: UIViewController {
 
@@ -36,9 +37,22 @@ final class EventIconViewController: UIViewController {
         setupData()
     }
     
-    // MARK: - Data
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cellAnimation()
+    }
+    
+    // MARK: - View
     private func setupView() {
         navigationItem.title = "Chọn Biểu Tượng"
+    }
+    
+    private func cellAnimation() {
+        let zoomAnimation = AnimationType.zoom(scale: 0.5)
+        let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/3)
+        UIView.animate(views: collectionView.visibleCells,
+                       animations: [rotateAnimation, zoomAnimation],
+                       duration: 1)
     }
     
     // MARK: - Data
