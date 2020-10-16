@@ -53,6 +53,7 @@ final class CategoryViewController: UIViewController {
     // MARK: - Data
     private func setupData() {
         database = DBManager.shared
+        database.setupCategoryData()
         categoryArray = database.fetchCategorys()
         tableView.do {
             $0.dataSource = self

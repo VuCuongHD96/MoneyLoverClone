@@ -130,7 +130,7 @@ extension EventViewController: UITableViewDelegate {
         let detailEventSheet = UIAlertAction(title: "Danh sách giao dịch", style: .default) { [weak self] (_) in
             guard let self = self else { return }
 
-            let story = TransactionsOfDetailViewController.instantiate()
+            let story = TransactionsOfEventViewController.instantiate()
             story.event = event
 
             self.navigationController?.pushViewController(story, animated: true)

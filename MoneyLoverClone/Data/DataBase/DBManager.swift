@@ -16,7 +16,6 @@ class DBManager {
     
     private init() {
         database = try? Realm()
-        setupCategoryData()
     }
     
     func delete<T: Object>(_ object: T) {
@@ -94,7 +93,7 @@ class DBManager {
         return Array(arrayResult)
     }
     
-    private func setupCategoryData() {
+    func setupCategoryData() {
         let categoryCount = database.objects(Category.self).count
         if categoryCount != 0 {
             return

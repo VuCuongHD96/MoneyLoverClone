@@ -127,13 +127,7 @@ extension TransactionsOfEventViewController: UITableViewDelegate {
     }
 }
 
-
-extension TransactionsOfDetailViewController: UITableViewDataSource {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return Constant.numberOfSections
-//    }
-
-    
+extension TransactionsOfEventViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listTransationEvent.count
     }

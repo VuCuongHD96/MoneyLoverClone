@@ -58,6 +58,7 @@ final class EventIconViewController: UIViewController {
     // MARK: - Data
     private func setupData() {
         database = DBManager.shared
+        database.setupCategoryData()
         categoryArray = database.fetchCategorys()
         collectionView.do {
             $0.dataSource = self
