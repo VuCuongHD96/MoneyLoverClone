@@ -10,6 +10,7 @@ import UIKit
 import Then
 import Reusable
 import SwiftDate
+import ViewAnimator
 
 final class TransactionsViewController: UIViewController {
     
@@ -34,6 +35,7 @@ final class TransactionsViewController: UIViewController {
     var transactionByMonthArray = [TransactionByDay]() {
         didSet {
             tableView.reloadData()
+            cellAnimation()
         }
     }
     let today = Date()
@@ -51,7 +53,7 @@ final class TransactionsViewController: UIViewController {
         fetchTransactionData()
         setupBalance()
     }
-    
+
     // MARK: - Data
     private func setupData() {
         tableView.do {
@@ -137,6 +139,13 @@ final class TransactionsViewController: UIViewController {
         }
         navigationItem.title = "Số dư: " + totalMoney.convertToMoneyFormat()
         self.totalMoney = totalMoney
+    }
+    
+    private func cellAnimation() {
+        let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: tableView.visibleCells,
+                       animations: [fromAnimation, zoomAnimation], delay: 0.2)
     }
     
     // MARK: - Action

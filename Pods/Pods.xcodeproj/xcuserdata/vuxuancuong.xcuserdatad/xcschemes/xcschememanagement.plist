@@ -182,6 +182,11 @@
 			<key>orderHint</key>
 			<integer>26</integer>
 		</dict>
+		<key>ViewAnimator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>isShown</key>
