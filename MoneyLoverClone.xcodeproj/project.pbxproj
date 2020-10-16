@@ -12,6 +12,7 @@
 		28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28617CD72519AF5600A9E4E0 /* AccountTableViewCell.swift */; };
 		28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28617CD82519AF5600A9E4E0 /* AccountTableViewCell.xib */; };
 		4C24A191252EF7ED007BD624 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C24A190252EF7ED007BD624 /* User.swift */; };
+		4C2D716825394872006175B2 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA59251B23A500768482 /* Calendar.storyboard */; };
 		4C30DA5C251B23E600768482 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA5B251B23E600768482 /* CalendarViewController.swift */; };
 		4C30DA5E251B430A00768482 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA5D251B430A00768482 /* Category.storyboard */; };
@@ -74,7 +75,6 @@
 		9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
-		CF05D6F325304EBA00E4D536 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
 		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
@@ -88,6 +88,17 @@
 		CF62DC1B252D62DA00BF2490 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF62DC18252D62DA00BF2490 /* DetailEvent.storyboard */; };
 		CF62DC1D252D669100BF2490 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DF2D252AC67E009D32E5 /* String+.swift */; };
 		CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EB2526D750005A2FEC /* Transaction.swift */; };
+		DC194E822539324600D84371 /* CellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC194E812539324600D84371 /* CellDelegate.swift */; };
+		DCA19749253822FB00051192 /* ViewReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA19744253822F500051192 /* ViewReportViewController.swift */; };
+		DCA1974A253822FB00051192 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA19745253822F600051192 /* CollectionViewCell.swift */; };
+		DCA1974B253822FB00051192 /* DetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA19746253822F800051192 /* DetailReportViewController.swift */; };
+		DCA1974C253822FB00051192 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA19747253822F900051192 /* Report.storyboard */; };
+		DCA197532538231D00051192 /* MoneyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA1974F2538231800051192 /* MoneyTableViewCell.xib */; };
+		DCA197542538231D00051192 /* MoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA197502538231900051192 /* MoneyTableViewCell.swift */; };
+		DCA197552538231D00051192 /* PieChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA197512538231B00051192 /* PieChartTableViewCell.xib */; };
+		DCA197562538231D00051192 /* PieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA197522538231D00051192 /* PieChartTableViewCell.swift */; };
+		DCA1975A2538233E00051192 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA197582538233C00051192 /* DetailTableViewCell.swift */; };
+		DCA1975B2538233E00051192 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA197592538233E00051192 /* DetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +187,17 @@
 		CF62DC14252D627B00BF2490 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		CF62DC17252D62DA00BF2490 /* TransactionsOfDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsOfDetailViewController.swift; sourceTree = "<group>"; };
 		CF62DC18252D62DA00BF2490 /* DetailEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
+		DC194E812539324600D84371 /* CellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDelegate.swift; sourceTree = "<group>"; };
+		DCA19744253822F500051192 /* ViewReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReportViewController.swift; sourceTree = "<group>"; };
+		DCA19745253822F600051192 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DCA19746253822F800051192 /* DetailReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailReportViewController.swift; sourceTree = "<group>"; };
+		DCA19747253822F900051192 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
+		DCA1974F2538231800051192 /* MoneyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyTableViewCell.xib; sourceTree = "<group>"; };
+		DCA197502538231900051192 /* MoneyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTableViewCell.swift; sourceTree = "<group>"; };
+		DCA197512538231B00051192 /* PieChartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartTableViewCell.xib; sourceTree = "<group>"; };
+		DCA197522538231D00051192 /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
+		DCA197582538233C00051192 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		DCA197592538233E00051192 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,9 +377,9 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9BC28A9925300AFD00ABDF43 /* ChangeProfile */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
+				9BC28A9925300AFD00ABDF43 /* ChangeProfile */,
 				4CA531E025340F7500D22471 /* Blance */,
 				4C7F4510252DCC4E00C325CE /* Walkthrough */,
 				CFF524AA25270AA700D2F755 /* ChangePassWord */,
@@ -375,6 +397,7 @@
 				4C30DA58251B238200768482 /* Calendar */,
 				9B8131C6251AE0E40088F6A6 /* Settings */,
 				4C30DA5F251B433B00768482 /* Category */,
+				DCA1974E2538230400051192 /* ViewReport */,
 				4C6C53E525217CDF00E7D3F0 /* EventIcon */,
 			);
 			path = Scenes;
@@ -602,6 +625,40 @@
 			path = ChangePassWord;
 			sourceTree = "<group>";
 		};
+		DCA1974E2538230400051192 /* ViewReport */ = {
+			isa = PBXGroup;
+			children = (
+				DCA19744253822F500051192 /* ViewReportViewController.swift */,
+				DCA19746253822F800051192 /* DetailReportViewController.swift */,
+				DCA19745253822F600051192 /* CollectionViewCell.swift */,
+				DC194E812539324600D84371 /* CellDelegate.swift */,
+				DCA19747253822F900051192 /* Report.storyboard */,
+				DCA197572538232800051192 /* Cell */,
+				DCA1975C2538234300051192 /* DetailCell */,
+			);
+			path = ViewReport;
+			sourceTree = "<group>";
+		};
+		DCA197572538232800051192 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DCA197502538231900051192 /* MoneyTableViewCell.swift */,
+				DCA1974F2538231800051192 /* MoneyTableViewCell.xib */,
+				DCA197522538231D00051192 /* PieChartTableViewCell.swift */,
+				DCA197512538231B00051192 /* PieChartTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DCA1975C2538234300051192 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				DCA197582538233C00051192 /* DetailTableViewCell.swift */,
+				DCA197592538233E00051192 /* DetailTableViewCell.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -666,6 +723,7 @@
 			files = (
 				CF52DB572525C4760096585B /* AddEvent.storyboard in Resources */,
 				4C548D40252D6254006FDCEF /* ChoiseEventCell.xib in Resources */,
+				DCA1974C253822FB00051192 /* Report.storyboard in Resources */,
 				4C30DA5E251B430A00768482 /* Category.storyboard in Resources */,
 				4C7F4512252DCC9500C325CE /* Walkthrough.storyboard in Resources */,
 				4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */,
@@ -673,16 +731,19 @@
 				4C30DA5A251B23A500768482 /* Calendar.storyboard in Resources */,
 				CF62DC15252D627B00BF2490 /* ChangePassWord.storyboard in Resources */,
 				4C81AA31251C4E4200B60CC4 /* ExpenseArray.plist in Resources */,
+				DCA1975B2538233E00051192 /* DetailTableViewCell.xib in Resources */,
 				4C6C53EE25217F5100E7D3F0 /* CategoryIconCell.xib in Resources */,
 				4CC87D4925136D9300A3B9BD /* LaunchScreen.storyboard in Resources */,
 				28617CDA2519AF5600A9E4E0 /* AccountTableViewCell.xib in Resources */,
 				4CC87D4625136D9300A3B9BD /* Assets.xcassets in Resources */,
 				4C6C53E725217D0800E7D3F0 /* EventIcon.storyboard in Resources */,
 				4C9FF3E02521CB5B0027D02F /* Setting.storyboard in Resources */,
+				DCA197552538231D00051192 /* PieChartTableViewCell.xib in Resources */,
 				4C8E4BFB2514C33C005B238B /* HeaderTransactionView.xib in Resources */,
 				CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */,
 				4C6FB01925233F130095F3FD /* TransactionDetail.storyboard in Resources */,
 				9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */,
+				DCA197532538231D00051192 /* MoneyTableViewCell.xib in Resources */,
 				4C8DB9182519AD6D00FABC11 /* Note.storyboard in Resources */,
 				4C9FF3D32521BD760027D02F /* Transaction.storyboard in Resources */,
 				4C9FF3DE2521C8F80027D02F /* Account.storyboard in Resources */,
@@ -783,10 +844,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
+				4C2D716825394872006175B2 /* EventViewController.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
-
+				DCA19749253822FB00051192 /* ViewReportViewController.swift in Sources */,
 				9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */,
-
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
@@ -797,18 +858,23 @@
 				28617CD52519AD8C00A9E4E0 /* AccountViewController.swift in Sources */,
 				CF62DC1D252D669100BF2490 /* String+.swift in Sources */,
 				4CCA96EA2526C7E9005A2FEC /* DBManager.swift in Sources */,
+				DC194E822539324600D84371 /* CellDelegate.swift in Sources */,
+				DCA1974B253822FB00051192 /* DetailReportViewController.swift in Sources */,
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				CF52DB582525C4760096585B /* AddEventTableViewController.swift in Sources */,
 				4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */,
 				4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
+				DCA197562538231D00051192 /* PieChartTableViewCell.swift in Sources */,
 				4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */,
+				DCA1975A2538233E00051192 /* DetailTableViewCell.swift in Sources */,
 				4C7F450F252DC25300C325CE /* UIView+.swift in Sources */,
 				4CC87D4125136D9100A3B9BD /* TransactionsViewController.swift in Sources */,
 				4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */,
 				4CE2DF2C252AB935009D32E5 /* Int+.swift in Sources */,
 				9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */,
+				DCA1974A253822FB00051192 /* CollectionViewCell.swift in Sources */,
 				4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */,
 				4C8E4BF22514B767005B238B /* Year.swift in Sources */,
 				CF62DC1A252D62DA00BF2490 /* TransactionsOfDetailViewController.swift in Sources */,
@@ -829,6 +895,7 @@
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
 				4C24A191252EF7ED007BD624 /* User.swift in Sources */,
+				DCA197542538231D00051192 /* MoneyTableViewCell.swift in Sources */,
 				4CD27A97253022C7005965BA /* AddUpdateTransactionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
