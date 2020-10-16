@@ -23,7 +23,6 @@ final class EventViewController: UIViewController {
         }
     }
     var database: DBManager!
-    var cell = EventTableViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +43,20 @@ final class EventViewController: UIViewController {
     private func checkEventValid() {
         listEvent.forEach { event in
             let endDate =  event.endDate
-            let dayLeft = cell.estimateDay(endDate: endDate)
+            let dayLeft = estimateDay(endDate: endDate)
             if dayLeft == 0 {
                 updateProcessEvent(status: StatusEventEnum.valid.rawValue, event: event)
             }
         }
+    }
+    
+    private func estimateDay(endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let now = Date()
+        let date1 = calendar.startOfDay(for: now)
+        let date2 = calendar.startOfDay(for: endDate)
+        let estimateDay = calendar.dateComponents([.day], from: date1, to: date2).day ?? 0
+        return estimateDay
     }
     
     private func setupView() {
@@ -73,14 +81,11 @@ final class EventViewController: UIViewController {
     }
     
     @IBAction func addEventAction(_ sender: Any) {
-        let story = UIStoryboard(name: "AddEvent", bundle: nil)
-        guard let addEventView = story.instantiateViewController(identifier: "AddEventTableViewController") as? AddEventTableViewController else {
-            return
-        }
-        let navController = UINavigationController(rootViewController: addEventView)
-        addEventView.isModalInPresentation = true
+        let story = AddEventTableViewController.instantiate()
+        let navController = UINavigationController(rootViewController: story)
+        story.isModalInPresentation = true
         navController.modalPresentationStyle = .fullScreen
-        addEventView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        story.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         present(navController, animated: true, completion: nil)
     }
 }
@@ -90,14 +95,6 @@ extension EventViewController: StoryboardSceneBased {
 }
 
 extension EventViewController: UITableViewDelegate {
-    func moveToDetailEventScreen() {
-        let story = UIStoryboard(name: "DetailEvent", bundle: nil)
-        guard let detailEvent = story.instantiateViewController(identifier: "DetailEventViewController") as? TransactionsOfDetailViewController else {
-            print("err")
-            return
-        }
-        self.navigationController?.pushViewController(detailEvent, animated: true)
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //get statusEvent
@@ -115,16 +112,17 @@ extension EventViewController: UITableViewDelegate {
         }
         let detailEventSheet = UIAlertAction(title: "Danh sách giao dịch", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            self.moveToDetailEventScreen()
+            let story = TransactionsOfEventViewController.instantiate()
+            self.navigationController?.pushViewController(story, animated: true)
         }
         let editEventSheet = UIAlertAction(title: "Sửa sự kiện", style: .default) { [weak self] (_) in
-            guard let self = self else { return }
+            // MARK: - To do
         }
         let deleteEventSheet = UIAlertAction(title: "Xóa sự kiện", style: .destructive) { [weak self] (_) in
-            guard let self = self else { return }
+            // MARK: - To do
         }
         let cancelSheet = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
-        
+        //checkStatusAction
         if statusEvent == StatusEventEnum.finish.rawValue {
             checkSheet.setValue("Đánh dấu chưa hoàn tất", forKey: "title")
         } else if statusEvent == StatusEventEnum.valid.rawValue {
@@ -149,7 +147,7 @@ extension EventViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cell = tableView.dequeueReusableCell(for: indexPath)
+        let cell: EventTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let event = listEvent[indexPath.row]
         cell.setContent(data: event)
         return cell

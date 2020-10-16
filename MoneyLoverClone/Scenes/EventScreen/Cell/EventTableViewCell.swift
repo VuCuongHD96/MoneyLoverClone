@@ -87,12 +87,12 @@ class EventTableViewCell: UITableViewCell, NibReusable {
         return cashEvent
     }
     
-    func estimateDay(endDate: Date) -> Int {
+    private func estimateDay(endDate: Date) -> Int {
         let calendar = Calendar.current
         let now = Date()
-        let date1 = calendar.startOfDay(for: now )
-        let date2 = calendar.startOfDay(for: endDate )
-        let estimateDay = calendar.dateComponents([.day], from: date1, to: date2 ).day ?? 0
+        let date1 = calendar.startOfDay(for: now)
+        let date2 = calendar.startOfDay(for: endDate)
+        let estimateDay = calendar.dateComponents([.day], from: date1, to: date2).day ?? 0
         return estimateDay
     }
     
