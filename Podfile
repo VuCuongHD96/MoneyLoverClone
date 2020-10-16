@@ -25,5 +25,6 @@ target 'MoneyLoverClone' do
   pod "BWWalkthrough"
   pod "Firebase/Storage"
   pod 'Kingfisher', '~> 5.0'
-  pod "ViewAnimator"
+  pod 'Charts'
+  pod 'ViewAnimator'
 end

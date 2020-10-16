@@ -21,6 +21,7 @@
                         <segue destination="7mR-90-OSj" kind="relationship" relationship="viewControllers" id="gcR-hZ-YZR"/>
                         <segue destination="bHU-Tq-SOI" kind="relationship" relationship="viewControllers" id="yKH-7w-ZF7"/>
                         <segue destination="Mag-Fp-I0j" kind="relationship" relationship="viewControllers" id="a76-dZ-nII"/>
+                        <segue destination="Uzc-SZ-nk4" kind="relationship" relationship="viewControllers" id="Ajw-sU-XWD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOW-Rr-mX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -69,6 +70,16 @@
             </objects>
             <point key="canvasLocation" x="-618" y="615"/>
         </scene>
+        <!--Report-->
+        <scene sceneID="7il-O3-y8o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Report" id="Uzc-SZ-nk4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="viewreport" id="gs5-aL-EqQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKS-PM-Wr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-637" y="694"/>
+        </scene>
     </scenes>
     <resources>
         <image name="account" width="32" height="32"/>
@@ -77,5 +88,6 @@
         <image name="plan" width="32" height="32"/>
         <image name="transaction" width="32" height="32"/>
         <image name="transactionSelected" width="32" height="32"/>
+        <image name="viewreport" width="32" height="32"/>
     </resources>
 </document>
