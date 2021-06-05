@@ -93,10 +93,12 @@ final class TransactionsViewController: UIViewController {
         if month < 10 {
             monthString = "0" + monthString
         }
-        if today.year == year && today.month == month {
-            nextMonthButton.isEnabled = false
-        } else {
-            nextMonthButton.isEnabled = true
+        UIView.animate(withDuration: 0.75) {
+            if self.today.year == year && self.today.month == month {
+                self.nextMonthButton.isHidden = true
+            } else {
+                self.nextMonthButton.isHidden = false
+            }
         }
         thisMonthButton.setTitle("\(monthString)/\(year)", for: .normal)
         let transactionInAMonth = transactionArray.filter {
@@ -206,9 +208,7 @@ extension TransactionsViewController: UITableViewDataSource {
 
 extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = Bundle.main.loadNibNamed(Constant.headerNibName, owner: self, options: nil)?.first as? HeaderTransactionView else {
-            return UIView()
-        }
+        let header = HeaderTransactionView.instantiate()
         let headerData = transactionByMonthArray[section]
         header.setContent(data: headerData)
         return header

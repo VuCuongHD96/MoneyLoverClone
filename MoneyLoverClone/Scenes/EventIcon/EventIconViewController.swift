@@ -15,6 +15,9 @@ final class EventIconViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet private weak var collectionView: UICollectionView!
 
+    // MARK: - Define
+    typealias Handler = (Category) -> Void
+    
     // MARK: - Properties
     struct Constant {
         static let lineSpacing: CGFloat = 40
@@ -25,8 +28,6 @@ final class EventIconViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    weak var delegate: ImageDelegate?
-    typealias Handler = (Category) -> Void
     var categoryDidChoise: Handler?
     var database: DBManager!
     

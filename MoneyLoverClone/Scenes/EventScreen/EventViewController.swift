@@ -11,12 +11,15 @@ import Reusable
 
 final class EventViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    // MARK: - Outlet
+    @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Define
     struct Constant {
         static let heigtforrow: CGFloat = 95
     }
     
+    // MARK: - Propert
     var listEvent = [Event]() {
         didSet {
             tableView.reloadData()
@@ -24,6 +27,7 @@ final class EventViewController: UIViewController {
     }
     var database: DBManager!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
@@ -36,13 +40,14 @@ final class EventViewController: UIViewController {
         checkEventValid()
     }
     
+    // MARK: - Data
     private func getListEventData() {
         listEvent = database.fetchEvents()
     }
     
     private func checkEventValid() {
         listEvent.forEach { event in
-            let endDate =  event.endDate
+            let endDate = event.endDate
             let dayLeft = estimateDay(endDate: endDate)
             if dayLeft == 0 {
                 updateProcessEvent(status: StatusEventEnum.valid.rawValue, event: event)
@@ -80,7 +85,6 @@ final class EventViewController: UIViewController {
         listEvent = database.fetchEvents()
     }
     
-
     private func confirmDelete(event: Event) {
         let alert = UIAlertController(title: nil, message: "Xoá sự kiện này?", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Xoá", style: .default) { [weak self] _ in
@@ -111,14 +115,12 @@ extension EventViewController: StoryboardSceneBased {
 }
 
 extension EventViewController: UITableViewDelegate {
-
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //get statusEvent
+        // get statusEvent
         let event = listEvent[indexPath.row]
         let statusEvent = event.status
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        //excute alert
+        // excute alert
         let checkSheet = UIAlertAction(title: "Đánh dấu hoàn tất ", style: .default) { [weak self] _ in
             guard let self = self else { return }
             if statusEvent == StatusEventEnum.finish.rawValue {

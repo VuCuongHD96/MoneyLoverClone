@@ -9,18 +9,29 @@
 import UIKit
 import Reusable
 
-class SettingsTableViewController: UITableViewController {
+final class SettingsTableViewController: UITableViewController {
     
+    // MARK: - Define
     struct Constant {
         static let sectionTitle = "HIỂN THỊ"
         static let numberOfSections = 1
         static let numberOfRowsInSection = 3
     }
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
     
+    // MARK: - Setup View
+    private func setupView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+}
+
+extension SettingsTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return Constant.numberOfSections
     }
@@ -28,20 +39,17 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constant.numberOfRowsInSection
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Constant.sectionTitle
-    }
 }
 
 extension SettingsTableViewController {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Constant.sectionTitle
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "ChangeProfile", bundle: nil)
-            guard let changeProfileScreen = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else {
-                return
-            }
+            let changeProfileScreen = ChangeProfileViewController.instantiate()
             navigationController?.pushViewController(changeProfileScreen, animated: true)
         case 1:
             print("man hinh sua dinh dang ngay thang")

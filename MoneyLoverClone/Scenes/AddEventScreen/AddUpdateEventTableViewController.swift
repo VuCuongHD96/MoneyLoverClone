@@ -141,13 +141,6 @@ class AddUpdateEventTableViewController: UITableViewController {
     }
 }
 
-extension AddUpdateEventTableViewController: ImageDelegate {
-    func displayImage(data: String) {
-        iconImage.image = UIImage(named: data )
-        imageString = data
-    }
-}
-
 extension AddUpdateEventTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row

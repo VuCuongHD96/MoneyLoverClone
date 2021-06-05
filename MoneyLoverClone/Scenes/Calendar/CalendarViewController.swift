@@ -17,8 +17,10 @@ final class CalendarViewController: UIViewController {
     @IBOutlet private weak var calendar: FSCalendar!
     @IBOutlet private weak var todayButton: UIBarButtonItem!
     
-    // MARK: - Properties
+    // MARK: - Define
     typealias Handler = (Date) -> Void
+    
+    // MARK: - Properties
     var passDate: Handler?
     var date = Date()
     var choiseDateEnum = ChoiseDateEnum.past

@@ -24,6 +24,6 @@ target 'MoneyLoverClone' do
   
   pod "BWWalkthrough"
   pod "Firebase/Storage"
-  pod 'Kingfisher', '~> 5.0'
+  pod 'SDWebImage'
   pod "ViewAnimator"
 end

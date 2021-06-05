@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2af-nh-fIA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2af-nh-fIA">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
                 <navigationController storyboardIdentifier="UINavigationController-2af-nh-fIA" id="2af-nh-fIA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tài khoản" image="account" selectedImage="accountSelected" id="5DW-9B-FH0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WFP-Tn-xBh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,30 +29,30 @@
             <objects>
                 <viewController storyboardIdentifier="AccountViewController" id="jGD-a5-Zlc" customClass="AccountViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeR-tr-AZf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-tq-B19">
-                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-pf-YIe">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="239"/>
+                                        <rect key="frame" x="0.0" y="30" width="375" height="170"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-oP-kk5">
-                                                <rect key="frame" x="127.5" y="0.5" width="159" height="158"/>
+                                                <rect key="frame" x="131" y="0.5" width="113" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8g3-oP-kk5" secondAttribute="height" id="0wh-ip-c3h"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbH-nf-1BO">
-                                                <rect key="frame" x="182" y="169" width="50.5" height="30"/>
+                                                <rect key="frame" x="162.5" y="123.5" width="50.5" height="18.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gmail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1y-CO-xpG">
-                                                <rect key="frame" x="186.5" y="209" width="41.5" height="30"/>
+                                                <rect key="frame" x="167" y="152" width="41.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-HH-yCL">
-                                <rect key="frame" x="0.0" y="377" width="414" height="485"/>
+                                <rect key="frame" x="0.0" y="264" width="375" height="403"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jGD-a5-Zlc" id="DAN-Bp-PrT"/>
@@ -99,7 +99,7 @@
                         <outlet property="accountImg" destination="8g3-oP-kk5" id="u31-5t-ao1"/>
                         <outlet property="gmailLable" destination="N1y-CO-xpG" id="m3D-rf-7CJ"/>
                         <outlet property="nameLabel" destination="ZbH-nf-1BO" id="jUK-4i-Wen"/>
-                        <outlet property="tableViewAccount" destination="RcN-HH-yCL" id="dq3-Xn-VHU"/>
+                        <outlet property="tableView" destination="RcN-HH-yCL" id="dq3-Xn-VHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xvf-YR-xJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -110,6 +110,6 @@
     <resources>
         <image name="account" width="32" height="32"/>
         <image name="accountSelected" width="32" height="32"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

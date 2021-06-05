@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,15 +10,13 @@
         <!--Transactions Of Event View Controller-->
         <scene sceneID="v1k-oN-frq">
             <objects>
-
-                <viewController storyboardIdentifier="TransactionsOfDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WKo-9D-gO0" customClass="TransactionsOfDetailViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
-
+                <viewController storyboardIdentifier="TransactionsOfEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WKo-9D-gO0" customClass="TransactionsOfEventViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vxr-fj-BRK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-71-6zT">
-                                <rect key="frame" x="10" y="98" width="394" height="179"/>
+                                <rect key="frame" x="10" y="10" width="355" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng quan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-5H-HKe">
                                         <rect key="frame" x="10" y="10" width="74" height="18"/>
@@ -51,7 +49,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJz-mp-BIu">
-                                        <rect key="frame" x="279" y="38" width="110" height="18"/>
+                                        <rect key="frame" x="240" y="38" width="110" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="Pu1-GH-FLp"/>
                                             <constraint firstAttribute="height" constant="18" id="Th8-oM-ca1"/>
@@ -61,13 +59,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,000,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK5-y2-ooQ">
-                                        <rect key="frame" x="279" y="66" width="110" height="18"/>
+                                        <rect key="frame" x="240" y="66" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                         <color key="textColor" red="0.96862745100000003" green="0.1464075255" blue="0.035601672709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjh-OT-cWV">
-                                        <rect key="frame" x="256" y="94" width="116" height="1"/>
+                                        <rect key="frame" x="217" y="94" width="116" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="116" id="8yO-B3-jhl"/>
@@ -75,7 +73,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1,000,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v8-BS-TxC">
-                                        <rect key="frame" x="273" y="105" width="110" height="18"/>
+                                        <rect key="frame" x="234" y="105" width="110" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -104,7 +102,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-Js-Lwj">
-                                <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="433.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -123,11 +121,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jj2-l4-C2O"/>
                     <connections>
-                        <outlet property="cardOverView" destination="Zdl-71-6zT" id="VCU-MR-OhK"/>
-                        <outlet property="expenseLabel" destination="oK5-y2-ooQ" id="OfW-3N-TqT"/>
-                        <outlet property="incomeLabel" destination="KJz-mp-BIu" id="jNX-lQ-MiD"/>
-                        <outlet property="tableview" destination="kRJ-Js-Lwj" id="7gU-JW-cwg"/>
-                        <outlet property="totalLabel" destination="6v8-BS-TxC" id="lmR-eP-qqD"/>
+                        <outlet property="cardOverView" destination="Zjh-OT-cWV" id="fEy-UL-3xX"/>
+                        <outlet property="expenseLabel" destination="oK5-y2-ooQ" id="1Hc-nH-ez5"/>
+                        <outlet property="incomeLabel" destination="KJz-mp-BIu" id="M1m-pA-vQ0"/>
+                        <outlet property="tableview" destination="kRJ-Js-Lwj" id="yk2-UB-Ghh"/>
+                        <outlet property="totalLabel" destination="6v8-BS-TxC" id="Ziv-3Z-Kr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sc4-m3-gmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,13 +138,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gxT-4C-beo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uSv-RA-nAx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WKo-9D-gO0" kind="relationship" relationship="rootViewController" id="dKI-HM-tBS"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jav-Lu-Lwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -29,7 +29,7 @@ class Transaction: Object {
         self.type = transactionType
     }
     
-    required init() {
+    required override init() {
         self.identify = UUID().uuidString
     }
     

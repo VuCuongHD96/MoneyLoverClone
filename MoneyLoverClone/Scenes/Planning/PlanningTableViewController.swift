@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Then
 
-class PlanningTableViewController: UITableViewController {
-    
-    @IBOutlet private var tblPlanning: UITableView!
-    
+final class PlanningTableViewController: UITableViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblPlanning.dataSource = self
-        tblPlanning.delegate = self
+        setupView()
     }
     
+    private func setupView() {
+        tableView.do {
+            $0.dataSource = self
+            $0.delegate = self
+        }
+    } 
+}
+
+extension PlanningTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             let viewcontroller = EventViewController.instantiate()

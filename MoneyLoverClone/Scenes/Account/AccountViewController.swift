@@ -8,54 +8,82 @@
 
 import UIKit
 import Reusable
-import Kingfisher
+import SDWebImage
 
-class AccountViewController: UIViewController {
+final class AccountViewController: UIViewController {
     
+    // MARK: - Outlet
     @IBOutlet private weak var accountImg: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var gmailLable: UILabel!
-    @IBOutlet private weak var tableViewAccount: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Define
     struct Constant {
-        static let heighForHeader: CGFloat = 45
+        static let heighForFooter: CGFloat = 45
         static let section = 2
     }
-    var accountArray = ["Nhóm", "Cài đặt", "Đổi mật khẩu", "Đăng xuất"]
-    var iconArray = ["group", "setting", "changepass", "logout"]
-    var myIndex = 0
-    var pass = "123"
-    var database: DBManager!
     
+    // MARK: - Property
+    var sectionArray = [AccountSectionModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var pass = "123"
+    var database = DBManager.shared
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
+        setupData()
         setupTableView()
     }
     
-    func setData() {
-        database = DBManager.shared
+    // MARK: - Data
+    private func setupData() {
+        setupDataTableView()
+    }
+    
+    private func setupDataTableView() {
+        let cellModelDataOne = [
+            AccountCellModel(image: "group", name: "Nhóm"),
+            AccountCellModel(image: "setting", name: "Cài đặt")
+        ]
+        let cellModelDataTwo = [
+            AccountCellModel(image: "changepass", name: "Đổi mật khẩu"),
+            AccountCellModel(image: "logout", name: "Đăng xuất")
+        ]
+        let sectionDataOne = AccountSectionModel(array: cellModelDataOne)
+        let sectionDataTwo = AccountSectionModel(array: cellModelDataTwo)
+        sectionArray = [sectionDataOne, sectionDataTwo]
+    }
+    
+    // MARK: - View
+    private func setupTableView() {
+        tableView.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: AccountTableViewCell.self)
+            $0.isScrollEnabled = false
+        }
+        
         let user = database.fetchUser()
-        guard let avatar = user?.avatar, let url = URL(string: avatar) else {
+        guard let avatar = user?.avatar,
+            let url = URL(string: avatar) else {
             return
         }
-        accountImg.kf.setImage(with: url)
+        accountImg.sd_setImage(with: url, completed: nil)
         nameLabel.text = user?.name
         gmailLable.text = user?.email
         accountImg.layer.cornerRadius = 50
         gmailLable.textColor = .lightGray
+        
+        setupDataTableView()
     }
     
-    func setupTableView() {
-        tableViewAccount.do {
-            $0.delegate = self
-            $0.dataSource = self
-            $0.register(cellType: AccountTableViewCell.self)
-        }
-        tableViewAccount.isScrollEnabled = false
-    }
-    
-    func logout() {
+    // MARK: - Action
+    private func logout() {
         let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn có chắc muốn đăng xuất khỏi thiết bị này?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -66,49 +94,49 @@ class AccountViewController: UIViewController {
     }
 }
 
-extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
-    
+extension AccountViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Constant.section
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Constant.heighForHeader
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat.leastNonzeroMagnitude
+        return sectionArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return Constant.section
-        case 1:
-            return Constant.section
-        default:
-            return 0
-        }
+        let sectionData = sectionArray[section]
+        let array = sectionData.array
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: AccountTableViewCell = tableViewAccount.dequeueReusableCell(for: indexPath)
-        switch indexPath.section {
-        case 0:
-            cell.setContent(iconArray[indexPath.row], accountArray[indexPath.row])
-        case 1:
-            cell.setContent(iconArray[indexPath.row + 2], accountArray[indexPath.row + 2])
-        default:
-            break
-        }
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        let sectionData = sectionArray[section]
+        let array = sectionData.array
+        
+        let item = array[row]
+        
+        let cell: AccountTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setContent(data: item)
         return cell
+    }
+}
+
+extension AccountViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return Constant.heighForFooter
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
+        let section = indexPath.section
+        let row = indexPath.row
+         
+        switch section {
         case 0:
-            myIndex = indexPath.row
-            switch myIndex {
+            switch row {
             case 0:
                 print("Man hinh nhom")
             case 1:
@@ -119,8 +147,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 1:
-            myIndex = indexPath.row
-            switch myIndex {
+            switch row {
             case 0:
                 let changePass = ChangePasswordViewController.instantiate()
                 changePass.currentPass = pass

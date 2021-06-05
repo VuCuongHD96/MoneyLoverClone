@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import RealmSwift
-import Kingfisher
+import SDWebImage
+import Reusable
 
 class ChangeProfileViewController: UIViewController {
     
@@ -51,7 +52,8 @@ class ChangeProfileViewController: UIViewController {
             guard let avatarURL = snapshot.value as? String else {
                 return
             }
-            self.avatarImage.kf.setImage(with: URL(string: avatarURL))
+            let url = URL(string: avatarURL)
+            self.avatarImage.sd_setImage(with: url, completed: nil)
         }
     }
     
@@ -102,4 +104,8 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         }
         picker.dismiss(animated: true, completion: nil)
     }
+}
+
+extension ChangeProfileViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboard.changeProfile
 }
