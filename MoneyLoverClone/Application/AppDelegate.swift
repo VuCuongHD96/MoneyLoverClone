@@ -14,15 +14,30 @@ import FBSDKCoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         _ = try? Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
+        
+        window = UIWindow(frame: Screen.bounds)
+        window?.makeKeyAndVisible()
+        
+        gotoTabbar()
+        
         return true
     }
     
-    func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:] ) -> Bool {
+    func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+    }
+    
+    private func gotoTabbar() {
+        let tabbar = TabBarViewController()
+        let navigationController = UINavigationController(rootViewController: tabbar)
+        window?.rootViewController = navigationController
     }
 }
