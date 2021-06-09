@@ -22,7 +22,6 @@
 		4C30DA68251B460D00768482 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30DA67251B460D00768482 /* Category.swift */; };
 		4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30DA69251B539200768482 /* RevenueArray.plist */; };
 		4C3E1102252EA21F009DC7E1 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E1101252EA21F009DC7E1 /* WalkThroughViewController.swift */; };
-		4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */; };
 		4C4E29D8251DF69D0015E783 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E29D7251DF69D0015E783 /* Event.swift */; };
 		4C548D3F252D6254006FDCEF /* ChoiseEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C548D3D252D6254006FDCEF /* ChoiseEventCell.swift */; };
 		4C548D40252D6254006FDCEF /* ChoiseEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */; };
@@ -73,10 +72,12 @@
 		9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9332F6252EC082000957EA /* GoogleService-Info.plist */; };
 		9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */; };
 		9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */; };
+		A2D4030C266B532300C8324D /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4030B266B532300C8324D /* TextField+.swift */; };
+		A2D4030E266B6F9F00C8324D /* AccountSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */; };
+		A2D40311266B71FC00C8324D /* AccountCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D40310266B71FC00C8324D /* AccountCellModel.swift */; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
-		CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4F12523216600F6A235 /* ImageDelegate.swift */; };
 		CF4A2A5025383F1500A1FA0A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		CF4A2A5325384D5500A1FA0A /* AddUpdateEventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A2A51253841B800A1FA0A /* AddUpdateEventEnum.swift */; };
 		CF52DB4D2525C3E00096585B /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF52DB492525C3DB0096585B /* EventTableViewCell.xib */; };
@@ -108,7 +109,6 @@
 		4C30DA67251B460D00768482 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4C30DA69251B539200768482 /* RevenueArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RevenueArray.plist; sourceTree = "<group>"; };
 		4C3E1101252EA21F009DC7E1 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
-		4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeyboard.swift; sourceTree = "<group>"; };
 		4C4E29D7251DF69D0015E783 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		4C548D3D252D6254006FDCEF /* ChoiseEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseEventCell.swift; sourceTree = "<group>"; };
 		4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiseEventCell.xib; sourceTree = "<group>"; };
@@ -165,9 +165,11 @@
 		9B9332F6252EC082000957EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfile.storyboard; sourceTree = "<group>"; };
 		9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		A2D4030B266B532300C8324D /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
+		A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSectionModel.swift; sourceTree = "<group>"; };
+		A2D40310266B71FC00C8324D /* AccountCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellModel.swift; sourceTree = "<group>"; };
 		BE812B66C0C425349C69ADFE /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
-		CF14E4F12523216600F6A235 /* ImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDelegate.swift; sourceTree = "<group>"; };
 		CF4A2A51253841B800A1FA0A /* AddUpdateEventEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateEventEnum.swift; sourceTree = "<group>"; };
 		CF52DB492525C3DB0096585B /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		CF52DB4A2525C3DB0096585B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				4C9FF3DD2521C8F80027D02F /* Account.storyboard */,
 				28617CD42519AD8C00A9E4E0 /* AccountViewController.swift */,
+				A2D4030F266B71E300C8324D /* Model */,
 				28617CD62519AF3300A9E4E0 /* Cell */,
 			);
 			path = Account;
@@ -266,7 +269,6 @@
 			children = (
 				4C6C53EB25217F5100E7D3F0 /* CategoryIconCell.swift */,
 				4C6C53EC25217F5100E7D3F0 /* CategoryIconCell.xib */,
-				CF14E4F12523216600F6A235 /* ImageDelegate.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -479,7 +481,6 @@
 				4C8E4BEB2514A926005B238B /* Application */,
 				4C8E4BEA2514A911005B238B /* Data */,
 				4C8E4BE62514A88F005B238B /* ViewModel */,
-				4CE313A6251882F600553415 /* CustomView */,
 				4C8E4BE92514A8A8005B238B /* Scenes */,
 				4C8DB91425199F4700FABC11 /* Unit */,
 				4CCA96ED25271C75005A2FEC /* Extension */,
@@ -504,6 +505,7 @@
 				4CE2DF2B252AB935009D32E5 /* Int+.swift */,
 				4CE2DF2D252AC67E009D32E5 /* String+.swift */,
 				4C7F450E252DC25300C325CE /* UIView+.swift */,
+				A2D4030B266B532300C8324D /* TextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -516,14 +518,6 @@
 				4CD27A96253022C7005965BA /* AddUpdateTransactionEnum.swift */,
 			);
 			path = AddTransaction;
-			sourceTree = "<group>";
-		};
-		4CE313A6251882F600553415 /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				4C4E29D5251DACDA0015E783 /* NumericKeyboard.swift */,
-			);
-			path = CustomView;
 			sourceTree = "<group>";
 		};
 		4CE437EB25257DC80089DEDA /* Cell */ = {
@@ -553,6 +547,15 @@
 				9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */,
 			);
 			path = ChangeProfile;
+			sourceTree = "<group>";
+		};
+		A2D4030F266B71E300C8324D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */,
+				A2D40310266B71FC00C8324D /* AccountCellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BF16F7A49D65BA1E1208B742 /* Pods */ = {
@@ -622,6 +625,7 @@
 				4C8E4BE42514A23C005B238B /* ShellScript */,
 				ED91CB502EE9BAC48D7DBBD8 /* [CP] Embed Pods Frameworks */,
 				607DE56E944BD36A48C49521 /* [CP] Copy Pods Resources */,
+				A2D40309266B164D00C8324D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -723,7 +727,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		51658AEB414F666D73335260 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -764,6 +768,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A2D40309266B164D00C8324D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		ED91CB502EE9BAC48D7DBBD8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -788,13 +809,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4E29D6251DACDA0015E783 /* NumericKeyboard.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */,
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
 				28617CD92519AF5600A9E4E0 /* AccountTableViewCell.swift in Sources */,
 				CF4A2A5025383F1500A1FA0A /* EventViewController.swift in Sources */,
-				CF14E4F22523216600F6A235 /* ImageDelegate.swift in Sources */,
 				CF62DC16252D627B00BF2490 /* ChangePasswordViewController.swift in Sources */,
 				4C6C53F02521932500E7D3F0 /* Screen.swift in Sources */,
 				4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */,
@@ -806,6 +825,7 @@
 				4C30DA68251B460D00768482 /* Category.swift in Sources */,
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				CF52DB582525C4760096585B /* AddUpdateEventTableViewController.swift in Sources */,
+				A2D4030E266B6F9F00C8324D /* AccountSectionModel.swift in Sources */,
 				4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */,
 				4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
@@ -824,6 +844,7 @@
 				CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */,
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */,
+				A2D40311266B71FC00C8324D /* AccountCellModel.swift in Sources */,
 				4CD27A9525300E02005965BA /* ChoiseDateEnum.swift in Sources */,
 				4C3E1102252EA21F009DC7E1 /* WalkThroughViewController.swift in Sources */,
 				CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */,
@@ -835,6 +856,7 @@
 				4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */,
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				4CC87D3F25136D9100A3B9BD /* SceneDelegate.swift in Sources */,
+				A2D4030C266B532300C8324D /* TextField+.swift in Sources */,
 				4C24A191252EF7ED007BD624 /* User.swift in Sources */,
 				4CD27A97253022C7005965BA /* AddUpdateTransactionEnum.swift in Sources */,
 			);
@@ -912,7 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -966,7 +988,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

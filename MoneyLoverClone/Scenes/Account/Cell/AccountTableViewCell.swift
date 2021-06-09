@@ -11,15 +11,17 @@ import Reusable
 
 final class AccountTableViewCell: UITableViewCell, NibReusable {
 
-    @IBOutlet private weak var imgIcon: UIImageView!
-    @IBOutlet private weak var lbName: UILabel!
+    // MARK: - Outlet
+    @IBOutlet private weak var iconImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setContent(_ indexImg: String, _ indexLb: String ) {
-        imgIcon.image = UIImage(named: indexImg)
-        lbName.text = indexLb
+    // MARK: - Data
+    func setContent(data: AccountCellModel) {
+        iconImageView.image = UIImage(named: data.image)
+        nameLabel.text = data.name
     }
 }

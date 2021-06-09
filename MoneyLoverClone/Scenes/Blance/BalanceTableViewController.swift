@@ -17,6 +17,9 @@ final class BalanceTableViewController: UITableViewController {
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private weak var moneyTextField: UITextField!
     
+    // MARK: - Define
+    typealias AttributedStringType = [NSAttributedString.Key: Any]
+    
     // MARK: - Properties
     var money = 0
     let today = Date()
@@ -32,7 +35,7 @@ final class BalanceTableViewController: UITableViewController {
     
     // MARK: - View
     private func setupView() {
-        let attributeButton: [NSAttributedString.Key: Any] = [.underlineStyle: 1, .foregroundColor: UIColor.systemGreen]
+        let attributeButton: AttributedStringType = [.underlineStyle: 1, .foregroundColor: UIColor.systemGreen]
         saveButton.do {
             $0.isEnabled = false
             $0.setTitleTextAttributes(attributeButton, for: .normal)
@@ -40,20 +43,10 @@ final class BalanceTableViewController: UITableViewController {
         cancelButton.do {
             $0.setTitleTextAttributes(attributeButton, for: .normal)
         }
-        let customKeyboard = NumericKeyboard(target: moneyTextField)
-        customKeyboard.doneEdit = { [weak self] in
-            guard let self = self else { return }
-            self.hideKeyBoard()
-        }
         moneyTextField.do {
-            $0.inputView = customKeyboard
             $0.becomeFirstResponder()
             $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
-    }
-    
-    private func hideKeyBoard() {
-        moneyTextField.resignFirstResponder()
     }
     
     // MARK: - Data

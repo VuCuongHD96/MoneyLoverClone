@@ -13,9 +13,9 @@ final class TransactionsOfEventViewController: UIViewController {
     
     @IBOutlet private weak var cardOverView: UIView!
     @IBOutlet private weak var tableview: UITableView!
-    @IBOutlet weak var incomeLabel: UILabel!
-    @IBOutlet weak var expenseLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet private weak var incomeLabel: UILabel!
+    @IBOutlet private weak var expenseLabel: UILabel!
+    @IBOutlet private weak var totalLabel: UILabel!
     
     struct Constant {
         static let numberOfSections = 5
@@ -102,15 +102,13 @@ final class TransactionsOfEventViewController: UIViewController {
             $0.backgroundColor = UIColor(red: 240/255.0, green: 240/255, blue: 240/255.0, alpha: 1.0)
         }
         checkEmptyTransation()
-        self.title = event.name
+        title = event.name
     }
 }
 
 extension TransactionsOfEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerSectionView = Bundle.main.loadNibNamed(Constant.headerNibName, owner: self, options: nil)?.first as? HeaderTransactionView else {
-            return UIView()
-        }
+        let headerSectionView = HeaderTransactionView.instantiate()
         return headerSectionView
     }
     

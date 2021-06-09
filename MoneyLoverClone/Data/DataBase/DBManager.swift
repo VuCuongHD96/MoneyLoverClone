@@ -9,7 +9,8 @@
 import Foundation
 import RealmSwift
 
-class DBManager {
+final class DBManager {
+    
     // MARK: - Setup Database
     static let shared = DBManager()
     private var database: Realm!
@@ -51,6 +52,15 @@ class DBManager {
         }
         arrayResult = arrayResult.sorted(byKeyPath: "endDate", ascending: true)
         return Array(arrayResult)
+    }
+    
+    func fetchEvent(from identify: String) -> Event {
+        let result = database.objects(Event.self).filter("identify == %@", identify)
+        if let event = result.first {
+            return event
+        } else {        
+            return Event()
+        }
     }
     
     // MARK: - Transaction

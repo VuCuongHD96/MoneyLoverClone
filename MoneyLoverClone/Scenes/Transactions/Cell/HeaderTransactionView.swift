@@ -47,4 +47,11 @@ final class HeaderTransactionView: UIView {
             dayOfWeakLabel.text = "Hôm qua"
         }
     }
+    
+    static func instantiate() -> HeaderTransactionView {
+        guard let view = Bundle.main.loadNibNamed("HeaderTransactionView", owner: self, options: nil)?.first as? HeaderTransactionView else {
+            return HeaderTransactionView()
+        }
+        return view
+    }
 }

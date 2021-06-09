@@ -11,7 +11,7 @@ import SwiftDate
 import Then
 import Reusable
 
-class AddTransactionTableViewController: UITableViewController {
+final class AddTransactionTableViewController: UITableViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var dateLabel: UILabel!
@@ -24,12 +24,29 @@ class AddTransactionTableViewController: UITableViewController {
     @IBOutlet private weak var eventImageView: UIImageView!
     @IBOutlet private weak var eventNameTextField: UITextField!
     
+    // MARK: - Define
+    struct Constant {
+        static let eventDefaultImage = "event"
+    }
+    
     // MARK: - Properties
-    var category = Category()
-    var date = Date()
-    var event: Event!
+    var category = Category() {
+        didSet {
+            setupCategory()
+        }
+    }
+    var date = Date() {
+        didSet {
+            setupDate()
+        }
+    }
+    var event = Event() {
+        didSet {
+            setupEvent()
+        }
+    }
     let formatter = DateFormatter()
-    var database: DBManager!
+    var database = DBManager.shared
     var transaction: Transaction!
     let today = Date()
     var addUpdateTransactionEnum = AddUpdateTransactionEnum.add
@@ -47,19 +64,13 @@ class AddTransactionTableViewController: UITableViewController {
         dataIsValid()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        moneyTextField.resignFirstResponder()
-    }
-    
     // MARK: - Views
     private func setupView() {
-        let customKeyboard = NumericKeyboard(target: moneyTextField)
-        customKeyboard.doneEdit = { [weak self] in
-            guard let self = self else { return }
-            self.hideKeyBoard()
+        moneyTextField.do {
+            $0.keyboardType = .numberPad
+            $0.addDoneButton()
+            $0.delegate = self
         }
-        moneyTextField.inputView = customKeyboard
         saveButton.do {
             $0.isEnabled = false
             $0.setTitleTextAttributes([.underlineStyle: 1], for: .normal)
@@ -81,8 +92,21 @@ class AddTransactionTableViewController: UITableViewController {
             $0.addTarget(self, action: #selector(dataIsValid), for: .editingDidEnd)
             $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
-        database = DBManager.shared
-        transaction = Transaction()
+    }
+    
+    private func setupCategory() {
+        categoryImageView.image = UIImage(named: category.image)
+        categoryNameTextField.text = category.name
+    }
+    
+    private func setupDate() {
+        let dateString = formatter.string(from: date)
+        dateLabel.text = dateString
+    }
+    
+    private func setupEvent() {
+        eventImageView.image = UIImage(named: event.image) ?? UIImage(named: Constant.eventDefaultImage)
+        eventNameTextField.text = event.name
     }
     
     private func setupChoiseEnum() {
@@ -90,9 +114,9 @@ class AddTransactionTableViewController: UITableViewController {
         case .add:
             prepareForAdd()
         case .update(let transaction):
-            prepareForUpdate()
+            prepareForUpdate(transaction)
             setupTransactionData(transaction)
-            self.transaction.clone(from: transaction)
+            self.transaction = transaction
         }
     }
     
@@ -103,39 +127,55 @@ class AddTransactionTableViewController: UITableViewController {
         dateLabel.text = todayDateString
     }
     
-    private func prepareForUpdate() {
+    private func prepareForUpdate(_ transaction: Transaction) {
         navigationItem.title = "Sửa giao dịch"
         navigationItem.rightBarButtonItem?.title = "Cập nhật"
-        saveButton.action = #selector(updateTransaction)
+        saveButton.action = #selector(setupUpdateAction)
     }
     
+    @objc func moveToNextTextField(sender: Timer) {
+        guard let abc = sender.userInfo as? [String: Any] else {
+            return
+        }
+        guard let data = abc["transaction"] as? Transaction else { return }
+        print("đây là dữ liệu: = ", data)
+    }
+
     private func setupTransactionData(_ transaction: Transaction) {
         let categoryFetch = database.fetchCategory(from: transaction.categoryID)
-        categoryImageView.image = UIImage(named: categoryFetch.image)
-        categoryNameTextField.text = categoryFetch.name
+        category = categoryFetch
         moneyTextField.text = transaction.money.convertToEditFormat()
-        dateLabel.text = formatter.string(from: transaction.date)
         date = transaction.date
         noteTextField.text = transaction.note
         guard let idEvent = transaction.idEvent else { return }
-        event = database.fetchObject(from: idEvent)
-        eventImageView.image = UIImage(named: event.image)
-        eventNameTextField.text = event.name
-    }
-    
-    private func hideKeyBoard() {
-        moneyTextField.do {
-            $0.resignFirstResponder()
-        }
+        let eventFetch = database.fetchEvent(from: idEvent)
+        event = eventFetch
     }
     
     @objc private func dataIsValid() {
-        guard let moneyText = moneyTextField.text, let categoryName = categoryNameTextField.text, moneyText != "0", categoryName != ""
-            else {
-                saveButton.isEnabled = false
-                return
+        if moneyTextField.text == "0" || categoryNameTextField.text?.isEmpty == true {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
         }
-        saveButton.isEnabled = true
+    }
+    
+    private func getTransaction() -> Transaction {
+        let moneyString = moneyTextField.text ?? "0"
+        let moneyNumber = moneyString.convertToInt()
+        let categoryID = category.identify
+        let transactionType = category.transactionType
+        let noteString = noteTextField.text ?? ""
+        
+        let transaction = Transaction()
+        transaction.money = moneyNumber
+        transaction.categoryID = categoryID
+        transaction.type = transactionType
+        transaction.note = noteString
+        transaction.date = date
+        transaction.idEvent = event.identify
+        
+        return transaction
     }
     
     // MARK: - Action
@@ -143,28 +183,24 @@ class AddTransactionTableViewController: UITableViewController {
         let categoryScreen = CategoryViewController.instantiate()
         categoryScreen.passCategory = { [weak self] in
             guard let self = self else { return }
-            self.categoryImageView.image = UIImage(named: $0.image)
-            self.categoryNameTextField.text = $0.name
-            self.transaction.categoryID = $0.identify
-            self.transaction.type = $0.transactionType
+            self.category = $0
         }
         categoryScreen.categorySelected = category
         navigationController?.pushViewController(categoryScreen, animated: true)
     }
     
     private func choiseDate(completeChoice: @escaping (Date) -> Void) {
-        moneyTextField.resignFirstResponder()
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let todaySheet = UIAlertAction(title: "Hôm nay", style: .default) { [weak self] _ in
             guard let self = self else { return }
             completeChoice(self.today)
         }
-        let yesterdaySheet = UIAlertAction(title: "Hôm qua", style: .default) { [weak self] (_) in
+        let yesterdaySheet = UIAlertAction(title: "Hôm qua", style: .default) { [weak self] _ in
             guard let self = self else { return }
             let yesterday = self.today - 1.days
             completeChoice(yesterday)
         }
-        let customSheet = UIAlertAction(title: "Tùy chọn", style: .default) { [weak self] (_) in
+        let customSheet = UIAlertAction(title: "Tùy chọn", style: .default) { [weak self] _ in
             guard let self = self else { return }
             let calendarScreen = CalendarViewController.instantiate()
             calendarScreen.choiseDateEnum = .past
@@ -188,7 +224,6 @@ class AddTransactionTableViewController: UITableViewController {
         noteScreen.note = note
         noteScreen.sendNote = {
             self.noteTextField.text = $0
-            self.transaction.note = $0
         }
         navigationController?.pushViewController(noteScreen, animated: true)
     }
@@ -197,26 +232,24 @@ class AddTransactionTableViewController: UITableViewController {
         let choiseEventScreen = ChoiseEventTableViewController.instantiate()
         choiseEventScreen.eventDidChoise = { [weak self] in
             guard let self = self else { return }
-            self.eventImageView.image = UIImage(named: $0.image)
-            self.eventNameTextField.text = $0.name
             self.event = $0
-            self.transaction.idEvent = $0.identify
         }
         navigationController?.pushViewController(choiseEventScreen, animated: true)
     }
     
-    @objc private func updateTransaction() {
-        let transactionToUpdate = Transaction()
-        transactionToUpdate.clone(from: transaction)
+    @objc private func setupUpdateAction() {
+        let transactionToUpdate = getTransaction()
+        transactionToUpdate.identify = transaction.identify
         database.save(transactionToUpdate)
         dismiss(animated: true, completion: nil)
     }
     
     @objc private func saveAction() {
+        let currentTransaction = getTransaction()
         let transactionToSave = Transaction()
-        transactionToSave.clone(from: transaction)
+        transactionToSave.clone(from: currentTransaction)
         database.save(transactionToSave)
-        UserDefaults.standard.set(transaction.date, forKey: "NewDateAdded")
+//        UserDefaults.standard.set(transaction.date, forKey: "NewDateAdded")
         dismiss(animated: true, completion: nil)
     }
     
@@ -227,7 +260,7 @@ class AddTransactionTableViewController: UITableViewController {
     @objc private func textFieldDidChange() {
         guard let text = moneyTextField.text?.convertToEditFormat() else { return }
         moneyTextField.text = text
-        transaction.money = text.convertToInt()
+//        transaction.money = text.convertToInt()
     }
 }
 
@@ -244,14 +277,22 @@ extension AddTransactionTableViewController {
             choiseDate { [weak self] in
                 guard let self = self else { return }
                 self.date = $0
-                let dateString = self.formatter.string(from: $0)
-                self.dateLabel.text = dateString
-                self.transaction.date = $0
             }
         case 4:
             choiseEvent()
         default:
             print("Wrong Choise")
+        }
+        
+        moneyTextField.resignFirstResponder()
+    }
+}
+
+extension AddTransactionTableViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text, text.isEmpty {
+            textField.text = "0"
         }
     }
 }
