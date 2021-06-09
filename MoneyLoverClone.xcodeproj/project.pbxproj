@@ -33,7 +33,6 @@
 		4C6C68D7252572830086BF55 /* ChoiseEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */; };
 		4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */; };
 		4C6FB0142522D2EA0095F3FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */; };
-		4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */; };
 		4C6FB01925233F130095F3FD /* TransactionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6FB01825233F130095F3FD /* TransactionDetail.storyboard */; };
 		4C6FB01B252343C60095F3FD /* TransactionDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB01A252343C60095F3FD /* TransactionDetailTableViewController.swift */; };
 		4C7F450F252DC25300C325CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F450E252DC25300C325CE /* UIView+.swift */; };
@@ -71,9 +70,12 @@
 		9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9332F6252EC082000957EA /* GoogleService-Info.plist */; };
 		9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */; };
 		9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */; };
+		A20CA6FE2671AE7000EEBA26 /* TransactionHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CA6FD2671AE7000EEBA26 /* TransactionHeaderModel.swift */; };
+		A22EBFA02670C26A001E894A /* TransactionSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EBF9F2670C26A001E894A /* TransactionSectionModel.swift */; };
 		A2D4030C266B532300C8324D /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4030B266B532300C8324D /* TextField+.swift */; };
 		A2D4030E266B6F9F00C8324D /* AccountSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */; };
 		A2D40311266B71FC00C8324D /* AccountCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D40310266B71FC00C8324D /* AccountCellModel.swift */; };
+		A2FCE2A82670DB9100DAD06D /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCE2A72670DB9100DAD06D /* Date+.swift */; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
 		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
@@ -119,7 +121,6 @@
 		4C6C68D6252572830086BF55 /* ChoiseEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiseEvent.storyboard; sourceTree = "<group>"; };
 		4C6C68D8252573780086BF55 /* ChoiseEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseEventTableViewController.swift; sourceTree = "<group>"; };
 		4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		4C6FB01825233F130095F3FD /* TransactionDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionDetail.storyboard; sourceTree = "<group>"; };
 		4C6FB01A252343C60095F3FD /* TransactionDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailTableViewController.swift; sourceTree = "<group>"; };
 		4C7F450E252DC25300C325CE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -163,9 +164,12 @@
 		9B9332F6252EC082000957EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfile.storyboard; sourceTree = "<group>"; };
 		9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		A20CA6FD2671AE7000EEBA26 /* TransactionHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHeaderModel.swift; sourceTree = "<group>"; };
+		A22EBF9F2670C26A001E894A /* TransactionSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionModel.swift; sourceTree = "<group>"; };
 		A2D4030B266B532300C8324D /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
 		A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSectionModel.swift; sourceTree = "<group>"; };
 		A2D40310266B71FC00C8324D /* AccountCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellModel.swift; sourceTree = "<group>"; };
+		A2FCE2A72670DB9100DAD06D /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		BE812B66C0C425349C69ADFE /* Pods-MoneyLoverClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningTableViewController.swift; sourceTree = "<group>"; };
 		CF4A2A51253841B800A1FA0A /* AddUpdateEventEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateEventEnum.swift; sourceTree = "<group>"; };
@@ -295,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				4C6FB0132522D2EA0095F3FD /* TabBarViewController.swift */,
-				4C6FB0152522D9B90095F3FD /* NavigationViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			children = (
 				4C9FF3D22521BD760027D02F /* Transaction.storyboard */,
 				4CC87D4025136D9100A3B9BD /* TransactionsViewController.swift */,
+				A22EBF9E2670C24A001E894A /* Model */,
 				4C8E4BF32514BE6E005B238B /* Cell */,
 			);
 			path = Transactions;
@@ -503,6 +507,7 @@
 				4CE2DF2D252AC67E009D32E5 /* String+.swift */,
 				4C7F450E252DC25300C325CE /* UIView+.swift */,
 				A2D4030B266B532300C8324D /* TextField+.swift */,
+				A2FCE2A72670DB9100DAD06D /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -544,6 +549,15 @@
 				9BC28A9C25300B4600ABDF43 /* ChangeProfileViewController.swift */,
 			);
 			path = ChangeProfile;
+			sourceTree = "<group>";
+		};
+		A22EBF9E2670C24A001E894A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A20CA6FD2671AE7000EEBA26 /* TransactionHeaderModel.swift */,
+				A22EBF9F2670C26A001E894A /* TransactionSectionModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A2D4030F266B71E300C8324D /* Model */ = {
@@ -823,7 +837,6 @@
 				4C30DA61251B441B00768482 /* CategoryViewController.swift in Sources */,
 				CF52DB582525C4760096585B /* AddUpdateEventTableViewController.swift in Sources */,
 				A2D4030E266B6F9F00C8324D /* AccountSectionModel.swift in Sources */,
-				4C6FB0162522D9B90095F3FD /* NavigationViewController.swift in Sources */,
 				4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */,
 				4CE313A1251852F000553415 /* TransactionCell.swift in Sources */,
 				4C6C68D9252573780086BF55 /* ChoiseEventTableViewController.swift in Sources */,
@@ -842,9 +855,11 @@
 				4C8E4BF92514C332005B238B /* HeaderTransactionView.swift in Sources */,
 				4CCA96F125272C47005A2FEC /* TransactionType.swift in Sources */,
 				A2D40311266B71FC00C8324D /* AccountCellModel.swift in Sources */,
+				A20CA6FE2671AE7000EEBA26 /* TransactionHeaderModel.swift in Sources */,
 				4CD27A9525300E02005965BA /* ChoiseDateEnum.swift in Sources */,
 				4C3E1102252EA21F009DC7E1 /* WalkThroughViewController.swift in Sources */,
 				CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */,
+				A2FCE2A82670DB9100DAD06D /* Date+.swift in Sources */,
 				4CC87D3D25136D9100A3B9BD /* AppDelegate.swift in Sources */,
 				4C6C53E925217D3800E7D3F0 /* EventIconViewController.swift in Sources */,
 				4C8DB91225199F2400FABC11 /* NoteViewController.swift in Sources */,
@@ -854,6 +869,7 @@
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
 				A2D4030C266B532300C8324D /* TextField+.swift in Sources */,
 				4C24A191252EF7ED007BD624 /* User.swift in Sources */,
+				A22EBFA02670C26A001E894A /* TransactionSectionModel.swift in Sources */,
 				4CD27A97253022C7005965BA /* AddUpdateTransactionEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

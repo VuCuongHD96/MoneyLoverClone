@@ -21,21 +21,19 @@ final class TransactionsViewController: UIViewController {
     @IBOutlet private weak var nextMonthButton: UIButton!
     @IBOutlet private weak var nodataView: UIView!
     
-    // MARK: - Properties
+    // MARK: - Define
     struct Constant {
         static let heightForHeaderInSection: CGFloat = 50
         static let heightForFooterInSection: CGFloat = 25
         static let heightForRowAt: CGFloat = 55
         static let headerNibName = "HeaderTransactionView"
     }
-    var dataManager: DBManager!
-    let formatter = DateFormatter()
-    let formatterMonthYear = DateFormatter()
-    var transactionArray = [Transaction]() 
-    var transactionByMonthArray = [TransactionByDay]() {
+    
+    // MARK: - Properties
+    var dataManager = DBManager.shared
+    var sectionModelArray = [TransactionSectionModel]() {
         didSet {
             tableView.reloadData()
-            cellAnimation()
         }
     }
     let today = Date()
@@ -46,101 +44,60 @@ final class TransactionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
+        setupView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchTransactionData()
-        setupBalance()
+        fetchTransactionData(from: today)
     }
-
-    // MARK: - Data
-    private func setupData() {
+    
+    private func setupView() {
         tableView.do {
             $0.delegate = self
             $0.dataSource = self
             $0.register(cellType: TransactionCell.self)
         }
-        dataManager = DBManager.shared
-        formatter.do {
-            $0.dateStyle = .full
-            $0.locale = Locale(identifier: "vi")
-        }
-        formatterMonthYear.do {
-            $0.locale = Locale(identifier: "vi")
-            $0.dateFormat = "MMMM, yyyy"
-        }
+    }
+
+    // MARK: - Data
+    private func setupData() {
+        
     }
     
-    private func fetchTransactionData() {
-        transactionArray = dataManager.fetchTransactions()
-        guard var mostRecentDate = transactionArray.first?.date else {
-            transactionByMonthArray.removeAll()
-            return
+    private func fetchTransactionData(from date: Date) {
+        let transactionArray = dataManager.fetchTransactions().filter {
+            $0.date.month == date.month && $0.date.year == date.year
         }
-        date = mostRecentDate
-        if let dateAdded = UserDefaults.standard.value(forKey: "NewDateAdded") as? Date {
-            mostRecentDate = dateAdded
-            date = dateAdded
+        
+        let transactionDictionary = Dictionary(grouping: transactionArray, by: { $0.dateString })
+        sectionModelArray = transactionDictionary.map { dictionary -> TransactionSectionModel in
+            let date = dictionary.key
+            let transactionArray = dictionary.value
+            let money = transactionArray.map { transaction -> Int in
+                if transaction.type == TransactionType.income.rawValue {
+                    return transaction.money
+                } else {
+                    return -transaction.money
+                }
+            }.reduce(0, +)
+            let headerData = TransactionHeaderModel(dateString: date, money: money)
+            return TransactionSectionModel(headerData: headerData, transactionArray: transactionArray)
         }
-        fetchTransactionBy(mostRecentDate)
-    }
-    
-    private func fetchTransactionBy(_ date: Date) {
-        let year = date.year
-        let month = date.month
-        var monthString = "\(month)"
-        if month < 10 {
-            monthString = "0" + monthString
-        }
-        UIView.animate(withDuration: 0.75) {
-            if self.today.year == year && self.today.month == month {
-                self.nextMonthButton.isHidden = true
-            } else {
-                self.nextMonthButton.isHidden = false
-            }
-        }
-        thisMonthButton.setTitle("\(monthString)/\(year)", for: .normal)
-        let transactionInAMonth = transactionArray.filter {
-            $0.date.year == year && $0.date.month == month
-        }
-        if transactionInAMonth.isEmpty {
-            nodataView.isHidden = false
-        } else {
-            nodataView.isHidden = true
-        }
-        var transactionDictionary = [String: [Transaction]]()
-        transactionInAMonth.forEach {
-            let date = $0.date
-            let dateString = formatter.string(from: date)
-            if transactionDictionary.keys.contains(dateString) == false {
-                transactionDictionary[dateString] = [$0]
-            } else {
-                transactionDictionary[dateString]?.append($0)
-            }
-        }
-        transactionByMonthArray.removeAll()
-        transactionDictionary.forEach {
-            let date = formatter.date(from: $0) ?? Date()
-            let transactionByDay = TransactionByDay(date: date, transactionArray: $1)
-            transactionByMonthArray.append(transactionByDay)
-        }
-        transactionByMonthArray.sort {
-            $0.date > $1.date
-        }
+        sectionModelArray = sectionModelArray.sorted(by: >)
+        setupBalance()
+//        setupMonthTitle(date: today)
     }
     
     // MARK: - Views
     private func setupBalance() {
-        let totalMoney = transactionArray.reduce(into: 0) {
-            switch $1.type {
-            case TransactionType.income.rawValue: $0 += $1.money
-            case TransactionType.expendsed.rawValue: $0 -= $1.money
-            default: break
-            }
-        }
+        let totalMoney = sectionModelArray.map {
+            $0.headerData
+        }.map {
+            $0.money
+        }.reduce(0, +)
         navigationItem.title = "Số dư: " + totalMoney.convertToMoneyFormat()
-        self.totalMoney = totalMoney
     }
     
     private func cellAnimation() {
@@ -150,26 +107,44 @@ final class TransactionsViewController: UIViewController {
                        animations: [fromAnimation, zoomAnimation], delay: 0.2)
     }
     
+    private func setupMonthTitle(date: Date) {
+        var thisMonthTitle = ""
+        var previousMonthTitle = ""
+        var nextMonthTitle = ""
+        
+        if today.month == date.month && today.year == date.year {
+            thisMonthTitle = "Tháng này"
+            previousMonthTitle = "Tháng trước"
+            nextMonthTitle = "Tương lai"
+        }
+        
+        if date + 1.months == today {
+            thisMonthTitle = "Tháng trước"
+            previousMonthTitle = "\(date.month) / \(date.year)"
+            nextMonthTitle = "Tháng này"
+        }
+
+        thisMonthButton.setTitle(thisMonthTitle, for: .normal)
+        previousMonthButton.setTitle(previousMonthTitle, for: .normal)
+        nextMonthButton.setTitle(nextMonthTitle, for: .normal)
+    }
+    
     // MARK: - Action
     @IBAction func choiseMonth(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
+        if sender == previousMonthButton {
             date = date - 1.months
-            fetchTransactionBy(date)
-        case 2:
+        } else {
             date = date + 1.months
-            fetchTransactionBy(date)
-        default:
-            break
         }
-        UserDefaults.standard.set(date, forKey: "NewDateAdded")
+        fetchTransactionData(from: date)
+//        setupMonthTitle(date: date)
     }
 
     @IBAction func showMore(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let thisMonth = UIAlertAction(title: "Xem giao dịch của tháng hiện tại", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.fetchTransactionBy(self.today)
+            self.fetchTransactionData(from: self.today)
             self.date = self.today
             UserDefaults.standard.set(self.date, forKey: "NewDateAdded")
         }
@@ -177,7 +152,7 @@ final class TransactionsViewController: UIViewController {
             guard let self = self else { return }
             let blanceScreen = BalanceTableViewController.instantiate()
             blanceScreen.money = self.totalMoney
-            let navigation = NavigationViewController(rootViewController: blanceScreen)
+            let navigation = UINavigationController(rootViewController: blanceScreen)
             navigation.modalPresentationStyle = .fullScreen
             self.present(navigation, animated: true, completion: nil)
         }
@@ -191,25 +166,35 @@ final class TransactionsViewController: UIViewController {
 
 extension TransactionsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return transactionByMonthArray.count
+        return sectionModelArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactionByMonthArray[section].transactionArray.count
+        let sectionData = sectionModelArray[section]
+        let transactionArray = sectionData.transactionArray
+        return transactionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        let sectionData = sectionModelArray[section]
+        let transactionArray = sectionData.transactionArray
+        let transactionData = transactionArray[row]
+        
         let cell: TransactionCell = tableView.dequeueReusableCell(for: indexPath)
-        let transaction = transactionByMonthArray[indexPath.section].transactionArray[indexPath.row]
-        cell.setcontent(data: transaction)
+        cell.setcontent(data: transactionData)
         return cell
     }
 }
 
 extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionData = sectionModelArray[section]
+        let headerData = sectionData.headerData
+        
         let header = HeaderTransactionView.instantiate()
-        let headerData = transactionByMonthArray[section]
         header.setContent(data: headerData)
         return header
     }
@@ -229,10 +214,13 @@ extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         let row = indexPath.row
-        let transactionInADay = transactionByMonthArray[section]
-        let transaction = transactionInADay.transactionArray[row]
+        
+        let sectionData = sectionModelArray[section]
+        let transactionArray = sectionData.transactionArray
+        let transactionData = transactionArray[row]
+        
         let transactionDetail = TransactionDetailTableViewController.instantiate()
-        transactionDetail.transaction = transaction
+        transactionDetail.transaction = transactionData
         transactionDetail.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(transactionDetail, animated: true)
     }

@@ -17,6 +17,7 @@ class Transaction: Object {
     @objc dynamic var date = Date()
     @objc dynamic var idEvent: String?
     @objc dynamic var type = ""
+    @objc dynamic var dateString = ""
     
     convenience init(money: Int, categoryID: String, note: String? = nil, date: Date, idEvent: String? = nil, transactionType: String) {
         self.init()
@@ -27,6 +28,7 @@ class Transaction: Object {
         self.date = date
         self.idEvent = idEvent
         self.type = transactionType
+        self.dateString = date.convertToEDMYString()
     }
     
     required override init() {
@@ -41,6 +43,7 @@ class Transaction: Object {
         self.date = transaction.date
         self.idEvent = transaction.idEvent
         self.type = transaction.type
+        self.dateString = date.convertToEDMYString()
     }
 
     override class func primaryKey() -> String? {
