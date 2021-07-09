@@ -12,18 +12,15 @@ target 'MoneyLoverClone' do
   pod 'Then'
   pod 'Toast-Swift', '~> 5.0.1'
 
-  pod 'RealmSwift'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
+  pod 'RealmSwift', '~> 5.0.0'
 
-  pod 'FBSDKLoginKit'
-  pod 'GoogleSignIn'
+  pod 'GoogleSignIn', '~> 4.0.2'
 
-  pod 'SwiftDate'
+  pod 'SwiftDate', '~> 5.0.13'
   pod 'FSCalendar'
   
-  pod "BWWalkthrough"
+  pod "BWWalkthrough", '~> 3.0.0'
   pod "Firebase/Storage"
-  pod 'SDWebImage'
+  pod 'SDWebImage', '~> 5.8.1'
   pod "ViewAnimator"
 end

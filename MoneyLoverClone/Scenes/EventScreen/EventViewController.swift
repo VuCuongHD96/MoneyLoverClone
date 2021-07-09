@@ -103,7 +103,7 @@ final class EventViewController: UIViewController {
         let story = AddUpdateEventTableViewController.instantiate()
 
         let navController = UINavigationController(rootViewController: story)
-        story.isModalInPresentation = true
+//        story.isModalInPresentation = true
         navController.modalPresentationStyle = .fullScreen
         story.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         present(navController, animated: true, completion: nil)
@@ -142,7 +142,7 @@ extension EventViewController: UITableViewDelegate {
             guard let self = self else { return }
             let story = AddUpdateEventTableViewController.instantiate()
             let navController = UINavigationController(rootViewController: story)
-            story.isModalInPresentation = true
+//            story.isModalInPresentation = true
             story.addUpdateEvent = .update(event)
             navController.modalPresentationStyle = .fullScreen
             story.modalTransitionStyle = UIModalTransitionStyle.coverVertical

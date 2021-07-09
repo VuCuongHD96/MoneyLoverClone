@@ -41,10 +41,11 @@ final class CategoryViewController: UIViewController {
     private func setupViews() {
         segment.do {
             $0.layer.borderWidth = 1
-            $0.selectedSegmentTintColor = .green
+//            $0.selectedSegmentTintColor = .green
+            
             $0.layer.borderColor = UIColor.green.cgColor
             $0.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-            $0.setTitleTextAttributes([.foregroundColor: UIColor.systemGreen], for: .normal)
+            $0.setTitleTextAttributes([.foregroundColor: UIColor.green], for: .normal)
             $0.backgroundColor = .white
         }
         navigationItem.title = "Chọn nhóm"

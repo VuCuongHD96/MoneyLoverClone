@@ -18,6 +18,6 @@ final class NavigationViewController: UINavigationController {
     
     // MARK: - Views
     private func setupView() {
-        UINavigationBar.appearance().tintColor = .systemGreen
+        UINavigationBar.appearance().tintColor = .green
     }
 }

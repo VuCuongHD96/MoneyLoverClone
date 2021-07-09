@@ -39,9 +39,9 @@ final class TransactionCell: UITableViewCell, NibReusable {
     private func setupCostColor(_ transactionType: TransactionType) {
         switch transactionType {
         case .expendsed:
-            costLabel.textColor = .systemRed
+            costLabel.textColor = .red
         case .income:
-            costLabel.textColor = .systemBlue
+            costLabel.textColor = .blue
         }
     }
     

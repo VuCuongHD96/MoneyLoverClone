@@ -19,7 +19,7 @@ final class AddEventCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         let attributedString = NSAttributedString(string: "Thêm sự kiện",
                                                   attributes: [.underlineStyle: 1,
-                                                               .foregroundColor: UIColor.systemGreen])
+                                                               .foregroundColor: UIColor.green])
         addEventLabel.attributedText = attributedString
     }
 }
