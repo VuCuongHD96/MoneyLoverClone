@@ -8,7 +8,7 @@
 
 import UIKit
 import BWWalkthrough
-import FBSDKLoginKit
+//import FBSDKLoginKit
 import GoogleSignIn
 import Reusable
 import Then
@@ -36,46 +36,26 @@ final class WalkThroughViewController: BWWalkthroughViewController {
         }
         GIDSignIn.sharedInstance()?.do {
             $0.clientID = Constant.clientID
-            $0.presentingViewController = self
+//            $0.presentingViewController = self
         }
     }
     
     func getData() {
-        if AccessToken.current != nil {
-            GraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).start(completionHandler: { (_, _, error) in
-                if error != nil {
-                    print(error?.localizedDescription as Any)
-                }
-            })
-        } else {
-            print("Access Token is nil")
-        }
+//        if AccessToken.current != nil {
+//            GraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).start(completionHandler: { (_, _, error) in
+//                if error != nil {
+//                    print(error?.localizedDescription as Any)
+//                }
+//            })
+//        } else {
+//            print("Access Token is nil")
+//        }
     }
     
     // MARK: - Action
     @IBAction func loginWithGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.signIn()
-    }
-    
-    @IBAction func loginWithFacebook(_ sender: Any) {
-        loginFacebook()
-    }
-    
-    func loginFacebook() {
-        let login = LoginManager()
-        login.logOut()
-        login.logIn(permissions: [.publicProfile, .email, .userFriends], viewController: self) { loginResult in
-            switch loginResult {
-            case .failed(_):
-                print("Log in failed")
-            case .success(granted: _, declined: _, token: _):
-                print("Logged In")
-                self.getData()
-            case .cancelled:
-                print("User cancelled log in")
-            }
-        }
     }
 }
 

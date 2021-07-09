@@ -35,7 +35,7 @@ final class BalanceTableViewController: UITableViewController {
     
     // MARK: - View
     private func setupView() {
-        let attributeButton: AttributedStringType = [.underlineStyle: 1, .foregroundColor: UIColor.systemGreen]
+        let attributeButton: AttributedStringType = [.underlineStyle: 1, .foregroundColor: UIColor.green]
         saveButton.do {
             $0.isEnabled = false
             $0.setTitleTextAttributes(attributeButton, for: .normal)

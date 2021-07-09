@@ -77,9 +77,9 @@ final class TransactionDetailTableViewController: UITableViewController {
         guard let transactionType = TransactionType(rawValue: transactionTypeString) else { return }
         switch transactionType {
         case .expendsed:
-            moneyLabel.textColor = .systemRed
+            moneyLabel.textColor = .red
         case .income:
-            moneyLabel.textColor = .systemBlue
+            moneyLabel.textColor = .blue
         }
         guard let idEvent = transaction.idEvent, idEvent != "" else { return }
         var event = Event()

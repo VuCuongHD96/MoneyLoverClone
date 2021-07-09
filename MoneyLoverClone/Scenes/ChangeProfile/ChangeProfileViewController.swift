@@ -20,7 +20,7 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     
     let storage = Storage.storage().reference()
-    let ref = Database.database().reference()
+//    let ref = Database.database().reference()
     let tapImage = UITapGestureRecognizer()
     let user = User(name: "minh thang", email: "minhthang09199@gmail.com", avatar: "")
     
@@ -48,13 +48,13 @@ class ChangeProfileViewController: UIViewController {
     }
     
     func getImageData() {
-        ref.child("Users").child("user 01").child("avatarURL").observeSingleEvent(of: .value) { (snapshot) in
-            guard let avatarURL = snapshot.value as? String else {
-                return
-            }
-            let url = URL(string: avatarURL)
-            self.avatarImage.sd_setImage(with: url, completed: nil)
-        }
+//        ref.child("Users").child("user 01").child("avatarURL").observeSingleEvent(of: .value) { (snapshot) in
+//            guard let avatarURL = snapshot.value as? String else {
+//                return
+//            }
+//            let url = URL(string: avatarURL)
+//            self.avatarImage.sd_setImage(with: url, completed: nil)
+//        }
     }
     
     @IBAction func saveProfile(_ sender: Any) {
@@ -70,11 +70,11 @@ class ChangeProfileViewController: UIViewController {
                 guard let url = url, error == nil else {
                     return
                 }
-                self.ref.child("Users").child("user 01").child("avatarURL").setValue("\(url)")
+//                self.ref.child("Users").child("user 01").child("avatarURL").setValue("\(url)")
             })
         })
         let name = nameTextField.text ?? ""
-        ref.child("Users").child("user 01").child("name").setValue("\(name)")
+//        ref.child("Users").child("user 01").child("name").setValue("\(name)")
         navigationController?.popViewController(animated: true)
     }
 }
