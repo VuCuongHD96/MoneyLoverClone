@@ -137,7 +137,22 @@ final class TransactionsViewController: UIViewController {
         nextMonthButton.setTitle(nextMonthTitle, for: .normal)
     }
     
-    // MARK: - Action
+    // MARK: - Create Action
+    private func gotoFindScreen() {
+        let viewController = FindTransactionViewController.instantiate()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    private func createFindTransactionAlertAction() -> UIAlertAction {
+        let findTransactionAlertAction = UIAlertAction(title: "Tìm giao dịch", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.gotoFindScreen()
+        }
+        return findTransactionAlertAction
+    }
+    
+    // MARK: - Do Action
     @IBAction func choiseMonth(_ sender: UIButton) {
         if sender == previousMonthButton {
             date = date - 1.months
@@ -163,12 +178,14 @@ final class TransactionsViewController: UIViewController {
             navigation.modalPresentationStyle = .fullScreen
             self.present(navigation, animated: true, completion: nil)
         }
+        let findTransaction = createFindTransactionAlertAction()
         let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
         alert.addAction(thisMonth)
         alert.addAction(fixBlance)
+        alert.addAction(findTransaction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-    }
+    } 
 }
 
 extension TransactionsViewController: UITableViewDataSource {

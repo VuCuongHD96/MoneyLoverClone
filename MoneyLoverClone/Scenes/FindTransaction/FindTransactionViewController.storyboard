@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tìm giao dịch-->
+        <scene sceneID="9tD-HA-ljj">
+            <objects>
+                <viewController storyboardIdentifier="FindTransactionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6j6-te-BEu" customClass="FindTransactionViewController" customModule="MoneyLoverClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWG-DC-bAH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2R0-m3-5sJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ak0-dy-xXH">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lU7-gB-6KK"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ak0-dy-xXH" firstAttribute="leading" secondItem="lU7-gB-6KK" secondAttribute="leading" id="05p-Hh-YPK"/>
+                            <constraint firstItem="Ak0-dy-xXH" firstAttribute="top" secondItem="2R0-m3-5sJ" secondAttribute="bottom" id="7ab-Ff-jpM"/>
+                            <constraint firstItem="lU7-gB-6KK" firstAttribute="bottom" secondItem="Ak0-dy-xXH" secondAttribute="bottom" id="FcI-W5-P6E"/>
+                            <constraint firstItem="2R0-m3-5sJ" firstAttribute="trailing" secondItem="lU7-gB-6KK" secondAttribute="trailing" id="Y9K-hO-8yY"/>
+                            <constraint firstItem="2R0-m3-5sJ" firstAttribute="leading" secondItem="lU7-gB-6KK" secondAttribute="leading" id="cVD-E5-wqf"/>
+                            <constraint firstItem="2R0-m3-5sJ" firstAttribute="top" secondItem="lU7-gB-6KK" secondAttribute="top" id="klz-pA-94z"/>
+                            <constraint firstItem="lU7-gB-6KK" firstAttribute="trailing" secondItem="Ak0-dy-xXH" secondAttribute="trailing" id="tRy-ib-pSh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tìm giao dịch" id="A6d-lC-t5N">
+                        <barButtonItem key="leftBarButtonItem" title="Đóng" id="9XD-1P-YTM">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="closeAction:" destination="6j6-te-BEu" id="eIT-hc-8WJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="2R0-m3-5sJ" id="JKs-PF-vyP"/>
+                        <outlet property="tableView" destination="Ak0-dy-xXH" id="Bey-9E-YL0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAI-w5-P6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="144.3778110944528"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b0e-X4-uNh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xs-3z-hJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OZ1-4w-CFY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8QS-tB-uto">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6j6-te-BEu" kind="relationship" relationship="rootViewController" id="3P0-H5-D5d"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="144.3778110944528"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
