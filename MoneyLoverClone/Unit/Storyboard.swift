@@ -25,4 +25,5 @@ struct Storyboard {
     static let walkThrough = UIStoryboard(name: "Walkthrough", bundle: nil)
     static let blance = UIStoryboard(name: "Blance", bundle: nil)
     static let changeProfile = UIStoryboard(name: "ChangeProfile", bundle: nil)
+    static let findTransaction = UIStoryboard(name: "FindTransactionViewController", bundle: nil)
 }

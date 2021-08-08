@@ -66,6 +66,8 @@
 		4CE313A525187E1000553415 /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE313A425187E1000553415 /* AddTransactionTableViewController.swift */; };
 		4CE437EE25257DC80089DEDA /* AddEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE437EC25257DC80089DEDA /* AddEventCell.swift */; };
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
+		844CC2BB26C0106100C49ED2 /* FindTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CC2B926C0106100C49ED2 /* FindTransactionViewController.swift */; };
+		844CC2EB26C016EE00C49ED2 /* FindTransactionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
 		9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9332F6252EC082000957EA /* GoogleService-Info.plist */; };
 		9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */; };
@@ -159,6 +161,8 @@
 		4CE437EC25257DC80089DEDA /* AddEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventCell.swift; sourceTree = "<group>"; };
 		4CE437ED25257DC80089DEDA /* AddEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventCell.xib; sourceTree = "<group>"; };
 		7F319EC1FA6BE4EEBDFEAA07 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
+		844CC2B926C0106100C49ED2 /* FindTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTransactionViewController.swift; sourceTree = "<group>"; };
+		844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindTransactionViewController.storyboard; sourceTree = "<group>"; };
 		85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9B9332F6252EC082000957EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				844CC2B826C0103100C49ED2 /* FindTransaction */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
 				9BC28A9925300AFD00ABDF43 /* ChangeProfile */,
@@ -531,6 +536,15 @@
 				4C548D3E252D6254006FDCEF /* ChoiseEventCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		844CC2B826C0103100C49ED2 /* FindTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				844CC2B926C0106100C49ED2 /* FindTransactionViewController.swift */,
+				844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */,
+			);
+			path = FindTransaction;
 			sourceTree = "<group>";
 		};
 		9B8131C6251AE0E40088F6A6 /* Settings */ = {
@@ -717,6 +731,7 @@
 				4C30DA6A251B539200768482 /* RevenueArray.plist in Resources */,
 				4CA531E225340F8D00D22471 /* Blance.storyboard in Resources */,
 				4CE313A2251852F000553415 /* TransactionCell.xib in Resources */,
+				844CC2EB26C016EE00C49ED2 /* FindTransactionViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +835,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844CC2BB26C0106100C49ED2 /* FindTransactionViewController.swift in Sources */,
 				4C30DA65251B44DA00768482 /* CategoryCell.swift in Sources */,
 				9BC28A9D25300B4600ABDF43 /* ChangeProfileViewController.swift in Sources */,
 				1016AEE925296C3D0030287F /* TransactionByDay.swift in Sources */,
