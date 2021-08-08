@@ -27,57 +27,52 @@ namespace util {
 
 class Printable {
 public:
-    constexpr Printable(bool value)
+    Printable(bool value)
         : m_type(Type::Bool)
         , m_uint(value)
     {
     }
-    constexpr Printable(unsigned char value)
+    Printable(unsigned char value)
         : m_type(Type::Uint)
         , m_uint(value)
     {
     }
-    constexpr Printable(unsigned int value)
+    Printable(unsigned int value)
         : m_type(Type::Uint)
         , m_uint(value)
     {
     }
-    constexpr Printable(unsigned long value)
+    Printable(unsigned long value)
         : m_type(Type::Uint)
         , m_uint(value)
     {
     }
-    constexpr Printable(unsigned long long value)
+    Printable(unsigned long long value)
         : m_type(Type::Uint)
         , m_uint(value)
     {
     }
-    constexpr Printable(char value)
+    Printable(char value)
         : m_type(Type::Int)
         , m_int(value)
     {
     }
-    constexpr Printable(int value)
+    Printable(int value)
         : m_type(Type::Int)
         , m_int(value)
     {
     }
-    constexpr Printable(long value)
+    Printable(long value)
         : m_type(Type::Int)
         , m_int(value)
     {
     }
-    constexpr Printable(long long value)
+    Printable(long long value)
         : m_type(Type::Int)
         , m_int(value)
     {
     }
-    constexpr Printable(double value)
-        : m_type(Type::Double)
-        , m_double(value)
-    {
-    }
-    constexpr Printable(const char* value)
+    Printable(const char* value)
         : m_type(Type::String)
         , m_string(value)
     {
@@ -99,14 +94,12 @@ private:
         Bool,
         Int,
         Uint,
-        Double,
         String,
     } m_type;
 
     union {
         uintmax_t m_uint;
         intmax_t m_int;
-        double m_double;
         const char* m_string;
     };
 };
@@ -121,13 +114,7 @@ std::string to_string(const T& v)
 
 std::string format(const char* fmt, std::initializer_list<Printable>);
 
-// format string format:
-//  "%%" - literal '%'
-//  "%1" - substitutes Nth argument, 1-indexed
-//
-// format("Hello %1, meet %2. %3%% complete.", "Alice", "Bob", 97)
-//  -> "Hello Alice, meet Bob. 97% complete."
-template <typename... Args>
+template<typename... Args>
 std::string format(const char* fmt, Args&&... args)
 {
     return format(fmt, {Printable(args)...});

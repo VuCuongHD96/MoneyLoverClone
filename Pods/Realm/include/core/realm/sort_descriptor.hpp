@@ -30,7 +30,7 @@ class SortDescriptor;
 class ConstTableRef;
 class Group;
 
-enum class DescriptorType { Sort, Distinct, Limit };
+enum class DescriptorType { Sort, Distinct, Limit, Include };
 
 struct LinkPathPart {
     // Constructor for forward links
@@ -110,13 +110,6 @@ public:
             bool ascending;
         };
         std::vector<SortColumn> m_columns;
-        struct ObjCache {
-            ObjKey key;
-            Mixed value;
-        };
-        using TableCache = std::vector<ObjCache>;
-        mutable std::vector<TableCache> m_cache;
-
         friend class ObjList;
     };
 
@@ -162,7 +155,7 @@ class DistinctDescriptor : public ColumnsDescriptor {
 public:
     DistinctDescriptor() = default;
     DistinctDescriptor(std::vector<std::vector<ColKey>> column_keys)
-        : ColumnsDescriptor(std::move(column_keys))
+        : ColumnsDescriptor(column_keys)
     {
     }
 
@@ -204,20 +197,7 @@ public:
         return util::none;
     }
 
-    enum class MergeMode {
-        /// If another sort has just been applied, merge before it, so it takes primary precedence
-        /// this is used for time based scenarios where building the last applied sort is the most important
-        /// default historical behaviour
-        append,
-        /// If another sort has just been applied, merge after it to take secondary precedence
-        /// this is used to construct sorts in a builder pattern where the first applied sort remains the most
-        /// important
-        prepend,
-        /// Replace this sort descriptor with another
-        replace
-    };
-
-    void merge(SortDescriptor&& other, MergeMode mode);
+    void merge_with(SortDescriptor&& other);
 
     Sorter sorter(Table const& table, const IndexPairs& indexes) const override;
 
@@ -268,6 +248,40 @@ private:
     size_t m_limit = size_t(-1);
 };
 
+class IncludeDescriptor : public ColumnsDescriptor {
+public:
+    IncludeDescriptor() = default;
+    // This constructor may throw an InvalidPathError exception if the path is not valid.
+    // A valid path consists of any number of connected link/list/backlink paths and always ends with a backlink
+    // column.
+    IncludeDescriptor(ConstTableRef table, const std::vector<std::vector<LinkPathPart>>& link_paths);
+    ~IncludeDescriptor() = default;
+    std::string get_description(ConstTableRef attached_table) const override;
+    std::unique_ptr<BaseDescriptor> clone() const override;
+    DescriptorType get_type() const override
+    {
+        return DescriptorType::Include;
+    }
+    void append(const IncludeDescriptor& other);
+    void report_included_backlinks(
+        ConstTableRef origin, ObjKey object,
+        util::FunctionRef<void(const Table*, const std::unordered_set<ObjKey>&)> reporter) const;
+
+    Sorter sorter(Table const&, const IndexPairs&) const override
+    {
+        return Sorter();
+    }
+
+    void collect_dependencies(const Table*, std::vector<TableKey>&) const override
+    {
+    }
+    void execute(IndexPairs& v, const Sorter& predicate, const BaseDescriptor* next) const override;
+
+private:
+    std::vector<std::vector<TableKey>> m_backlink_sources; // stores a default TableKey for non-backlink columns
+};
+
+
 class DescriptorOrdering {
 public:
     DescriptorOrdering() = default;
@@ -276,10 +290,10 @@ public:
     DescriptorOrdering& operator=(const DescriptorOrdering&);
     DescriptorOrdering& operator=(DescriptorOrdering&&) = default;
 
-    void append_sort(SortDescriptor sort, SortDescriptor::MergeMode mode = SortDescriptor::MergeMode::prepend);
+    void append_sort(SortDescriptor sort);
     void append_distinct(DistinctDescriptor distinct);
     void append_limit(LimitDescriptor limit);
-    void append(const DescriptorOrdering& other);
+    void append_include(IncludeDescriptor include);
     realm::util::Optional<size_t> get_min_limit() const;
     /// Remove all LIMIT statements from this descriptor ordering, returning the
     /// minimum LIMIT value that existed. If there was no LIMIT statement,
@@ -299,7 +313,9 @@ public:
     bool will_apply_sort() const;
     bool will_apply_distinct() const;
     bool will_apply_limit() const;
+    bool will_apply_include() const;
     std::string get_description(ConstTableRef target_table) const;
+    IncludeDescriptor compile_included_backlinks() const;
     void collect_dependencies(const Table* table);
     void get_versions(const Group* group, TableVersions& versions) const;
 

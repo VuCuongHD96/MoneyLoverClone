@@ -42,6 +42,7 @@ public:
     using Array::erase;
     using Array::clear;
     using Array::destroy;
+    using Array::verify;
 
     ArrayKeyBase(Allocator& allocator)
         : Array(allocator)
@@ -89,14 +90,9 @@ public:
     {
         return ObjKey{Array::get(ndx) - adj};
     }
-    Mixed get_any(size_t ndx) const override
-    {
-        return Mixed(get(ndx));
-    }
     bool is_null(size_t ndx) const
     {
-        ObjKey key = get(ndx);
-        return !key || key.is_unresolved();
+        return Array::get(ndx) == 0;
     }
     void move(ArrayKeyBase& dst, size_t ndx)
     {
@@ -115,7 +111,6 @@ public:
         REALM_ASSERT(begin != realm::npos);
         Array::erase(begin);
     }
-    void verify() const;
 };
 
 class ArrayKey : public ArrayKeyBase<1> {

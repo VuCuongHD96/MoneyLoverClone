@@ -25,10 +25,11 @@
 #import "RLMQueryUtil.hpp"
 #import "RLMUtil.hpp"
 
-#import <realm/object-store/object_schema.hpp>
-#import <realm/object-store/object_store.hpp>
-#import <realm/object-store/schema.hpp>
-#import <realm/object-store/shared_realm.hpp>
+#import "object_schema.hpp"
+#import "object_store.hpp"
+#import "schema.hpp"
+#import "shared_realm.hpp"
+
 #import <realm/table.hpp>
 
 using namespace realm;
@@ -75,8 +76,10 @@ RLMClassInfo &RLMClassInfo::linkTargetType(realm::Property const& property) {
     return linkTargetType(&property - &objectSchema->persisted_properties[0]);
 }
 
-RLMClassInfo &RLMClassInfo::resolve(__unsafe_unretained RLMRealm *const realm) {
-    return realm->_info[rlmObjectSchema.className];
+RLMClassInfo &RLMClassInfo::freeze(__unsafe_unretained RLMRealm *const frozenRealm) {
+    REALM_ASSERT(frozenRealm.frozen);
+    // FIXME
+    return frozenRealm->_info[rlmObjectSchema.className];
 }
 
 RLMSchemaInfo::impl::iterator RLMSchemaInfo::begin() noexcept { return m_objects.begin(); }

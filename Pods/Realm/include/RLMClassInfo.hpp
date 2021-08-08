@@ -87,7 +87,7 @@ public:
     RLMClassInfo &linkTargetType(realm::Property const& property);
 
     // Get the corresponding ClassInfo for the given Realm
-    RLMClassInfo &resolve(RLMRealm *);
+    RLMClassInfo &freeze(RLMRealm *);
 };
 
 // A per-RLMRealm object schema map which stores RLMClassInfo keyed on the name

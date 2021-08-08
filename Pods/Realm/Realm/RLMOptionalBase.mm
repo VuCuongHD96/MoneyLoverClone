@@ -22,8 +22,7 @@
 #import "RLMObject_Private.hpp"
 #import "RLMProperty.h"
 #import "RLMUtil.hpp"
-
-#import <realm/object-store/object.hpp>
+#import "object.hpp"
 
 namespace {
 struct OptionalBase {

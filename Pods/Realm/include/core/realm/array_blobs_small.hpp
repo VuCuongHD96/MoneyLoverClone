@@ -21,6 +21,7 @@
 
 #include <realm/binary_data.hpp>
 #include <realm/array_blob.hpp>
+#include <realm/array_integer.hpp>
 #include <realm/exceptions.hpp>
 
 namespace realm {
@@ -114,11 +115,14 @@ public:
     /// initialization value).
     static MemRef create_array(size_t size, Allocator&, BinaryData defaults);
 
-    void update_from_parent() noexcept;
+#ifdef REALM_DEBUG
+    void to_dot(std::ostream&, bool is_strings, StringData title = StringData()) const;
+#endif
+    bool update_from_parent(size_t old_baseline) noexcept;
 
 private:
     friend class ArrayString;
-    Array m_offsets;
+    ArrayInteger m_offsets;
     ArrayBlob m_blob;
     Array m_nulls;
 
@@ -261,12 +265,15 @@ inline size_t ArraySmallBlobs::get_size_from_header(const char* header, Allocato
     return Array::get_size_from_header(offsets_header);
 }
 
-inline void ArraySmallBlobs::update_from_parent() noexcept
+inline bool ArraySmallBlobs::update_from_parent(size_t old_baseline) noexcept
 {
-    Array::update_from_parent();
-    m_blob.update_from_parent();
-    m_offsets.update_from_parent();
-    m_nulls.update_from_parent();
+    bool res = Array::update_from_parent(old_baseline);
+    if (res) {
+        m_blob.update_from_parent(old_baseline);
+        m_offsets.update_from_parent(old_baseline);
+        m_nulls.update_from_parent(old_baseline);
+    }
+    return res;
 }
 
 } // namespace realm

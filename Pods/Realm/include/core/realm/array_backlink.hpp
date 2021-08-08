@@ -58,11 +58,7 @@ public:
     {
         return Array::get(ndx);
     }
-    Mixed get_any(size_t ndx) const override
-    {
-        REALM_ASSERT(false);
-        return Mixed(get(ndx));
-    }
+
     void add(int64_t val)
     {
         Array::add(val);

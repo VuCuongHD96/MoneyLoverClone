@@ -33,7 +33,7 @@ import Realm
  `LinkingObjects` can only be used as a property on `Object` models. Properties of this type must be declared as `let`
  and cannot be `dynamic`.
  */
-@frozen public struct LinkingObjects<Element: ObjectBase> where Element: RealmCollectionValue {
+public struct LinkingObjects<Element: Object> {
     /// The type of the objects represented by the linking objects.
     public typealias ElementType = Element
 
@@ -326,16 +326,6 @@ import Realm
      */
     public func freeze() -> LinkingObjects {
         return LinkingObjects(propertyName: propertyName, handle: handle?.freeze())
-    }
-
-    /**
-     Returns a live version of this frozen collection.
-
-     This method resolves a reference to a live copy of the same frozen collection.
-     If called on a live collection, will return itself.
-    */
-    public func thaw() -> LinkingObjects<Element>? {
-        return LinkingObjects(propertyName: propertyName, handle: handle?.thaw())
     }
 
     // MARK: Implementation

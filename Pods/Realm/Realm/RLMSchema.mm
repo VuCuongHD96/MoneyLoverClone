@@ -27,13 +27,14 @@
 #import "RLMSwiftSupport.h"
 #import "RLMUtil.hpp"
 
-#import <realm/group.hpp>
-#import <realm/object-store/object_schema.hpp>
-#import <realm/object-store/object_store.hpp>
-#import <realm/object-store/schema.hpp>
+#import "object_schema.hpp"
+#import "object_store.hpp"
+#import "schema.hpp"
 
-#import <mutex>
+#import <realm/group.hpp>
+
 #import <objc/runtime.h>
+#include <mutex>
 
 using namespace realm;
 

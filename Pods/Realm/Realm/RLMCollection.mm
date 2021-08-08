@@ -26,9 +26,9 @@
 #import "RLMObject_Private.hpp"
 #import "RLMProperty_Private.h"
 
-#import <realm/object-store/collection_notifications.hpp>
-#import <realm/object-store/list.hpp>
-#import <realm/object-store/results.hpp>
+#import "collection_notifications.hpp"
+#import "list.hpp"
+#import "results.hpp"
 
 static const int RLMEnumerationBufferSize = 16;
 
@@ -381,7 +381,7 @@ struct CollectionCallbackWrapper {
         else if (changes.empty()) {
             block(collection, nil, nil);
         }
-        else if (!changes.collection_root_was_deleted || !changes.deletions.empty()) {
+        else {
             block(collection, [[RLMCollectionChange alloc] initWithChanges:changes], nil);
         }
     }

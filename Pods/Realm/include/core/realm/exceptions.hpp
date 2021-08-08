@@ -23,7 +23,6 @@
 
 #include <realm/util/features.h>
 #include <realm/util/backtrace.hpp>
-#include <realm/util/to_string.hpp>
 
 namespace realm {
 
@@ -34,19 +33,6 @@ using util::ExceptionWithBacktrace;
 class NoSuchTable : public ExceptionWithBacktrace<std::exception> {
 public:
     const char* message() const noexcept override;
-};
-
-class InvalidTableRef : public ExceptionWithBacktrace<std::exception> {
-public:
-    InvalidTableRef(const char* cause)
-        : m_message(cause)
-    {
-    }
-    const char* message() const noexcept override
-    {
-        return m_message.c_str();
-    }
-    std::string m_message;
 };
 
 
@@ -78,11 +64,12 @@ public:
 /// constructor when opening a database that uses a deprecated file format
 /// and/or a deprecated history schema which this version of Realm cannot
 /// upgrade from.
-class UnsupportedFileFormatVersion : public ExceptionWithBacktrace<> {
+class UnsupportedFileFormatVersion : public ExceptionWithBacktrace<std::exception> {
 public:
     UnsupportedFileFormatVersion(int source_version);
     /// The unsupported version of the file.
     int source_version = 0;
+    const char* message() const noexcept override;
 };
 
 
@@ -116,37 +103,11 @@ public:
     /// runtime_error::what() returns the msg provided in the constructor.
 };
 
-/// Thrown when a key can not by found
-class KeyNotFound : public std::runtime_error {
+/// Thrown when a key can not be used (either not found or already existing
+/// when trying to create a new object)
+class InvalidKey : public std::runtime_error {
 public:
-    KeyNotFound(const std::string& msg)
-        : std::runtime_error(msg)
-    {
-    }
-};
-
-/// Thrown when a column can not by found
-class ColumnNotFound : public std::runtime_error {
-public:
-    ColumnNotFound()
-        : std::runtime_error("Column not found")
-    {
-    }
-};
-
-/// Thrown when a column key is already used
-class ColumnAlreadyExists : public std::runtime_error {
-public:
-    ColumnAlreadyExists()
-        : std::runtime_error("Column already exists")
-    {
-    }
-};
-
-/// Thrown when a key is already existing when trying to create a new object
-class KeyAlreadyUsed : public std::runtime_error {
-public:
-    KeyAlreadyUsed(const std::string& msg)
+    InvalidKey(const std::string& msg)
         : std::runtime_error(msg)
     {
     }
@@ -219,6 +180,9 @@ private:
 /// exception being thrown. The whole point of properly documenting "Undefined
 /// Behaviour" cases is to help the user know what the limits are, without
 /// constraining the database to handle every and any use-case thrown at it.
+///
+/// FIXME: This exception class should probably be moved to the `_impl`
+/// namespace, in order to avoid some confusion.
 class LogicError : public ExceptionWithBacktrace<std::exception> {
 public:
     enum ErrorKind {
@@ -279,28 +243,31 @@ public:
 
         /// Group::open() is called on a group accessor that is already in the
         /// attached state. Or Group::open() or Group::commit() is called on a
-        /// group accessor that is managed by a DB object.
+        /// group accessor that is managed by a SharedGroup object.
         wrong_group_state,
 
-        /// No active transaction on a particular Transaction object (e.g. after commit)
-        /// or the Transaction object is of the wrong type (write to a read-only transaction)
+        /// No active transaction on a particular SharedGroup object (e.g.,
+        /// SharedGroup::commit()), or the active transaction on the SharedGroup
+        /// object is of the wrong type (read/write), or an attampt was made to
+        /// initiate a new transaction while one is already in progress on the
+        /// same SharedGroup object.
         wrong_transact_state,
 
-        /// Attempted use of a continuous transaction through a DB
+        /// Attempted use of a continuous transaction through a SharedGroup
         /// object with no history. See Replication::get_history().
         no_history,
 
-        /// Durability setting (as passed to the DB constructor) was
+        /// Durability setting (as passed to the SharedGroup constructor) was
         /// not consistent across the session.
         mixed_durability,
 
         /// History type (as specified by the Replication implementation passed
-        /// to the DB constructor) was not consistent across the
+        /// to the SharedGroup constructor) was not consistent across the
         /// session.
         mixed_history_type,
 
         /// History schema version (as specified by the Replication
-        /// implementation passed to the DB constructor) was not
+        /// implementation passed to the SharedGroup constructor) was not
         /// consistent across the session.
         mixed_history_schema_version,
 
@@ -313,8 +280,8 @@ public:
         /// You can not add index on a subtable of a subtable
         subtable_of_subtable_index,
 
-        /// You try to instantiate a collection object not matching column type
-        collection_type_mismatch
+        /// You try to instantiate a list object not matching column type
+        list_type_mismatch
     };
 
     LogicError(ErrorKind message);
@@ -352,10 +319,13 @@ inline const char* DescriptorMismatch::message() const noexcept
 }
 
 inline UnsupportedFileFormatVersion::UnsupportedFileFormatVersion(int version)
-    : ExceptionWithBacktrace<>(
-          util::format("Database has an unsupported version (%1) and cannot be upgraded", version))
-    , source_version(version)
+: source_version(version)
 {
+}
+
+inline const char* UnsupportedFileFormatVersion::message() const noexcept
+{
+    return "Database has an unsupported version and cannot be upgraded";
 }
 
 inline const char* MultipleSyncAgents::message() const noexcept

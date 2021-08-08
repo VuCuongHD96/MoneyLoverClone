@@ -65,12 +65,7 @@ public final class RealmOptional<Value: RealmOptionalType>: RLMOptionalBase {
     }
 }
 
-extension RealmOptional: Equatable where Value: Equatable {
-    public static func == (lhs: RealmOptional<Value>, rhs: RealmOptional<Value>) -> Bool {
-        return lhs.value == rhs.value
-    }
-}
-
+#if swift(>=4.1)
 extension RealmOptional: Codable where Value: Codable {
     public convenience init(from decoder: Decoder) throws {
         self.init()
@@ -84,6 +79,7 @@ extension RealmOptional: Codable where Value: Codable {
         try self.value.encode(to: encoder)
     }
 }
+#endif
 
 internal protocol RealmOptionalProtocol { }
 extension RealmOptional: RealmOptionalProtocol { }
