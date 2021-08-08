@@ -17,35 +17,32 @@ final class HeaderTransactionView: UIView {
     @IBOutlet private weak var monthYearLabel: UILabel!
     @IBOutlet private weak var moneyLabel: UILabel!
     
-    // MARK: - Properties
+    // MARK: - Define
     struct Constant {
         static let dateFormat = "EEEE,dd,MMMM yyyy"
     }
+    
+    // MARK: - Properties
     var formatter = DateFormatter()
     let today = Date()
     
     // MARK: - Data
-    func setContent(data: TransactionByDay) {
-        moneyLabel.text = data.summaryMoney.convertToMoneyFormat()
-        setupTime(from: data.date)
+    func setContent(data: TransactionHeaderModel) {
+        setupTime(data: data.dateString)
+        moneyLabel.text = String(data.money).convertToMoneyFormat()
     }
     
-    private func setupTime(from date: Date) {
-        formatter.locale = Locale(identifier: "vi")
-        formatter.dateFormat = Constant.dateFormat
-        let dateString = formatter.string(from: date)
-        let stringArray = dateString.split(separator: ",")
-        dayLabel.text = String(stringArray[1])
-        dayOfWeakLabel.text = String(stringArray[0])
-        monthYearLabel.text = String(stringArray[2])
-        let todayString = formatter.string(from: today)
-        if dateString == todayString {
-            dayOfWeakLabel.text = "Hôm nay"
-        }
-        let yesterday = formatter.string(from: Date() - 1.days)
-        if dateString == yesterday {
-            dayOfWeakLabel.text = "Hôm qua"
-        }
+    private func setupTime(data: String) {
+        let stringArray = data.split(separator: "-")
+        
+        let dayData = String(stringArray[1])
+        let dayOfWeakData = String(stringArray[0])
+        let monthData = String(stringArray[2])
+        let yearData = String(stringArray[3])
+        
+        dayLabel.text = dayData
+        dayOfWeakLabel.text = dayOfWeakData
+        monthYearLabel.text = "tháng " + monthData + " " + yearData
     }
     
     static func instantiate() -> HeaderTransactionView {

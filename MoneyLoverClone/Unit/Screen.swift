@@ -9,7 +9,7 @@
 import UIKit
 
 struct Screen {
-    private static let bounds = UIScreen.main.bounds
+    static let bounds = UIScreen.main.bounds
     static let width = bounds.size.width
     static let height = bounds.size.height
     static let designWidth: CGFloat = 320

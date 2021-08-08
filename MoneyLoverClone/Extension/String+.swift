@@ -33,4 +33,9 @@ extension String {
         guard let self = numberFormatter.string(from: nsNumber) else { return "" }
         return self
     }
+
+    func getDayOfWeek() -> Substring {
+        let stringArray = self.split(separator: "-")
+        return stringArray[1]
+    }
 }

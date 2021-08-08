@@ -122,5 +122,4 @@ final class DBManager {
             self.save(category)
         }
     }
-    
 }

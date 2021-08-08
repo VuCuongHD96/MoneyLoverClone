@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         _ = try? Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         FirebaseApp.configure()
-        
+
         return true
     }
 }

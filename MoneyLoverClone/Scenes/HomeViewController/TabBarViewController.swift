@@ -9,6 +9,7 @@
 import UIKit
 import Then
 import BWWalkthrough
+import Reusable
 
 final class TabBarViewController: UITabBarController {
     
@@ -20,6 +21,10 @@ final class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         setupData()
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // MARK: - View
@@ -49,3 +54,4 @@ extension TabBarViewController: UITabBarControllerDelegate {
         return true
     }
 }
+
