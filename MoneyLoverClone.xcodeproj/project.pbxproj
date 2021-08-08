@@ -68,6 +68,7 @@
 		4CE437EF25257DC80089DEDA /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE437ED25257DC80089DEDA /* AddEventCell.xib */; };
 		844CC2BB26C0106100C49ED2 /* FindTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CC2B926C0106100C49ED2 /* FindTransactionViewController.swift */; };
 		844CC2EB26C016EE00C49ED2 /* FindTransactionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */; };
+		844CC30826C01F6100C49ED2 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CC30726C01F6100C49ED2 /* ViewControllerType.swift */; };
 		9B8131CC251AE56F0088F6A6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */; };
 		9B9332F7252EC082000957EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9332F6252EC082000957EA /* GoogleService-Info.plist */; };
 		9BC28A9B25300B3200ABDF43 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC28A9A25300B3200ABDF43 /* ChangeProfile.storyboard */; };
@@ -163,6 +164,7 @@
 		7F319EC1FA6BE4EEBDFEAA07 /* Pods-MoneyLoverClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLoverClone.release.xcconfig"; path = "Target Support Files/Pods-MoneyLoverClone/Pods-MoneyLoverClone.release.xcconfig"; sourceTree = "<group>"; };
 		844CC2B926C0106100C49ED2 /* FindTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTransactionViewController.swift; sourceTree = "<group>"; };
 		844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindTransactionViewController.storyboard; sourceTree = "<group>"; };
+		844CC30726C01F6100C49ED2 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLoverClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8131CB251AE56F0088F6A6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9B9332F6252EC082000957EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		4C8E4BE92514A8A8005B238B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				844CC30A26C01F6B00C49ED2 /* ViewControllerType */,
 				844CC2B826C0103100C49ED2 /* FindTransaction */,
 				4CC87D4725136D9300A3B9BD /* LaunchScreen.storyboard */,
 				4CC87D4225136D9100A3B9BD /* Main.storyboard */,
@@ -545,6 +548,14 @@
 				844CC2EA26C016EE00C49ED2 /* FindTransactionViewController.storyboard */,
 			);
 			path = FindTransaction;
+			sourceTree = "<group>";
+		};
+		844CC30A26C01F6B00C49ED2 /* ViewControllerType */ = {
+			isa = PBXGroup;
+			children = (
+				844CC30726C01F6100C49ED2 /* ViewControllerType.swift */,
+			);
+			path = ViewControllerType;
 			sourceTree = "<group>";
 		};
 		9B8131C6251AE0E40088F6A6 /* Settings */ = {
@@ -883,6 +894,7 @@
 				4CA531E42534133600D22471 /* BalanceTableViewController.swift in Sources */,
 				4C6C53ED25217F5100E7D3F0 /* CategoryIconCell.swift in Sources */,
 				4C4E29D8251DF69D0015E783 /* Event.swift in Sources */,
+				844CC30826C01F6100C49ED2 /* ViewControllerType.swift in Sources */,
 				A2D4030C266B532300C8324D /* TextField+.swift in Sources */,
 				4C24A191252EF7ED007BD624 /* User.swift in Sources */,
 				A22EBFA02670C26A001E894A /* TransactionSectionModel.swift in Sources */,
