@@ -26,7 +26,6 @@ final class TransactionsViewController: UIViewController {
         static let heightForHeaderInSection: CGFloat = 50
         static let heightForFooterInSection: CGFloat = 25
         static let heightForRowAt: CGFloat = 55
-        static let headerNibName = "HeaderTransactionView"
     }
     
     // MARK: - Properties
@@ -63,7 +62,6 @@ final class TransactionsViewController: UIViewController {
 
     // MARK: - Data
     private func setupData() {
-        
     }
     
     private func fetchTransactionData(from date: Date) {
@@ -87,7 +85,7 @@ final class TransactionsViewController: UIViewController {
         }
         sectionModelArray = sectionModelArray.sorted(by: >)
         setupBalance()
-//        setupMonthTitle(date: today)
+        setupMonthTitle(date: date)
     }
     
     // MARK: - Views
@@ -108,24 +106,34 @@ final class TransactionsViewController: UIViewController {
     }
     
     private func setupMonthTitle(date: Date) {
-        var thisMonthTitle = ""
         var previousMonthTitle = ""
+        var thisMonthTitle = ""
         var nextMonthTitle = ""
+        nextMonthButton.isEnabled = true
         
-        if today.month == date.month && today.year == date.year {
-            thisMonthTitle = "Tháng này"
+        if today.isThisMonth(with: date) {
             previousMonthTitle = "Tháng trước"
-            nextMonthTitle = "Tương lai"
+            thisMonthTitle = "Tháng này"
+            nextMonthButton.isEnabled = false
         }
         
-        if date + 1.months == today {
+        if date.isPreviousMonth() {
+            let previousMonth = date - 1.months
+            previousMonthTitle = "\(previousMonth.month) / \(previousMonth.year)"
             thisMonthTitle = "Tháng trước"
-            previousMonthTitle = "\(date.month) / \(date.year)"
             nextMonthTitle = "Tháng này"
         }
+        
+        if date.isPast() {
+            let previousMonth = date - 1.months
+            previousMonthTitle = "\(previousMonth.month) / \(previousMonth.year)"
+            thisMonthTitle = "\(date.month) / \(date.year)"
+            let nextMonth = date + 1.months
+            nextMonthTitle = "\(nextMonth.month) / \(nextMonth.year)"
+        }
 
-        thisMonthButton.setTitle(thisMonthTitle, for: .normal)
         previousMonthButton.setTitle(previousMonthTitle, for: .normal)
+        thisMonthButton.setTitle(thisMonthTitle, for: .normal)
         nextMonthButton.setTitle(nextMonthTitle, for: .normal)
     }
     
@@ -137,7 +145,6 @@ final class TransactionsViewController: UIViewController {
             date = date + 1.months
         }
         fetchTransactionData(from: date)
-//        setupMonthTitle(date: date)
     }
 
     @IBAction func showMore(_ sender: Any) {

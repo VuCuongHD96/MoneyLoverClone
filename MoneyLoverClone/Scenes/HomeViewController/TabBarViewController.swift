@@ -25,10 +25,6 @@ final class TabBarViewController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let user = database.fetchUser()
-//        if user == nil {
-//            setupWalkThough()
-//        }
     }
     
     // MARK: - View

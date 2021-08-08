@@ -79,13 +79,6 @@ final class DBManager {
         return Array(result)
     }
     
-//    func fetchTransactions(from date: Date) -> [Transaction] {
-//        guard let result = database?.objects(Transaction.self).filter("date == %@", date) else {
-//            return [Transaction]()
-//        }
-//        return Array(result)
-//    }
-    
     // MARK: - Category
     func fetchCategory(from identify: String) -> Category {
         let result = database.objects(Category.self).filter("identify == %@", identify)
