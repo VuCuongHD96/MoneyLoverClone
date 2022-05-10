@@ -47,6 +47,8 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+MoneyLoverClone/.DS_Store
+MoneyLoverClone/Scenes/.DS_Store
 
 # CocoaPods
 #

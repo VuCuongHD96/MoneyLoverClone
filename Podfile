@@ -12,7 +12,7 @@ target 'MoneyLoverClone' do
   pod 'Then'
   pod 'Toast-Swift', '~> 5.0.1'
 
-  pod 'RealmSwift', '~> 5.0.0'
+  pod 'RealmSwift', '~> 10.5.0'
 
   pod 'GoogleSignIn', '~> 4.0.2'
 
@@ -23,4 +23,11 @@ target 'MoneyLoverClone' do
   pod "Firebase/Storage"
   pod 'SDWebImage', '~> 5.8.1'
   pod "ViewAnimator"
+  
+  post_install do |installer|
+        installer.pods_project.build_configurations.each do |config|
+          config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+        end
+  end
+  
 end
