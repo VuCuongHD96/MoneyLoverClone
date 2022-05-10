@@ -78,8 +78,9 @@
 		A2D4030E266B6F9F00C8324D /* AccountSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4030D266B6F9F00C8324D /* AccountSectionModel.swift */; };
 		A2D40311266B71FC00C8324D /* AccountCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D40310266B71FC00C8324D /* AccountCellModel.swift */; };
 		A2FCE2A82670DB9100DAD06D /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCE2A72670DB9100DAD06D /* Date+.swift */; };
+		A489413F282AC0D800E132D1 /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
+		A4894140282AC0D800E132D1 /* Pods_MoneyLoverClone.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85075FE022A5A78A17A42D32 /* Pods_MoneyLoverClone.framework */; };
-		C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B814BB2CF2CF6C94CC6F942 /* Pods_MoneyLoverClone.framework */; };
 		CF14E4EB2522D8D500F6A235 /* PlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14E4EA2522D8D500F6A235 /* PlanningTableViewController.swift */; };
 		CF4A2A5025383F1500A1FA0A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52DB4C2525C3E00096585B /* EventViewController.swift */; };
 		CF4A2A5325384D5500A1FA0A /* AddUpdateEventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A2A51253841B800A1FA0A /* AddUpdateEventEnum.swift */; };
@@ -95,6 +96,20 @@
 		CF6E2D8A2537F5ED003468C9 /* StatusEventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E2D882537F524003468C9 /* StatusEventEnum.swift */; };
 		CFCAF80E252B12CC00C7AE27 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA96EB2526D750005A2FEC /* Transaction.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4894141282AC0D800E132D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A4894140282AC0D800E132D1 /* Pods_MoneyLoverClone.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1016AEE825296C3D0030287F /* TransactionByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByDay.swift; sourceTree = "<group>"; };
@@ -195,7 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E247DEBB952E86903C3B2A /* Pods_MoneyLoverClone.framework in Frameworks */,
+				A489413F282AC0D800E132D1 /* Pods_MoneyLoverClone.framework in Frameworks */,
 				B01990675D86B85E1096B97E /* Pods_MoneyLoverClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +666,7 @@
 				ED91CB502EE9BAC48D7DBBD8 /* [CP] Embed Pods Frameworks */,
 				A2D40309266B164D00C8324D /* ShellScript */,
 				735791BF7189E220FCED4037 /* [CP] Copy Pods Resources */,
+				A4894141282AC0D800E132D1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1034,6 +1050,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = MoneyLoverClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1052,6 +1069,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = MoneyLoverClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
